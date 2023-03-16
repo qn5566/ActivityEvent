@@ -1,11 +1,11 @@
 {
-    "ios_version": "1",
-    "android_version": "1",
-    "info": "新版已經上線!!\n1. 增加GoogleMap地圖.\n2. 調整標題寬度.",
-    "notice": "有問題歡迎與我聯繫喔~ \nsohotguys@gmail.com",
-    "android_url": "https://play.google.com/store/apps/details?id=com.meetstudio.travel&pli=1",
-    "ios_url": "https://apps.apple.com/us/app/%E5%8F%B0%E7%81%A3%E6%99%AF%E9%BB%9E%E5%9C%B0%E5%9C%96/id1671108420",
-    "title_travel":[
+  "ios_version": "1",
+  "android_version": "1",
+  "info": "新版已經上線!!\n1. 增加GoogleMap地圖.\n2. 調整標題寬度.",
+  "notice": "有問題歡迎與我聯繫喔~ \nsohotguys@gmail.com",
+  "android_url": "https://play.google.com/store/apps/details?id=com.meetstudio.travel&pli=1",
+  "ios_url": "https://apps.apple.com/us/app/%E5%8F%B0%E7%81%A3%E6%99%AF%E9%BB%9E%E5%9C%B0%E5%9C%96/id1671108420",
+  "title_travel": [
     "臺北市",
     "基隆市",
     "臺中市",
@@ -29,7 +29,7 @@
     "嘉義縣",
     "雲林縣"
   ],
-  "title_event":[
+  "title_event": [
     "臺北市",
     "基隆市",
     "臺中市",
@@ -53,7 +53,7 @@
     "嘉義縣",
     "雲林縣"
   ],
-  "title_restaurant":[
+  "title_restaurant": [
     "新北市",
     "基隆市",
     "臺中市",
@@ -78,7 +78,21 @@
     "雲林縣",
     "臺北市"
   ],
-    "key_word_travel": ["公園","夜市"],
-    "key_word_event": ["音樂節","餐廳"],
-    "key_word_restaurant": ["吃到飽","素食"]
+  "key_word_travel": [
+    "公園",
+    "夜市"
+  ],
+  "key_word_event": [
+    "音樂節",
+    "餐廳"
+  ],
+  "key_word_restaurant": [
+    "吃到飽",
+    "素食"
+  ],
+  "data_api": [
+    "https://media.taiwan.net.tw/XMLReleaseALL_public/scenic_spot_C_f.json",
+    "https://media.taiwan.net.tw/XMLReleaseALL_public/activity_C_f.json",
+    "https://media.taiwan.net.tw/XMLReleaseALL_public/restaurant_C_f.json"
+  ]
 }
