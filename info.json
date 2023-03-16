@@ -78,5 +78,7 @@
     "雲林縣",
     "臺北市"
   ],
-    "option": ""
+    "key_word_travel": ["公園","夜市"],
+    "key_word_event": ["音樂節","餐廳"],
+    "key_word_restaurant": ["吃到飽","素食"]
 }
