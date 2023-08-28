@@ -1,7 +1,7 @@
 {
-  "ios_version": "13",
-  "android_version": "13",
-  "info": "新版已經上線!!\n1. 更新有新版的跳轉方式.\n2. 關閉滑動.\n3. 優化搜尋功能.\n4. 新增跳轉功能.\n",
+  "ios_version": "15",
+  "android_version": "15",
+  "info": "新版已經上線!!\n1. 優化地圖選單.\n2. 修改主題顏色.\n3. 設定頁面優化.\n4. 修改搜尋配色.\n",
   "notice": "有問題歡迎與我聯繫喔~ \nsohotguys@gmail.com",
   "android_url": "https://play.google.com/store/apps/details?id=com.meetstudio.event",
   "ios_url": "https://apps.apple.com/us/app/%E5%8F%B0%E7%81%A3%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82%E5%9C%B0%E5%9C%96/id6446348643",
