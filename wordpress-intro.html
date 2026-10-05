@@ -1,0 +1,340 @@
+<!-- 台灣吃喝玩樂地圖｜WordPress 自訂 HTML 區塊 -->
+<section class="twfun-landing" id="twfun-top" itemscope itemtype="https://schema.org/SoftwareApplication">
+  <style>
+    .twfun-landing {
+      --cream: #f8f1e7;
+      --paper: #fffaf2;
+      --ink: #1f2526;
+      --navy: #143f51;
+      --red: #d34a3e;
+      --gold: #d8aa5c;
+      --sage: #829379;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .twfun-landing, .twfun-landing * { box-sizing: border-box; }
+    .twfun-landing a { color: inherit; text-decoration: none; }
+    .twfun-landing img { display: block; max-width: 100%; }
+    .twfun-landing h1, .twfun-landing h2, .twfun-landing h3,
+    .twfun-landing p, .twfun-landing figure { width: auto; max-width: none; }
+    .twfun-landing h1, .twfun-landing h2, .twfun-landing h3 {
+      color: inherit !important;
+      float: none !important;
+      text-transform: none;
+    }
+    .twfun-landing h1, .twfun-landing h2, .twfun-landing h3,
+    .twfun-landing p, .twfun-landing span, .twfun-landing b {
+      writing-mode: horizontal-tb;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+    .twfun-shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .twfun-nav { display: flex; align-items: center; justify-content: space-between; padding: 26px 0; }
+    .twfun-brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: .15em; }
+    .twfun-brand img { width: 52px; height: 52px; border-radius: 14px; }
+    .twfun-nav-link { padding: 9px 18px; border: 1.5px solid var(--navy); border-radius: 999px; color: var(--navy); font-weight: 800; }
+    .twfun-hero { position: relative; padding: 66px 0 100px; }
+    .twfun-hero::before, .twfun-hero::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; }
+    .twfun-hero::before { width: 470px; height: 470px; top: -190px; right: -150px; background: var(--red); opacity: .95; }
+    .twfun-hero::after { width: 270px; height: 270px; left: -140px; bottom: 30px; background: var(--gold); opacity: .55; }
+    .twfun-hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 72px; align-items: center; }
+    .twfun-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 24px; font-size: 14px; font-weight: 900; letter-spacing: .2em; color: var(--red); }
+    .twfun-kicker::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: currentColor; }
+    .twfun-title { margin: 0; font-size: clamp(48px, 7.3vw, 94px); line-height: 1.06; letter-spacing: -.05em; font-weight: 950; }
+    .twfun-title span { display: block; color: var(--navy); }
+    .twfun-lead { max-width: 580px; margin: 28px 0 34px; font-size: clamp(18px, 2vw, 24px); color: #5f615e; }
+    .twfun-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .twfun-store { display: inline-flex; align-items: center; gap: 12px; min-width: 190px; padding: 13px 22px; border-radius: 18px; color: #fff !important; background: var(--navy); box-shadow: 0 12px 26px rgb(20 63 81 / 18%); transition: transform .2s ease, box-shadow .2s ease; }
+    .twfun-store:last-child { background: var(--red); box-shadow: 0 12px 26px rgb(211 74 62 / 18%); }
+    .twfun-store:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgb(31 37 38 / 22%); }
+    .twfun-store svg { flex: 0 0 auto; width: 27px; height: 27px; fill: currentColor; }
+    .twfun-store small, .twfun-store strong { display: block; line-height: 1.2; }
+    .twfun-store small { font-size: 10px; opacity: .8; letter-spacing: .08em; }
+    .twfun-store strong { margin-top: 3px; font-size: 16px; }
+    .twfun-phone-wrap { position: relative; min-height: 620px; display: grid; place-items: center; }
+    .twfun-dot-grid { position: absolute; inset: 0; background-image: radial-gradient(var(--navy) 0 10px, transparent 11px); background-size: 58px 58px; opacity: .12; transform: rotate(-8deg); }
+    .twfun-phone { position: relative; width: min(310px, 72vw); padding: 11px; border-radius: 42px; background: #1e2425; box-shadow: 28px 32px 0 var(--gold), 0 28px 70px rgb(31 37 38 / 28%); transform: rotate(4deg); }
+    .twfun-phone::before { content: ""; position: absolute; z-index: 2; width: 34%; height: 18px; top: 11px; left: 33%; border-radius: 0 0 15px 15px; background: #1e2425; }
+    .twfun-phone img { width: 100%; border-radius: 32px; }
+    .twfun-marquee { overflow: hidden; border-block: 2px solid var(--navy); background: var(--navy); color: #fff; transform: rotate(-1deg) scale(1.02); }
+    .twfun-marquee-track { display: flex; width: max-content; padding: 13px 0; animation: twfun-scroll 25s linear infinite; }
+    .twfun-marquee span { padding-right: 42px; font-size: 15px; font-weight: 900; letter-spacing: .18em; white-space: nowrap; }
+    @keyframes twfun-scroll { to { transform: translateX(-50%); } }
+    .twfun-section { padding: 108px 0; }
+    .twfun-section-title { margin: 0 0 18px; font-size: clamp(36px, 5vw, 62px); line-height: 1.15; letter-spacing: -.04em; }
+    .twfun-section-title em { color: var(--red); font-style: normal; }
+    .twfun-section-intro { max-width: 680px; margin: 0 0 48px; color: #666864; font-size: 18px; }
+    .twfun-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .twfun-feature { position: relative; min-height: 320px; padding: 34px; border: 2px solid var(--gold); border-radius: 38px; background: var(--paper); overflow: hidden; transition: transform .2s ease; }
+    .twfun-feature:hover { transform: translateY(-6px); }
+    .twfun-feature:nth-child(2) { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .twfun-feature:nth-child(3) { background: var(--red); border-color: var(--red); color: #fff; }
+    .twfun-feature-number { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 50%; background: var(--red); color: #fff; font-weight: 900; }
+    .twfun-feature:nth-child(2) .twfun-feature-number { background: var(--gold); color: var(--ink); }
+    .twfun-feature:nth-child(3) .twfun-feature-number { background: var(--paper); color: var(--red); }
+    .twfun-feature h3 { margin: 50px 0 12px; font-size: 28px; }
+    .twfun-feature p { margin: 0; opacity: .78; }
+    .twfun-feature-shape { position: absolute; width: 125px; height: 125px; right: -28px; bottom: -28px; border-radius: 50%; background: var(--gold); opacity: .28; }
+    .twfun-gallery-section { padding: 110px 0; background: var(--ink); color: #fff; }
+    .twfun-gallery-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 48px; }
+    .twfun-gallery-head p { max-width: 480px; margin: 0; color: #c7c7c3; }
+    .twfun-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: start; }
+    .twfun-shot { overflow: hidden; border-radius: 28px; border: 2px solid #5d5f5d; background: #2e3434; box-shadow: 0 20px 45px rgb(0 0 0 / 25%); }
+    .twfun-shot:nth-child(even) { margin-top: 48px; }
+    .twfun-shot img { width: 100%; height: auto; transition: transform .35s ease; }
+    .twfun-shot:hover img { transform: scale(1.025); }
+    .twfun-landing .twfun-steps {
+      display: grid !important;
+      width: 100% !important;
+      max-width: none !important;
+      grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr) !important;
+      gap: 70px;
+      align-items: center;
+    }
+    .twfun-steps > * { min-width: 0; width: 100%; max-width: none; }
+    .twfun-step-art { position: relative; aspect-ratio: 1; border-radius: 50%; background: var(--red); display: grid; place-items: center; }
+    .twfun-step-art::before { content: ""; width: 60%; height: 60%; border-radius: 50%; border: 34px solid var(--cream); }
+    .twfun-step-art::after { content: "遊"; position: absolute; font-size: clamp(90px, 14vw, 170px); line-height: 1; font-family: serif; font-weight: 900; color: var(--navy); }
+    .twfun-step-list { display: grid !important; width: 100%; gap: 22px; }
+    .twfun-landing .twfun-step { display: grid !important; width: 100% !important; grid-template-columns: 54px minmax(0, 1fr) !important; gap: 18px; padding-bottom: 22px; border-bottom: 1px solid #d8cab7; }
+    .twfun-step > p:empty { display: none !important; }
+    .twfun-step > div { min-width: 0; width: 100%; }
+    .twfun-step > b, .twfun-step .twfun-step-number { display: grid !important; place-items: center; width: 48px !important; height: 48px; min-width: 48px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; }
+    .twfun-step h3 { margin: 0 0 4px; font-size: 22px; }
+    .twfun-step p { margin: 0; color: #6c6d68; }
+    .twfun-faq { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: start; }
+    .twfun-faq-list { display: grid; gap: 14px; }
+    .twfun-faq-item { padding: 26px 28px; border: 1.5px solid #d8cab7; border-radius: 24px; background: var(--paper); }
+    .twfun-faq-item h3 { margin: 0 0 8px; font-size: 21px; }
+    .twfun-faq-item p { margin: 0; color: #666864; }
+    .twfun-cta { position: relative; margin-bottom: 90px; padding: 72px clamp(28px, 7vw, 88px); border-radius: 46px; background: var(--gold); overflow: hidden; }
+    .twfun-cta::before, .twfun-cta::after { content: ""; position: absolute; border-radius: 50%; }
+    .twfun-cta::before { width: 280px; height: 280px; top: -120px; right: -40px; background: var(--red); }
+    .twfun-cta::after { width: 150px; height: 150px; right: 170px; bottom: -70px; background: var(--navy); }
+    .twfun-cta-content { position: relative; z-index: 1; max-width: 650px; }
+    .twfun-cta h2 { margin: 0 0 16px; font-size: clamp(38px, 6vw, 68px); line-height: 1.1; }
+    .twfun-cta p { margin: 0 0 30px; font-size: 19px; }
+    .twfun-footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px 0; border-top: 1px solid #d8cab7; color: #747570; font-size: 13px; }
+    .twfun-reveal { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+    .twfun-js .twfun-reveal { opacity: 0; transform: translateY(28px); }
+    .twfun-reveal.twfun-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .twfun-marquee-track { animation: none; } .twfun-js .twfun-reveal { opacity: 1; transform: none; } }
+    @media (max-width: 900px) {
+      .twfun-hero-grid { grid-template-columns: 1fr; }
+      .twfun-landing .twfun-steps { grid-template-columns: minmax(0, 1fr) !important; }
+      .twfun-faq { grid-template-columns: 1fr; gap: 34px; }
+      .twfun-hero { padding-top: 35px; }
+      .twfun-phone-wrap { min-height: 570px; }
+      .twfun-feature-grid { grid-template-columns: 1fr; }
+      .twfun-feature { min-height: 240px; }
+      .twfun-feature h3 { margin-top: 32px; }
+      .twfun-gallery { grid-template-columns: repeat(2, 1fr); }
+      .twfun-step-art { max-width: 440px; margin: 0 auto; }
+    }
+    @media (max-width: 560px) {
+      .twfun-shell { width: min(100% - 28px, 1180px); }
+      .twfun-nav { padding: 18px 0; }
+      .twfun-brand { letter-spacing: .08em; }
+      .twfun-brand img { width: 44px; height: 44px; }
+      .twfun-nav-link { display: none; }
+      .twfun-hero { padding: 36px 0 78px; }
+      .twfun-hero-grid { gap: 30px; }
+      .twfun-title { font-size: 50px; }
+      .twfun-lead { font-size: 17px; }
+      .twfun-actions { display: grid; }
+      .twfun-store { width: 100%; }
+      .twfun-phone-wrap { min-height: 500px; }
+      .twfun-phone { width: 245px; border-radius: 34px; box-shadow: 18px 22px 0 var(--gold), 0 22px 50px rgb(31 37 38 / 25%); }
+      .twfun-phone img { border-radius: 25px; }
+      .twfun-section, .twfun-gallery-section { padding: 78px 0; }
+      .twfun-feature { padding: 28px; border-radius: 28px; }
+      .twfun-gallery-head { display: block; }
+      .twfun-gallery-head p { margin-top: 18px; }
+      .twfun-gallery { gap: 10px; }
+      .twfun-shot { border-radius: 18px; }
+      .twfun-shot:nth-child(even) { margin-top: 25px; }
+      .twfun-steps { gap: 42px; }
+      .twfun-cta { margin-bottom: 55px; padding: 52px 26px; border-radius: 32px; }
+      .twfun-cta::before { width: 150px; height: 150px; }
+      .twfun-cta::after { width: 90px; height: 90px; right: 20px; }
+      .twfun-footer { display: block; text-align: center; }
+    }
+  </style>
+
+  <meta itemprop="applicationCategory" content="TravelApplication">
+  <meta itemprop="operatingSystem" content="Android, iOS">
+  <meta itemprop="isAccessibleForFree" content="true">
+
+  <div class="twfun-shell">
+    <nav class="twfun-nav" aria-label="頁面導覽">
+      <a class="twfun-brand" href="#twfun-top">
+        <img itemprop="image" src="https://raw.githubusercontent.com/qn5566/ActivityEvent/main/res/images/icon/main_icon.webp" alt="台灣吃喝玩樂地圖 App 圖示">
+        <span>HI TAIWAN</span>
+      </a>
+      <a class="twfun-nav-link" href="#twfun-download">免費下載</a>
+    </nav>
+
+    <div class="twfun-hero">
+      <div class="twfun-hero-grid">
+        <div class="twfun-reveal">
+          <p class="twfun-kicker">好玩的・玩樂誌</p>
+          <h1 class="twfun-title" itemprop="name">台灣吃喝<span>玩樂地圖</span></h1>
+          <p class="twfun-lead" itemprop="description">台灣吃喝玩樂地圖是一款整合台灣景點、活動與餐廳資訊的免費旅遊 App。透過地圖、縣市及關鍵字搜尋，快速探索附近好去處，收藏想去景點並開啟導航。</p>
+          <div class="twfun-actions">
+            <a class="twfun-store" itemprop="installUrl" href="https://apps.apple.com/us/app/id6446348643" target="_blank" rel="noopener" aria-label="前往 App Store 下載台灣吃喝玩樂地圖">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.79 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.1M12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
+              <span><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
+            </a>
+            <a class="twfun-store" itemprop="installUrl" href="https://play.google.com/store/apps/details?id=com.meetstudio.event" target="_blank" rel="noopener" aria-label="前往 Google Play 下載台灣吃喝玩樂地圖">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.18 23.76c-.38-.2-.63-.58-.63-1.08V1.32c0-.5.25-.88.63-1.08l11.8 11.76-11.8 11.76Zm12.75-10.81 2.97 1.71-12.42 7.15 9.45-8.86Zm3.93-.12c.38.22.62.57.62.99s-.24.77-.62.99l-2.84 1.64-3.12-3.12 3.12-3.12 2.84 1.64ZM6.48 2.19l12.42 7.15-2.97 1.71-9.45-8.86Z"/></svg>
+              <span><small>GET IT ON</small><strong>Google Play</strong></span>
+            </a>
+          </div>
+        </div>
+        <div class="twfun-phone-wrap twfun-reveal">
+          <div class="twfun-dot-grid" aria-hidden="true"></div>
+          <div class="twfun-phone">
+            <img src="https://raw.githubusercontent.com/qn5566/ActivityEvent/main/screenshot/Screenshot_20260930_125816.png" alt="台灣吃喝玩樂地圖 App 首頁畫面">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="twfun-marquee" aria-hidden="true">
+    <div class="twfun-marquee-track">
+      <span>景點・活動・餐廳・附近探索・想去清單・旅行足跡・景點・活動・餐廳・</span>
+      <span>景點・活動・餐廳・附近探索・想去清單・旅行足跡・景點・活動・餐廳・</span>
+    </div>
+  </div>
+
+  <div class="twfun-shell twfun-section">
+    <div class="twfun-reveal">
+      <h2 class="twfun-section-title">一張地圖，<em>三種玩法。</em></h2>
+      <p class="twfun-section-intro">不用在許多網站之間來回尋找，依照當下的心情，快速切換你想看的內容。</p>
+    </div>
+    <div class="twfun-feature-grid">
+      <article class="twfun-feature twfun-reveal"><span class="twfun-feature-number">01</span><h3>發現特色景點</h3><p>從城市地標到巷弄秘境，依縣市與關鍵字找到下一站。</p><i class="twfun-feature-shape" aria-hidden="true"></i></article>
+      <article class="twfun-feature twfun-reveal"><span class="twfun-feature-number">02</span><h3>掌握期間活動</h3><p>展覽、市集、音樂節通通收進口袋，不錯過精彩時刻。</p><i class="twfun-feature-shape" aria-hidden="true"></i></article>
+      <article class="twfun-feature twfun-reveal"><span class="twfun-feature-number">03</span><h3>搜尋在地美食</h3><p>旅行途中想吃什麼，附近餐廳與台灣小吃即刻帶路。</p><i class="twfun-feature-shape" aria-hidden="true"></i></article>
+    </div>
+  </div>
+
+  <div class="twfun-shell twfun-section">
+    <div class="twfun-faq">
+      <div class="twfun-reveal">
+        <p class="twfun-kicker">TRAVEL FAQ</p>
+        <h2 class="twfun-section-title">關於台灣吃喝<br><em>玩樂地圖</em></h2>
+        <p class="twfun-section-intro">規劃台灣自由行、週末小旅行或尋找附近美食時，常見的使用問題一次解答。</p>
+      </div>
+      <div class="twfun-faq-list">
+        <article class="twfun-faq-item twfun-reveal"><h3>台灣吃喝玩樂地圖可以查詢哪些資訊？</h3><p>App 整合台灣各縣市的旅遊景點、期間活動及餐廳資訊，可依分類、城市與關鍵字快速搜尋。</p></article>
+        <article class="twfun-faq-item twfun-reveal"><h3>可以搜尋目前位置附近的景點嗎？</h3><p>可以。開啟附近功能後，即可從地圖查看周邊景點、活動與餐廳，並直接開啟 Google 地圖導航。</p></article>
+        <article class="twfun-faq-item twfun-reveal"><h3>可以收藏想去的景點嗎？</h3><p>可以將喜歡的景點加入想去清單，也能從旅行足跡回顧曾經探索過的地點。</p></article>
+        <article class="twfun-faq-item twfun-reveal"><h3>支援 iPhone 與 Android 手機嗎？</h3><p>台灣吃喝玩樂地圖支援 iOS 與 Android，可分別從 App Store 和 Google Play 免費下載。</p></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="twfun-gallery-section">
+    <div class="twfun-shell">
+      <div class="twfun-gallery-head twfun-reveal">
+        <h2 class="twfun-section-title">把台灣，<br><em>裝進口袋。</em></h2>
+        <p>直覺的卡片介面與地圖模式，無論正在規劃旅程，或臨時想找附近去處，都能迅速出發。</p>
+      </div>
+      <div class="twfun-gallery">
+        <figure class="twfun-shot twfun-reveal"><img loading="lazy" src="https://raw.githubusercontent.com/qn5566/ActivityEvent/main/screenshot/Screenshot_20260930_125816.png" alt="App 景點探索畫面"></figure>
+        <figure class="twfun-shot twfun-reveal"><img loading="lazy" src="https://raw.githubusercontent.com/qn5566/ActivityEvent/main/screenshot/Screenshot_20260930_125903.png" alt="App 附近地圖畫面"></figure>
+        <figure class="twfun-shot twfun-reveal"><img loading="lazy" src="https://raw.githubusercontent.com/qn5566/ActivityEvent/main/screenshot/Screenshot_20260930_125843.png" alt="App 景點詳細資訊畫面"></figure>
+        <figure class="twfun-shot twfun-reveal"><img loading="lazy" src="https://raw.githubusercontent.com/qn5566/ActivityEvent/main/screenshot/Screenshot_20260930_125833.png" alt="App 旅行足跡畫面"></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="twfun-shell twfun-section">
+    <div class="twfun-steps">
+      <div class="twfun-step-art twfun-reveal" aria-hidden="true"></div>
+      <div>
+        <div class="twfun-reveal"><p class="twfun-kicker">LET'S GO</p><h2 class="twfun-section-title">出發，就是<br>這麼簡單。</h2></div>
+        <div class="twfun-step-list">
+          <div class="twfun-step twfun-reveal"><div class="twfun-step-number">一</div><div><h3>選擇想看的分類</h3><p>景點、活動或餐廳，跟著今天的心情走。</p></div></div>
+          <div class="twfun-step twfun-reveal"><div class="twfun-step-number">二</div><div><h3>搜尋城市或附近</h3><p>依照縣市、關鍵字與目前位置快速探索。</p></div></div>
+          <div class="twfun-step twfun-reveal"><div class="twfun-step-number">三</div><div><h3>收藏後直接導航</h3><p>建立想去清單，把喜歡的地方變成旅程。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="twfun-shell" id="twfun-download">
+    <div class="twfun-cta twfun-reveal">
+      <div class="twfun-cta-content">
+        <p class="twfun-kicker">FREE DOWNLOAD</p>
+        <h2>今天，要去哪裡玩？</h2>
+        <p>下載「台灣吃喝玩樂地圖」，把每一次出發都變成值得收藏的足跡。</p>
+        <div class="twfun-actions">
+          <a class="twfun-store" href="https://apps.apple.com/us/app/id6446348643" target="_blank" rel="noopener"><span><small>iPhone / iPad</small><strong>前往 App Store</strong></span></a>
+          <a class="twfun-store" href="https://play.google.com/store/apps/details?id=com.meetstudio.event" target="_blank" rel="noopener"><span><small>Android</small><strong>前往 Google Play</strong></span></a>
+        </div>
+      </div>
+    </div>
+    <footer class="twfun-footer"><span>台灣吃喝玩樂地圖 © 2026</span><span>有問題歡迎聯繫：sohotguys@gmail.com</span></footer>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.currentScript.closest('.twfun-landing');
+      root.classList.add('twfun-js');
+      const items = root.querySelectorAll('.twfun-reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(item => item.classList.add('twfun-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('twfun-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(item => observer.observe(item));
+    })();
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "台灣吃喝玩樂地圖",
+          "description": "整合台灣景點、活動與餐廳資訊的免費旅遊 App，可搜尋附近好去處、收藏想去景點並開啟地圖導航。",
+          "applicationCategory": "TravelApplication",
+          "operatingSystem": "Android, iOS",
+          "image": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/res/images/icon/main_icon.webp",
+          "screenshot": [
+            "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/screenshot/Screenshot_20260930_125816.png",
+            "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/screenshot/Screenshot_20260930_125903.png"
+          ],
+          "downloadUrl": [
+            "https://apps.apple.com/us/app/id6446348643",
+            "https://play.google.com/store/apps/details?id=com.meetstudio.event"
+          ],
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "台灣吃喝玩樂地圖可以查詢哪些資訊？", "acceptedAnswer": { "@type": "Answer", "text": "App 整合台灣各縣市的旅遊景點、期間活動及餐廳資訊，可依分類、城市與關鍵字快速搜尋。" } },
+            { "@type": "Question", "name": "可以搜尋目前位置附近的景點嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。開啟附近功能後，即可從地圖查看周邊景點、活動與餐廳，並直接開啟 Google 地圖導航。" } },
+            { "@type": "Question", "name": "可以收藏想去的景點嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以將喜歡的景點加入想去清單，也能從旅行足跡回顧曾經探索過的地點。" } },
+            { "@type": "Question", "name": "支援 iPhone 與 Android 手機嗎？", "acceptedAnswer": { "@type": "Answer", "text": "台灣吃喝玩樂地圖支援 iOS 與 Android，可分別從 App Store 和 Google Play 免費下載。" } }
+          ]
+        }
+      ]
+    }
+  </script>
+</section>
