@@ -1,0 +1,341 @@
+/* WordPress 佈景主題隔離：避免文章容器與自動插入段落改變版面 */
+.twfun-landing {
+  width: 100vw;
+  max-width: none !important;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.twfun-landing > p:empty,
+.twfun-landing > p:has(br:only-child) { display: none !important; }
+.twfun-landing button,
+.twfun-landing input,
+.twfun-landing textarea,
+.twfun-landing select { font: inherit; }
+.twfun-landing ul,
+.twfun-landing ol { margin: 0; padding: 0; list-style: none; }
+
+.twfun-landing {
+      /* 藍色到粉色夢幻極光動態背景 (Aurora Wave Gradient) */
+      --sky-blue: #6DB3F2;
+      --cherry-pink: #E88D96;
+      --lavender: #D8B4F8;
+      --ink: #2D3142;
+      --ink-soft: #6C757D;
+      --paper: rgba(255, 255, 255, 0.94);
+      --card-shadow: 0 16px 36px rgba(210, 180, 225, 0.25);
+
+      color: var(--ink);
+      /* 全頁極光流動漸層背景 */
+      background: linear-gradient(135deg, #E8F0FE 0%, #F5F0FF 40%, #FFDFE5 70%, #EBF3FF 100%);
+      background-size: 300% 300%;
+      animation: twfun-aurora-bg 18s ease infinite alternate;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      line-height: 1.8;
+      overflow: hidden;
+      isolation: isolate;
+      position: relative;
+      padding-bottom: 60px;
+    }
+
+    /* 極光漸層全頁流動動畫 */
+    @keyframes twfun-aurora-bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .twfun-landing, .twfun-landing * { box-sizing: border-box; }
+    .twfun-landing a { color: inherit; text-decoration: none; }
+    .twfun-landing img { display: block; max-width: 100%; }
+    .twfun-landing h1, .twfun-landing h2, .twfun-landing h3,
+    .twfun-landing p, .twfun-landing figure { width: auto; max-width: none; margin: 0; }
+    .twfun-landing h1, .twfun-landing h2, .twfun-landing h3 {
+      font-family: "PingFang TC", "Microsoft JhengHei", -apple-system, sans-serif;
+      font-weight: 700;
+      color: var(--ink) !important;
+      float: none !important;
+      text-transform: none;
+      writing-mode: horizontal-tb;
+    }
+    .twfun-shell { width: min(1160px, calc(100% - 36px)); margin: 0 auto; position: relative; z-index: 2; }
+
+    /* 英文字體點綴風格 (Editorial Typography) */
+    .twfun-en-serif { font-family: Georgia, "Times New Roman", serif; font-style: italic; letter-spacing: .06em; }
+    .twfun-editorial-num { font-family: Georgia, serif; font-size: 2.2rem; font-style: italic; font-weight: 700; color: var(--cherry-pink); opacity: .8; line-height: 1; }
+
+    /* 極光動態流光背景疊層 (Aurora Floating Blobs) */
+    .twfun-aurora-overlay {
+      position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden;
+    }
+    .twfun-aurora-blob {
+      position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.45; animation: twfun-aurora-move 20s infinite alternate;
+    }
+    .twfun-blob-1 { top: -10%; left: -10%; width: 600px; height: 600px; background: rgba(109, 179, 242, 0.6); }
+    .twfun-blob-2 { top: 35%; right: -15%; width: 700px; height: 700px; background: rgba(232, 141, 150, 0.6); animation-duration: 25s; animation-delay: -5s; }
+    .twfun-blob-3 { bottom: -10%; left: 10%; width: 650px; height: 650px; background: rgba(216, 180, 248, 0.6); animation-duration: 22s; animation-delay: -10s; }
+
+    @keyframes twfun-aurora-move {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(50px, 40px) scale(1.15); }
+      100% { transform: translate(-40px, 60px) scale(0.95); }
+    }
+
+    /* 頂部導覽列 */
+    .twfun-nav { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; border-bottom: 1px dashed rgba(232, 141, 150, 0.3); }
+    .twfun-brand { display: flex; align-items: center; gap: 14px; }
+    .twfun-brand img { width: 46px; height: 46px; border-radius: 14px; box-shadow: 0 4px 12px rgba(232, 141, 150, 0.2); border: 2px solid #fff; }
+    .twfun-brand-text { display: flex; flex-direction: column; }
+    .twfun-brand-title { font-size: 18px; font-weight: 700; letter-spacing: .05em; color: var(--ink); }
+    .twfun-brand-sub { font-size: 11px; color: var(--cherry-pink); font-family: Georgia, serif; letter-spacing: .12em; text-transform: uppercase; }
+
+    .twfun-nav-btn {
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #E88D96 0%, #6DB3F2 100%);
+      color: #fff !important;
+      font-weight: 700;
+      border-radius: 99px;
+      font-size: 14px;
+      letter-spacing: .05em;
+      box-shadow: 0 6px 18px rgba(232, 141, 150, 0.4);
+      transition: all .35s ease;
+    }
+    .twfun-nav-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 26px rgba(232, 141, 150, 0.55); }
+
+    /* 首頁 Hero 區塊 */
+    .twfun-hero { position: relative; padding: 45px 0 65px; }
+    .twfun-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 45px; align-items: center; }
+
+    .twfun-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 18px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(232, 141, 150, 0.4);
+      border-radius: 99px;
+      color: var(--cherry-pink);
+      font-size: 13px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(232, 141, 150, 0.12);
+    }
+
+    .twfun-title { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.45; font-weight: 700; letter-spacing: 0.02em; }
+    .twfun-title span.twfun-subline {
+      display: block; font-size: clamp(15px, 1.8vw, 20px); font-weight: 400; color: var(--ink-soft); font-family: Georgia, serif; margin-top: 8px; letter-spacing: .08em;
+    }
+    .twfun-title em { font-style: normal; color: var(--cherry-pink); background: linear-gradient(120deg, rgba(232,141,150,0.2) 0%, rgba(109,179,242,0.2) 100%); padding: 2px 8px; border-radius: 6px; }
+
+    .twfun-lead { font-size: clamp(15px, 1.6vw, 18px); color: var(--ink-soft); margin: 22px 0 30px; font-weight: 300; line-height: 1.8; }
+
+    /* 下載卡片區 */
+    .twfun-download-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      padding: 24px;
+      border-radius: 22px;
+      border: 1.5px solid #FFF;
+      box-shadow: var(--card-shadow);
+      max-width: 540px;
+      transition: all .35s ease;
+    }
+    .twfun-download-card:hover {
+      box-shadow: 0 20px 45px rgba(232, 141, 150, 0.35); transform: translateY(-2px);
+    }
+    .twfun-download-head { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+    .twfun-download-head span.twfun-en { color: var(--cherry-pink); font-size: 16px; }
+
+    .twfun-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .twfun-store {
+      display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 18px; border-radius: 16px; color: #fff !important; position: relative; overflow: hidden; z-index: 1; transition: all .35s ease;
+    }
+    .twfun-store::before {
+      content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transition: left .6s ease; z-index: 2;
+    }
+    .twfun-store:hover::before { left: 100%; }
+
+    .twfun-store-ios { background: #353B48; box-shadow: 0 6px 18px rgba(53,59,72,0.2); }
+    .twfun-store-android { background: linear-gradient(135deg, #E88D96 0%, #6DB3F2 100%); box-shadow: 0 6px 18px rgba(232,141,150,0.35); }
+    .twfun-store:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 28px rgba(232, 141, 150, 0.45); }
+    .twfun-store svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
+    .twfun-store small { display: block; font-size: 10px; opacity: .88; letter-spacing: .08em; }
+    .twfun-store strong { display: block; font-size: 15px; font-weight: 700; line-height: 1.1; margin-top: 2px; }
+
+    /* 右側相框 */
+    .twfun-polaroid-hero { position: relative; padding: 15px; }
+    .twfun-polaroid-box {
+      background: #FFF;
+      padding: 16px 16px 24px 16px;
+      border-radius: 20px;
+      box-shadow: 0 20px 45px rgba(210, 190, 220, 0.45);
+      transform: rotate(2deg);
+      border: 1px solid #F5EEF8;
+      position: relative;
+    }
+    .twfun-polaroid-img-frame { border-radius: 12px; overflow: hidden; background: #000; }
+    .twfun-polaroid-caption-box { margin-top: 14px; text-align: center; }
+    .twfun-polaroid-title { font-size: 16px; font-weight: 700; color: var(--cherry-pink); }
+    .twfun-polaroid-sub { font-size: 13px; color: var(--ink-soft); font-family: Georgia, serif; font-style: italic; }
+
+    /* ✨ 全新重構：日系文青雜誌色塊卡片 (Editorial Color Block Cards - 無貼紙、無圓圈印章) */
+    .twfun-journal-section { padding: 60px 0; }
+    .twfun-sec-head { text-align: center; max-width: 680px; margin: 0 auto 45px; }
+    .twfun-sec-sub { font-family: Georgia, serif; font-size: 17px; font-style: italic; color: var(--cherry-pink); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 4px; }
+    .twfun-sec-title { font-size: clamp(24px, 3.4vw, 36px); font-weight: 700; line-height: 1.35; }
+
+    .twfun-magazine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .twfun-mag-card {
+      background: #FFF;
+      border-radius: 24px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(180, 190, 210, 0.2);
+      transition: all .35s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+    .twfun-mag-card:hover { transform: translateY(-8px); box-shadow: 0 22px 48px rgba(232, 141, 150, 0.35); }
+
+    .twfun-mag-photo {
+      position: relative; aspect-ratio: 4/3; overflow: hidden;
+    }
+    .twfun-mag-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .twfun-mag-card:hover .twfun-mag-photo img { transform: scale(1.08); }
+
+    /* 圖片上簡潔俐落的分類標籤 */
+    .twfun-mag-tag {
+      position: absolute; top: 12px; left: 12px; background: rgba(45, 49, 66, 0.82); backdrop-filter: blur(6px); color: #FFF; padding: 4px 14px; border-radius: 99px; font-size: 11px; letter-spacing: 0.05em;
+    }
+
+    /* ✨ 文青雜誌風底座色塊 (Editorial Color Block Section) */
+    .twfun-mag-block {
+      padding: 22px 24px 26px 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8FC 100%);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    /* 色塊頂部不規則設計細節：不同卡片配備不同柔和底色點綴 */
+    .twfun-mag-card:nth-child(1) .twfun-mag-block { background: linear-gradient(180deg, #FFF6F7 0%, #FFFFFF 100%); }
+    .twfun-mag-card:nth-child(2) .twfun-mag-block { background: linear-gradient(180deg, #F4F8FF 0%, #FFFFFF 100%); }
+    .twfun-mag-card:nth-child(3) .twfun-mag-block { background: linear-gradient(180deg, #F9F4FF 0%, #FFFFFF 100%); }
+    .twfun-mag-card:nth-child(4) .twfun-mag-block { background: linear-gradient(180deg, #FFF9F0 0%, #FFFFFF 100%); }
+    .twfun-mag-card:nth-child(5) .twfun-mag-block { background: linear-gradient(180deg, #F0FBFF 0%, #FFFFFF 100%); }
+    .twfun-mag-card:nth-child(6) .twfun-mag-block { background: linear-gradient(180deg, #FFF4FA 0%, #FFFFFF 100%); }
+
+    .twfun-mag-header-line {
+      display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 4px;
+    }
+    .twfun-mag-block h3 { font-size: 19px; font-weight: 700; color: var(--ink) !important; margin: 0; }
+    
+    .twfun-mag-en-title { font-family: Georgia, serif; font-size: 13.5px; font-style: italic; color: var(--cherry-pink); margin-bottom: 10px; display: block; }
+    .twfun-mag-desc { font-size: 13.5px; color: var(--ink-soft); font-weight: 300; line-height: 1.65; margin-bottom: 14px; }
+    
+    .twfun-mag-footer-note {
+      padding-top: 10px; border-top: 1px dashed rgba(220, 200, 220, 0.6); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ink-soft);
+    }
+    .twfun-mag-quote { font-family: Georgia, serif; font-style: italic; color: var(--cherry-pink); font-size: 13px; }
+
+    /* 4 大亮點標籤列 */
+    .twfun-highlight-bar {
+      margin: 35px 0 55px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .twfun-hl-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 20px 16px;
+      border-radius: 18px;
+      border: 1px solid #FFF;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(220, 200, 225, 0.2);
+      transition: transform .3s ease;
+    }
+    .twfun-hl-card:hover { transform: translateY(-4px); }
+    .twfun-hl-icon { font-size: 28px; margin-bottom: 6px; }
+    .twfun-hl-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+    .twfun-hl-en { font-family: Georgia, serif; font-size: 13px; font-style: italic; color: var(--cherry-pink); margin-bottom: 4px; }
+    .twfun-hl-desc { font-size: 12px; color: var(--ink-soft); }
+
+    /* 畫廊展示區塊 */
+    .twfun-gallery-section {
+      background: linear-gradient(135deg, rgba(232,141,150,0.12) 0%, rgba(109,179,242,0.12) 100%);
+      padding: 60px 0;
+      border-radius: 32px;
+      margin: 35px 0;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+    .twfun-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 35px; }
+    .twfun-shot-card {
+      background: rgba(255,255,255,0.92);
+      padding: 10px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      border: 1px solid #FFF;
+      transition: transform .3s ease;
+    }
+    .twfun-shot-card:hover { transform: translateY(-5px); }
+    .twfun-shot-card img { width: 100%; border-radius: 12px; }
+    .twfun-shot-title { text-align: center; margin-top: 8px; font-size: 13px; font-weight: 700; color: var(--ink); }
+    .twfun-shot-sub { text-align: center; font-family: Georgia, serif; font-size: 11px; font-style: italic; color: var(--cherry-pink); }
+
+    /* FAQ 常見問題 */
+    .twfun-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .twfun-faq-item {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 24px 28px;
+      border-radius: 20px;
+      border: 1px solid #FFF;
+      box-shadow: 0 6px 20px rgba(220, 200, 225, 0.2);
+    }
+    .twfun-faq-item h3 { font-size: 17px; margin-bottom: 8px; color: var(--cherry-pink) !important; font-weight: 700; }
+    .twfun-faq-item p { font-size: 13.5px; color: var(--ink-soft); font-weight: 300; line-height: 1.7; }
+
+    /* 底部大 CTA 下載區 */
+    .twfun-bottom-cta {
+      background: linear-gradient(135deg, #FFDFE5 0%, #F0F4FF 50%, #E8F0FE 100%);
+      color: var(--ink);
+      border-radius: 36px;
+      padding: 60px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 60px;
+      border: 2px solid #FFF;
+      box-shadow: 0 20px 50px rgba(232, 141, 150, 0.25);
+    }
+    .twfun-bottom-cta::after {
+      content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%); animation: twfun-rotate 25s linear infinite; pointer-events: none;
+    }
+    @keyframes twfun-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .twfun-bottom-cta-content { position: relative; z-index: 2; }
+    .twfun-bottom-cta h2 { color: var(--ink) !important; font-size: clamp(28px, 4vw, 44px); margin-bottom: 6px; font-weight: 700; }
+    .twfun-bottom-cta .twfun-cta-sub { font-family: Georgia, serif; font-size: 20px; font-style: italic; color: var(--cherry-pink); margin-bottom: 18px; }
+    .twfun-bottom-cta p { font-size: 16px; color: var(--ink-soft); font-weight: 300; max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+    .twfun-bottom-cta .twfun-actions { display: flex; justify-content: center; gap: 16px; max-width: none; }
+    .twfun-bottom-cta .twfun-store { min-width: 200px; }
+
+    /* 頁尾 */
+    .twfun-footer { text-align: center; padding: 35px 0 20px; font-size: 13px; color: var(--ink-soft); border-top: 1px dashed rgba(232, 141, 150, 0.3); margin-top: 60px; }
+
+    /* RWD 響應式 */
+    @media (max-width: 900px) {
+      .twfun-hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .twfun-magazine-grid { grid-template-columns: repeat(2, 1fr); }
+      .twfun-highlight-bar { grid-template-columns: repeat(2, 1fr); }
+      .twfun-gallery { grid-template-columns: repeat(2, 1fr); }
+      .twfun-faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .twfun-magazine-grid { grid-template-columns: 1fr; }
+      .twfun-actions { grid-template-columns: 1fr; }
+      .twfun-bottom-cta .twfun-actions { flex-direction: column; }
+      .twfun-highlight-bar { grid-template-columns: 1fr; }
+    }
