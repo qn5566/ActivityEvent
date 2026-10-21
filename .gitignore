@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+.venv/
+
+# macOS
+.DS_Store
+
+# 翻譯暫存 / 快取 / 日誌
+data/.translation_cache.sqlite3*
+data/.offline_translate.lock
+data/*.out
+data/translate.log
+data/*.json.tmp
+
+# 翻譯工作暫存（含各語合併字典，~171MB，不上傳）
+data/_translations/
