@@ -109,7 +109,7 @@
     },
     {
       "code": "en",
-      "name": "英文",
+      "name": "English",
       "name_en": "English",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/en/Event-json.zip",
@@ -119,7 +119,7 @@
     },
     {
       "code": "ja",
-      "name": "日文",
+      "name": "日本語",
       "name_en": "Japanese",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ja/Event-json.zip",
@@ -129,7 +129,7 @@
     },
     {
       "code": "ko",
-      "name": "韓文",
+      "name": "한국어",
       "name_en": "Korean",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ko/Event-json.zip",
@@ -139,7 +139,7 @@
     },
     {
       "code": "th",
-      "name": "泰文",
+      "name": "ไทย",
       "name_en": "Thai",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/th/Event-json.zip",
@@ -149,7 +149,7 @@
     },
     {
       "code": "vi",
-      "name": "越南文",
+      "name": "Tiếng Việt",
       "name_en": "Vietnamese",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/vi/Event-json.zip",
@@ -159,7 +159,7 @@
     },
     {
       "code": "ms",
-      "name": "馬來文",
+      "name": "Bahasa Melayu",
       "name_en": "Malay",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ms/Event-json.zip",
@@ -169,7 +169,7 @@
     },
     {
       "code": "fil",
-      "name": "菲律賓文",
+      "name": "Filipino",
       "name_en": "Filipino",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/fil/Event-json.zip",
@@ -179,7 +179,7 @@
     },
     {
       "code": "hi",
-      "name": "印地文",
+      "name": "हिन्दी",
       "name_en": "Hindi",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/hi/Event-json.zip",
@@ -189,7 +189,7 @@
     },
     {
       "code": "id",
-      "name": "印尼文",
+      "name": "Bahasa Indonesia",
       "name_en": "Indonesian",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/id/Event-json.zip",
@@ -199,7 +199,7 @@
     },
     {
       "code": "es",
-      "name": "西班牙文",
+      "name": "Español",
       "name_en": "Spanish",
       "data_api": [
         "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/es/Event-json.zip",
