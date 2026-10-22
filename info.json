@@ -96,6 +96,118 @@
     "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/Attraction-json.zip",
     "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/Restaurant-json.zip"
   ],
+  "languages": [
+    {
+      "code": "zh",
+      "name": "繁體中文",
+      "name_en": "Traditional Chinese",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "en",
+      "name": "英文",
+      "name_en": "English",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/en/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/en/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/en/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "ja",
+      "name": "日文",
+      "name_en": "Japanese",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ja/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ja/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ja/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "ko",
+      "name": "韓文",
+      "name_en": "Korean",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ko/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ko/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ko/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "th",
+      "name": "泰文",
+      "name_en": "Thai",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/th/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/th/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/th/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "vi",
+      "name": "越南文",
+      "name_en": "Vietnamese",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/vi/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/vi/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/vi/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "ms",
+      "name": "馬來文",
+      "name_en": "Malay",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ms/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ms/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/ms/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "fil",
+      "name": "菲律賓文",
+      "name_en": "Filipino",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/fil/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/fil/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/fil/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "hi",
+      "name": "印地文",
+      "name_en": "Hindi",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/hi/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/hi/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/hi/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "id",
+      "name": "印尼文",
+      "name_en": "Indonesian",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/id/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/id/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/id/Restaurant-json.zip"
+      ]
+    },
+    {
+      "code": "es",
+      "name": "西班牙文",
+      "name_en": "Spanish",
+      "data_api": [
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/es/Event-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/es/Attraction-json.zip",
+        "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/data/es/Restaurant-json.zip"
+      ]
+    }
+  ],
   "option": "感謝您使用我們的App，我們十分感謝您的支持和信任！我們將繼續不斷地改進和提升App的品質，希望能夠為您帶來更好的使用體驗。如果您對App有任何的建議或意見，請不要猶豫，隨時與我們聯繫。再次感謝您的使用！",
   "info_menu": [
     "探訪台灣特色小吃",
