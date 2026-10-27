@@ -9,8 +9,10 @@
   5. 圖片授權（【姓名/拍攝】等）→ Photo by 姓名
   其餘（描述）→ 留給 offline_translate.py 用 argos 翻譯。
 
-正典策略：專名、食物、物種、圖片授權的結果套用「所有語言共用同一英文/拼音值」，
-讓 argos 不去碰它們（避免把專名再翻成怪字）。
+正典策略：專名（地名／建物名）與圖片授權不再全語言共用英文，而是：
+  - 拉丁文字語言（en/es/vi/ms/fil/id）沿用英文/拼音；
+  - ja 轉片假名、ko 轉諺文（常見後綴／場所詞另查 transliterate.py 的對照表）。
+  食物／物種仍全語言共用英文（glossary 查表）；描述句留給 offline_translate.py 用 argos 翻譯。
 
 用法：
   python3 preprocess.py --dry-run   # 只列分類統計與樣本，不寫檔
@@ -30,6 +32,7 @@ from pypinyin import lazy_pinyin
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import translate  # noqa: E402
+import transliterate  # noqa: E402
 
 LANGS = ["en", "ja", "ko", "vi", "es", "fil", "hi", "id", "ms", "th"]
 DATA_DIR = Path(__file__).resolve().parent / "data"
@@ -148,27 +151,55 @@ def suffix_of(k):
     return None, None
 
 
-def render_proper(prefix):
-    for zh, en in PROPER:
+def render_proper(prefix, lang):
+    if lang in transliterate.LATIN:
+        for zh, en in PROPER:
+            if zh in prefix:
+                prefix = prefix.replace(zh, " " + en + " ")
+        toks = prefix.split()
+        out = []
+        for t in toks:
+            out.append("".join(lazy_pinyin(t)).capitalize() if is_han(t) else t)
+        return " ".join(out) if out else "".join(lazy_pinyin(prefix)).capitalize()
+    # ja/ko：專名音譯，常見詞翻譯
+    placeholders = []
+    for i, (zh, en) in enumerate(PROPER):
         if zh in prefix:
-            prefix = prefix.replace(zh, " " + en + " ")
-    toks = prefix.split()
+            ph = f"zplh{i}z"
+            placeholders.append((ph, transliterate.localize_proper(zh, en, lang, lazy_pinyin(zh))))
+            prefix = prefix.replace(zh, " " + ph + " ")
+    ph_map = dict(placeholders)
+    if lang == "ja":
+        result = ""
+        for tok in prefix.split():
+            if tok in ph_map:
+                result += ph_map[tok]
+            elif is_han(tok):
+                result += transliterate.transliterate_syllables(lazy_pinyin(tok), lang)
+            else:
+                result += tok
+        return result
     out = []
-    for t in toks:
-        out.append("".join(lazy_pinyin(t)).capitalize() if is_han(t) else t)
-    return " ".join(out) if out else "".join(lazy_pinyin(prefix)).capitalize()
+    for tok in prefix.split():
+        if tok in ph_map:
+            out.append(ph_map[tok])
+        elif is_han(tok):
+            out.append(transliterate.transliterate_syllables(lazy_pinyin(tok), lang))
+        else:
+            out.append(tok)
+    return " ".join(out)
 
 
-def render_name(k):
+def render_name(k, lang):
     """地名/建物名 → 專名音譯 + 英文後綴；若非專名則回傳 None。"""
     if k in FULL:
-        return FULL[k]
+        return transliterate.localize_proper(k, FULL[k], lang, lazy_pinyin(k))
     suf, en = suffix_of(k)
     if not suf:
         return None
     prefix = k[: -len(suf)]
     if not prefix:
-        return en
+        return transliterate.localize_word(en, lang)
     if not is_han(prefix):
         return None
     if len(k) > 12:
@@ -178,20 +209,23 @@ def render_name(k):
     for m in STOP_MARKERS:
         if m in prefix:
             return None
-    return render_proper(prefix) + " " + en
+    sep = transliterate.word_sep(lang)
+    return render_proper(prefix, lang) + sep + transliterate.localize_word(en, lang)
 
 
-def render_person(name):
+def render_person(name, lang):
     """中文姓名 → 拼音（姓 + 名）。"""
     py = lazy_pinyin(name)
     if not py:
         return name
+    if lang not in transliterate.LATIN:
+        return transliterate.transliterate_syllables(py, lang)
     if len(py) == 1:
         return py[0].capitalize()
     return py[0].capitalize() + " " + "".join(py[1:]).capitalize()
 
 
-def render_photo_credit(text):
+def render_photo_credit(text, lang):
     """【姓名/拍攝】或 姓名/拍攝 → Photo by 姓名。"""
     m = re.fullmatch(r"【?(.+?)[/／]拍攝】?", text)
     if not m:
@@ -199,10 +233,14 @@ def render_photo_credit(text):
     name = m.group(1).strip("【】").strip()
     if not name or not is_han(name) or len(name) > 6:
         return None
-    return "Photo by " + render_person(name)
+    if lang == "ja":
+        return "写真：" + render_person(name, lang)
+    if lang == "ko":
+        return "사진: " + render_person(name, lang)
+    return "Photo by " + render_person(name, lang)
 
 
-def classify(text):
+def classify(text, lang="en"):
     """回傳 (kind, value)；kind=None 表示留給 argos。"""
     t = text.strip()
     if not has_han(t):
@@ -212,10 +250,10 @@ def classify(text):
     g = load_glossary().get(t)
     if isinstance(g, str):
         return ("glossary", g)
-    v = render_name(t)
+    v = render_name(t, lang)
     if v:
         return ("proper", v)
-    v = render_photo_credit(t)
+    v = render_photo_credit(t, lang)
     if v:
         return ("photo", v)
     return (None, None)
@@ -244,7 +282,7 @@ def main():
             continue
         stats[kind] = stats.get(kind, 0) + 1
         samples.setdefault(kind, []).append((text, value))
-        plans.append((text, kind, value))
+        plans.append((text, kind))
 
     print("=== 前置處理分類統計 ===")
     for kind in ("identity", "blacklist", "glossary", "proper", "photo"):
@@ -269,8 +307,13 @@ def main():
 
     FORCE_OVERWRITE = {"identity", "blacklist"}
     changed = 0
-    for text, kind, value in plans:
+    value_cache = {}
+    for text, kind in plans:
         for lang in LANGS:
+            key = (text, "en") if lang in transliterate.LATIN else (text, lang)
+            if key not in value_cache:
+                value_cache[key] = classify(text, key[1])[1]
+            value = value_cache[key]
             table = tables[lang]
             if force or kind in FORCE_OVERWRITE or text not in table:
                 if table.get(text) != value:

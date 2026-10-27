@@ -7,7 +7,10 @@
   3. 專名欄位（店名／品牌／地名／地址等）→ jieba 分詞 + pinyin 音譯 + 常見詞英文替換
   其餘（描述句）→ 留給 content_offline_translate.py 用 argos 翻譯。
 
-正典策略：上述結果對所有語言共用同一英文/拼音值（同 data 管線）。
+正典策略：專名（店名／品牌／地名／地址）不再全語言共用英文，而是：
+  - 拉丁文字語言（en/es/vi/ms/fil/id）沿用英文/拼音；
+  - ja 轉片假名、ko 轉諺文（常見後綴／場所詞另查 transliterate.py 的對照表）。
+  其餘（描述句）仍留給 content_offline_translate.py 用 argos 翻譯。
 
 用法：
   python3 content_preprocess.py --dry-run   # 只列分類統計與樣本，不寫檔
@@ -27,6 +30,7 @@ from preprocess import (  # noqa: E402
 )
 from pypinyin import lazy_pinyin  # noqa: E402
 import jieba  # noqa: E402
+import transliterate  # noqa: E402
 
 LANGS = list(ct.LANGUAGES)
 
@@ -92,16 +96,21 @@ def suffix_table():
     return _SUFFIX_CACHE
 
 
-def render_word(word):
-    """單一漢字詞 → 英文（後綴對應）或 pinyin；無法處理回 pinyin。"""
+def render_word(word, lang):
+    """單一漢字詞 → 目標語言文字（拉丁語系：後綴英文 + pinyin；ja/ko：音譯 + 後綴在地化）。"""
     for suf, en in suffix_table():
         if word.endswith(suf):
             prefix = word[: -len(suf)]
             if not prefix:
-                return en
+                return transliterate.localize_word(en, lang)
             if is_han(prefix):
-                return "".join(lazy_pinyin(prefix)).capitalize() + " " + en
-    return "".join(lazy_pinyin(word)).capitalize()
+                sep = transliterate.word_sep(lang)
+                return (
+                    transliterate.transliterate_syllables(lazy_pinyin(prefix), lang)
+                    + sep
+                    + transliterate.localize_word(en, lang)
+                )
+    return transliterate.transliterate_syllables(lazy_pinyin(word), lang)
 
 
 def _collapse_dups(text):
@@ -123,28 +132,52 @@ def _collapse_dups(text):
     return " ".join(out)
 
 
-def render_content_name(text):
-    """店名／品牌／地名 → 官方英文 + pinyin（保留內嵌英文/ASCII/emoji/符號）。"""
+def render_content_name(text, lang):
+    """店名／品牌／地名 → 目標語言文字（拉丁語系：官方英文 + pinyin；ja/ko：音譯 + 後綴在地化）。"""
     t = text.strip()
-    if t in FULL:
-        return FULL[t]
-    for zh, en in proper_table():
+    if t in FULL and lang in transliterate.LATIN:
+        en = FULL[t]
+        return en
+    # 用唯一 ASCII 佔位符替代專名詞組，避免 jieba 對外來語／漢字再切分
+    placeholders = []
+    for i, (zh, en) in enumerate(proper_table()):
         if zh in t:
-            t = t.replace(zh, " " + en + " ")
-    out = []
+            ph = f"zplh{i}z"
+            placeholders.append(
+                (ph, transliterate.localize_proper(zh, en, lang, lazy_pinyin(zh)))
+            )
+            t = t.replace(zh, " " + ph + " ")
+    parts = []
     for seg in jieba.cut(t):
         s = seg.strip()
         if not s:
             continue
         if not is_han(s):
-            out.append(s)
+            parts.append((s, False))
         else:
-            out.append(render_word(s))
-    result = re.sub(r"\s+", " ", " ".join(out)).strip()
-    return _collapse_dups(result)
+            parts.append((render_word(s, lang), True))
+    ph_map = dict(placeholders)
+    # 依語言組裝：拉丁語系／ko 用空白，ja 只在「外來語 ↔ 漢字音譯」交界處保留空白
+    if lang == "ja":
+        result = ""
+        prev_jp = None
+        for tok, was_han in parts:
+            is_ph = tok in ph_map
+            actual = ph_map.get(tok, tok)
+            jp = was_han or is_ph
+            if result and (not jp or not prev_jp):
+                result += " "
+            result += actual
+            prev_jp = jp
+    else:
+        result = " ".join(ph_map.get(tok, tok) for tok, _ in parts)
+        result = re.sub(r"\s+", " ", result).strip()
+    if lang in transliterate.LATIN:
+        return _collapse_dups(result)
+    return result
 
 
-def classify(text, leaf_key):
+def classify(text, leaf_key, lang="en"):
     """回傳 (kind, value)；kind=None 表示留給 argos。"""
     t = text.strip()
     if not has_han(t):
@@ -153,7 +186,7 @@ def classify(text, leaf_key):
     if isinstance(g, str) and g:
         return ("glossary", g)
     if leaf_key in NAME_FIELDS:
-        return ("proper", render_content_name(t))
+        return ("proper", render_content_name(t, lang))
     return (None, None)
 
 
@@ -186,7 +219,7 @@ def main():
             continue
         stats[kind] = stats.get(kind, 0) + 1
         samples.setdefault(kind, []).append((text, value))
-        plans.append((text, kind, value))
+        plans.append((text, kind, leaf_key))
 
     print("=== content 前置處理分類統計（共 %d 筆待譯文字） ===" % len(items))
     for kind in ("identity", "glossary", "proper"):
@@ -212,8 +245,16 @@ def main():
 
     FORCE_OVERWRITE = {"identity"}
     changed = 0
-    for text, kind, value in plans:
+    value_cache = {}
+    for text, kind, leaf_key in plans:
         for lang in LANGS:
+            if lang in transliterate.LATIN:
+                key = (text, "en")
+            else:
+                key = (text, lang)
+            if key not in value_cache:
+                value_cache[key] = classify(text, leaf_key, key[1])[1]
+            value = value_cache[key]
             table = tables[lang]
             if force or kind in FORCE_OVERWRITE or text not in table:
                 if table.get(text) != value:
