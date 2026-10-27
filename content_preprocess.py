@@ -41,6 +41,12 @@ CONTENT_PROPER = [
     ("海景", "Seaview"), ("觀景", "Viewing"), ("老宅", "Old House"),
     ("精選", "Selected"), ("天井", "Courtyard"), ("沙龍", "Salon"),
     ("手沖", "Pour-over"), ("甜點", "Dessert"), ("老屋", "Old House"),
+    # 知名專名校正（官方英文，優先於 pinyin；避免被單字後綴拆壞）
+    ("女王頭", "Queen's Head"), ("阜杭豆漿", "Fuhang Soy Milk"),
+    ("微熱山丘", "SunnyHills"), ("鼎泰豐", "Din Tai Fung"), ("頤宮", "Le Palais"),
+    ("野柳", "Yehliu"), ("鹿港", "Lukang"), ("壽山", "Shoushan"), ("七星潭", "Qixingtan"),
+    ("佳德", "Chia Te"), ("興波咖啡", "Simple Kaffa"), ("山男咖啡", "Yamano Cafe"),
+    ("50嵐", "50 Lan"), ("清水斷崖", "Qingshui Cliff"),
 ]
 
 # 地址後綴（SUFFIX 沒有者補上）
@@ -98,6 +104,25 @@ def render_word(word):
     return "".join(lazy_pinyin(word)).capitalize()
 
 
+def _collapse_dups(text):
+    """合併相鄰重複的詞組（忽略大小寫），例如 "Yamano Cafe Yamano Cafe" -> "Yamano Cafe"。"""
+    words = text.split()
+    out = []
+    i = 0
+    while i < len(words):
+        if i + 3 < len(words) and words[i].lower() == words[i + 2].lower() and words[i + 1].lower() == words[i + 3].lower():
+            out.extend([words[i], words[i + 1]])
+            i += 4
+            while i + 1 < len(words) and words[i].lower() == out[-2].lower() and words[i + 1].lower() == out[-1].lower():
+                i += 2
+        elif i + 1 < len(words) and words[i].lower() == words[i + 1].lower():
+            i += 1
+        else:
+            out.append(words[i])
+            i += 1
+    return " ".join(out)
+
+
 def render_content_name(text):
     """店名／品牌／地名 → 官方英文 + pinyin（保留內嵌英文/ASCII/emoji/符號）。"""
     t = text.strip()
@@ -115,7 +140,8 @@ def render_content_name(text):
             out.append(s)
         else:
             out.append(render_word(s))
-    return re.sub(r"\s+", " ", " ".join(out)).strip()
+    result = re.sub(r"\s+", " ", " ".join(out)).strip()
+    return _collapse_dups(result)
 
 
 def classify(text, leaf_key):
