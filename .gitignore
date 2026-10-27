@@ -14,3 +14,10 @@ data/*.json.tmp
 
 # 翻譯工作暫存（含各語合併字典，~171MB，不上傳）
 data/_translations/
+
+# content 改版內容的翻譯暫存 / 日誌（同 data/ 規則）
+content/_translations/
+content/translate.log
+content/.offline_translate.lock
+content/*.json.tmp
+content/*.out
