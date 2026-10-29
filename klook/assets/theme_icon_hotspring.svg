@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- 溫泉桶漸層 -->
+    <linearGradient id="tubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <!-- 溫泉水漸層 (暖粉粉溫泉水) -->
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBCFE8"/>
+      <stop offset="50%" stop-color="#F472B6"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </linearGradient>
+    <!-- 浮動小木桶漸層 -->
+    <linearGradient id="bucketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <!-- 白煙漸層 -->
+    <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 陰影 -->
+  <ellipse cx="100" cy="168" rx="72" ry="14" fill="#000000" opacity="0.12"/>
+
+  <!-- 大溫泉木桶外身 -->
+  <path d="M36,110 C36,145 64,164 100,164 C136,164 164,145 164,110 L164,98 C164,98 140,114 100,114 C60,114 36,98 36,98 Z" fill="url(#tubGrad)"/>
+
+  <!-- 木桶鐵圈金屬條 -->
+  <path d="M40,126 C56,138 78,144 100,144 C122,144 144,138 160,126" stroke="#78350F" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M48,148 C64,156 82,160 100,160 C118,160 136,156 152,148" stroke="#78350F" stroke-width="2.5" fill="none" opacity="0.6"/>
+
+  <!-- 木桶邊緣 (Rim) -->
+  <ellipse cx="100" cy="98" rx="64" ry="22" fill="url(#rimGrad)"/>
+
+  <!-- 溫泉水面 -->
+  <ellipse cx="100" cy="100" rx="58" ry="18" fill="url(#waterGrad)"/>
+
+  <!-- 水面波紋光澤 -->
+  <ellipse cx="94" cy="99" rx="42" ry="11" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="106" cy="102" rx="26" ry="6" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.45"/>
+
+  <!-- 浮動小桶 (Floating Bath Bucket) -->
+  <g transform="translate(112, 85) rotate(-6)">
+    <ellipse cx="16" cy="14" rx="15" ry="7" fill="url(#bucketGrad)"/>
+    <path d="M2,14 C2,23 8,26 16,26 C24,26 30,23 30,14 Z" fill="url(#bucketGrad)"/>
+    <!-- 浴巾掛在小桶上 -->
+    <path d="M12,12 C12,18 10,23 10,26 C12,27 18,27 20,26 C20,23 18,18 18,12 Z" fill="#FFFFFF" opacity="0.95"/>
+    <line x1="10" y1="23" x2="20" y2="23" stroke="#CBD5E1" stroke-width="1"/>
+  </g>
+
+  <!-- 溫泉紅白標誌 (經典溫泉符號) -->
+  <g transform="translate(74, 122) scale(0.65)">
+    <ellipse cx="40" cy="30" rx="36" ry="8" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M25,22 C23,12 33,6 30,-2" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M40,22 C38,10 48,4 45,-6" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M55,22 C53,12 63,6 60,-2" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- 裊裊升騰的白煙霧 (Wisps of Steam) -->
+  <path d="M72,85 C66,65 84,48 76,28 C70,14 80,4 82,0" fill="none" stroke="url(#steamGrad)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M100,82 C92,60 112,44 104,24 C98,10 108,2 110,-2" fill="none" stroke="url(#steamGrad)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M128,84 C122,66 138,52 130,34 C124,22 132,12 134,8" fill="none" stroke="url(#steamGrad)" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

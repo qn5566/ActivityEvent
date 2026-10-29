@@ -14,13 +14,14 @@
       "shortName": "手搖名店",
       "color": "#9FC2DD",
       "watermark": "BOBA & TEA",
-      "heroImg": "assets/ranking_boba.png",
-      "iconImg": "assets/ranking_boba.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_boba.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_boba.png",
       "heroAlt": "台灣手搖飲珍珠奶茶",
       "ctaText": "🍽️ 領訂餐優惠 ➔",
       "ctaType": "dining",
       "desc": "自由行旅客必朝聖！附甜度冰塊客製化建議與英文點餐指南。",
-      "badge": "🧋 手搖 Boba Top 20"
+      "badge": "🧋 手搖 Boba Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=珍珠奶茶&aid=106452"
     },
     {
       "id": "nightmarket",
@@ -36,13 +37,14 @@
       "shortName": "夜市必比登",
       "color": "#F3A8A8",
       "watermark": "NIGHT MARKET",
-      "heroImg": "assets/ranking_market.png",
-      "iconImg": "assets/ranking_market.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_market.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_market.png",
       "heroAlt": "台灣夜市熱鬧街景小吃",
       "ctaText": "🍽️ 查看排隊攻略 ➔",
       "ctaType": "dining",
       "desc": "米其林必比登權威推介！各國老饕必吃剛需排隊經典。",
-      "badge": "🍢 夜市 Market Top 20"
+      "badge": "🍢 夜市 Market Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=夜市&aid=106452"
     },
     {
       "id": "bbq",
@@ -58,13 +60,14 @@
       "shortName": "頂級燒肉",
       "color": "#FF9977",
       "watermark": "BBQ & WAGYU",
-      "heroImg": "assets/theme_icon_bbq.png",
-      "iconImg": "assets/theme_icon_bbq.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_bbq.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_bbq.png",
       "heroAlt": "炭火炙烤頂級和牛燒肉",
       "ctaText": "🍽️ 搶先預約訂位 ➔",
       "ctaType": "dining",
       "desc": "日韓歐美遊客指名：屋馬、茶六、橘色與頂級和牛專人代烤。",
-      "badge": "🥩 燒肉 BBQ Top 20"
+      "badge": "🥩 燒肉 BBQ Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=燒肉&aid=106452"
     },
     {
       "id": "halal_vegan",
@@ -80,12 +83,14 @@
       "shortName": "清真素食",
       "color": "#AFCF69",
       "watermark": "HALAL & VEGAN",
-      "heroImg": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_veggie.png",
       "heroAlt": "清真友善與純植蔬食料理",
       "ctaText": "🍽️ 查詢蔬食菜單 ➔",
       "ctaType": "dining",
       "desc": "東南亞穆斯林、歐美素食者友善：全植物肉、米其林綠星精緻料理。",
-      "badge": "🟢 蔬食 Veggie Top 20"
+      "badge": "🟢 蔬食 Veggie Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=素食&aid=106452",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_veggie.png"
     },
     {
       "id": "tea",
@@ -101,13 +106,14 @@
       "shortName": "工夫茶席",
       "color": "#D1D1A5",
       "watermark": "TEA HOUSE",
-      "heroImg": "assets/ranking_tea.png",
-      "iconImg": "assets/ranking_tea.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea.png",
       "heroAlt": "九份與貓空傳統工夫茶席",
       "ctaText": "🍵 預約品茗體驗 ➔",
       "ctaType": "dining",
       "desc": "九份阿妹茶樓、貓空望遠、阿里山高山烏龍與職人沖泡解說。",
-      "badge": "🍵 茶席 Tea Top 20"
+      "badge": "🍵 茶席 Tea Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=茶&aid=106452"
     },
     {
       "id": "spots",
@@ -123,12 +129,14 @@
       "shortName": "熱門景點",
       "color": "#A0D9C5",
       "watermark": "TOP SPOTS",
-      "heroImg": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&auto=format&fit=crop",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots.png",
       "heroAlt": "台北101與台北天際線景觀",
       "ctaText": "⚡ Klook 快速預約 ➔",
       "ctaType": "activity",
       "desc": "全站真實海外預訂數據！故宮、101觀景台、野柳女王頭、太魯閣精選。",
-      "badge": "🏆 景點 Spots Top 20"
+      "badge": "🏆 景點 Spots Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=台灣&aid=106452",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots.png"
     },
     {
       "id": "walk",
@@ -144,12 +152,14 @@
       "shortName": "文青散策",
       "color": "#B9ABD3",
       "watermark": "CITY WALK",
-      "heroImg": "https://images.unsplash.com/photo-1526478806334-5fd488fcaabc?w=800&auto=format&fit=crop",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk.png",
       "heroAlt": "赤峰街與老街漫步",
       "ctaText": "🗺️ 開啟散策地圖 ➔",
       "ctaType": "activity",
       "desc": "歐美日韓文青最愛路線：赤峰街、大稻埕老宅、台南神農街、審計新村。",
-      "badge": "🚶 散策 Walk Top 20"
+      "badge": "🚶 散策 Walk Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=城市漫步&aid=106452",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk.png"
     },
     {
       "id": "rainy",
@@ -165,13 +175,14 @@
       "shortName": "雨天備案",
       "color": "#A1DADC",
       "watermark": "RAINY DAY",
-      "heroImg": "assets/ranking_rainy.png",
-      "iconImg": "assets/ranking_rainy.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy.png",
       "heroAlt": "國立故宮博物院與室內展館",
       "ctaText": "⚡ 線上免排隊門票 ➔",
       "ctaType": "activity",
       "desc": "下雨天自由行不泡湯：Xpark 水族館、故宮、科博館、美術館直通。",
-      "badge": "🌧️ 雨天 Rainy Top 20"
+      "badge": "🌧️ 雨天 Rainy Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=室內活動&aid=106452"
     },
     {
       "id": "charter",
@@ -187,13 +198,14 @@
       "shortName": "包車推薦",
       "color": "#A5D1C1",
       "watermark": "PRIVATE RIDE",
-      "heroImg": "assets/ranking_ride.png",
-      "iconImg": "assets/ranking_ride.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_ride.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_ride.png",
       "heroAlt": "台灣海岸公路包車自駕巡禮",
       "ctaText": "🚗 預約專屬包車司機 ➔",
       "ctaType": "charter",
       "desc": "語言不通免煩惱！配置多語司機、點對點直達：九份金瓜石、日月潭清境、太魯閣。",
-      "badge": "🚗 包車 Ride Top 20"
+      "badge": "🚗 包車 Ride Top 20",
+      "ctaUrl": "https://www.klook.com/zh-TW/car-rentals/?aid=106452"
     },
     {
       "id": "hotspring",
@@ -209,13 +221,14 @@
       "shortName": "名湯溫泉",
       "color": "#F7C2AB",
       "watermark": "HOT SPRING",
-      "heroImg": "assets/theme_icon_hotspring.png",
-      "iconImg": "assets/theme_icon_hotspring.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_hotspring.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_hotspring.png",
       "heroAlt": "日式露天風呂與白煙溫泉池",
       "ctaText": "🏨 Trip.com 即時訂房 ➔",
       "ctaType": "hotel",
       "desc": "北投白磺、礁溪美人湯、烏來碳酸泉、谷關與知本露天風呂精選。",
-      "badge": "♨️ 溫泉 Hot Spring Top 20"
+      "badge": "♨️ 溫泉 Hot Spring Top 20",
+      "ctaUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227"
     },
     {
       "id": "hostel",
@@ -231,13 +244,14 @@
       "shortName": "青年旅舍",
       "color": "#EBDAC1",
       "watermark": "HOSTEL & INN",
-      "heroImg": "assets/ranking_hostel.png",
-      "iconImg": "assets/ranking_hostel.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_hostel.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_hostel.png",
       "heroAlt": "文青設計風格青年旅舍公共空間",
       "ctaText": "🏨 即時比價搶單人床 ➔",
       "ctaType": "hotel",
       "desc": "單人背包客首選！每晚千元有找、英文流利櫃檯、超高社交安全感。",
-      "badge": "🎒 青旅 Hostel Top 20"
+      "badge": "🎒 青旅 Hostel Top 20",
+      "ctaUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227"
     },
     {
       "id": "souvenir",
@@ -253,13 +267,14 @@
       "shortName": "必買伴手",
       "color": "#E8C1F4",
       "watermark": "GIFTS & TREATS",
-      "heroImg": "assets/ranking_shopping.png",
-      "iconImg": "assets/ranking_shopping.png",
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_gifts.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_gifts.png",
       "heroAlt": "鳳梨酥與台灣茶禮盒伴手禮",
       "ctaText": "🛍️ 直寄飯店代收 ➔",
       "ctaType": "shopping",
       "desc": "佳德鳳梨酥、微熱山丘、大黑松小倆口、快車肉乾直寄飯店免排隊免扛。",
-      "badge": "🛍️ 伴手 Gifts Top 20"
+      "badge": "🛍️ 伴手 Gifts Top 20",
+      "ctaUrl": "https://afftck.com/track/clicks/4459/c627c2bc980522defc8dec23d62e9d47266c4cdf2aabebf00365bb13234652eed671a3ea103a9e71?subid_1=%E5%8F%B0%E7%81%A3%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82&subid_2=%E5%8F%B0%E7%81%A3%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82"
     },
     {
       "id": "cafe",
@@ -280,8 +295,9 @@
       "ctaType": "dining",
       "desc": "世界冠軍手沖、老宅紅磚天井、海景第一排，精選全台風格咖啡與甜點名店。",
       "badge": "☕ 咖啡 Cafe Top 20",
-      "heroImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop",
-      "iconImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop"
+      "heroImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/theme_icon_cafe.png",
+      "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/theme_icon_cafe.png",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=咖啡&aid=106452"
     },
     {
       "id": "events",
@@ -303,7 +319,8 @@
       "desc": "熱氣球嘉年華、大型節慶與燈會等全台年度必訪盛事精選。",
       "badge": "🎪 活動 Events Top 10",
       "heroImg": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=600&auto=format&fit=crop",
-      "iconImg": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=600&auto=format&fit=crop"
+      "iconImg": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=600&auto=format&fit=crop",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=台灣活動&aid=106452"
     },
     {
       "id": "anime",
@@ -325,7 +342,8 @@
       "desc": "寶可夢中心、動漫主題商店與期間限定快閃，動漫迷必朝聖清單。",
       "badge": "🎨 動漫 Anime Top 15",
       "heroImg": "https://images.unsplash.com/photo-1563089145-599997674d42?w=600&auto=format&fit=crop",
-      "iconImg": "https://images.unsplash.com/photo-1563089145-599997674d42?w=600&auto=format&fit=crop"
+      "iconImg": "https://images.unsplash.com/photo-1563089145-599997674d42?w=600&auto=format&fit=crop",
+      "ctaUrl": "https://affclkr.online/track/clicks/5686/c627c2bf910421d7fb8dec23d62e9d47266c4cdf2aabebf10168b413234652eed671a3ea103a9e71?subid_1=%E5%8F%B0%E7%81%A3%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82&subid_2=%E5%8F%B0%E7%81%A3%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82"
     },
     {
       "id": "ocean",
@@ -347,7 +365,8 @@
       "desc": "衝浪、浮潛、SUP 與海岸秘境，全台海洋戶外體驗精選。",
       "badge": "🌊 海洋 Ocean Top 15",
       "heroImg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
-      "iconImg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop"
+      "iconImg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=水上活動&aid=106452"
     },
     {
       "id": "nightview",
@@ -369,7 +388,8 @@
       "desc": "高空酒吧、觀景台與山城燈海，全台絕美百萬夜景精選。",
       "badge": "🌃 夜景 Night View Top 20",
       "heroImg": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop",
-      "iconImg": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop"
+      "iconImg": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop",
+      "ctaUrl": "https://www.klook.com/zh-TW/search/?query=台北夜景&aid=106452"
     }
   ],
   "items": {
@@ -385,7 +405,7 @@
         "desc": "台灣手搖界常青樹！首推傳奇「1號」四季春茶搭配波霸珍珠與椰果，口感層次豐富。建議甜度冰塊：微糖微冰（30% Sugar, Less Ice）。",
         "price": "NT$ 40 - 65",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1558857563-b37cf5a452ef?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/50lan_tea.png"
       },
       {
         "rank": 2,
@@ -398,7 +418,7 @@
         "desc": "每杯茶皆透過專利「萃茶機」現點現磨現萃！茶香高雅純厚，國王珍珠大顆軟糯耐嚼，海外旅客甘願排隊一小時朝聖。",
         "price": "NT$ 95 - 130",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/chicha_sanchen.png"
       },
       {
         "rank": 3,
@@ -411,7 +431,7 @@
         "desc": "以春烏龍、輕烏龍與焙烏龍三分法聞名，招牌獨家軟嫩茶凍搭配濃厚奶茶，清爽回甘無負擔，近年青年社群打卡第一名。",
         "price": "NT$ 45 - 75",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/dezheng_tea.png"
       },
       {
         "rank": 4,
@@ -424,7 +444,7 @@
         "desc": "獨創將台灣傳統節慶米食「草仔粿」揉入奶茶中，帶有一抹艾草淡香與軟Q嚼勁，顛覆傳統珍珠手搖體驗！",
         "price": "NT$ 45 - 70",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/aniceholiday_tea.png"
       },
       {
         "rank": 5,
@@ -437,7 +457,7 @@
         "desc": "鮮果飲天花板！滿滿現切愛文芒果果肉搭配自製綠茶凍與鹹甜濃香紐西蘭芝士奶蓋，夏天消暑一口入魂。",
         "price": "NT$ 65 - 95",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/macu_tea.png"
       },
       {
         "rank": 6,
@@ -450,7 +470,7 @@
         "desc": "嚴選斯里蘭卡、印度與台灣三種頂級茶葉調配基底，奶香如絲絨般滑順，被無數咖啡與奶茶老饕譽為台北最強鮮奶茶。",
         "price": "NT$ 65 - 85",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/soma_tea.png"
       },
       {
         "rank": 7,
@@ -463,7 +483,7 @@
         "desc": "堅持不添加奶精！使用台南綠光牧場新鮮直送鮮奶，透明無色素的白玉珍珠用蜂蜜浸泡，帶有優雅自然清甜蜜香。",
         "price": "NT$ 55 - 80",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/milksha_tea.png"
       },
       {
         "rank": 8,
@@ -476,7 +496,7 @@
         "desc": "微帶果香的深焙熟成茶葉，能完美解膩各類油炸小吃。加點白玉珍珠讓口感更加綿密，店面裝潢如英式老藥房超好拍。",
         "price": "NT$ 40 - 65",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/kebuke_tea.jpg"
       },
       {
         "rank": 9,
@@ -489,7 +509,7 @@
         "desc": "日本百年辻利在台旗艦店，現刷傳統宇治抹茶融合濃醇鮮乳與軟Q白玉，是日韓旅客與抹茶控在台必喝的頂級日系手搖。",
         "price": "NT$ 110 - 160",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/tsujiri_tea.png"
       },
       {
         "rank": 10,
@@ -502,7 +522,7 @@
         "desc": "採用多種穀物焙煎的和風茶飲，搭配現榨鮮葡萄柚原汁與炙烤烏龍茶底，清甜甘醇不澀口，各分店每日皆是大排長龍。",
         "price": "NT$ 45 - 75",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1546173159-315724a31696?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/hachiyo_tea.png"
       },
       {
         "rank": 11,
@@ -515,7 +535,7 @@
         "desc": "西元 1983 年創始於台中！將台灣傳統粉圓與香濃奶茶完美融合的世紀名店，細緻碎冰與古早味小粉圓是其永恆靈魂。",
         "price": "NT$ 100 - 180",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1558857563-b37cf5a452ef?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/chunshuitang_tea.png"
       },
       {
         "rank": 12,
@@ -528,7 +548,7 @@
         "desc": "驚豔全網的酪梨奶蓋！加入台灣新鮮熟成酪梨製成綿密奶蓋，帶有天然果香濃稠感，與台灣日月潭紅玉紅茶堪稱絕配。",
         "price": "NT$ 50 - 75",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/daming_tea.png"
       },
       {
         "rank": 13,
@@ -541,7 +561,7 @@
         "desc": "由台灣英式下午茶名店古典玫瑰園創立，將皇家奢華果茶平價手搖化，優雅大馬士革玫瑰花香氣令人回味無窮。",
         "price": "NT$ 45 - 70",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/taotaotea_tea.png"
       },
       {
         "rank": 14,
@@ -554,7 +574,7 @@
         "desc": "台北奶茶排隊霸主！採用特殊鍋煮工法帶出重烘焙紅茶深邃甘韻，生乳奶香極其飽滿，喝過一次便回不去。",
         "price": "NT$ 55 - 75",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/johntea_tea.png"
       },
       {
         "rank": 15,
@@ -567,7 +587,7 @@
         "desc": "主打每杯滿載手工剝落的新鮮紅葡萄柚果肉，結合頂級翡翠綠茶與話梅提味，酸甜爆汁毫無苦澀感，回購率居高不下。",
         "price": "NT$ 50 - 75",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1546173159-315724a31696?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/guiji_tea.png"
       },
       {
         "rank": 16,
@@ -580,7 +600,7 @@
         "desc": "南台灣無人不知的傳奇手搖！自有茶園契作生產，招牌山楂烏龍酸甜生津開胃，是體驗南部在地庶民手搖文化必喝代表。",
         "price": "NT$ 35 - 55",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/magictea_tea.png"
       },
       {
         "rank": 17,
@@ -593,7 +613,7 @@
         "desc": "以台灣老茶廠配方茶為底，加入每日手工慢熬的嫩滑杏仁凍或茉莉綠茶凍，吸入口中瞬間化開，充滿古早味雅致。",
         "price": "NT$ 40 - 65",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/wootea_tea.png"
       },
       {
         "rank": 18,
@@ -606,7 +626,7 @@
         "desc": "將小時候阿嬤手工製作的古早味紅豆粉粿冰棒重現為手搖杯，濃香綿密軟Q十足，曾登上美國與日本多家美食媒體推薦。",
         "price": "NT$ 50 - 75",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/wanpo_tea.png"
       },
       {
         "rank": 19,
@@ -619,7 +639,7 @@
         "desc": "台南在地發跡數十年的手搖巨擘！一杯「綜合新味」包含大小珍珠與脆口水晶，微酸檸檬綠茶底清爽解渴，在地人激推！",
         "price": "NT$ 40 - 65",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/bog_tea.png"
       },
       {
         "rank": 20,
@@ -632,7 +652,7 @@
         "desc": "1982年創始於高雄鹽埕老街，將普洱茶甘潤降火特性調和高品質鮮奶，不加一滴冰塊原味呈現，老派甘純經典不滅。",
         "price": "NT$ 55 - 70",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/hwada_tea.png"
       }
     ],
     "cafe": [
@@ -909,7 +929,7 @@
         "desc": "米其林必比登常客！現桿大甲檳榔心芋泥包裹鹹鴨蛋黃與香濃黑豬肉脯，外酥內爆漿綿密。",
         "price": "NT$ 30 - 35",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_taro_ball.png"
       },
       {
         "rank": 2,
@@ -922,7 +942,7 @@
         "desc": "饒河街慈祐宮入口第一攤，排隊人潮從未間斷！手工貼在炭火高溫甕壁烤出焦香酥脆外皮，咬下滿滿滾燙肉汁與濃郁蔥香。",
         "price": "NT$ 65",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_pepper_bun.png"
       },
       {
         "rank": 3,
@@ -935,7 +955,7 @@
         "desc": "老士林冬令進補首選！十五味溫補中藥慢熬數小時，湯頭甘醇回甘不苦澀，排骨肉質軟爛輕易骨肉分離。",
         "price": "NT$ 100 - 150",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_herbal_ribs.png"
       },
       {
         "rank": 4,
@@ -948,7 +968,7 @@
         "desc": "獨門控溫燙熟厚切新鮮豬肝，粉嫩爽脆絲毫不乾柴。醇厚琥珀色高湯加入冬菜與香油提香，老饕讚不絕口。",
         "price": "NT$ 75 - 90",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_pig_liver.png"
       },
       {
         "rank": 5,
@@ -961,7 +981,7 @@
         "desc": "手工現煮爆漿熱芝麻花生湯圓鋪在剉冰上，淋上獨家香甜桂花蜜！吃完湯圓還能免費回攤加檸檬汁變身檸檬桂花清冰。",
         "price": "NT$ 80 - 100",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_yupinyuan_tangyuan.png"
       },
       {
         "rank": 6,
@@ -974,7 +994,7 @@
         "desc": "連續多年入選米其林必比登推介，精選大支肋骨慢燉至骨髓入味，湯頭清香無負擔，搭配特製香豆瓣醬更添風味。",
         "price": "NT$ 90 - 110",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_chendong_ribs.png"
       },
       {
         "rank": 7,
@@ -987,7 +1007,7 @@
         "desc": "每日限量！整支超大去骨仿土雞腿肉質彈牙鮮嫩，麻油湯頭清澈甘甜帶淡淡酒香，冬日開攤半小時即搶購一空。",
         "price": "NT$ 120 - 160",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_anan_chicken.png"
       },
       {
         "rank": 8,
@@ -1000,7 +1020,7 @@
         "desc": "夜市門口第一攤！現切帶皮土雞肉淋上特調甘甜醬油膏，搭配淋上雞油與古早味油膏的白飯，肉質扎實甘香飽滿。",
         "price": "NT$ 90 - 110",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_shannei_chicken.png"
       },
       {
         "rank": 9,
@@ -1013,7 +1033,7 @@
         "desc": "通化夜市老饕必買宵夜下酒菜！陳年老滷汁冷泡入味，鴨翅皮脆肉香，搭配獨門酸菜與現磨生辣椒醬，越嚼越香。",
         "price": "NT$ 60 - 150",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_liangji_luwei.png"
       },
       {
         "rank": 10,
@@ -1026,7 +1046,7 @@
         "desc": "鐵板上拍打出千層酥脆感！加入大把新鮮九層塔葉與現煎嫩蛋，淋上獨創微甜不嗆的蜂蜜芥末醬，香氣四溢。",
         "price": "NT$ 45 - 65",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_xiongji_pancake.png"
       },
       {
         "rank": 11,
@@ -1039,7 +1059,7 @@
         "desc": "基隆廟口元老級名攤！手切帶皮肥瘦相間的黑豬肉燥慢火熬煮至晶瑩剔透，白飯粒粒裹上油亮膠質，平價美味天花板。",
         "price": "NT$ 30 - 55",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tianyixiang_pork.png"
       },
       {
         "rank": 12,
@@ -1052,7 +1072,7 @@
         "desc": "炭火爐上翻滾的小巧紅潤香腸，外腸衣焦脆緊繃，咬下瞬間肉汁四濺。攤位前擺滿新鮮大蒜粒，一口香腸一口大蒜最道地！",
         "price": "NT$ 8 / 顆",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_yikouchi_sausage.png"
       },
       {
         "rank": 13,
@@ -1065,7 +1085,7 @@
         "desc": "軟嫩濕潤的古早味粉漿餅皮在鐵板上煎出微焦金黃，打入大顆青蔥鮮蛋，刷上招牌鹹甜微辣醬汁，熱騰騰捲起超滿足。",
         "price": "NT$ 50",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_minglun_danbing.png"
       },
       {
         "rank": 14,
@@ -1078,7 +1098,7 @@
         "desc": "炭烤糯米腸劃開塞入厚切黑豬肉香腸、醃小黃瓜、酸菜、嫩薑與花生粉，特製紙筒旋轉即食不沾手，香氣層次極致豐富。",
         "price": "NT$ 65",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_guanzhilin_sausage.png"
       },
       {
         "rank": 15,
@@ -1091,7 +1111,7 @@
         "desc": "冬天穿大衣也甘願吃！自製古法酸梅冰沙為底，鋪上蜜煮至鬆軟綿密的大紅豆，再挖入一球香濃手工牛奶冰淇淋，鹹甜酸甘絕頂滋味。",
         "price": "NT$ 50 - 60",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_fengren_ice.png"
       },
       {
         "rank": 16,
@@ -1104,7 +1124,7 @@
         "desc": "大老遠就能聞到黑麻油、老薑與蒜頭熱炒的濃烈三杯香！每顆鵪鶉蛋與雞翅被炒至醬黑發亮、皮Q肉韌，甜鹹交織極其下飯下酒。",
         "price": "NT$ 50 - 100",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_ershixiong_luwei.png"
       },
       {
         "rank": 17,
@@ -1117,7 +1137,7 @@
         "desc": "雞排炸至金黃酥脆後，移至炭火網上刷滿台南特有甘甜蜜汁醬，炭火炙烤帶出微焦香氣，外皮甜脆肉質厚實多汁。",
         "price": "NT$ 85",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tongda_chicken.png"
       },
       {
         "rank": 18,
@@ -1130,7 +1150,7 @@
         "desc": "瑞豐夜市天天大排長龍！薄脆如餅乾的特調麵衣緊鎖住鮮美雞汁，厚度驚人卻無比嫩滑，是高雄自由行必吃罪惡宵夜代表。",
         "price": "NT$ 95",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_angel_chicken.png"
       },
       {
         "rank": 19,
@@ -1143,7 +1163,7 @@
         "desc": "大黑豆干在老滷鍋中慢煮出密密麻麻氣孔，咬下爆出滾燙滷汁！鋪上如小山般的生碎蒜與新鮮青蔥，蒜香濃烈過癮至極。",
         "price": "NT$ 65 - 80",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_garlic_tofu.png"
       },
       {
         "rank": 20,
@@ -1156,7 +1176,7 @@
         "desc": "六合夜市最知名地標！精選當季高甜度紅肉木瓜，加入整瓶高品質純鮮奶現點現打，不加一滴水，口感綿滑濃醇宛如冰淇淋。",
         "price": "NT$ 70",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1558857563-b37cf5a452ef?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_zhenlaopai_papaya.png"
       }
     ],
     "bbq": [
@@ -1433,7 +1453,7 @@
         "desc": "台北歷史最悠久的清真牛肉麵！大塊厚實牛肉燉煮軟嫩，牛骨高湯醇香清爽無腥羶，吸引各國穆斯林旅客專程拜訪。",
         "price": "NT$ 150 - 220",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_qingzhen_beef_noodle.png"
       },
       {
         "rank": 2,
@@ -1459,7 +1479,7 @@
         "desc": "連續斬獲米其林綠星殊榮！將台灣小農在地有機蔬果融合加州現代料理，環境如同溫室花園，顛覆大眾對素食的刻板印象。",
         "price": "NT$ 400 - 800",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_littletree_food.png"
       },
       {
         "rank": 4,
@@ -1472,7 +1492,7 @@
         "desc": "百道精緻素港點！外皮層層酥脆化口的蘿蔔絲餅、晶瑩剔透蔬菜水晶餃，每逢假日座無虛席，長輩與外國家庭一致推崇。",
         "price": "NT$ 450 - 750",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_yangshin_tea.png"
       },
       {
         "rank": 5,
@@ -1485,7 +1505,7 @@
         "desc": "信義區外籍商務與歐美旅人最愛！純植物手工肉排口感扎實多汁，起司與甜點皆為天然堅果腰果發酵製作，純淨無負擔。",
         "price": "NT$ 450 - 850",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_herbivore_vegan.png"
       },
       {
         "rank": 6,
@@ -1498,7 +1518,7 @@
         "desc": "緊鄰西門町商圈，經過嚴格 Halal 屠宰認證的在地老滋味。現包現煎的牛肉水煎包底部金黃焦脆，肉餡鮮美甘甜。",
         "price": "NT$ 120 - 200",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_zhangjia_beef_noodle.png"
       },
       {
         "rank": 7,
@@ -1511,7 +1531,7 @@
         "desc": "佔地千坪附設兒童沙坑！將肉骨茶、叻沙、沙嗲串以全素食材重現，濃烈南洋香料香氣逼人，東南亞旅客驚呼神還原。",
         "price": "NT$ 350 - 600",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_redsun_island.png"
       },
       {
         "rank": 8,
@@ -1524,7 +1544,7 @@
         "desc": "日式枯山水庭園造景，靜謐禪意悠揚。清爽滋養的松露素麵湯底溫潤甘美，素小菜做工細膩雅致，用餐極為舒心放鬆。",
         "price": "NT$ 180 - 320",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_kongye_noodle.png"
       },
       {
         "rank": 9,
@@ -1537,7 +1557,7 @@
         "desc": "由巴基斯坦與印度籍廚師掌杓，香料由中東直接進口，獲官方清真嚴格認證。窯烤餅金黃酥軟，咖哩濃郁香辣正宗。",
         "price": "NT$ 250 - 500",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_little_india.png"
       },
       {
         "rank": 10,
@@ -1550,7 +1570,7 @@
         "desc": "日本老闆定居台南創辦！無蛋無奶無動物油脂，以慢火慢熬的濃縮日本豆乳作為湯底，醇厚濃郁度完全不輸傳統豚骨拉麵！",
         "price": "NT$ 200 - 280",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_taro_ramen.png"
       },
       {
         "rank": 11,
@@ -1563,7 +1583,7 @@
         "desc": "建於日治時期的中西合璧豪宅洋樓，雕花鐵窗與復古地磚美不勝收。主廚將台南在地古早味以純素手法改良，優雅尊貴。",
         "price": "NT$ 500 - 1,200",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_chikan_xilou.png"
       },
       {
         "rank": 12,
@@ -1576,7 +1596,7 @@
         "desc": "南台灣穆斯林指名度第一！嚴格選用檢疫與清真儀式牛肉，牛雜處理乾淨脆嫩，牛腩煲軟爛入味，湯頭清甜回甘。",
         "price": "NT$ 200 - 450",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_kaohsiung_chaozhou_halal.png"
       },
       {
         "rank": 13,
@@ -1589,7 +1609,7 @@
         "desc": "主廚堅持少油低鹽的天然香料料理，多種咖哩可自由選擇純素或羊肉雞肉，烤餅現點現甩香氣逼人，口味道地正宗。",
         "price": "NT$ 300 - 600",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_deli_indian.png"
       },
       {
         "rank": 14,
@@ -1602,7 +1622,7 @@
         "desc": "佔地寬廣的氣派百匯餐廳！從新鮮生菜沙拉、日式素生魚片、義式披薩到中式熱炒應有盡有，是全家大小茹素聚餐首選。",
         "price": "NT$ 400 - 650",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_yuan_vegetarian.png"
       },
       {
         "rank": 15,
@@ -1615,7 +1635,7 @@
         "desc": "堅持使用非基改有機黃豆，每日現磨現煮。店員在吧台當面撈起如絲綢般的新鮮熱豆皮，沾上甘醇醬油膏，豆香純淨撲鼻。",
         "price": "NT$ 300 - 550",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_delisoys.png"
       },
       {
         "rank": 16,
@@ -1628,7 +1648,7 @@
         "desc": "結合各國風味的五星級蔬食 Buffet！招牌厚切猴頭菇排彈牙如牛排，松露燉飯香氣馥郁，甜點區自製冰淇淋與蛋糕極具水準。",
         "price": "NT$ 598 - 688",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_fruitful_food.png"
       },
       {
         "rank": 17,
@@ -1641,7 +1661,7 @@
         "desc": "全台罕見的滇緬少數民族蔬食！大量使用新鮮香茅、刺芫荽、檸檬葉等天然草本香料，酸甜香辣極度開胃下飯。",
         "price": "NT$ 250 - 450",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_renjian_baiyi.png"
       },
       {
         "rank": 18,
@@ -1654,7 +1674,7 @@
         "desc": "鄰近花蓮火車站，老闆用心推廣花蓮純素生活，選用在地阿美族刺蔥與小農野菜入菜，口味清爽少油少鹽，宛如回家吃飯。",
         "price": "NT$ 180 - 320",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_green_earth.png"
       },
       {
         "rank": 19,
@@ -1667,7 +1687,7 @@
         "desc": "隱身台東市老屋庭院，四周種滿綠意植栽。早餐盤滿載台東在地友善小農無毒鮮蔬與自製手工麵包，是東海岸慢活早晨的極品。",
         "price": "NT$ 200 - 360",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tsaomin.png"
       },
       {
         "rank": 20,
@@ -1983,7 +2003,7 @@
         "desc": "依山面海的採金山城！穿梭曲折狹窄石階小巷，品嚐現煮Q彈芋圓，傍晚紅燈籠亮起，彷彿置身動畫電影浪漫秘境。",
         "price": "免費漫遊",
         "ctaType": "klook",
-        "img": "assets/shifen_lantern_tour.png"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png"
       },
       {
         "rank": 4,
@@ -2009,7 +2029,7 @@
         "desc": "台灣最大高山天然淡水湖！湖光山色清晨雲霧繚繞如水墨畫，騎單車掠過落羽松水上木棧步道，漫遊原民伊達邵商圈。",
         "price": "環湖遊艇票 NT$ 300",
         "ctaType": "klook",
-        "img": "assets/sun_moon_lake_tour.png"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/sun_moon_lake_tour.png"
       },
       {
         "rank": 6,
@@ -2022,7 +2042,7 @@
         "desc": "漫步在海拔兩千多公尺的千年紅檜巨木林間，森呼吸滿滿芬多精。清晨搭乘紅色登山小火車穿過雲海直達祝山迎接第一道金光。",
         "price": "全票 NT$ 300",
         "ctaType": "klook",
-        "img": "assets/alishan_train_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/alishan_train_tour.jpg"
       },
       {
         "rank": 7,
@@ -2035,7 +2055,7 @@
         "desc": "造山運動與立霧溪億萬年切割出的驚世大理石峽谷，抬頭絕壁千仞、低頭碧綠急流奔騰，大自然的鬼斧神工令人屏息震撼。",
         "price": "免費入園",
         "ctaType": "klook",
-        "img": "assets/taroko_gorge_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/taroko_gorge_tour.jpg"
       },
       {
         "rank": 8,
@@ -2061,7 +2081,7 @@
         "desc": "由晶瑩剔透的貝殼砂凝聚而成的半月形海灣，海水清澈蔚藍全年溫暖。黃昏時分坐在沙灘吧看夕陽染紅整片巴士海峽，渡假感爆棚。",
         "price": "免費入灘",
         "ctaType": "klook",
-        "img": "assets/kenting_coastal_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/kenting_coastal_tour.jpg"
       },
       {
         "rank": 10,
@@ -2087,7 +2107,7 @@
         "desc": "建於西元1653年荷蘭東印度公司時期，歷經鄭成功與清代重修，九隻馱著御碑的巨大石贔屓栩栩如生，周圍更匯集府城頂級小吃。",
         "price": "門票 NT$ 70",
         "ctaType": "klook",
-        "img": "assets/tainan_sicao_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/tainan_sicao_tour.jpg"
       },
       {
         "rank": 12,
@@ -2113,7 +2133,7 @@
         "desc": "各國旅客訪台必玩！火車緩緩駛過民宅屋簷下，在鐵軌上提筆寫下心願點燃天燈放飛天際。步行不遠即是磅礴簾幕型瀑布。",
         "price": "天燈約 NT$ 200 - 300",
         "ctaType": "klook",
-        "img": "assets/shifen_lantern_tour.png"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png"
       },
       {
         "rank": 14,
@@ -2639,7 +2659,7 @@
         "desc": "一生必看一次的感動場面！夜幕低垂時分，上千盞寫滿各國旅人心願的天燈在倒數聲中同時離地升空，冉冉照亮整座山谷夜空，如星河湧動。",
         "price": "免費觀賞 / 天燈自費",
         "ctaType": "klook",
-        "img": "assets/shifen_lantern_tour.png"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png"
       },
       {
         "rank": 4,
@@ -3139,7 +3159,7 @@
         "desc": "北台灣最熱門經典路線！專屬司機直達免轉車，一天網羅採金山城、世界級海蝕奇岩與放天燈，沿途品嚐芋圓與十分胡椒餅。",
         "price": "包車一日 NT$ 3,200 起",
         "ctaType": "klook",
-        "img": "assets/shifen_lantern_tour.png"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png"
       },
       {
         "rank": 2,
@@ -3165,7 +3185,7 @@
         "desc": "穿梭世界遺產等級大理石大峽谷！專車帶領深入燕子口、水濂洞與長春祠，傍晚停留在七星潭礫石海灘堆石頭許願，感受太平洋浩瀚海浪。",
         "price": "包車一日 NT$ 3,500 起",
         "ctaType": "klook",
-        "img": "assets/taroko_gorge_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/taroko_gorge_tour.jpg"
       },
       {
         "rank": 4,
@@ -3191,7 +3211,7 @@
         "desc": "從湖泊一路飆上海拔三千米壯麗脊梁山脈！漫步歐式城堡青青草原看綿羊奔跑，登上全台灣公路最高地標武嶺牌樓眺望壯闊百岳群峰。",
         "price": "包車一日 NT$ 4,500 起",
         "ctaType": "klook",
-        "img": "assets/sun_moon_lake_tour.png"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/sun_moon_lake_tour.png"
       },
       {
         "rank": 6,
@@ -3217,7 +3237,7 @@
         "desc": "老饕與文化愛好者必選！搭乘竹筏戴斗笠穿梭如綠色夢境般的紅樹林水上隧道，漫步安平樹屋盤根錯節榕樹，專車隨停隨吃國華街必比登牛肉湯。",
         "price": "包車一日 NT$ 3,500 起",
         "ctaType": "klook",
-        "img": "assets/tainan_sicao_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/tainan_sicao_tour.jpg"
       },
       {
         "rank": 8,
@@ -3230,7 +3250,7 @@
         "desc": "拖著大行李箱也能輕鬆由高雄跨入墾丁！中途停靠壯觀世界級佛光山大佛與駁二倉庫群，傍晚直達墾丁海景渡假飯店，沿途海景絕美。",
         "price": "包車直達 NT$ 2,800 起",
         "ctaType": "klook",
-        "img": "assets/kenting_coastal_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/kenting_coastal_tour.jpg"
       },
       {
         "rank": 9,
@@ -3243,7 +3263,7 @@
         "desc": "專車直達海拔兩千米高山！免去山路轉乘暈車困擾，造訪奮起湖山城老街品嚐香氣逼人的鐵盒便當，漫步在千年巨木環繞的迷霧森林裡。",
         "price": "包車專案 NT$ 4,500 起",
         "ctaType": "klook",
-        "img": "assets/alishan_train_tour.jpg"
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/alishan_train_tour.jpg"
       },
       {
         "rank": 10,

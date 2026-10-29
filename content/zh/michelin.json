@@ -13,7 +13,7 @@
       "price": "NT$2,500 - 8,000",
       "rate": "5.0★",
       "feature": "蟬聯多年三星的頂級粵菜傳奇，招牌『火焰片皮鴨』皮脆肉嫩脂香四溢，搭配極致手工港點工藝，是海外貴賓與全球饕客訪台必訪殿堂。",
-      "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+      "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/michelin_le_palais.png"
     },
     {
       "id": "star-2",
@@ -28,7 +28,7 @@
       "price": "NT$4,500 - 8,800",
       "rate": "5.0★",
       "feature": "以法式 Fine Dining 的繁複技巧與精準火候，重新演繹台灣本土風味與家常滋味（如芋泥油封鴨、經典家常湯品意象），展現台灣風土當代藝術之美。",
-      "img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&auto=format&fit=crop"
+      "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/michelin_tairroir.png"
     },
     {
       "id": "star-3",
@@ -43,7 +43,7 @@
       "price": "NT$3,800 - 5,500",
       "rate": "4.9★",
       "feature": "由日籍主廚田原諒悟掌杓，善於結合台灣在地食材、香草與亞洲飲食文化，茶湯與茶碗蒸招牌層次繁複迷人，創造極富層次的獨特風味套餐。",
-      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop"
+      "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/michelin_logy.png"
     },
     {
       "id": "star-4",
@@ -58,7 +58,7 @@
       "price": "NT$3,200 - 5,000",
       "rate": "4.9★",
       "feature": "西班牙米其林二星餐廳的海外唯一分店，坐落於慕舍酒店，以自然優雅的分子料理手法呈現西班牙庇里牛斯山谷與台灣海洋風土的和諧共鳴。",
-      "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop"
+      "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/michelin_molino.png"
     },
     {
       "id": "star-5",
@@ -73,7 +73,7 @@
       "price": "NT$3,000 - 7,000",
       "rate": "4.9★",
       "feature": "世紀名廚侯布雄在台北的招牌黑紅吧台餐廳，經典法式馬鈴薯泥綿密若絲綢、精準熟度的肉類與時令海鮮料理極具世界級水準。",
-      "img": "https://images.unsplash.com/photo-1547496502-affa22d38842?w=600&auto=format&fit=crop"
+      "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/michelin_robuchon.png"
     },
     {
       "id": "star-6",

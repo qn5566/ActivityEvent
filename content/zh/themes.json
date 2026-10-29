@@ -6,14 +6,14 @@
     "zhTitle": "北海岸・山海鐵道與山城",
     "enTitle": "NORTH COAST & JIUFEN",
     "name": "北海岸山海公路巡禮",
-    "bannerImg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/northcoast_yinyangsea_cover.png",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/northcoast_yinyangsea_cover.png",
     "title": "North Coast Ocean Panorama · Where Waves Kiss Mountains",
     "subtitle": "沿著台 2 線蔚藍海岸線，探索野柳奇岩、九份老街茶香、深澳鐵道與極東岬角日出",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=106452"
     },
     "experiences": [
       {
@@ -324,14 +324,14 @@
     "zhTitle": "離島跳島・海龜共游與藍海",
     "enTitle": "TAIWAN ISLAND HOPPING",
     "name": "台灣熱門離島跳島漫遊",
-    "bannerImg": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/hero_bg_island.png",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/hero_bg_island.png",
     "title": "Island Hopping Sanctuary · Sea Turtles, Coral Reefs & Milky Ways",
     "subtitle": "東港碼頭乘浪出海！小琉球與海龜共游、綠島世界級蔚藍潛點、澎湖玄武岩與雙心石滬",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=106452"
     },
     "experiences": [
       {
@@ -637,14 +637,14 @@
     "zhTitle": "花東探索・峽谷稻浪與太平洋",
     "enTitle": "EAST COAST & TAROKO",
     "name": "花東縱谷與太平洋海岸",
-    "bannerImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/hualien_cliff_cover.png",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/hualien_cliff_cover.png",
     "title": "Pacific Coast & Emerald Rift Valley · Nature's Grand Theater",
     "subtitle": "馳騁台 9 與台 11 線，穿梭清水斷崖碧海藍天、池上稻浪、金尊衝浪與多良太平洋海景",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=106452"
     },
     "experiences": [
       {
@@ -950,14 +950,14 @@
     "zhTitle": "露營登山・北歐極光星空",
     "enTitle": "OUTDOOR & PEAKS",
     "name": "露營登山極光探險",
-    "bannerImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/alishan_seaofclouds_cover.png",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/alishan_seaofclouds_cover.png",
     "title": "Alpine Wilderness & Glamping Escapes · Walk Above the Clouds",
     "subtitle": "合歡山群峰輕鬆入手、阿里山檜木巨木群森呼吸、高海拔星空露營車與嘉明湖天使的眼淚",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=106452"
     },
     "experiences": [
       {
@@ -1263,14 +1263,14 @@
     "zhTitle": "溫泉/公園・名湯白煙與親子度假",
     "enTitle": "HOT SPRINGS & RETREAT",
     "name": "全台極上溫泉與共融公園",
-    "bannerImg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/yilan_hotspring_cover.jpg",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/yilan_hotspring_cover.jpg",
     "title": "Mineral Healing Waters & Family Parkland · Total Body & Soul Reset",
     "subtitle": "北投日式青磺名湯、礁溪美人碳酸泉、關子嶺黑泥漿溫泉與全齡友善親子放電綠野",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=106452"
     },
     "experiences": [
       {
@@ -1576,14 +1576,14 @@
     "zhTitle": "花火/活動・夏夜璀璨煙火秀",
     "enTitle": "NIGHT MARKETS & SKYLINE",
     "name": "台灣夏夜花火與盛典活動",
-    "bannerImg": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/taipei_xmas_tree_cover.png",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/taipei_xmas_tree_cover.png",
     "title": "Sizzling Street Bites & Million-Dollar Views · Taiwan's Night Beat",
     "subtitle": "晚上 9 點後的精采夜生活！排隊搶吃米其林必比登胡椒餅、炸雞排，上山遠眺台北 101 與全島璀璨星河",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=106452"
     },
     "experiences": [
       {
@@ -1889,14 +1889,14 @@
     "zhTitle": "節慶文化・歲時盛典與信仰民俗",
     "enTitle": "CULTURE & FESTIVALS",
     "name": "台灣歲時節慶典禮與影視朝聖",
-    "bannerImg": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png",
     "title": "Sacred Rituals, Lantern Festivals & Cinematic Trails",
     "subtitle": "平溪千盞天燈冉冉升空、大甲媽祖進香萬人空巷、大稻埕百年月老與金馬電影取景地深度漫步",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=106452"
     },
     "experiences": [
       {
@@ -2212,14 +2212,14 @@
     "zhTitle": "台灣環島・森林螢火蟲壯遊",
     "enTitle": "GRAND ROADTRIP & SPORTS",
     "name": "台灣環島森林公路壯遊",
-    "bannerImg": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1600&auto=format&fit=crop",
-    "deckBg": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=700&auto=format&fit=crop",
+    "bannerImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/sunmoonlake_aerial_cover.png",
+    "deckBg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/sunmoonlake_aerial_cover.png",
     "title": "Grand Island Circuit & Stadium Passions · Chase Horizons",
     "subtitle": "自駕台灣四極點公路：極北富貴角、極東三貂角、極南鵝鑾鼻、極西國聖燈塔，巡迴各大城市球場熱血應援！",
     "bookingCta": {
-      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=106452",
       "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
-      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
+      "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=106452"
     },
     "experiences": [
       {
