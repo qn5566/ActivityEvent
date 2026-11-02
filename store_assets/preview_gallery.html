@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taiwan Travel Map ｜ App Store & Google Play Showcase</title>
+  <style>
+    :root {
+      --sky-blue: #6DB3F2;
+      --cherry-pink: #E88D96;
+      --lavender: #D8B4F8;
+      --ink: #2D3142;
+      --ink-soft: #6C757D;
+      --paper: #FFFFFF;
+      --bg: #F8FAFC;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #F0F4FD 0%, #FAF5FF 50%, #FFF0F3 100%);
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 32px 20px 80px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(232, 141, 150, 0.4);
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cherry-pink);
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(232, 141, 150, 0.15);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    p.subtitle {
+      font-size: 15px;
+      color: var(--ink-soft);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 10px 22px;
+      border: 1px solid rgba(109, 179, 242, 0.3);
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .tab-btn:hover {
+      background: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(109, 179, 242, 0.2);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--cherry-pink), var(--sky-blue));
+      color: #FFFFFF;
+      border-color: transparent;
+      box-shadow: 0 6px 18px rgba(232, 141, 150, 0.35);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Spec Pill Info */
+    .spec-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FFFFFF;
+      padding: 16px 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(45, 49, 66, 0.05);
+      border: 1px solid rgba(220, 226, 240, 0.8);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .spec-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .spec-details {
+      display: flex;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .spec-badge {
+      background: #F0F4FD;
+      color: #3B82F6;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-family: monospace;
+    }
+
+    /* Grid Gallery */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 10px 30px rgba(45, 49, 66, 0.06);
+      border: 1px solid rgba(220, 226, 240, 0.8);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(109, 179, 242, 0.2);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #E8EEF5;
+      aspect-ratio: 1290 / 2796;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-meta {
+      padding: 12px 6px 4px;
+    }
+
+    .card-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--cherry-pink);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2px 0 4px;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+
+    .card-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-download {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      background: #F4F6F9;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-download:hover {
+      background: #E5E9F0;
+    }
+
+    /* Feature Graphic View */
+    .feature-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 12px 36px rgba(45, 49, 66, 0.06);
+      margin-bottom: 40px;
+    }
+
+    .feature-img-wrapper {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto 20px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(45, 49, 66, 0.12);
+    }
+
+    .feature-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Guide Box */
+    .guide-box {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(45, 49, 66, 0.06);
+      margin-top: 24px;
+    }
+
+    .guide-box h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .rule-item {
+      padding: 16px;
+      border-radius: 12px;
+      background: #F9FAFB;
+      border-left: 4px solid var(--sky-blue);
+    }
+
+    .rule-item.apple { border-left-color: #0071E3; }
+    .rule-item.google { border-left-color: #34A853; }
+
+    .rule-item h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .rule-item p {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div style="margin-bottom: 14px;">
+        <img src="../screenshot/icon.png" width="76" height="76" style="border-radius: 18px; box-shadow: 0 8px 24px rgba(45, 49, 66, 0.15);" alt="Taiwan Travel Map Icon">
+      </div>
+      <div class="brand-badge">✦ GLOBAL EDITION ✦ TAIWAN TRAVEL MAP</div>
+      <h1>App Store & Google Play Promotional Assets</h1>
+      <p class="subtitle">Compliant with Apple App Store & Google Play Store Guidelines • Aurora Gradient & Japanese Editorial Aesthetic</p>
+    </header>
+
+    <!-- Nav Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('apple')">🍏 Apple App Store (1290 × 2796)</button>
+      <button class="tab-btn" onclick="showTab('google')">🤖 Google Play Phone (1080 × 2400)</button>
+      <button class="tab-btn" onclick="showTab('feature')">🎨 Google Play Feature Graphic (1024 × 500)</button>
+      <button class="tab-btn" onclick="showTab('guidelines')">📋 Store Metadata & Guidelines</button>
+    </div>
+
+    <!-- Tab 1: Apple App Store -->
+    <div id="tab-apple" class="tab-content active">
+      <div class="spec-bar">
+        <div>
+          <div class="spec-title">Apple App Store (6.7" Super Retina Display for iPhone 15/16 Pro Max)</div>
+          <div style="font-size: 13px; color: var(--ink-soft); margin-top: 2px;">
+            Flat 24-bit RGB PNG (no alpha) • Clean 9:41 status bar • Sleek Dynamic Island bezel frame
+          </div>
+        </div>
+        <div class="spec-details">
+          <span class="spec-badge">1290 × 2796 px</span>
+          <span class="spec-badge">72 DPI RGB</span>
+          <span class="spec-badge">5 High-Conversion Slides</span>
+        </div>
+      </div>
+
+      <div class="screenshot-grid">
+        <!-- 01 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="apple_app_store_6.7_inch/01_destinations.png" alt="01 Discover Hidden Taiwan Gems">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 01 • DESTINATIONS</div>
+            <div class="card-title">Discover Hidden Taiwan Gems</div>
+            <div class="card-desc">Forest trails, hot springs & in-depth historical stories</div>
+            <div class="card-actions">
+              <a href="apple_app_store_6.7_inch/01_destinations.png" target="_blank" class="btn-download">View Original (1290x2796)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="apple_app_store_6.7_inch/02_themes.png" alt="02 Curated Travel Experiences">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 02 • THEMES</div>
+            <div class="card-title">Curated Travel Experiences</div>
+            <div class="card-desc">Jiufen coast, Taroko gorge, island hopping & glamping</div>
+            <div class="card-actions">
+              <a href="apple_app_store_6.7_inch/02_themes.png" target="_blank" class="btn-download">View Original (1290x2796)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="apple_app_store_6.7_inch/03_events.png" alt="03 Top Nationwide Events">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 03 • EVENTS</div>
+            <div class="card-title">Top Nationwide Events</div>
+            <div class="card-desc">Marathons, cultural festivals & direct private transfers</div>
+            <div class="card-actions">
+              <a href="apple_app_store_6.7_inch/03_events.png" target="_blank" class="btn-download">View Original (1290x2796)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="apple_app_store_6.7_inch/04_lifestyle.png" alt="04 Historic Cafes & City Walks">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 04 • LIFESTYLE</div>
+            <div class="card-title">Historic Cafes & City Walks</div>
+            <div class="card-desc">Explore Chihfeng vintage alleys, artisan coffee & desserts</div>
+            <div class="card-actions">
+              <a href="apple_app_store_6.7_inch/04_lifestyle.png" target="_blank" class="btn-download">View Original (1290x2796)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="apple_app_store_6.7_inch/05_essentials.png" alt="05 All Your Travel Essentials">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 05 • ESSENTIALS</div>
+            <div class="card-title">All Your Travel Essentials</div>
+            <div class="card-desc">11 languages supported • SIM & eSIM, charters & tickets</div>
+            <div class="card-actions">
+              <a href="apple_app_store_6.7_inch/05_essentials.png" target="_blank" class="btn-download">View Original (1290x2796)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Google Play -->
+    <div id="tab-google" class="tab-content">
+      <div class="spec-bar">
+        <div>
+          <div class="spec-title">Google Play Store Phone (1080 × 2400 px, 20:9 Aspect Ratio)</div>
+          <div style="font-size: 13px; color: var(--ink-soft); margin-top: 2px;">
+            Material 3 design standard • Centered punch-hole camera • No navigation bar clutter
+          </div>
+        </div>
+        <div class="spec-details">
+          <span class="spec-badge">1080 × 2400 px</span>
+          <span class="spec-badge">24-bit PNG</span>
+          <span class="spec-badge">5 Full Slides</span>
+        </div>
+      </div>
+
+      <div class="screenshot-grid">
+        <!-- 01 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="google_play_phone/01_destinations.png" alt="01 Discover Hidden Taiwan Gems">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 01 • DESTINATIONS</div>
+            <div class="card-title">Discover Hidden Taiwan Gems</div>
+            <div class="card-desc">Forest trails, hot springs & in-depth local stories</div>
+            <div class="card-actions">
+              <a href="google_play_phone/01_destinations.png" target="_blank" class="btn-download">View Original (1080x2400)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="google_play_phone/02_themes.png" alt="02 Curated Travel Experiences">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 02 • THEMES</div>
+            <div class="card-title">Curated Travel Experiences</div>
+            <div class="card-desc">Jiufen coast, Taroko gorge, island hopping & glamping</div>
+            <div class="card-actions">
+              <a href="google_play_phone/02_themes.png" target="_blank" class="btn-download">View Original (1080x2400)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="google_play_phone/03_events.png" alt="03 Top Nationwide Events">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 03 • EVENTS</div>
+            <div class="card-title">Top Nationwide Events</div>
+            <div class="card-desc">Marathons, cultural festivals & direct private transfers</div>
+            <div class="card-actions">
+              <a href="google_play_phone/03_events.png" target="_blank" class="btn-download">View Original (1080x2400)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="google_play_phone/04_lifestyle.png" alt="04 Historic Cafes & City Walks">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 04 • LIFESTYLE</div>
+            <div class="card-title">Historic Cafes & City Walks</div>
+            <div class="card-desc">Explore Chihfeng vintage alleys, artisan coffee & desserts</div>
+            <div class="card-actions">
+              <a href="google_play_phone/04_lifestyle.png" target="_blank" class="btn-download">View Original (1080x2400)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="google_play_phone/05_essentials.png" alt="05 All Your Travel Essentials">
+          </div>
+          <div class="card-meta">
+            <div class="card-num">✦ SLIDE 05 • ESSENTIALS</div>
+            <div class="card-title">All Your Travel Essentials</div>
+            <div class="card-desc">11 languages supported • SIM & eSIM, charters & tickets</div>
+            <div class="card-actions">
+              <a href="google_play_phone/05_essentials.png" target="_blank" class="btn-download">View Original (1080x2400)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Feature Graphic -->
+    <div id="tab-feature" class="tab-content">
+      <div class="spec-bar">
+        <div>
+          <div class="spec-title">Google Play Feature Graphic (1024 × 500 px)</div>
+          <div style="font-size: 13px; color: var(--ink-soft); margin-top: 2px;">
+            Mandatory for Google Play featured slots & promotions • Dual floating perspective devices
+          </div>
+        </div>
+        <div class="spec-details">
+          <span class="spec-badge">1024 × 500 px</span>
+          <span class="spec-badge">24-bit PNG (No Alpha)</span>
+          <span class="spec-badge">Featured Banner</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-img-wrapper">
+          <img src="google_play_feature/google_play_feature_graphic_1024x500.png" alt="Google Play Feature Graphic">
+        </div>
+        <div style="text-align: center; margin-top: 16px;">
+          <a href="google_play_feature/google_play_feature_graphic_1024x500.png" target="_blank" class="btn-download" style="display: inline-block; padding: 10px 24px;">
+            Download Feature Graphic (1024 × 500 px)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Guidelines -->
+    <div id="tab-guidelines" class="tab-content">
+      <div class="guide-box">
+        <h2>📋 Store Guidelines & Multi-Language Optimization</h2>
+        <div class="rule-grid">
+          <div class="rule-item apple">
+            <h3>🍏 Apple App Store Best Practices</h3>
+            <p><strong>Universal English Reach:</strong> Using English as the primary promotional screenshot language allows international travelers from Europe, the Americas, and APAC to instantly understand your app's core value.</p>
+            <p style="margin-top: 8px;"><strong>Strict No-Android Rule:</strong> No Android clock, icons, or navigation buttons appear in the assets, ensuring 100% compliance with Section 2.3 of Apple Review Guidelines.</p>
+          </div>
+
+          <div class="rule-item google">
+            <h3>🤖 Google Play Store Best Practices</h3>
+            <p><strong>Mandatory Feature Graphic:</strong> The 1024 × 500 banner is required for Google Play recommendations and search placement.</p>
+            <p style="margin-top: 8px;"><strong>Safe Text Margins:</strong> All typography sits within the center 80% safe zone to prevent edge cropping across various Android screen aspect ratios.</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 36px;">✍️ Store Listing Copy (English)</h2>
+        <div style="background: #F8FAFC; border-radius: 12px; padding: 20px; border: 1px solid #E2E8F0; font-size: 14px; line-height: 1.8;">
+          <p><strong>App Title:</strong> Taiwan Travel Map: Guide & Gems</p>
+          <p><strong>Short Description:</strong> Discover hidden attractions, vibrant festivals, historic cafes, and travel essentials across Taiwan.</p>
+          <p><strong>Keywords:</strong> Taiwan travel, Taiwan map, Taipei attractions, Jiufen, Taroko, Taiwan events, Taipei Marathon, private charter, Taiwan cafes, eSIM Taiwan, Taiwan guide</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      event.target.classList.add('active');
+      document.getElementById('tab-' + name).classList.add('active');
+    }
+  </script>
+</body>
+</html>
