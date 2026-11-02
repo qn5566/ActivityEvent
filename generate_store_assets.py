@@ -16,11 +16,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SCREENSHOT_DIR = os.path.join(BASE_DIR, "screenshot")
 OUTPUT_DIR = os.path.join(BASE_DIR, "store_assets")
 
-IOS_DIR = os.path.join(OUTPUT_DIR, "apple_app_store_6.7_inch")
+IOS_6_1_DIR = os.path.join(OUTPUT_DIR, "apple_app_store_6.1_inch")
+IOS_6_3_DIR = os.path.join(OUTPUT_DIR, "apple_app_store_6.3_inch")
+IOS_6_7_DIR = os.path.join(OUTPUT_DIR, "apple_app_store_6.7_inch")
 ANDROID_DIR = os.path.join(OUTPUT_DIR, "google_play_phone")
 FEATURE_DIR = os.path.join(OUTPUT_DIR, "google_play_feature")
 
-for d in [IOS_DIR, ANDROID_DIR, FEATURE_DIR]:
+for d in [IOS_6_1_DIR, IOS_6_3_DIR, IOS_6_7_DIR, ANDROID_DIR, FEATURE_DIR]:
     os.makedirs(d, exist_ok=True)
 
 # System Font Paths
@@ -222,18 +224,39 @@ def build_phone_mockup(screen_img, target_width, target_height, is_dark_top=True
     shadow_canvas.paste(device_canvas, (shadow_pad, shadow_pad), device_canvas)
     return shadow_canvas
 
-def render_store_slide(spec, output_path, format_type="ios"):
+def render_store_slide(spec, output_path, format_type="ios_6.1"):
     """
-    Renders an all-English promotional screenshot sheet.
+    Renders an all-English promotional screenshot sheet for various store display targets:
+    - 'ios_6.1': 1179 x 2556 px (iPhone 14 Pro, 15, 15 Pro, 16 - 6.1" Display)
+    - 'ios_6.3': 1206 x 2622 px (iPhone 16 Pro - 6.3" Display)
+    - 'ios_6.7': 1290 x 2796 px (iPhone 14 Plus, 15 Pro Max, 16 Pro Max - 6.7"/6.9" Display)
+    - 'android': 1080 x 2400 px (Google Play standard 20:9 FHD+)
     """
-    if format_type == "ios":
+    if format_type == "ios_6.1":
+        W, H = 1179, 2556
+        is_ios = True
+        font_pill = get_font(EN_TITLE_FONT, 31, index=1)
+        font_title = get_font(EN_TITLE_FONT, 60, index=1)
+        font_sub = get_font(EN_SUB_FONT, 33)
+        font_tags = get_font(EN_SANS_FONT, 29, index=0)
+        phone_w = 896
+        phone_h = int(phone_w * (2340 / 1080))
+    elif format_type == "ios_6.3":
+        W, H = 1206, 2622
+        is_ios = True
+        font_pill = get_font(EN_TITLE_FONT, 32, index=1)
+        font_title = get_font(EN_TITLE_FONT, 62, index=1)
+        font_sub = get_font(EN_SUB_FONT, 34)
+        font_tags = get_font(EN_SANS_FONT, 30, index=0)
+        phone_w = 916
+        phone_h = int(phone_w * (2340 / 1080))
+    elif format_type in ["ios", "ios_6.7"]:
         W, H = 1290, 2796
         is_ios = True
         font_pill = get_font(EN_TITLE_FONT, 34, index=1)
         font_title = get_font(EN_TITLE_FONT, 66, index=1)
         font_sub = get_font(EN_SUB_FONT, 36)
         font_tags = get_font(EN_SANS_FONT, 32, index=0)
-        
         phone_w = 980
         phone_h = int(phone_w * (2340 / 1080))
     else:
@@ -243,7 +266,6 @@ def render_store_slide(spec, output_path, format_type="ios"):
         font_title = get_font(EN_TITLE_FONT, 56, index=1)
         font_sub = get_font(EN_SUB_FONT, 32)
         font_tags = get_font(EN_SANS_FONT, 28, index=0)
-        
         phone_w = 840
         phone_h = int(phone_w * (2340 / 1080))
 
@@ -455,20 +477,32 @@ def main():
     print("Generating English International Store Assets for 'Taiwan Travel Map'...")
     print("=" * 65)
     
-    # 1. Apple App Store 6.7" (1290 x 2796)
-    print("\n[1/3] Generating Apple App Store 6.7\" Screenshots (1290x2796)...")
+    # 1. Apple App Store 6.1" (1179 x 2556) - iPhone 14 Pro, 15, 15 Pro, 16
+    print("\n[1/5] Generating Apple App Store 6.1\" Screenshots (1179x2556)...")
     for spec in SCREEN_SPECS:
-        out_path = os.path.join(IOS_DIR, spec["filename"])
-        render_store_slide(spec, out_path, format_type="ios")
+        out_path = os.path.join(IOS_6_1_DIR, spec["filename"])
+        render_store_slide(spec, out_path, format_type="ios_6.1")
         
-    # 2. Google Play Phone (1080 x 2400)
-    print("\n[2/3] Generating Google Play Store Phone Screenshots (1080x2400)...")
+    # 2. Apple App Store 6.3" (1206 x 2622) - iPhone 16 Pro
+    print("\n[2/5] Generating Apple App Store 6.3\" Screenshots (1206x2622)...")
+    for spec in SCREEN_SPECS:
+        out_path = os.path.join(IOS_6_3_DIR, spec["filename"])
+        render_store_slide(spec, out_path, format_type="ios_6.3")
+        
+    # 3. Apple App Store 6.7" (1290 x 2796) - iPhone 14 Plus, 15 Pro Max, 16 Pro Max
+    print("\n[3/5] Generating Apple App Store 6.7\" Screenshots (1290x2796)...")
+    for spec in SCREEN_SPECS:
+        out_path = os.path.join(IOS_6_7_DIR, spec["filename"])
+        render_store_slide(spec, out_path, format_type="ios_6.7")
+        
+    # 4. Google Play Phone (1080 x 2400)
+    print("\n[4/5] Generating Google Play Store Phone Screenshots (1080x2400)...")
     for spec in SCREEN_SPECS:
         out_path = os.path.join(ANDROID_DIR, spec["filename"])
         render_store_slide(spec, out_path, format_type="android")
         
-    # 3. Google Play Feature Graphic (1024 x 500)
-    print("\n[3/3] Generating Google Play Feature Graphic (1024x500)...")
+    # 5. Google Play Feature Graphic (1024 x 500)
+    print("\n[5/5] Generating Google Play Feature Graphic (1024x500)...")
     fg_path = os.path.join(FEATURE_DIR, "google_play_feature_graphic_1024x500.png")
     render_feature_graphic(fg_path)
     

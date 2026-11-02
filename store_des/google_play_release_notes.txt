@@ -1,0 +1,132 @@
+<zh-TW>
+全新 UI 介面改版，探索台灣更美好！
+感謝大家對「台灣吃喝玩樂地圖」的喜愛！本次重大更新：
+1. 全新介面設計：極光美學與日系雜誌排版，瀏覽更舒適。
+2. 精選旅遊主題：新增九份、跳島、秘境步道與溫泉路線。
+3. 老宅咖啡漫步：收錄巷弄人氣咖啡與手作焦糖布丁。
+4. 全台活動盛事：台北馬拉松、節慶展演即時掌握。
+5. 自由行必備：SIM與eSIM網卡、專車接送預訂。
+6. 11國語言優化：全面提升多語系翻譯精準度。
+7. 效能提升與問題修正。
+</zh-TW>
+
+<en-US>
+Major UI Revamp - Explore Taiwan with Fresh Inspiration!
+Key updates in this release:
+1. Brand New UI/UX: Modern aurora aesthetics and magazine layout.
+2. Curated Themes: Jiufen coast, island hopping, and hot springs.
+3. Historic Cafes: Specialty coffee in vintage alleys.
+4. Live Events: Taipei Marathon and cultural festivals.
+5. Travel Essentials: eSIM data cards and private transfers.
+6. 11 Languages: Enhanced localized experience.
+7. Performance improvements and bug fixes.
+</en-US>
+
+<ja-JP>
+大幅UIリニューアル・台湾旅行がもっと楽しく快適に！
+今回の大型アップデート内容：
+1. 洗練された新デザイン：オーロラ調と雑誌風レイアウト。
+2. 厳選テーマ旅行：九份、離島巡り、自然歩道、温泉癒やし旅。
+3. 古民家カフェ散歩：路地裏の珈琲と手作りプリンを掲載。
+4. 全土のイベント：台北マラソンや伝統祭りの最新日程。
+5. 旅行の必需品：台湾eSIMや貸切チャーター車の手配をサポート。
+6. 11言語対応：日本語をはじめ多言語の表示精度を向上。
+7. 動作の安定性向上と不具合の修正。
+</ja-JP>
+
+<ko-KR>
+대규모 UI 개편 - 더 편리해진 대만 여행!
+이번 대규모 업데이트 주요 내용:
+1. 새로운 UI/UX 디자인: 오로라 감성과 매거진 스타일.
+2. 테마별 여행 코스: 지우펀, 섬 투어, 피톤치드 숲길, 힐링 온천.
+3. 감성 옛 가옥 카페: 골목길 스페셜티 커피와 수제 디저트.
+4. 대만 축제 및 이벤트: 타이베이 마라톤, 계절별 축제 일정.
+5. 자유여행 필수품: 대만 eSIM 데이터 유심 및 전용 차량 연동.
+6. 11개 국어 지원: 한국어 및 다국어 번역 최적화.
+7. 지도 로딩 속도 개선 및 버그 수정.
+</ko-KR>
+
+<th-TH>
+ปรับโฉม UI ใหม่ครั้งใหญ่ - เที่ยวไต้หวันสนุกและง่ายขึ้น!
+ไฮไลต์การอัปเดตเวอร์ชันนี้:
+1. ดีไซน์ใหม่ทั้งหมด: สไตล์นิตยสารญี่ปุ่น โทนสีแสงเหนือ
+2. ธีมเที่ยวคัดสรร: เส้นทางจิ่วเฟิ่น เที่ยวเกาะ เดินป่า และน้ำพุร้อน
+3. คาเฟ่บ้านโบราณ: รวมร้านกาแฟระดับแชมป์และพุดดิ้งโฮมเมด
+4. อีเวนต์ทั่วไต้หวัน: ตารางงานไทเปมาราธอนและเทศกาลวัฒนธรรม
+5. ตัวช่วยเที่ยว: จองซิม/eSIM และบริการเหมารถพร้อมคนขับ
+6. รองรับ 11 ภาษา: พัฒนาระบบภาษาไทยให้แม่นยำยิ่งขึ้น
+7. ปรับปรุงความเร็วและแก้ไขข้อผิดพลาด
+</th-TH>
+
+<vi-VN>
+Nâng cấp giao diện mới - Khám phá Đài Loan tuyệt vời hơn!
+Chi tiết bản cập nhật:
+1. Giao diện UI/UX mới: Phong cách tạp chí thanh lịch.
+2. Chủ đề du lịch chọn lọc: Tuyến Cửu Phần, du lịch đảo và suối nước nóng.
+3. Cà phê nhà cổ: Quán cà phê đoạt giải và bánh pudding thủ công.
+4. Lễ hội toàn Đài Loan: Lịch Taipei Marathon và sự kiện văn hóa.
+5. Tiện ích tự túc: Đặt eSIM và dịch vụ xe riêng đưa đón.
+6. 11 ngôn ngữ: Nâng cao độ chính xác tiếng Việt và quốc tế.
+7. Cải thiện tốc độ và sửa lỗi.
+</vi-VN>
+
+<ms-MY>
+Pembaruan Antara Muka Baharu - Terokai Taiwan Lebih Indah!
+Kemas kini utama:
+1. Reka Bentuk Baharu: Gaya majalah dan gradien aurora.
+2. Tema Terpilih: Pesisir Jiufen, pulau dan kolam air panas.
+3. Kafe Rumah Lama: Kopi terbaik dan puding karamel.
+4. Acara Nasional: Jadual Maraton Taipei dan festival.
+5. Keperluan Perjalanan: Tempahan kad eSIM dan sewa kereta.
+6. 11 Bahasa: Peningkatan terjemahan Bahasa Melayu.
+7. Peningkatan kelajuan dan pembaikan pepijat.
+</ms-MY>
+
+<fil-PH>
+Malaking Pagbabago sa UI - Mas Masayang Paglalakbay sa Taiwan!
+Mga update sa bersyong ito:
+1. Bagong Disenyo ng UI: Magazine layout at aurora gradient.
+2. Mga Espesyal na Ruta: Baybayin ng Jiufen at hot springs.
+3. Vintage Cafes: Coffee shops at dessert sa lumang eskinita.
+4. Mga Kaganapan: Iskedyul ng Taipei Marathon at pista.
+5. Gamit sa Pagbiyahe: Pag-book ng eSIM at car transfer.
+6. 11 Wika: Mas tumpak na pagsasalin sa Filipino.
+7. Mabilis na mapa at bug fixes.
+</fil-PH>
+
+<hi-IN>
+बड़ा UI नया रूप - ताइवान यात्रा को और आसान बनाएं!
+इस प्रमुख अपडेट में मुख्य विशेषताएं:
+1. नया UI/UX डिज़ाइन: आधुनिक ऑरोरा और पत्रिका लेआउट।
+2. क्यूरेटेड यात्रा थीम: जिउफेन तट, द्वीप यात्रा और हॉट स्प्रिंग्स।
+3. ऐतिहासिक कैफे: पुरानी गलियों में प्रसिद्ध कॉफी और डेसर्ट।
+4. लाइव कार्यक्रम: ताइपे मैराथन और सांस्कृतिक उत्सवों का शेड्यूल।
+5. यात्रा की आवश्यकताएं: eSIM डेटा और निजी कार सेवाओं की व्यवस्था।
+6. 11 भाषाओं का समर्थन: हिंदी में बेहतर अनुवाद।
+7. बेहतर गति और बग समाधान।
+</hi-IN>
+
+<id-ID>
+Pembaruan Antarmuka UI Baru - Jelajahi Taiwan Lebih Mudah!
+Pembaruan utama versi ini:
+1. Desain UI/UX Baru: Tata letak majalah dan gradasi aurora.
+2. Rute Bertema: Pesisir Jiufen, wisata pulau, dan air panas.
+3. Kafe Rumah Tua: Kopi juara di lorong nostalgia.
+4. Acara Nasional: Jadwal Taipei Marathon dan festival.
+5. Kebutuhan Wisata: Pemesanan internet eSIM dan sewa mobil.
+6. Dukungan 11 Bahasa: Peningkatan terjemahan Bahasa Indonesia.
+7. Peningkatan performa peta dan perbaikan bug.
+</id-ID>
+
+<es-ES>
+Gran renovación de interfaz - Explora Taiwán con nueva inspiración!
+Novedades de la actualización:
+1. Nuevo diseño UI/UX: Estilo revista y degradados aurora.
+2. Rutas temáticas: Costa de Jiufen, islas y aguas termales.
+3. Cafeterías históricas: Café de especialidad en callejones.
+4. Eventos en vivo: Maratón de Taipéi y festivales.
+5. Esenciales de viaje: Tarjetas eSIM y traslados privados.
+6. 11 idiomas: Traducciones al español perfeccionadas.
+7. Mayor velocidad y corrección de errores.
+</es-ES>
+

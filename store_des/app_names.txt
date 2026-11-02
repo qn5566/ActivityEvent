@@ -1,0 +1,51 @@
+【台灣吃喝玩樂地圖 11 國語言 App 名稱與副標題速查表】
+（符合 Apple App Store 與 Google Play Console 嚴格 30 字元上限規範，無特殊符號）
+
+1. 繁體中文 (zh-TW)
+- App 名稱（30字內）：台灣吃喝玩樂地圖
+- 建議副標題（iOS 30字內）：探索私房景點與老宅咖啡
+
+2. 英文 (en-US)
+- App Name: Taiwan Travel Map
+- App Name 備選（含關鍵字）: Taiwan Travel Map: Food Guide
+- Subtitle: Explore Attractions & Cafes
+
+3. 日本語 (ja-JP)
+- App 名稱: 台湾食べ歩き遊びマップ
+- App 名稱備選: 台湾旅行マップ：観光とグルメ
+- 副標題: 穴場スポットと古民家カフェ
+
+4. 한국어 (ko-KR)
+- App 이름: 대만 여행 지도: 맛집과 관광
+- App 이름 간결형: 대만 여행 지도
+- 부제목: 숨은 명소와 감성 카페 탐방
+
+5. ไทย (th-TH)
+- ชื่อแอป: แผนที่เที่ยวไต้หวัน กิน ดื่ม
+- ชื่อแอปแบบสากล: Taiwan Travel Map เที่ยวไต้หวัน
+- คำบรรยายสั้น: ค้นพบที่เที่ยวลับและคาเฟ่
+
+6. Tiếng Việt (vi-VN)
+- Tên ứng dụng: Bản đồ Du lịch Đài Loan
+- Phụ đề: Khám phá điểm đến và cà phê
+
+7. Bahasa Melayu (ms-MY)
+- Nama Aplikasi: Peta Pelancongan Taiwan
+- Sari kata: Terokai tarikan dan kafe vintaj
+
+8. Filipino / Tagalog (fil-PH)
+- Pangalan ng App: Taiwan Travel Map: Pasyalan
+- Subtitle: Tuklasin ang mga pasyalan at cafe
+
+9. हिन्दी (hi-IN)
+- ऐप का नाम: ताइवान यात्रा मानचित्र
+- उपशीर्षक: छिपे हुए स्थल और कैफे खोजें
+
+10. Bahasa Indonesia (id-ID)
+- Nama Aplikasi: Peta Wisata Taiwan: Panduan
+- Subjudul: Jelajahi destinasi dan kafe vintage
+
+11. Español (es-ES)
+- Nombre de la app: Mapa de Viaje de Taiwán
+- Subtítulo: Descubre atracciones y cafés
+
