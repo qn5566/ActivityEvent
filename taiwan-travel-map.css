@@ -408,6 +408,13 @@
       border-radius: 20px;
       border: 1px solid #FFF;
       box-shadow: 0 6px 20px rgba(220, 200, 225, 0.2);
+      transition: all 0.3s ease;
+    }
+    .twfun-faq-item:hover,
+    .twfun-faq-item.is-active {
+      border-color: rgba(232, 141, 150, 0.6);
+      box-shadow: 0 12px 28px rgba(232, 141, 150, 0.22);
+      transform: translateY(-2px);
     }
     .twfun-faq-item h3 { font-size: 17px; margin-bottom: 8px; color: var(--cherry-pink) !important; font-weight: 700; }
     .twfun-faq-item p { font-size: 13.5px; color: var(--ink-soft); font-weight: 300; line-height: 1.7; }
