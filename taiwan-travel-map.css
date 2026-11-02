@@ -160,8 +160,76 @@
     .twfun-store small { display: block; font-size: 10px; opacity: .88; letter-spacing: .08em; }
     .twfun-store strong { display: block; font-size: 15px; font-weight: 700; line-height: 1.1; margin-top: 2px; }
 
-    /* 右側相框 */
-    .twfun-polaroid-hero { position: relative; padding: 15px; }
+    /* 右側現代手機樣機與懸浮標籤 (Modern Hero Mockup & Floating Chips) */
+    .twfun-polaroid-hero { position: relative; padding: 10px; display: flex; justify-content: center; }
+    .twfun-phone-frame {
+      width: min(300px, 85vw);
+      aspect-ratio: 1080 / 2340;
+      background: #181C24;
+      border-radius: 46px;
+      padding: 10px;
+      box-shadow: 0 25px 60px rgba(45, 49, 66, 0.28), 0 0 0 2px rgba(255, 255, 255, 0.7);
+      position: relative;
+      animation: twfun-phone-float 6s ease-in-out infinite alternate;
+    }
+    @keyframes twfun-phone-float {
+      0% { transform: translateY(0px) rotate(1deg); }
+      100% { transform: translateY(-10px) rotate(-1deg); }
+    }
+    .twfun-phone-island {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 84px;
+      height: 24px;
+      background: #000;
+      border-radius: 20px;
+      z-index: 10;
+    }
+    .twfun-phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 38px;
+      overflow: hidden;
+      background: #FFF;
+      position: relative;
+    }
+    .twfun-phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 懸浮毛玻璃標籤 (Floating Glass Chips) */
+    .twfun-float-chip {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 99px;
+      padding: 8px 16px;
+      box-shadow: 0 10px 25px rgba(210, 180, 225, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink);
+      z-index: 12;
+      animation: twfun-chip-bob 4s ease-in-out infinite alternate;
+      white-space: nowrap;
+    }
+    .twfun-chip-1 { top: 10%; right: -20px; animation-delay: 0s; }
+    .twfun-chip-2 { bottom: 25%; left: -25px; animation-delay: -1.5s; }
+    .twfun-chip-3 { bottom: 6%; right: -15px; animation-delay: -3s; }
+    @keyframes twfun-chip-bob {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-7px); }
+    }
+
+    /* 拍立得舊相框備用相容相框 */
     .twfun-polaroid-box {
       background: #FFF;
       padding: 16px 16px 24px 16px;
@@ -175,6 +243,45 @@
     .twfun-polaroid-caption-box { margin-top: 14px; text-align: center; }
     .twfun-polaroid-title { font-size: 16px; font-weight: 700; color: var(--cherry-pink); }
     .twfun-polaroid-sub { font-size: 13px; color: var(--ink-soft); font-family: Georgia, serif; font-style: italic; }
+
+    /* 11 國多語系輪播列 (Multi-Language Bar) */
+    .twfun-lang-section {
+      margin: 10px 0 45px;
+      text-align: center;
+    }
+    .twfun-lang-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cherry-pink);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-family: Georgia, serif;
+    }
+    .twfun-lang-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .twfun-lang-pill {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(232, 141, 150, 0.35);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink);
+      transition: all .25s ease;
+      backdrop-filter: blur(8px);
+    }
+    .twfun-lang-pill:hover {
+      background: #FFF;
+      color: var(--cherry-pink);
+      border-color: var(--cherry-pink);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(232, 141, 150, 0.25);
+    }
 
     /* ✨ 全新重構：日系文青雜誌色塊卡片 (Editorial Color Block Cards - 無貼紙、無圓圈印章) */
     .twfun-journal-section { padding: 60px 0; }
@@ -239,30 +346,30 @@
     }
     .twfun-mag-quote { font-family: Georgia, serif; font-style: italic; color: var(--cherry-pink); font-size: 13px; }
 
-    /* 4 大亮點標籤列 */
+    /* 6 大核心亮點標籤列 */
     .twfun-highlight-bar {
       margin: 35px 0 55px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
     }
     .twfun-hl-card {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(8px);
-      padding: 20px 16px;
-      border-radius: 18px;
+      padding: 20px 14px;
+      border-radius: 20px;
       border: 1px solid #FFF;
       text-align: center;
       box-shadow: 0 6px 20px rgba(220, 200, 225, 0.2);
-      transition: transform .3s ease;
+      transition: all .3s ease;
     }
-    .twfun-hl-card:hover { transform: translateY(-4px); }
+    .twfun-hl-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(232, 141, 150, 0.25); }
     .twfun-hl-icon { font-size: 28px; margin-bottom: 6px; }
-    .twfun-hl-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
-    .twfun-hl-en { font-family: Georgia, serif; font-size: 13px; font-style: italic; color: var(--cherry-pink); margin-bottom: 4px; }
-    .twfun-hl-desc { font-size: 12px; color: var(--ink-soft); }
+    .twfun-hl-title { font-size: 14.5px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+    .twfun-hl-en { font-family: Georgia, serif; font-size: 12px; font-style: italic; color: var(--cherry-pink); margin-bottom: 4px; }
+    .twfun-hl-desc { font-size: 11.5px; color: var(--ink-soft); line-height: 1.4; }
 
-    /* 畫廊展示區塊 */
+    /* 畫廊展示區塊 (5 大全新 UI 實機截圖) */
     .twfun-gallery-section {
       background: linear-gradient(135deg, rgba(232,141,150,0.12) 0%, rgba(109,179,242,0.12) 100%);
       padding: 60px 0;
@@ -270,19 +377,27 @@
       margin: 35px 0;
       border: 1px solid rgba(255, 255, 255, 0.85);
     }
-    .twfun-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 35px; }
+    .twfun-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 35px; }
     .twfun-shot-card {
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.94);
       padding: 10px;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
       border: 1px solid #FFF;
-      transition: transform .3s ease;
+      transition: all .35s ease;
+      display: flex;
+      flex-direction: column;
     }
-    .twfun-shot-card:hover { transform: translateY(-5px); }
-    .twfun-shot-card img { width: 100%; border-radius: 12px; }
-    .twfun-shot-title { text-align: center; margin-top: 8px; font-size: 13px; font-weight: 700; color: var(--ink); }
-    .twfun-shot-sub { text-align: center; font-family: Georgia, serif; font-size: 11px; font-style: italic; color: var(--cherry-pink); }
+    .twfun-shot-card:hover { transform: translateY(-8px); box-shadow: 0 18px 36px rgba(109, 179, 242, 0.3); }
+    .twfun-shot-img-box {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 1080 / 2340;
+    }
+    .twfun-shot-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .twfun-shot-title { text-align: center; margin-top: 10px; font-size: 13.5px; font-weight: 700; color: var(--ink); }
+    .twfun-shot-sub { text-align: center; font-family: Georgia, serif; font-size: 11px; font-style: italic; color: var(--cherry-pink); margin-top: 2px; }
 
     /* FAQ 常見問題 */
     .twfun-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -326,12 +441,18 @@
     .twfun-footer { text-align: center; padding: 35px 0 20px; font-size: 13px; color: var(--ink-soft); border-top: 1px dashed rgba(232, 141, 150, 0.3); margin-top: 60px; }
 
     /* RWD 響應式 */
+    @media (max-width: 1024px) {
+      .twfun-highlight-bar { grid-template-columns: repeat(3, 1fr); }
+      .twfun-gallery { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 900px) {
       .twfun-hero-grid { grid-template-columns: 1fr; gap: 35px; }
       .twfun-magazine-grid { grid-template-columns: repeat(2, 1fr); }
+      .twfun-faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
       .twfun-highlight-bar { grid-template-columns: repeat(2, 1fr); }
       .twfun-gallery { grid-template-columns: repeat(2, 1fr); }
-      .twfun-faq-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
       .twfun-magazine-grid { grid-template-columns: 1fr; }

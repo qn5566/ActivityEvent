@@ -22,41 +22,48 @@ from generate_store_assets import (
 BANNER_DIR = os.path.join(OUTPUT_DIR, "apple_app_store_banners")
 os.makedirs(BANNER_DIR, exist_ok=True)
 
-def render_header_banner(output_path):
+def render_header_banner(output_path, target_width=3840, target_height=1646):
     """
     Renders the Header Banner (標題素材) for App Store Connect.
-    Supported size: 3840 x 1646 px (21:9 cinematic wide ratio).
+    Supported sizes:
+      - 3840 x 1646 px (21:9 cinematic wide ratio)
+      - 5244 x 2950 px (16:9 high-res standard)
     """
-    W, H = 3840, 1646
-    print(f"Rendering Header Banner ({W}x{H})...")
+    W, H = target_width, target_height
+    scale = W / 3840.0
+    # Additional vertical centering shift if the aspect ratio is taller than 21:9
+    base_scaled_h = 1646 * scale
+    y_shift = max(0, int((H - base_scaled_h) / 2))
+    
+    print(f"Rendering Header Banner ({W}x{H}, scale={scale:.2f}, y_shift={y_shift})...")
     
     # 1. Wide Aurora Background
     bg = create_aurora_background(W, H, blobs_config=[
-        {"center": (int(W * 0.18), int(H * 0.35)), "radius": 750, "color": (109, 179, 242, 110)},
-        {"center": (int(W * 0.55), int(H * 0.65)), "radius": 850, "color": (216, 180, 248, 100)},
-        {"center": (int(W * 0.85), int(H * 0.35)), "radius": 900, "color": (232, 141, 150, 115)},
+        {"center": (int(W * 0.18), int(H * 0.35)), "radius": int(750 * scale), "color": (109, 179, 242, 110)},
+        {"center": (int(W * 0.55), int(H * 0.65)), "radius": int(850 * scale), "color": (216, 180, 248, 100)},
+        {"center": (int(W * 0.85), int(H * 0.35)), "radius": int(900 * scale), "color": (232, 141, 150, 115)},
     ])
     draw = ImageDraw.Draw(bg)
     
-    # Fonts
-    font_pill = get_font(EN_TITLE_FONT, 38, index=1)
-    font_brand = get_font(EN_TITLE_FONT, 118, index=1)
-    font_sub = get_font(EN_SUB_FONT, 56)
-    font_lead = get_font(EN_SANS_FONT, 42, index=0)
-    font_badge = get_font(EN_TITLE_FONT, 32, index=1)
-    font_footer = get_font(EN_SANS_FONT, 34, index=0)
+    # Scaled Fonts
+    font_pill = get_font(EN_TITLE_FONT, int(38 * scale), index=1)
+    font_brand = get_font(EN_TITLE_FONT, int(118 * scale), index=1)
+    font_sub = get_font(EN_SUB_FONT, int(56 * scale))
+    font_lead = get_font(EN_SANS_FONT, int(42 * scale), index=0)
+    font_badge = get_font(EN_TITLE_FONT, int(32 * scale), index=1)
+    font_footer = get_font(EN_SANS_FONT, int(34 * scale), index=0)
     
     # Left Content Positioning
-    left_x = 220
+    left_x = int(220 * scale)
     
     # App Icon (New Icon from screenshot/icon.png)
     icon_path = os.path.join(SCREENSHOT_DIR, "icon.png")
-    icon_size = 220
+    icon_size = int(220 * scale)
     if os.path.exists(icon_path):
         icon = Image.open(icon_path).convert("RGBA").resize((icon_size, icon_size), Image.Resampling.LANCZOS)
         
         # Soft shadow
-        shadow_pad = 40
+        shadow_pad = int(40 * scale)
         shadow_w = icon_size + shadow_pad * 2
         shadow_h = icon_size + shadow_pad * 2
         icon_shadow = Image.new("RGBA", (shadow_w, shadow_h), (0, 0, 0, 0))
@@ -66,52 +73,52 @@ def render_header_banner(output_path):
         shadow_layer = Image.new("RGBA", (icon_size, icon_size), (30, 35, 50, 255))
         shadow_layer.putalpha(shadow_alpha)
         
-        icon_shadow.paste(shadow_layer, (shadow_pad, shadow_pad + 10), shadow_layer)
-        icon_shadow = icon_shadow.filter(ImageFilter.GaussianBlur(18))
+        icon_shadow.paste(shadow_layer, (shadow_pad, shadow_pad + int(10 * scale)), shadow_layer)
+        icon_shadow = icon_shadow.filter(ImageFilter.GaussianBlur(int(18 * scale)))
         
-        icon_y = 260
+        icon_y = int(260 * scale) + y_shift
         bg.paste(icon_shadow, (left_x - shadow_pad, icon_y - shadow_pad), icon_shadow)
         bg.paste(icon, (left_x, icon_y), icon)
     
     # Pill Tag above title
     pill_text = "TAIWAN TRAVEL & LIFESTYLE GUIDE"
     pb = draw.textbbox((0, 0), pill_text, font=font_pill)
-    pw = pb[2] - pb[0] + 60
-    ph = 64
-    py = 530
-    draw.rounded_rectangle([left_x, py, left_x + pw, py + ph], radius=32, fill=PILL_BG, outline=PILL_BORDER, width=2)
-    draw.text((left_x + 30, py + 14), pill_text, fill=CHERRY_PINK, font=font_pill)
+    pw = pb[2] - pb[0] + int(60 * scale)
+    ph = int(64 * scale)
+    py = int(530 * scale) + y_shift
+    draw.rounded_rectangle([left_x, py, left_x + pw, py + ph], radius=ph // 2, fill=PILL_BG, outline=PILL_BORDER, width=2)
+    draw.text((left_x + int(30 * scale), py + int(14 * scale)), pill_text, fill=CHERRY_PINK, font=font_pill)
     
     # Brand Main Title
-    draw.text((left_x, 630), "TAIWAN TRAVEL MAP", fill=INK_COLOR, font=font_brand)
+    draw.text((left_x, int(630 * scale) + y_shift), "TAIWAN TRAVEL MAP", fill=INK_COLOR, font=font_brand)
     
     # Subtitle
-    draw.text((left_x, 775), "Explore Taiwan Like A Local", fill=CHERRY_PINK, font=font_sub)
+    draw.text((left_x, int(775 * scale) + y_shift), "Explore Taiwan Like A Local", fill=CHERRY_PINK, font=font_sub)
     
     # Lead descriptive text
-    draw.text((left_x, 865), "Discover Hidden Attractions, Vibrant Festivals & Historic Cafes", fill=INK_COLOR, font=font_lead)
+    draw.text((left_x, int(865 * scale) + y_shift), "Discover Hidden Attractions, Vibrant Festivals & Historic Cafes", fill=INK_COLOR, font=font_lead)
     
     # Feature Badges
     pills = ["Hidden Gems", "Curated Themes", "Live Events", "Historic Cafes", "Private Charters"]
     bx = left_x
-    by = 960
+    by = int(960 * scale) + y_shift
     for p in pills:
         bb = draw.textbbox((0, 0), p, font=font_badge)
-        bw = bb[2] - bb[0] + 48
-        bh = 60
-        draw.rounded_rectangle([bx, by, bx + bw, by + bh], radius=30, fill=PILL_BG, outline=PILL_BORDER, width=2)
-        draw.text((bx + 24, by + 13), p, fill=INK_COLOR, font=font_badge)
-        bx += bw + 18
+        bw = bb[2] - bb[0] + int(48 * scale)
+        bh = int(60 * scale)
+        draw.rounded_rectangle([bx, by, bx + bw, by + bh], radius=bh // 2, fill=PILL_BG, outline=PILL_BORDER, width=2)
+        draw.text((bx + int(24 * scale), by + int(13 * scale)), p, fill=INK_COLOR, font=font_badge)
+        bx += bw + int(18 * scale)
         
     # Multi-language & nationwide note
-    draw.text((left_x, 1100), "Available in 11 Languages   -   Nationwide Guide   -   Travel Essentials", fill=INK_SOFT, font=font_footer)
+    draw.text((left_x, int(1100 * scale) + y_shift), "Available in 11 Languages   -   Nationwide Guide   -   Travel Essentials", fill=INK_SOFT, font=font_footer)
     
     # Right Side: 3 Layered Floating iPhone Mockups
     src_1 = os.path.join(SCREENSHOT_DIR, "Screenshot_20261102_114636.png") # Themes
     src_2 = os.path.join(SCREENSHOT_DIR, "Screenshot_20261102_114613.png") # Taiping Mountain
     src_3 = os.path.join(SCREENSHOT_DIR, "Screenshot_20261102_115414.png") # Cafes
     
-    phone_w = 660
+    phone_w = int(660 * scale)
     phone_h = int(phone_w * (2340 / 1080))
     
     if os.path.exists(src_1) and os.path.exists(src_2) and os.path.exists(src_3):
@@ -120,9 +127,9 @@ def render_header_banner(output_path):
         m3 = build_phone_mockup(Image.open(src_3), phone_w, phone_h, is_dark_top=True, is_ios=True)
         
         # Paste in depth order: Left (Themes), Right (Cafes), Center elevated (Taiping Mountain)
-        bg.paste(m1, (2160, 200), m1)
-        bg.paste(m3, (3000, 240), m3)
-        bg.paste(m2, (2560, 100), m2)
+        bg.paste(m1, (int(2160 * scale), int(200 * scale) + y_shift), m1)
+        bg.paste(m3, (int(3000 * scale), int(240 * scale) + y_shift), m3)
+        bg.paste(m2, (int(2560 * scale), int(100 * scale) + y_shift), m2)
         
     final_output = bg.convert("RGB")
     final_output.save(output_path, "PNG", quality=95)
@@ -254,17 +261,25 @@ def main():
     print("Generating Apple App Store Custom Product Page Banners...")
     print("=" * 65)
     
-    # 1. Header Banner (3840 x 1646)
-    out_header = os.path.join(BANNER_DIR, "header_banner_3840x1646.png")
-    render_header_banner(out_header)
+    # 1. Header Banner (3840 x 1646) - Standard Wide Cinematic 21:9
+    out_header_3840 = os.path.join(BANNER_DIR, "header_banner_3840x1646.png")
+    render_header_banner(out_header_3840, 3840, 1646)
     
-    # 2. Search Results Banner High-Res (3840 x 2560)
-    out_search_hi = os.path.join(BANNER_DIR, "search_results_banner_3840x2560.png")
-    render_search_results_banner(out_search_hi, 3840, 2560)
+    # 2. Header Banner (5244 x 2950) - 16:9 High-Res
+    out_header_5244 = os.path.join(BANNER_DIR, "header_banner_5244x2950.png")
+    render_header_banner(out_header_5244, 5244, 2950)
     
-    # 3. Search Results Banner Standard (1920 x 1280)
-    out_search_std = os.path.join(BANNER_DIR, "search_results_banner_1920x1280.png")
-    render_search_results_banner(out_search_std, 1920, 1280)
+    # 3. Search Results Banner High-Res (3840 x 2560) - 3:2
+    out_search_3840 = os.path.join(BANNER_DIR, "search_results_banner_3840x2560.png")
+    render_search_results_banner(out_search_3840, 3840, 2560)
+    
+    # 4. Search Results Banner Standard (1920 x 1280) - 3:2
+    out_search_1920 = os.path.join(BANNER_DIR, "search_results_banner_1920x1280.png")
+    render_search_results_banner(out_search_1920, 1920, 1280)
+    
+    # 5. Search Results Banner High-Res (5244 x 2950) - 16:9
+    out_search_5244 = os.path.join(BANNER_DIR, "search_results_banner_5244x2950.png")
+    render_search_results_banner(out_search_5244, 5244, 2950)
     
     print("\n" + "=" * 65)
     print("All iOS Store Banners generated successfully!")
