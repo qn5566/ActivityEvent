@@ -18,6 +18,7 @@ import argparse
 import json
 import sys
 from datetime import datetime
+from html.parser import HTMLParser
 from pathlib import Path
 
 CONTENT_DIR = Path(__file__).resolve().parent / "content"
@@ -36,7 +37,7 @@ FILE_FIELDS = {
     "blog.json": {
         "title", "subtitle", "category", "author", "date", "readTime", "content",
         "name", "address", "signature", "hours", "transport", "mapQuery",
-        "tags", "city", "district", "authorQuote", "readCount",
+        "tags", "city", "district", "authorQuote", "readCount", "fullHtmlArticle",
     },
     "cafes.json": {
         "name", "city", "district", "address", "features", "status", "tags",
@@ -96,11 +97,105 @@ def walk(node, keys=()):
         yield keys, node
 
 
+_SKIP_HTML_TAGS = {"style", "script"}
+
+
+class _HtmlSegmenter(HTMLParser):
+    """把 HTML 切成有序的 (kind, value)：
+    kind == "text" 為可翻譯的文字節點，kind == "raw" 為標籤／屬性／註解等原樣保留。
+    如此 href/src 等屬性內的繁體中文（如地圖 ?q=地名）不會被翻譯。
+    """
+
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.segments = []
+        self._text_buf = []
+        self._skip_depth = 0
+
+    def _flush_text(self):
+        if self._text_buf:
+            self.segments.append(("text", "".join(self._text_buf)))
+            self._text_buf = []
+
+    def _raw(self, value):
+        self._flush_text()
+        self.segments.append(("raw", value))
+
+    def handle_starttag(self, tag, attrs):
+        self._raw(self.get_starttag_text() or f"<{tag}>")
+        if tag in _SKIP_HTML_TAGS:
+            self._skip_depth += 1
+
+    def handle_startendtag(self, tag, attrs):
+        self._raw(self.get_starttag_text() or f"<{tag}/>")
+
+    def handle_endtag(self, tag):
+        self._raw(f"</{tag}>")
+        if tag in _SKIP_HTML_TAGS and self._skip_depth > 0:
+            self._skip_depth -= 1
+
+    def handle_data(self, data):
+        if self._skip_depth == 0:
+            self._text_buf.append(data)
+        else:
+            self._raw(data)
+
+    def handle_comment(self, data):
+        self._raw(f"<!--{data}-->")
+
+    def handle_decl(self, decl):
+        self._raw(f"<!{decl}>")
+
+    def handle_pi(self, data):
+        self._raw(f"<?{data}>")
+
+    def handle_entityref(self, name):
+        self._append(f"&{name};")
+
+    def handle_charref(self, name):
+        self._append(f"&#{name};")
+
+    def _append(self, value):
+        if self._skip_depth == 0:
+            self._text_buf.append(value)
+        else:
+            self._raw(value)
+
+    def finish(self):
+        self._flush_text()
+        return self.segments
+
+
+def extract_html_texts(html_str):
+    """取出 HTML 內的可翻譯文字節點（不含 style/script 內容與屬性）。"""
+    parser = _HtmlSegmenter()
+    parser.feed(html_str)
+    parser.close()
+    return [value for kind, value in parser.finish() if kind == "text" and value.strip()]
+
+
+def translate_html(html_str, translations):
+    """依對照表重建 HTML：僅替換文字節點，標籤／屬性／註解原樣保留。"""
+    parser = _HtmlSegmenter()
+    parser.feed(html_str)
+    parser.close()
+    parts = []
+    for kind, value in parser.finish():
+        if kind == "text":
+            parts.append(translations.get(value, value))
+        else:
+            parts.append(value)
+    return "".join(parts)
+
+
 def collect_texts(node, file_name):
     found = set()
     for keys, value in walk(node):
         if isinstance(value, str) and value.strip() and is_translatable(file_name, keys):
-            found.add(value)
+            if keys and keys[-1] == "fullHtmlArticle":
+                found.update(extract_html_texts(value))
+            else:
+                found.add(value)
     return found
 
 
@@ -113,6 +208,8 @@ def translated_copy(node, translations, file_name, keys=()):
     if isinstance(node, list):
         return [translated_copy(v, translations, file_name, keys) for v in node]
     if isinstance(node, str) and is_translatable(file_name, keys):
+        if keys and keys[-1] == "fullHtmlArticle":
+            return translate_html(node, translations)
         return translations.get(node, node)
     return node
 
