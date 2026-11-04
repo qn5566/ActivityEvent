@@ -36,6 +36,7 @@ FILE_FIELDS = {
     "blog.json": {
         "title", "subtitle", "category", "author", "date", "readTime", "content",
         "name", "address", "signature", "hours", "transport", "mapQuery",
+        "tags", "city", "district", "authorQuote", "readCount",
     },
     "cafes.json": {
         "name", "city", "district", "address", "features", "status", "tags",
