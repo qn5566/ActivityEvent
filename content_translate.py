@@ -175,14 +175,21 @@ def extract_html_texts(html_str):
 
 
 def translate_html(html_str, translations):
-    """依對照表重建 HTML：僅替換文字節點，標籤／屬性／註解原樣保留。"""
+    """依對照表重建 HTML：僅替換文字節點，標籤／屬性／註解原樣保留。
+    對照 key 使用 strip 後的文字，輸出時保留原始前後空白。"""
     parser = _HtmlSegmenter()
     parser.feed(html_str)
     parser.close()
     parts = []
     for kind, value in parser.finish():
         if kind == "text":
-            parts.append(translations.get(value, value))
+            stripped = value.strip()
+            if stripped and stripped in translations:
+                lead = value[: len(value) - len(value.lstrip())]
+                trail = value[len(value.rstrip()):]
+                parts.append(lead + translations[stripped] + trail)
+            else:
+                parts.append(value)
         else:
             parts.append(value)
     return "".join(parts)
@@ -193,7 +200,7 @@ def collect_texts(node, file_name):
     for keys, value in walk(node):
         if isinstance(value, str) and value.strip() and is_translatable(file_name, keys):
             if keys and keys[-1] == "fullHtmlArticle":
-                found.update(extract_html_texts(value))
+                found.update(n.strip() for n in extract_html_texts(value))
             else:
                 found.add(value)
     return found
