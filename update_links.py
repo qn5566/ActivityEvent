@@ -34,6 +34,7 @@ PARAM_OF_KEY = {
     "klook_charter_aid": "aid",
     "trip_allianceid": "Allianceid",
     "trip_sid": "SID",
+    "trip_sub1": "trip_sub1",
     "trip_sub3": "trip_sub3",
     "trip_flight_sub3": "trip_sub3",
 }
