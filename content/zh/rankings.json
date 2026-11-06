@@ -228,7 +228,7 @@
       "ctaType": "hotel",
       "desc": "北投白磺、礁溪美人湯、烏來碳酸泉、谷關與知本露天風呂精選。",
       "badge": "♨️ 溫泉 Hot Spring Top 20",
-      "ctaUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227"
+      "ctaUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app"
     },
     {
       "id": "hostel",
@@ -251,7 +251,7 @@
       "ctaType": "hotel",
       "desc": "單人背包客首選！每晚千元有找、英文流利櫃檯、超高社交安全感。",
       "badge": "🎒 青旅 Hostel Top 20",
-      "ctaUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227"
+      "ctaUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app"
     },
     {
       "id": "souvenir",

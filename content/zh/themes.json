@@ -12,7 +12,8 @@
     "subtitle": "沿著台 2 線蔚藍海岸線，探索野柳奇岩、九份老街茶香、深澳鐵道與極東岬角日出",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=123436"
     },
     "experiences": [
@@ -178,8 +179,8 @@
         "desc": "百年世界文化遺產級高山鐵道！穿梭熱帶、暖帶到溫帶林相，體驗傳奇之字形折返、獨立山三迴旋登山與清晨祝山雲海金光日出車次。",
         "day1Plan": "【1日經典快遊】清晨抵達嘉義站 ➔ 搭乘檜木列車至奮起湖老街 ➔ 品嚐百年鐵路便當與草仔粿 ➔ 下午漫步肖楠母樹林步道 ➔ 搭車悠閒賦歸。",
         "day2Plan": "【2日深度雲海行】Day 1: 嘉義林鐵本線穿梭獨立山螺旋鐵道 ➔ 抵達阿里山森林遊樂區夜宿。Day 2: 清晨搭乘祝山線觀日出與無邊際雲海 ➔ 漫步巨木群棧道 ➔ 搭乘神木線悠閒下山。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.1 人氣鐵路",
@@ -199,8 +200,8 @@
         "desc": "台灣最具文青懷舊情懷的礦業鐵道支線。火車門前掠過十分老街、漫步全台最大簾幕式十分瀑布，夜幕低垂時在平溪鐵道旁點燃萬盞天燈祈福。",
         "day1Plan": "【1日天燈鐵道行】瑞芳站購買平溪一日券 ➔ 猴硐貓村擼貓散步 ➔ 十分老街放天燈與參觀十分瀑布 ➔ 菁桐日式木造車站拍照留念。",
         "day2Plan": "【2日山城山海遊】Day 1: 漫遊平溪支線各小站、深坑石底大溝與煤礦紀念公園，夜宿平溪山居。Day 2: 轉往九份老街與金瓜石陰陽海黃金瀑布，享受北海岸山海絕景。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.2 人氣鐵路",
@@ -220,8 +221,8 @@
         "desc": "穿越中台灣綠意盎然的樟樹綠色隧道。終點車埕被譽為全台最美火車站，群山環抱的日式檜木建築、隱茶 Steam 水上茶屋與木桶便當令人心曠神怡。",
         "day1Plan": "【1日綠意慢活遊】搭乘集集支線小火車 ➔ 租單車穿梭集集綠色隧道 ➔ 抵達車埕漫步貯木池與體驗手工木工DIY ➔ 水上茶屋品茗。",
         "day2Plan": "【2日南投森呼吸】Day 1: 集集火車站與車埕林業博覽園區慢活，夜宿日月潭湖畔。Day 2: 日月潭搭船環湖與向山遊客中心自行車道，享受水沙連湖光山色。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.3 人氣鐵路",
@@ -241,8 +242,8 @@
         "desc": "全台首創舊鐵道電動自行車！騎行在歷史斑駁的軌道之上，凌空穿越 33 公尺高龍騰斷橋南段秘境，眺望綠意峽谷與鯉魚潭水庫壯闊水色。",
         "day1Plan": "【1日 Rail Bike 探險】苗栗三義勝興車站搭乘 Rail Bike A路線 ➔ 穿梭百年七彩時光隧道 ➔ 龍騰斷橋拍照 ➔ 品嚐客家粄條美食。",
         "day2Plan": "【2日木雕與溫泉行】Day 1: 舊山線鐵道自行車騎行與木雕老街手作體驗，夜宿泰安溫泉飯店。Day 2: 泰安享受美人湯碳酸氫鈉泉 ➔ 洗水坑豆腐街品嚐黑豆腐。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.4 人氣鐵路",
@@ -262,8 +263,8 @@
         "desc": "行駛於太平洋懸崖與中央山脈之間的蔚藍鐵道。多良車站鮮紅欄杆矗立於蔚藍大海之上，火車自山壁隧道呼嘯而出，海天一色無垠展開。",
         "day1Plan": "【1日太平洋聽浪遊】太麻里車站打卡海天一路平交道 ➔ 登臨多良車站景觀台等待列車出山洞 ➔ 金崙大橋秘境海灘放空。",
         "day2Plan": "【2日南迴溫泉山海行】Day 1: 多良景觀月台與太麻里金針山健行，夜宿金崙天然野溪溫泉民宿。Day 2: 金崙涵洞秘境看海 ➔ 知本森林遊樂區吸收芬多精。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.5 人氣鐵路",
@@ -283,8 +284,8 @@
         "desc": "被讚譽為山線最美車站！高架月台毫無遮蔽，一覽無遺縱谷平原與海岸山脈，春季綠波蕩漾、秋季黃金稻浪隨風翻湧，宛如宮崎駿動畫畫卷。",
         "day1Plan": "【1日縱谷稻浪悠遊】搭乘自強號抵達東里車站 ➔ 月台俯瞰千頃稻浪 ➔ 租借單車漫遊東里百年碾米廠文創聚落 ➔ 玉里品嚐橋頭臭豆腐。",
         "day2Plan": "【2日花東縱谷田園行】Day 1: 東里車站賞稻浪與玉里客城鐵橋拍火車，夜宿池上稻田民宿。Day 2: 清晨池上伯朗大道騎單車、大坡池泛舟 ➔ 關山環鎮自行車道。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.6 人氣鐵路",
@@ -304,8 +305,8 @@
         "desc": "北台灣版的多良車站！出站即是無邊無際的太平洋海景，串聯深澳鐵道自行車，夜間光雕隧道與俏皮河豚車廂讓人流連忘返。",
         "day1Plan": "【1日海岸鐵道放電】搭火車直抵八斗子海景月台 ➔ 體驗深澳鐵道自行車吹海風 ➔ 漫步潮境公園飛天掃帚與望幽谷海景步道。",
         "day2Plan": "【2日山海基隆行】Day 1: 八斗子與深澳象鼻岩海岸地質景觀，夜宿基隆港海景飯店逛廟口夜市。Day 2: 和平島地質公園地景泳池戲水 ➔ 正濱漁港彩色屋拍美照。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.7 人氣鐵路",
@@ -325,8 +326,8 @@
         "desc": "沿油羅溪畔逆流而上的綠色山城鐵道。中途合興車站保留許願鐘與懷舊車廂，終點內灣老街充滿野薑花粽香氣、吊橋水色與劉興欽漫畫館。",
         "day1Plan": "【1日客庄文青遊】新竹搭乘彩繪內灣線 ➔ 合興愛情火車站敲響幸福之鐘 ➔ 內灣老街品嚐野薑花粽與擂茶 ➔ 漫步內灣吊橋欣賞溪谷。",
         "day2Plan": "【2日新竹山林森呼吸】Day 1: 內灣支線鐵道巡禮與水田部落探秘，夜宿尖石鄉溫泉渡假村。Day 2: 尖石青蛙石天空步道健行 ➔ 司馬庫斯神木巨木群壯闊生態行。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.8 人氣鐵路",
@@ -346,8 +347,8 @@
         "desc": "台灣鐵道奢華與復古的雙重巔峰！鳴日號以黑橘低調美學提供五星米其林級移動珍饈；藍皮解憂號則為全台唯一開窗吹太平洋海風的復古綠皮火車。",
         "day1Plan": "【1日解憂慢活行】屏東枋寮搭乘藍皮解憂號 ➔ 復古旋轉吊扇與開窗海風 ➔ 停靠枋山看海與太麻里小站導覽 ➔ 台東市區文創漫遊。",
         "day2Plan": "【2日奢華鐵道假期】Day 1: 搭乘五星美饌鳴日號列車品味時令在地手作大餐，夜宿花蓮五星度假酒店。Day 2: 享受鳴日號包辦之太魯閣私廚迎賓行程與產地餐桌饗宴。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.9 人氣鐵路",
@@ -367,8 +368,8 @@
         "desc": "火車穿越雪山隧道後豁然開朗的蘭陽平原！車窗外龜山島宛如浮在太平洋的綠寶石；冬山火車站以巨型綠色瓜棚鋼構遮雨棚聞名，高架橋下更附設綠舟水岸公園。",
         "day1Plan": "【1日平原水岸行】冬山車站打卡綠色瓜棚建築 ➔ 站旁冬山河生態綠舟搭乘電動鴨母船探訪神秘水道 ➔ 羅東夜市品嚐當歸羊肉湯與三星蔥餅。",
         "day2Plan": "【2日宜蘭山海溫泉遊】Day 1: 眺望龜山島海線搭車、冬山生態綠舟漫步，夜宿礁溪溫泉飯店泡湯。Day 2: 礁溪林美石磐步道漫步 ➔ 頭城外澳沙灘看衝浪喝海景咖啡。",
-        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
-        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=&trip_sub3=D20272275",
+        "trainTicketUrl": "https://tw.trip.com/trains/taiwan/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
+        "hotelUrl": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20272275",
         "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
         "tags": [
           "NO.10 人氣鐵路",
@@ -1095,7 +1096,8 @@
     "subtitle": "東港碼頭乘浪出海！小琉球與海龜共游、綠島世界級蔚藍潛點、澎湖玄武岩與雙心石滬",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
     },
     "experiences": [
@@ -1409,7 +1411,8 @@
     "subtitle": "馳騁台 9 與台 11 線，穿梭清水斷崖碧海藍天、池上稻浪、金尊衝浪與多良太平洋海景",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=123436"
     },
     "experiences": [
@@ -1723,7 +1726,8 @@
     "subtitle": "268座三千公尺巨峰官方入山申請入口，親山休閒步道輕鬆走與台灣百岳高山縱走",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/51234-glamping-taiwan/?aid=123436"
     },
     "experiences": [
@@ -2399,7 +2403,8 @@
     "subtitle": "北投日式青磺名湯、礁溪美人碳酸泉、關子嶺黑泥漿溫泉與全齡友善親子放電綠野",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
     },
     "experiences": [
@@ -2713,7 +2718,8 @@
     "subtitle": "晚上 9 點後的精采夜生活！排隊搶吃米其林必比登胡椒餅、炸雞排，上山遠眺台北 101 與全島璀璨星河",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
     },
     "experiences": [
@@ -3027,7 +3033,8 @@
     "subtitle": "平溪千盞天燈冉冉升空、大甲媽祖進香萬人空巷、大稻埕百年月老與金馬電影取景地深度漫步",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
     },
     "experiences": [
@@ -3977,7 +3984,8 @@
     "subtitle": "自駕台灣四極點公路：極北富貴角、極東三貂角、極南鵝鑾鼻、極西國聖燈塔，巡迴各大城市球場熱血應援！",
     "bookingCta": {
       "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
-      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
       "tour": "https://www.klook.com/zh-TW/activity/904-penghu-day-tour-magong/?aid=123436"
     },
     "experiences": [
