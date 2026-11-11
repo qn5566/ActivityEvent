@@ -167,7 +167,83 @@
         "tag": "新北貢寮 · 精選地標",
         "desc": "台灣本島極東點，雪白純潔希臘風燈塔，迎接每日全台第一道晨曦曙光。",
         "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
+      }
+    ],
+    "subCategories": [
+      {
+        "id": "all",
+        "name": "全部景點 All",
+        "icon": "✨"
       },
+      {
+        "id": "coast",
+        "name": "🌊 北海岸",
+        "icon": "🌊"
+      }
+    ],
+    "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/northcoast_yinyangsea_cover.png"
+  },
+  {
+    "id": "railway",
+    "icon": "🚂",
+    "shortTitle": "經典鐵道",
+    "zhTitle": "經典鐵道・山城海線與懷舊列車",
+    "enTitle": "CLASSIC RAILWAYS",
+    "name": "全台經典鐵道巡禮",
+    "bannerImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop",
+    "deckBg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop",
+    "title": "Riding Taiwan's Most Scenic Rail Lines",
+    "subtitle": "從阿里山森林鐵路到平溪天燈支線，搭上鳴日號與藍皮解憂號，沿著山城、海岸與縱谷，收藏全台最美的十條鐵道風景。",
+    "bookingCta": {
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
+      "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=123436"
+    },
+    "experiences": [
+      {
+        "icon": "🚂",
+        "title": "阿里山森林鐵路",
+        "desc": "世界級高山鐵道，之字形爬升穿梭雲霧檜木林。"
+      },
+      {
+        "icon": "🏮",
+        "title": "平溪天燈支線",
+        "desc": "山城瀑布與祈願天燈，鐵道旁的懷舊老街。"
+      },
+      {
+        "icon": "🚃",
+        "title": "鳴日號藍皮解憂號",
+        "desc": "復古美饌列車，慢速漫遊東海岸與南迴。"
+      }
+    ],
+    "itineraries": [
+      {
+        "planName": "【1 日輕旅】山城鐵道一日遊",
+        "duration": "1 日經典",
+        "days": [
+          {
+            "day": "精華動線",
+            "text": "平溪支線十分車站放天燈 ➔ 猴硐貓村 ➔ 深澳八斗子海景車站。"
+          }
+        ]
+      },
+      {
+        "planName": "【2 日漫遊】森林與海線鐵道慢活",
+        "duration": "2 天 1 夜",
+        "days": [
+          {
+            "day": "Day 1",
+            "text": "阿里山森林鐵路日出 ➔ 嘉義檜意森活村 ➔ 奮起湖便當。"
+          },
+          {
+            "day": "Day 2",
+            "text": "集集支線車埕 ➔ 內灣山城老街 ➔ 平溪十分天燈夜。"
+          }
+        ]
+      }
+    ],
+    "spots": [
       {
         "name": "嘉義 ｜ 阿里山林業鐵路（世界級高山森林鐵道）",
         "subCategory": "railway",
@@ -377,7 +453,83 @@
           "遠眺龜山島"
         ],
         "img": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&auto=format&fit=crop"
+      }
+    ],
+    "subCategories": [
+      {
+        "id": "all",
+        "name": "全部景點 All",
+        "icon": "✨"
       },
+      {
+        "id": "railway",
+        "name": "🚂 經典鐵道（10大特色鐵路）",
+        "icon": "🚂"
+      }
+    ],
+    "iconImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop"
+  },
+  {
+    "id": "cinema",
+    "icon": "🎬",
+    "shortTitle": "影視朝聖",
+    "zhTitle": "影視朝聖・走進經典名場景",
+    "enTitle": "MOVIE LOCATIONS",
+    "name": "影視朝聖之旅",
+    "bannerImg": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop",
+    "deckBg": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop",
+    "title": "Step Into the Scenes of Your Favorite Films",
+    "subtitle": "跟著《不能說的秘密》《青春18×2》《刺客聶隱娘》等經典作品，走進台北101、大稻埕、淡水老街等銀幕名場景。",
+    "bookingCta": {
+      "charter": "https://www.klook.com/zh-TW/car-rentals/?aid=123436",
+      "hotel": "https://tw.trip.com/hotels/?Allianceid=9507030&SID=325761227&trip_sub1=app",
+      "flight": "https://tw.trip.com/flights/?flighttype=S&dcity=TPE&Allianceid=9507030&SID=325761227&trip_sub1=app&trip_sub3=D20944240",
+      "tour": "https://www.klook.com/zh-TW/activity/1874-jiufen-shifen-day-tour-taipei/?aid=123436"
+    },
+    "experiences": [
+      {
+        "icon": "🎬",
+        "title": "不能說的秘密",
+        "desc": "淡水老街與八里左岸，重溫周杰倫的鋼琴初戀。"
+      },
+      {
+        "icon": "🎞️",
+        "title": "青春18×2",
+        "desc": "台南保安車站，通往有你的旅程。"
+      },
+      {
+        "icon": "🏙️",
+        "title": "台北101",
+        "desc": "信義商圈街區，多部電影的城市地標。"
+      }
+    ],
+    "itineraries": [
+      {
+        "planName": "【1 日輕旅】台北影視地標巡禮",
+        "duration": "1 日經典",
+        "days": [
+          {
+            "day": "精華動線",
+            "text": "台北101 ➔ 大稻埕永樂市場 ➔ 淡水老街與八里左岸。"
+          }
+        ]
+      },
+      {
+        "planName": "【2 日漫遊】南北電影場景深度行",
+        "duration": "2 天 1 夜",
+        "days": [
+          {
+            "day": "Day 1",
+            "text": "台北晶華酒店 ➔ 大稻埕 ➔ 台北101夜景。"
+          },
+          {
+            "day": "Day 2",
+            "text": "台南保安車站 ➔ 墾丁白沙灣 ➔ 佳樂水海景。"
+          }
+        ]
+      }
+    ],
+    "spots": [
       {
         "name": "台北 ｜ 台北晶華酒店（Regent Taipei）",
         "subCategory": "cinema",
@@ -1066,22 +1218,12 @@
         "icon": "✨"
       },
       {
-        "id": "coast",
-        "name": "🌊 北海岸",
-        "icon": "🌊"
-      },
-      {
-        "id": "railway",
-        "name": "🚂 經典鐵道（10大特色鐵路）",
-        "icon": "🚂"
-      },
-      {
         "id": "cinema",
         "name": "🎬 影視朝聖（20部名作/40景）",
         "icon": "🎬"
       }
     ],
-    "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/northcoast_yinyangsea_cover.png"
+    "iconImg": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
   },
   {
     "id": "islands",
@@ -3260,686 +3402,6 @@
         "tag": "台南中西 · 信仰盛事",
         "desc": "數千顆民間學童手繪彩繪燈籠懸掛古廟街巷，春節點燈照耀古都漫溢溫暖祥和。",
         "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 台北晶華酒店（Regent Taipei）",
-        "subCategory": "cinema",
-        "subName": "🎬 《露西》",
-        "movieTitle": "《露西》（Lucy）",
-        "en": "《露西》（Lucy）",
-        "tag": "台北市中山區 · 《露西》",
-        "address": "台北市中山區",
-        "desc": "片頭女主角史嘉蕾·喬韓森被反派控制、在大廳電梯口展開驚心動魄交涉的核心代表場景。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《露西》",
-          "台北市中山區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 大稻埕永樂市場",
-        "subCategory": "cinema",
-        "subName": "🎬 《露西》",
-        "movieTitle": "《露西》（Lucy）",
-        "en": "《露西》（Lucy）",
-        "tag": "台北市大同區 · 《露西》",
-        "address": "台北市大同區",
-        "desc": "女主角在傳統市場混亂生鮮攤位與布市穿梭的槍戰名場面，展現老台北最鮮活強烈的市井張力。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《露西》",
-          "台北市大同區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 台北101與信義商圈街區",
-        "subCategory": "cinema",
-        "subName": "🎬 《露西》",
-        "movieTitle": "《露西》（Lucy）",
-        "en": "《露西》（Lucy）",
-        "tag": "台北市信義區 · 《露西》",
-        "address": "台北市信義區",
-        "desc": "片中多次震撼出現的高空俯瞰、霓虹街景與好萊塢級信義區極速飛車追逐鏡頭。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《露西》",
-          "台北市信義區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "屏東 ｜ 墾丁白沙灣（Baisha Bay）",
-        "subCategory": "cinema",
-        "subName": "🎬 《少年Pi的奇幻漂流》",
-        "movieTitle": "《少年Pi的奇幻漂流》（Life of Pi）",
-        "en": "《少年Pi的奇幻漂流》（Life of Pi）",
-        "tag": "屏東縣恆春鎮 · 《少年Pi的奇幻漂流》",
-        "address": "屏東縣恆春鎮",
-        "desc": "片尾孟加拉虎理查派克頭也不回走入叢林、Pi 歷劫獲救躺在沙灘上的經典白沙海岸與海浪拍岸絕景。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《少年Pi的奇幻漂流》",
-          "屏東縣恆春鎮",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "屏東 ｜ 墾丁港口沙漠與佳樂水",
-        "subCategory": "cinema",
-        "subName": "🎬 《少年Pi的奇幻漂流》",
-        "movieTitle": "《少年Pi的奇幻漂流》（Life of Pi）",
-        "en": "《少年Pi的奇幻漂流》（Life of Pi）",
-        "tag": "屏東縣滿州鄉 · 《少年Pi的奇幻漂流》",
-        "address": "屏東縣滿州鄉",
-        "desc": "片中展現無人奇幻浮島與超現實地貌的奇岩海岸線，風蝕地形與太平洋湛藍潮汐交織。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《少年Pi的奇幻漂流》",
-          "屏東縣滿州鄉",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台中 ｜ 中台灣影視基地（原水湳造浪池）",
-        "subCategory": "cinema",
-        "subName": "🎬 《少年Pi的奇幻漂流》",
-        "movieTitle": "《少年Pi的奇幻漂流》（Life of Pi）",
-        "en": "《少年Pi的奇幻漂流》（Life of Pi）",
-        "tag": "台中市霧峰區 · 《少年Pi的奇幻漂流》",
-        "address": "台中市霧峰區",
-        "desc": "全片核心的暴風雨海難、夜光鯨魚與海上漂流特效造浪池拍攝地，為台灣影視特效里程碑。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《少年Pi的奇幻漂流》",
-          "台中市霧峰區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "花蓮 ｜ 牛山呼庭（壽豐鄉海岸）",
-        "subCategory": "cinema",
-        "subName": "🎬 《沉默》",
-        "movieTitle": "《沉默》（Silence）",
-        "en": "《沉默》（Silence）",
-        "tag": "花蓮縣壽豐鄉 · 《沉默》",
-        "address": "花蓮縣壽豐鄉",
-        "desc": "安德魯·加菲爾德飾演的神父抵達日本海岸、江戶時代村落與波濤拍岸的原始黑色天然沙灘。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《沉默》",
-          "花蓮縣壽豐鄉",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "新北 ｜ 貢寮龍洞岬與金瓜石水湳洞",
-        "subCategory": "cinema",
-        "subName": "🎬 《沉默》",
-        "movieTitle": "《沉默》（Silence）",
-        "en": "《沉默》（Silence）",
-        "tag": "新北市貢寮區 · 《沉默》",
-        "address": "新北市貢寮區",
-        "desc": "陡峭海蝕絕壁懸崖與海邊登陸場景，重現 17 世紀未開拓島嶼的險峻與莊嚴神聖氛圍。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《沉默》",
-          "新北市貢寮區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 陽明山小油坑與硫磺谷",
-        "subCategory": "cinema",
-        "subName": "🎬 《沉默》",
-        "movieTitle": "《沉默》（Silence）",
-        "en": "《沉默》（Silence）",
-        "tag": "台北市北投區 · 《沉默》",
-        "address": "台北市北投區",
-        "desc": "霧氣繚繞與硫磺地熱蒸氣升騰的荒野場景，地質地貌宛如異域世界，帶出深沉宗教苦行意象。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《沉默》",
-          "台北市北投區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台南 ｜ 32唱片行（中西區民權路老宅）",
-        "subCategory": "cinema",
-        "subName": "🎬 《想見你》",
-        "movieTitle": "《想見你》（Someday or One Day）",
-        "en": "《想見你》（Someday or One Day）",
-        "tag": "台南市中西區 · 《想見你》",
-        "address": "台南市中西區",
-        "desc": "李子維、陳韻如初遇與卡帶穿越時空的核心靈魂場景！復古木門與紅磚街景為全亞洲影迷必訪聖地。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《想見你》",
-          "台南市中西區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台南 ｜ 閒情茗品屋（南區傳統早餐店）",
-        "subCategory": "cinema",
-        "subName": "🎬 《想見你》",
-        "movieTitle": "《想見你》（Someday or One Day）",
-        "en": "《想見你》（Someday or One Day）",
-        "tag": "台南市南區 · 《想見你》",
-        "address": "台南市南區",
-        "desc": "主角三人吃鍋燒意麵、加布丁辣醬的經典復古餐飲老店，充滿台灣南部濃厚人情味與青春記憶。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《想見你》",
-          "台南市南區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台南 ｜ 漁光島月牙灣沙灘",
-        "subCategory": "cinema",
-        "subName": "🎬 《想見你》",
-        "movieTitle": "《想見你》（Someday or One Day）",
-        "en": "《想見你》（Someday or One Day）",
-        "tag": "台南市安平區 · 《想見你》",
-        "address": "台南市安平區",
-        "desc": "三人漫步、吹海風看夕陽橘光的浪漫海灘，林投樹防風林穿出後的純淨沙灘美不勝收。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《想見你》",
-          "台南市安平區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "新北 ｜ 淡江中學八角樓與古典琴房",
-        "subCategory": "cinema",
-        "subName": "🎬 《不能說的秘密》",
-        "movieTitle": "《不能說的秘密》（Secret）",
-        "en": "《不能說的秘密》（Secret）",
-        "tag": "新北市淡水區 · 《不能說的秘密》",
-        "address": "新北市淡水區",
-        "desc": "周杰倫與桂綸鎂穿梭的西班牙紅磚八角樓、古典迴廊琴房，琴鍵穿越時空的絕美青春發源地。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《不能說的秘密》",
-          "新北市淡水區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "新北 ｜ 真理大學（牛津學堂與大禮拜堂）",
-        "subCategory": "cinema",
-        "subName": "🎬 《不能說的秘密》",
-        "movieTitle": "《不能說的秘密》（Secret）",
-        "en": "《不能說的秘密》（Secret）",
-        "tag": "新北市淡水區 · 《不能說的秘密》",
-        "address": "新北市淡水區",
-        "desc": "校園內歷史悠久的西式磚造建築群與青翠大草皮，陽光灑落的長廊如詩如畫。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《不能說的秘密》",
-          "新北市淡水區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "新北 ｜ 淡水老街與八里左岸濱海步道",
-        "subCategory": "cinema",
-        "subName": "🎬 《不能說的秘密》",
-        "movieTitle": "《不能說的秘密》（Secret）",
-        "en": "《不能說的秘密》（Secret）",
-        "tag": "新北市淡水區 · 《不能說的秘密》",
-        "address": "新北市淡水區",
-        "desc": "男女主角騎腳踏車載女友下課、吃鐵蛋看淡水河落日的濱海步道，浪漫戀愛名場面。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《不能說的秘密》",
-          "新北市淡水區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台南 ｜ 全美戲院",
-        "subCategory": "cinema",
-        "subName": "🎬 《青春18×2 通往有你的旅程》",
-        "movieTitle": "《青春18×2 通往有你的旅程》",
-        "en": "《青春18×2 通往有你的旅程》",
-        "tag": "台南市中西區 · 《青春18×2 通往有你的旅程》",
-        "address": "台南市中西區",
-        "desc": "男女主角一同觀看經典電影的傳統手繪看板老字號戲院，保留全台最珍貴的膠卷年代手繪風情。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《青春18×2 通往有你的旅程》",
-          "台南市中西區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台南 ｜ 武聖夜市",
-        "subCategory": "cinema",
-        "subName": "🎬 《青春18×2 通往有你的旅程》",
-        "movieTitle": "《青春18×2 通往有你的旅程》",
-        "en": "《青春18×2 通往有你的旅程》",
-        "tag": "台南市中西區 · 《青春18×2 通往有你的旅程》",
-        "address": "台南市中西區",
-        "desc": "Jimmy 與 Ami 逛夜市射氣球、買地瓜球喝冬瓜茶約會的熱鬧現場，在地台南夜間人氣大熱點。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《青春18×2 通往有你的旅程》",
-          "台南市中西區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台南 ｜ 保安車站",
-        "subCategory": "cinema",
-        "subName": "🎬 《青春18×2 通往有你的旅程》",
-        "movieTitle": "《青春18×2 通往有你的旅程》",
-        "en": "《青春18×2 通往有你的旅程》",
-        "tag": "台南市仁德區 · 《青春18×2 通往有你的旅程》",
-        "address": "台南市仁德區",
-        "desc": "兩人離別搭車、充滿濃厚日式風情的百年檜木木造老火車站，永保安康紀念車票起點。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《青春18×2 通往有你的旅程》",
-          "台南市仁德區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 台北大巨蛋周邊與忠孝東路",
-        "subCategory": "cinema",
-        "subName": "🎬 《台北追緝令》",
-        "movieTitle": "《台北追緝令》（Weekend in Taipei）",
-        "en": "《台北追緝令》（Weekend in Taipei）",
-        "tag": "台北市信義區 · 《台北追緝令》",
-        "address": "台北市信義區",
-        "desc": "好萊塢頂級飛車追逐與高難度街頭槍戰場景，摩登都會夜色與大巨蛋現代建築線條極為搶眼。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《台北追緝令》",
-          "台北市信義區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "基隆 ｜ 大武崙沙灘與濱海公路",
-        "subCategory": "cinema",
-        "subName": "🎬 《台北追緝令》",
-        "movieTitle": "《台北追緝令》（Weekend in Taipei）",
-        "en": "《台北追緝令》（Weekend in Taipei）",
-        "tag": "基隆市安樂區 · 《台北追緝令》",
-        "address": "基隆市安樂區",
-        "desc": "片中蔚藍海灣景致與沿海超跑狂飆鏡頭，依山傍海的金色沙灘與北海岸壯麗海景。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《台北追緝令》",
-          "基隆市安樂區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 台北萬豪酒店空中宴會廳",
-        "subCategory": "cinema",
-        "subName": "🎬 《台北追緝令》",
-        "movieTitle": "《台北追緝令》（Weekend in Taipei）",
-        "en": "《台北追緝令》（Weekend in Taipei）",
-        "tag": "台北市中山區 · 《台北追緝令》",
-        "address": "台北市中山區",
-        "desc": "片中豪華客房與俯瞰台北夜景的空中宴會廳奢華景觀，盡顯國際都會的華麗質感。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《台北追緝令》",
-          "台北市中山區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台南 ｜ 台灣高鐵台南站與新竹六家段",
-        "subCategory": "cinema",
-        "subName": "🎬 《十億追殺令》",
-        "movieTitle": "《十億追殺令》（Shield of Straw）",
-        "en": "《十億追殺令》（Shield of Straw）",
-        "tag": "台南市歸仁區 · 《十億追殺令》",
-        "address": "台南市歸仁區",
-        "desc": "日本新幹線無法借拍高難度動作戲，全片高鐵押送死囚的重頭戲全程租借台灣高鐵軌道與車廂拍攝！",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《十億追殺令》",
-          "台南市歸仁區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 萬華龍山寺與周邊街廓",
-        "subCategory": "cinema",
-        "subName": "🎬 《一千次晚安》",
-        "movieTitle": "《一千次晚安》（A Thousand Times Good Night）",
-        "en": "《一千次晚安》（A Thousand Times Good Night）",
-        "tag": "台北市萬華區 · 《一千次晚安》",
-        "address": "台北市萬華區",
-        "desc": "國際影后茱麗葉·畢諾許飾演戰地攝影師，在台灣傳統宮廟香火、雕樑畫棟與市井巷弄拍攝的寫實場景。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《一千次晚安》",
-          "台北市萬華區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 迪化街與大稻埕歷史街屋",
-        "subCategory": "cinema",
-        "subName": "🎬 《隱形同盟》與多部跨國合拍片",
-        "movieTitle": "《隱形同盟》與多部跨國合拍片",
-        "en": "《隱形同盟》與多部跨國合拍片",
-        "tag": "台北市大同區 · 《隱形同盟》與多部跨國合拍片",
-        "address": "台北市大同區",
-        "desc": "充滿歷史層次的紅磚巴洛克騎樓與南北貨中藥街區，長年為歐美紀錄片與獨立文藝長片指定取景地。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《隱形同盟》與多部跨國合拍片",
-          "台北市大同區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "南投 ｜ 仁愛鄉霧社與合歡山高山溪谷",
-        "subCategory": "cinema",
-        "subName": "🎬 《賽德克·巴萊》",
-        "movieTitle": "《賽德克·巴萊》（Seediq Bale）",
-        "en": "《賽德克·巴萊》（Seediq Bale）",
-        "tag": "南投縣仁愛鄉 · 《賽德克·巴萊》",
-        "address": "南投縣仁愛鄉",
-        "desc": "重現歷史原型的原始森林步道、雲海奇萊與高山溪谷，氣勢磅礴的原鄉史詩風貌。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《賽德克·巴萊》",
-          "南投縣仁愛鄉",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "新北 ｜ 林口阿榮片場霧社街歷史實景",
-        "subCategory": "cinema",
-        "subName": "🎬 《賽德克·巴萊》",
-        "movieTitle": "《賽德克·巴萊》（Seediq Bale）",
-        "en": "《賽德克·巴萊》（Seediq Bale）",
-        "tag": "新北市林口區 · 《賽德克·巴萊》",
-        "address": "新北市林口區",
-        "desc": "劇組依 1930 年代考據打造的整條歷史日式街區、郵便局、武德殿與公學校，重現磅礡歷史。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《賽德克·巴萊》",
-          "新北市林口區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 大安森林公園周邊信義路段",
-        "subCategory": "cinema",
-        "subName": "🎬 《一一》",
-        "movieTitle": "《一一》（A One and a Two）",
-        "en": "《一一》（A One and a Two）",
-        "tag": "台北市大安區 · 《一一》",
-        "address": "台北市大安區",
-        "desc": "片中洋洋走在人行天橋與大安森林公園步道上的經典城市漫遊視角，坎城名作國際影史永恆經典。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《一一》",
-          "台北市大安區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 圓山大飯店",
-        "subCategory": "cinema",
-        "subName": "🎬 《一一》",
-        "movieTitle": "《一一》（A One and a Two）",
-        "en": "《一一》（A One and a Two）",
-        "tag": "台北市中山區 · 《一一》",
-        "address": "台北市中山區",
-        "desc": "片頭開場經典盛大婚宴場景，展現傳統中式宮殿建築的富麗堂皇與人際世故流轉。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《一一》",
-          "台北市中山區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "基隆 ｜ 中山陸橋（舒淇天橋）",
-        "subCategory": "cinema",
-        "subName": "🎬 《千禧曼波》",
-        "movieTitle": "《千禧曼波》（Millennium Mambo）",
-        "en": "《千禧曼波》（Millennium Mambo）",
-        "tag": "基隆市仁愛區 · 《千禧曼波》",
-        "address": "基隆市仁愛區",
-        "desc": "舒淇在迷幻藍色日光燈下回眸抽菸漫步的狹長天橋，已成為全球無數文青影迷來台指定打卡地標。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《千禧曼波》",
-          "基隆市仁愛區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "新北 ｜ 九份豎崎路與阿妹茶樓周邊",
-        "subCategory": "cinema",
-        "subName": "🎬 《悲情城市》",
-        "movieTitle": "《悲情城市》（A City of Sadness）",
-        "en": "《悲情城市》（A City of Sadness）",
-        "tag": "新北市瑞芳區 · 《悲情城市》",
-        "address": "新北市瑞芳區",
-        "desc": "石階長廊與層疊紅燈籠茶坊，帶動九份成為國際（尤其日本觀光客）知名朝聖勝地的關鍵電影。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《悲情城市》",
-          "新北市瑞芳區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "新北 ｜ 金瓜石八角亭與黃金神社遺跡",
-        "subCategory": "cinema",
-        "subName": "🎬 《悲情城市》",
-        "movieTitle": "《悲情城市》（A City of Sadness）",
-        "en": "《悲情城市》（A City of Sadness）",
-        "tag": "新北市瑞芳區 · 《悲情城市》",
-        "address": "新北市瑞芳區",
-        "desc": "礦業山城荒涼與歷史滄桑感交織的石階地貌，俯瞰陰陽海與無耳茶壺山的絕佳視角。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《悲情城市》",
-          "新北市瑞芳區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "宜蘭 ｜ 太平山見晴懷古步道與翠峰湖",
-        "subCategory": "cinema",
-        "subName": "🎬 《刺客聶隱娘》",
-        "movieTitle": "《刺客聶隱娘》（The Assassin）",
-        "en": "《刺客聶隱娘》（The Assassin）",
-        "tag": "宜蘭縣大同鄉 · 《刺客聶隱娘》",
-        "address": "宜蘭縣大同鄉",
-        "desc": "雲霧繚繞的千年檜木森林、苔蘚舊鐵軌，呈現極致東方美學與空靈古典山林意境。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《刺客聶隱娘》",
-          "宜蘭縣大同鄉",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "宜蘭 ｜ 棲蘭神木園",
-        "subCategory": "cinema",
-        "subName": "🎬 《刺客聶隱娘》",
-        "movieTitle": "《刺客聶隱娘》（The Assassin）",
-        "en": "《刺客聶隱娘》（The Assassin）",
-        "tag": "宜蘭縣大同鄉 · 《刺客聶隱娘》",
-        "address": "宜蘭縣大同鄉",
-        "desc": "巨大的千年紅檜神木群與幽深天然林道，展現隱世刺客靜候目標的肅穆武俠風範。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《刺客聶隱娘》",
-          "宜蘭縣大同鄉",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 華山1914文化創意產業園區",
-        "subCategory": "cinema",
-        "subName": "🎬 《愛》",
-        "movieTitle": "《愛》（LOVE）",
-        "en": "《愛》（LOVE）",
-        "tag": "台北市中正區 · 《愛》",
-        "address": "台北市中正區",
-        "desc": "紅磚歷史倉庫、文青特色咖啡館與市集草皮漫步約會場景，台北文創活力地標。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《愛》",
-          "台北市中正區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "花蓮 ｜ 七星潭月牙灣海灘",
-        "subCategory": "cinema",
-        "subName": "🎬 《愛》",
-        "movieTitle": "《愛》（LOVE）",
-        "en": "《愛》（LOVE）",
-        "tag": "花蓮縣新城鄉 · 《愛》",
-        "address": "花蓮縣新城鄉",
-        "desc": "男女主角看海沉思、撫平心靈的礫石海灘，圓潤鵝卵石與純白浪花相伴。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《愛》",
-          "花蓮縣新城鄉",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "嘉義 ｜ 東石鄉與布袋鎮漁村蚵田",
-        "subCategory": "cinema",
-        "subName": "🎬 《熱帶魚》",
-        "movieTitle": "《熱帶魚》（Tropical Fish）",
-        "en": "《熱帶魚》（Tropical Fish）",
-        "tag": "嘉義縣東石鄉 · 《熱帶魚》",
-        "address": "嘉義縣東石鄉",
-        "desc": "淹水房舍與傳統蚵田，呈現台灣中南部沿海獨特的海平面下生活樣貌與鹽田夕陽奇景。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《熱帶魚》",
-          "嘉義縣東石鄉",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 紫藤廬（大安區新生南路古蹟茶館）",
-        "subCategory": "cinema",
-        "subName": "🎬 《飲食男女》",
-        "movieTitle": "《飲食男女》（Eat Drink Man Woman）",
-        "en": "《飲食男女》（Eat Drink Man Woman）",
-        "tag": "台北市大安區 · 《飲食男女》",
-        "address": "台北市大安區",
-        "desc": "片中郎雄飾演的國宴主廚與友人品茗長談、充滿濃郁文人氣息與歲月沉澱的日式木造庭園。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《飲食男女》",
-          "台北市大安區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "台北 ｜ 中正紀念堂周邊林蔭人行道",
-        "subCategory": "cinema",
-        "subName": "🎬 《飲食男女》",
-        "movieTitle": "《飲食男女》（Eat Drink Man Woman）",
-        "en": "《飲食男女》（Eat Drink Man Woman）",
-        "tag": "台北市中正區 · 《飲食男女》",
-        "address": "台北市中正區",
-        "desc": "老父親郎雄每日清晨慢跑晨練的紅牆綠樹外圍人行步道，刻劃台北庶民晨起生活肌理。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《飲食男女》",
-          "台北市中正區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "花蓮 ｜ 鳳林鎮與壽豐鄉原始田野",
-        "subCategory": "cinema",
-        "subName": "🎬 《黑之牛》",
-        "movieTitle": "《黑之牛》（Black Ox）",
-        "en": "《黑之牛》（Black Ox）",
-        "tag": "花蓮縣鳳林鎮 · 《黑之牛》",
-        "address": "花蓮縣鳳林鎮",
-        "desc": "利用台灣東部未經人工修飾的原始水稻田、山澗溪流與泥土小徑，還原古代農耕與人牛深厚羈絆。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《黑之牛》",
-          "花蓮縣鳳林鎮",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop"
-      },
-      {
-        "name": "高雄 ｜ 蓮池潭風景區（龍虎塔與春秋閣）",
-        "subCategory": "cinema",
-        "subName": "🎬 《天邊一朵雲》",
-        "movieTitle": "《天邊一朵雲》（The Wayward Cloud）",
-        "en": "《天邊一朵雲》（The Wayward Cloud）",
-        "tag": "高雄市左營區 · 《天邊一朵雲》",
-        "address": "高雄市左營區",
-        "desc": "鮮豔巨大的東方龍虎造景、九曲橋與湖畔涼亭，成為國際藝術名片中辨識度極高的東方魔幻場景。",
-        "charterUrl": "https://www.klook.com/zh-TW/city/19-taiwan-car-charter/?aid=106452",
-        "tags": [
-          "《天邊一朵雲》",
-          "高雄市左營區",
-          "實景朝聖"
-        ],
-        "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop"
       }
     ],
     "subCategories": [
@@ -3962,11 +3424,6 @@
         "id": "temple",
         "name": "🥁 信仰廟會",
         "icon": "🥁"
-      },
-      {
-        "id": "cinema",
-        "name": "🎬 影視朝聖（20部名作/40景）",
-        "icon": "🎬"
       }
     ],
     "iconImg": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png"

@@ -69,6 +69,14 @@
   .toolbar { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
   .toolbar h2 { margin:0; }
   .search { margin-left:auto; }
+  .modal-overlay { position:fixed; inset:0; background:rgba(15,23,42,.55); display:none;
+                   align-items:center; justify-content:center; z-index:100; padding:16px; }
+  .modal-overlay.open { display:flex; }
+  .modal { background:#fff; border-radius:14px; padding:18px 20px; width:min(680px, 94vw);
+           max-height:88vh; overflow:auto; box-shadow:0 20px 60px rgba(0,0,0,.3); }
+  .modal h2 { margin:0 0 12px; font-size:16px; }
+  .modal .field-grid { grid-template-columns:repeat(2, 1fr); }
+  .modal .modal-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:14px; }
 </style>
 </head>
 <body>
@@ -86,6 +94,17 @@
     <div id="topicList"></div>
   </aside>
   <main id="main"></main>
+</div>
+
+<div class="modal-overlay" id="spotModal" onclick="if(event.target===this)closeSpotModal()">
+  <div class="modal">
+    <h2 id="spotModalTitle">新增景點</h2>
+    <div class="field-grid" id="spotModalForm"></div>
+    <div class="modal-actions">
+      <button type="button" onclick="closeSpotModal()">取消</button>
+      <button type="button" class="primary" onclick="saveNewSpot()">＋ 新增景點</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -512,13 +531,15 @@ function renderThemes(){
 
   const spots = th.spots || [];
   html += `<div class="toolbar"><h2>📍 景點 spots（${spots.length} 筆）</h2>
-    <input class="search" id="itemSearch" placeholder="🔍 搜尋景點/描述…" oninput="filterItems()"></div>`;
+    <input class="search" id="itemSearch" placeholder="🔍 搜尋景點/描述…" oninput="filterItems()">
+    <button type="button" class="add-link" onclick="openSpotModal()">＋ 加景點</button></div>`;
   spots.forEach((sp, idx)=>{
     const spPath = `${p}.spots[${idx}]`;
     html += `<div class="item-row" data-search="${escapeHtml((sp.name+' '+sp.subName+' '+sp.en+' '+sp.tag+' '+sp.desc).toLowerCase())}">
       <div class="item-head"><span class="rank">#${idx+1}</span>
         <span class="nm"><input data-path="${spPath}.name" value="${escapeHtml(sp.name||'')}"></span>
-        <span class="link">${escapeHtml(sp.subName||'')}</span></div>
+        <span class="link">${escapeHtml(sp.subName||'')}</span>
+        <button type="button" class="link-del" onclick="removeSpot(${idx})" title="刪除景點">✕</button></div>
       <div class="item-body field-grid">
         ${tfp(spPath,'subCategory', sp.subCategory)} ${tfp(spPath,'subName', sp.subName)}
         ${tfp(spPath,'en', sp.en)} ${tfp(spPath,'tag', sp.tag)}
@@ -542,6 +563,81 @@ function spotExtras(path, sp){
   if(sp.rank !== undefined) out += `<div>${label('rank')}<input data-numeric="1" data-path="${path}.rank" value="${escapeHtml(sp.rank)}"></div>`;
   if(Array.isArray(sp.tags)) out += `<div class="full">${label('tags（逗號分隔）')}<textarea data-path="${path}.tags" data-csv="1">${escapeHtml(sp.tags.join(', '))}</textarea></div>`;
   return out;
+}
+
+function openSpotModal(){
+  const th = state.data[state.selectedTheme];
+  if(!th){ return; }
+  const subs = (th.subCategories||[]).filter(sc => sc.id !== 'all');
+  const opts = subs.map(sc => `<option value="${escapeHtml(sc.id)}">${escapeHtml(sc.name)}</option>`).join('');
+  $('#spotModalTitle').textContent = `新增景點：${th.shortTitle || th.name || th.id}`;
+  $('#spotModalForm').innerHTML = `
+    <div>${label('name（景點名稱）')}<input id="ns_name" placeholder="必填"></div>
+    <div>${label('subCategory（分類）')}<select id="ns_subCategory">${opts}</select></div>
+    <div>${label('subName（分類小標）')}<input id="ns_subName" placeholder="例：NO.1 人氣鐵路"></div>
+    <div>${label('en（英文名稱）')}<input id="ns_en" placeholder=""></div>
+    <div>${label('tag（地點標籤）')}<input id="ns_tag" placeholder="例：新北萬里 · 精選地標"></div>
+    <div>${label('img（圖片）')}<input id="ns_img" placeholder="https://..."></div>
+    <div class="full">${label('desc（描述）')}<textarea id="ns_desc"></textarea></div>
+    <div>${label('hotelUrl（飯店分潤）')}<input id="ns_hotelUrl" placeholder="https://..."></div>
+    <div>${label('charterUrl（包車分潤）')}<input id="ns_charterUrl" placeholder="https://..."></div>
+    <div>${label('trainTicketUrl（車票分潤）')}<input id="ns_trainTicketUrl" placeholder="https://..."></div>
+    <div>${label('permitUrl（申請連結）')}<input id="ns_permitUrl" placeholder="https://..."></div>
+    <div>${label('campUrl（露營分潤）')}<input id="ns_campUrl" placeholder="https://..."></div>
+    <div class="full hint" style="margin-top:2px">額外欄位（選填）</div>
+    <div>${label('rate（評分）')}<input id="ns_rate" placeholder="例：5.0★"></div>
+    <div>${label('rank（排序，數字）')}<input id="ns_rank" placeholder=""></div>
+    <div>${label('altitude（海拔）')}<input id="ns_altitude" placeholder=""></div>
+    <div>${label('address（地址）')}<input id="ns_address" placeholder=""></div>
+    <div>${label('route（路線）')}<input id="ns_route" placeholder=""></div>
+    <div>${label('movieTitle（影視作品）')}<input id="ns_movieTitle" placeholder="例：《不能說的秘密》"></div>
+    <div>${label('day1Plan（第一天）')}<input id="ns_day1Plan" placeholder=""></div>
+    <div>${label('day2Plan（第二天）')}<input id="ns_day2Plan" placeholder=""></div>
+    <div class="full">${label('tags（逗號分隔）')}<textarea id="ns_tags"></textarea></div>
+  `;
+  $('#spotModal').classList.add('open');
+  const nameEl = $('#ns_name');
+  if(nameEl) nameEl.focus();
+}
+
+function closeSpotModal(){
+  $('#spotModal').classList.remove('open');
+}
+
+function saveNewSpot(){
+  const th = state.data[state.selectedTheme];
+  const val = id => { const el = $('#'+id); return el ? el.value.trim() : ''; };
+  const spot = {
+    name: val('ns_name'),
+    subCategory: val('ns_subCategory'),
+    subName: val('ns_subName'),
+    en: val('ns_en'),
+    tag: val('ns_tag'),
+    desc: val('ns_desc'),
+    img: val('ns_img'),
+  };
+  const urls = { hotelUrl:'ns_hotelUrl', charterUrl:'ns_charterUrl', trainTicketUrl:'ns_trainTicketUrl', permitUrl:'ns_permitUrl', campUrl:'ns_campUrl' };
+  for(const k in urls){ const v = val(urls[k]); if(v) spot[k] = v; }
+  const singles = ['rate','altitude','address','route','movieTitle','day1Plan','day2Plan'];
+  singles.forEach(k=>{ const v = val('ns_'+k); if(v) spot[k] = v; });
+  const rank = val('ns_rank');
+  if(rank !== '') spot.rank = Number(rank);
+  const tags = val('ns_tags');
+  if(tags) spot.tags = tags.split(',').map(t=>t.trim()).filter(Boolean);
+  if(!spot.name){ alert('請填寫景點名稱'); return; }
+  if(!Array.isArray(th.spots)) th.spots = [];
+  th.spots.push(spot);
+  closeSpotModal();
+  markDirty();
+  render();
+}
+
+function removeSpot(idx){
+  if(!confirm('確定刪除這個景點？儲存後會從所有語言同步移除。')) return;
+  const th = state.data[state.selectedTheme];
+  if(Array.isArray(th.spots)) th.spots.splice(idx, 1);
+  markDirty();
+  render();
 }
 
 function renderSouvenirsList(){

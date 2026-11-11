@@ -14,6 +14,7 @@
 """
 
 import argparse
+import copy
 import json
 import os
 import sys
@@ -88,7 +89,11 @@ def should_sync(key, value):
 
 
 def sync_node(src, tgt):
-    """把 src 中應同步的欄位（http / type）就地合併進 tgt（並行結構）。"""
+    """把 src 中應同步的欄位（http / type）就地合併進 tgt（並行結構）。
+
+    列表長度也會對齊 src：多出的會刪除、少掉的會補上（深拷貝 src 的新增項），
+    讓刪除/新增「景點」等清單項目時能同步到其他語言。
+    """
     if isinstance(src, dict) and isinstance(tgt, dict):
         for key, sval in src.items():
             if should_sync(key, sval):
@@ -99,6 +104,10 @@ def sync_node(src, tgt):
         for i, sval in enumerate(src):
             if i < len(tgt):
                 sync_node(sval, tgt[i])
+        if len(tgt) > len(src):
+            del tgt[len(src):]
+        elif len(tgt) < len(src):
+            tgt.extend(copy.deepcopy(src[len(tgt):]))
 
 
 def sync_to_other_langs(rel, data):
