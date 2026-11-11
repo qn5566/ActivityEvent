@@ -31,7 +31,14 @@
             "signature": "深入探索金門與馬祖的戰地記憶：長輩口中的金馬獎軍中鬼故事、花崗岩坑道鬼斧神工、夜半鬼哭到海風夕陽、藍眼淚踩浪、閩東石屋、Klook渡輪包車與Trip.com特色民宿推薦。",
             "transport": "金門尚義機場 / 南竿機場 / 北竿機場 / 基隆港臺馬輪",
             "mapQuery": "https://maps.google.com/?q=金門翟山坑道",
-            "bookingUrl": "https://www.klook.com/?aid=106452"
+            "bookingUrl": "https://www.klook.com/?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -66,7 +73,14 @@
             "signature": "深入探索超越日本富士山標高的東北亞第一高峰玉山主峰（3,952m）、天使的眼淚嘉明湖（3,310m）與台灣百岳縱走。內含外國人山屋申請配額、入山證法規、四季降雪結冰期、冰爪裝備指南與專屬包車路線。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=玉山主峰",
-            "bookingUrl": "https://www.klook.com/?aid=106452"
+            "bookingUrl": "https://www.klook.com/?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -101,7 +115,14 @@
             "signature": "北海岸與東北角浮潛深潛全指南：龍洞四季灣救生員規劃、和平島安全海水池、潮間帶河豚海參探奇；進階基隆嶼海扇林與望海巷沉船包船深潛。精選 Klook 浮潛課程、專車包車、周邊 6 家海鮮餐廳（鼻頭阿珠老店、望海巷石頭火鍋、巧宴海鮮、長腳小卷米粉、黑白毛海鮮、下麵餐酒）與 3 家風格咖啡店（我們在海邊、靠北過日子、野事草店）。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=龍洞四季灣",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/34862-northeast-discover-scuba-diving-longdong?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/34862-northeast-discover-scuba-diving-longdong?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/34862-northeast-discover-scuba-diving-longdong?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -136,7 +157,14 @@
             "signature": "新竹深度慢旅全攻略：城隍廟池府王爺祈福求子、十七公里海岸線綠色隧道騎單車看風車、新竹市立動物園與青青草原放風箏。精選 3 家海邊咖啡（沒有名字的甜點、LUAU柴寮披薩、南寮海角咖啡）、3 家山上秘境咖啡（日見森嵐、六號花園、上山喝咖啡）、3 家米其林與頂級名店（彼刻義式、唯星法式、國賓八方燴）、6 家城隍廟商圈夜市老字號小吃（廟口鴨香飯、北門炸粿、西市汕頭館、原夜市鴨肉麵、老段純真牛肉麵、葉大鵬潤餅）、3 大必逛傳統市場（東門市場、新竹中央市場、竹蓮市場）與尖石司馬庫斯高山露營溫泉包車指南。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=新竹城隍廟與司馬庫斯巨木群",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/80048-hsinchu-sima-kusi-one-day-tour?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/80048-hsinchu-sima-kusi-one-day-tour?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/80048-hsinchu-sima-kusi-one-day-tour?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -171,7 +199,14 @@
             "signature": "走訪宜蘭超過 50 次的深度私房指南：從礁溪美人湯溫泉滑水道、頭城外澳衝浪與 SUP 立槳、蘭陽平原百萬夜景露營到親子水豚農場。完整收錄 6 家田園早午餐（黑宅、日光私廚、初陽、光宅、好森、正好小籠包）、6 家親子飯店、3 家溫泉滑水道飯店、3 家傳奇小吃、3 家無菜單與國宴名店、3 家微醺酒吧、3 間烏石港衝浪店、3 家龜山島海景咖啡與租車包車全攻略。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=宜蘭礁溪溫泉與頭城外澳",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/10737-turtle-island-whale-watching-tour-yilan?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/10737-turtle-island-whale-watching-tour-yilan?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/10737-turtle-island-whale-watching-tour-yilan?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -206,7 +241,14 @@
             "signature": "深入花蓮野性與慢活：七星潭疊石聽浪、雲山水落羽松夢幻湖、阿美族海祭場「人臉側面岩」雙路線探險、大石鼻山步道與高山森林基地。精選 3 家太平洋海景咖啡（海崖谷、山度空間、原野牧場）、3 家排隊老牌冰品（佳興冰果室、正當冰、光復糖廠）、3 家米其林與指標海鮮（達基力、欣欣麵館、翰品怡園）、3 家 Klook 站前租車機車（格上、和運、胖草）與 3 家原住民柴燒野菜料理（達基力、巴奇克、紅瓦屋石頭火鍋）。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=花蓮七星潭風景區",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/3725-qingshui-cliff-sea-kayak-hualien?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/3725-qingshui-cliff-sea-kayak-hualien?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/3725-qingshui-cliff-sea-kayak-hualien?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -241,7 +283,14 @@
             "signature": "台南慢活深度長旅：海安路萬聖節街區、雙層觀光巴士環遊安平古蹟、中西區磨石子老宅民宿。完整收錄 6 家在地人私藏麵店（葉家／邱家小卷米粉、恭仔意麵、阿江炒鱔魚、民生路無名意麵、老牌川味牛肉麵）、6 家品茗茶館（奉茶、窄門、隱肆好茶、衛屋茶事、雙全紅茶、聚珍臺灣）、6 家老宅咖啡（PARIPARI apt.、Kadoya、StableNice 等）與 3 大米其林台菜（阿霞飯店、筑馨居、博仁堂）。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=台南海安路藝術街",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/8875-chimei-museum-permanent-exhibition-ticket-tainan?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/8875-chimei-museum-permanent-exhibition-ticket-tainan?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/8875-chimei-museum-permanent-exhibition-ticket-tainan?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -276,7 +325,14 @@
             "signature": "深入北海岸與九份秘境：阿妹茶樓泡茶看深澳海灣夕陽日落、三芝四季親子與寵物友善看海咖啡店、龜吼漁港大啖現蒸萬里蟹與潮間帶抓寄居蟹、水湳洞陰陽海「可頌岩」奇岩地質與十三層遺址。完整收錄 6 家風格海景咖啡（我們在海邊、靠北過日子、Papa 在三芝、白日夢、洋荳子、野事草店）、3 家老街必吃小吃（阿柑姨芋圓、阿蘭草仔粿、金山鴨肉）、3 家現撈海鮮（巧宴、靖瑜、望海巷石頭火鍋）與專車包車一日遊全攻略。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=九份老街",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/9909-popular-sightseeing-charter-tour-taipei?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/9909-popular-sightseeing-charter-tour-taipei?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/9909-popular-sightseeing-charter-tour-taipei?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -311,7 +367,14 @@
             "signature": "深入台北慢活日常：迪化街年味試吃焦香烏魚子、赤峰街科技業回憶探店昭和布丁與脆皮甜甜圈、忠孝新生華山 1914 展演與三創生活園區動漫公仔扭蛋。完整收錄台北必吃美饌 5 選（鼎泰豐／小王煮瓜／阜杭豆漿／金蓬萊台菜／施家鮮肉湯圓）、冠軍手沖興波咖啡、ASW 洋樓茶館與亞洲 50 大酒吧 Bar Mood、Draft Land 等 6 大巷弄慢飲空間。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=大稻埕迪化街",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/1659-taipei-101-taipei?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/1659-taipei-101-taipei?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/1659-taipei-101-taipei?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -346,7 +409,14 @@
             "signature": "深入高雄港都蛻變：從重工業拆船碼頭到亞洲新灣區、水岸輕軌、駁二大港橋旋轉、SKM Park 草衙道親子樂園與大鵬灣兜風漫遊。完整收錄高雄三大必喝厚奶茶（樺達／双妃／老江）、米其林一星餐廳 3 選（雋 GEN／承 Sho／Haili）、在地老饕私藏 5 大鴨肉名店（鴨肉珍／鴨肉本／正昌／七賢／極品當歸鴨）與 6 間挑高海景咖啡館。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=駁二藝術特區大港橋",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/13607-kaohsiung-classic-attractions-day-tour-kaohsiung?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/13607-kaohsiung-classic-attractions-day-tour-kaohsiung?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/13607-kaohsiung-classic-attractions-day-tour-kaohsiung?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -381,7 +451,14 @@
             "signature": "收錄旅人深度露營與晨騎真實心境、向山清水模水上單車道評測、水陸空 3 種視角（綠能渡輪／高空纜車／貓囒山步道）全覽評比、5 大湖岸風土美食（金盆阿嬤茶葉蛋／杜太太手工麻糬／邵族刺蔥料理／湖妹草仔粿／涵碧樓東方餐廳）與 6 間台茶 18 號湖景咖啡茶席，附外國旅客全英文指南與 3 天 2 夜排程。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=日月潭向山遊客中心",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/33027-formosa-aboriginal-cultural-village-ticket-sun-moon-lake-boat-pass?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/33027-formosa-aboriginal-cultural-village-ticket-sun-moon-lake-boat-pass?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/33027-formosa-aboriginal-cultural-village-ticket-sun-moon-lake-boat-pass?aid=106452"
+                }
+            ]
         }
     },
     {
@@ -416,7 +493,14 @@
             "signature": "來過無數次阿里山的真情告白：從單身追曙光到帶著孩子露營淨化心靈。完整收錄阿里山林鐵全線通車歷史與四大螺旋工法、紅檜巨木科學樹齡、5 大必吃山味（奮起湖雅湖便當／Hana 廚房／山賓石頭火鍋／游芭絲鄒宴／阿嬤草仔粿）、3 間雲海咖啡莊園，以及小笠原山追日出評比與 3 天 2 夜慢活排程表。",
             "transport": "",
             "mapQuery": "https://maps.google.com/?q=阿里山國家森林遊樂區",
-            "bookingUrl": "https://www.klook.com/zh-TW/activity/19834-alishan-forest-ticket-fenchihu-lunchbox-taichung?aid=106452"
+            "bookingUrl": "https://www.klook.com/zh-TW/activity/19834-alishan-forest-ticket-fenchihu-lunchbox-taichung?aid=106452",
+            "links": [
+                {
+                    "type": "klook",
+                    "label": "Klook 預訂",
+                    "url": "https://www.klook.com/zh-TW/activity/19834-alishan-forest-ticket-fenchihu-lunchbox-taichung?aid=106452"
+                }
+            ]
         }
     }
 ]

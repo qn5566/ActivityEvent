@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ActivityEvent 內容管理</title>
+<style>
+  :root {
+    --bg:#f4f6fa; --panel:#ffffff; --line:#e2e8f0; --ink:#1e293b; --muted:#64748b;
+    --accent:#2563eb; --accent-ink:#ffffff; --danger:#dc2626;
+    --klook:#7c3aed; --trip:#0d9488; --map:#64748b; --owlting:#ea580c;
+    --souvenir:#db2777; --dining:#ca8a04;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+         background:var(--bg); color:var(--ink); font-size:14px; }
+  header { display:flex; align-items:center; gap:12px; padding:10px 16px; background:var(--panel);
+           border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; flex-wrap:wrap; }
+  header h1 { font-size:16px; margin:0; font-weight:700; }
+  header .grow { flex:1; }
+  select, button { font-size:13px; padding:6px 10px; border-radius:8px; border:1px solid var(--line); background:#fff; }
+  button.primary { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); cursor:pointer; font-weight:600; }
+  button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  #status { font-size:12px; color:var(--muted); }
+  #status.dirty { color:#b45309; }
+  #status.ok { color:#15803d; }
+  #status.err { color:var(--danger); }
+
+  .layout { display:flex; min-height:calc(100vh - 53px); }
+  aside { width:230px; background:var(--panel); border-right:1px solid var(--line); padding:10px; overflow-y:auto; }
+  aside .lang-tabs { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
+  aside .lang-tabs button { font-size:11px; padding:3px 7px; border-radius:6px; }
+  aside .lang-tabs button.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .topic-item { display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; cursor:pointer; margin-bottom:2px; }
+  .topic-item:hover { background:#eef2ff; }
+  .topic-item.on { background:#dbeafe; font-weight:600; }
+  .topic-item .ic { font-size:18px; }
+  .topic-item .nm { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .topic-item .cnt { font-size:11px; color:var(--muted); }
+
+  main { flex:1; padding:16px; overflow-y:auto; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:14px; }
+  .card h2 { font-size:15px; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
+  .field-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; }
+  .field-grid .full { grid-column:1 / -1; }
+  label { display:block; font-size:12px; color:var(--muted); margin-bottom:3px; }
+  input, textarea { width:100%; padding:7px 9px; border:1px solid var(--line); border-radius:8px; font-size:13px;
+                    font-family:inherit; background:#fbfcfe; }
+  input:focus, textarea:focus { outline:2px solid #bfdbfe; border-color:var(--accent); }
+  textarea { resize:vertical; min-height:46px; }
+  .badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:999px; color:#fff; font-weight:600; }
+  .b-klook{background:var(--klook)} .b-trip{background:var(--trip)} .b-map{background:var(--map)}
+  .b-owlting{background:var(--owlting)} .b-souvenir{background:var(--souvenir)} .b-dining{background:var(--dining)}
+  .b-none{background:#94a3b8}
+  .item-row { border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:10px; }
+  .item-head { display:flex; align-items:center; gap:10px; }
+  .item-head .rank { font-weight:700; color:var(--muted); min-width:22px; }
+  .item-head .nm { flex:1; }
+  .item-head .link { font-size:12px; }
+  .item-body { margin-top:8px; }
+  .mono, .link-a { font-size:12px; color:var(--accent); word-break:break-all; text-decoration:none; }
+  .link-a:hover { text-decoration:underline; }
+  .hint { font-size:12px; color:var(--muted); }
+  .links-editor { margin-top:8px; border-top:1px dashed var(--line); padding-top:8px; }
+  .link-row { display:grid; grid-template-columns:90px 130px 1fr 28px; gap:6px; margin-bottom:6px; align-items:center; }
+  .link-row input { padding:5px 7px; font-size:12px; }
+  .link-del { border:none; background:transparent; color:var(--danger); cursor:pointer; font-size:14px; padding:2px; }
+  .add-link { border:1px dashed var(--accent); color:var(--accent); background:#fff; border-radius:8px; padding:4px 10px; cursor:pointer; font-size:12px; }
+  .toolbar { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .toolbar h2 { margin:0; }
+  .search { margin-left:auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏷️ ActivityEvent 內容管理</h1>
+  <select id="fileSelect" title="選擇檔案"></select>
+  <button id="reloadBtn">重新載入</button>
+  <button id="saveBtn" class="primary" disabled>💾 存檔</button>
+  <span id="status">就緒</span>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="lang-tabs" id="langTabs"></div>
+    <div id="topicList"></div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script>
+const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, dirty:false, files:{} };
+const $ = s => document.querySelector(s);
+
+function channelBadge(type){
+  const t = (type||'').toLowerCase();
+  const cls = {klook:'b-klook', trip:'b-trip', map:'b-map', owlting:'b-owlting', souvenir:'b-souvenir', dining:'b-dining'}[t] || 'b-none';
+  return `<span class="badge ${cls}">${type||'—'}</span>`;
+}
+
+async function api(url, opts){
+  const r = await fetch(url, opts);
+  const j = await r.json();
+  if(!r.ok) throw new Error(j.error || ('HTTP '+r.status));
+  return j;
+}
+
+async function loadFiles(){
+  state.files = await api('/api/files');
+  const sel = $('#fileSelect');
+  const langs = Object.keys(state.files).sort();
+  sel.innerHTML = '';
+  const add = (label, value) => {
+    const o = document.createElement('option');
+    o.value = value; o.textContent = label; sel.appendChild(o);
+  };
+  for(const dir of langs){
+    for(const f of state.files[dir]){
+      const rel = (dir === '.' ? f : dir + '/' + f);
+      add(rel, rel);
+    }
+  }
+  // 預設選 zh/rankings.json
+  const preferred = 'content/zh/rankings.json';
+  if([...sel.options].some(o => o.value === preferred)) sel.value = preferred;
+  renderLangTabs();
+  await loadFile(sel.value);
+}
+
+function renderLangTabs(){
+  const wrap = $('#langTabs');
+  wrap.innerHTML = '';
+  const langs = Object.keys(state.files).filter(d => d.startsWith('content/')).sort();
+  for(const dir of langs){
+    const lang = dir.split('/')[1];
+    const b = document.createElement('button');
+    b.textContent = lang;
+    b.onclick = () => switchLang(lang);
+    const cur = state.path ? state.path.split('/')[1] : null;
+    if(lang === cur) b.classList.add('on');
+    wrap.appendChild(b);
+  }
+}
+
+function switchLang(lang){
+  const fname = state.path ? state.path.split('/').pop() : 'rankings.json';
+  const rel = `content/${lang}/${fname}`;
+  if(state.files[`content/${lang}`] && state.files[`content/${lang}`].includes(fname)){
+    $('#fileSelect').value = rel;
+    loadFile(rel);
+  }
+}
+
+async function loadFile(path){
+  const res = await api('/api/file?path=' + encodeURIComponent(path));
+  state.path = res.path;
+  state.data = res.data;
+  state.dirty = false;
+  state.selectedTopic = null;
+  state.selectedArticle = null;
+  state.selectedCafe = null;
+  state.selectedCharter = null;
+  state.selectedMichelin = null;
+  state.selectedTheme = null;
+  state.selectedSouvenir = null;
+  updateStatus();
+  renderLangTabs();
+  render();
+}
+
+function render(){
+  const main = $('#main');
+  if(!state.data) { main.innerHTML = '<div class="card">載入中…</div>'; return; }
+  if(state.data && state.data.topics && state.data.items){
+    renderRankings();
+    renderTopics();
+  } else if(state.data && Array.isArray(state.data.stars) && Array.isArray(state.data.bib)){
+    renderMichelin();
+    renderMichelinList();
+  } else if(Array.isArray(state.data) && state.data.length && (state.data[0].spotInfo !== undefined || state.data[0].fullHtmlArticle !== undefined)){
+    renderBlog();
+    renderBlogList();
+  } else if(Array.isArray(state.data) && state.data.length && state.data[0].mapUrl !== undefined){
+    renderCafe();
+    renderCafeList();
+  } else if(Array.isArray(state.data) && state.data.length && state.data[0].commissionRate !== undefined){
+    renderCharter();
+    renderCharterList();
+  } else if(Array.isArray(state.data) && state.data.length && state.data[0].bookingCta !== undefined){
+    renderThemes();
+    renderThemesList();
+  } else if(Array.isArray(state.data) && state.data.length && state.data[0].defaultUrl !== undefined && state.data[0].items !== undefined){
+    renderSouvenirs();
+    renderSouvenirsList();
+  } else {
+    main.innerHTML = `<div class="card"><h2>${state.path}</h2><pre>${escapeHtml(JSON.stringify(state.data,null,2))}</pre></div>`;
+    $('#topicList').innerHTML = '';
+  }
+}
+
+function renderTopics(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!(state.data && state.data.topics)) return;
+  state.data.topics.forEach((t,i)=>{
+    const items = state.data.items[t.id] || [];
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state.selectedTopic === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">${t.icon||''}</span><span class="nm">${escapeHtml(t.zhName||t.id)}</span><span class="cnt">${items.length}</span>`;
+    div.onclick = ()=>{ state.selectedTopic = i; render(); };
+    list.appendChild(div);
+  });
+}
+
+function renderBlogList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!Array.isArray(state.data)) return;
+  state.data.forEach((a,i)=>{
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state.selectedArticle === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">📄</span><span class="nm">${escapeHtml(a.title||a.id)}</span>`;
+    div.onclick = ()=>{ state.selectedArticle = i; render(); };
+    list.appendChild(div);
+  });
+}
+
+function escapeHtml(s){
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderBlog(){
+  const main = $('#main');
+  if(state.selectedArticle == null){ state.selectedArticle = 0; }
+  const a = state.data[state.selectedArticle];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const sp = a.spotInfo || {};
+  const p = `[${state.selectedArticle}]`;
+  const spPath = `${p}.spotInfo`;
+
+  let html = `<div class="toolbar"><h2>文章 ${state.selectedArticle+1} / ${state.data.length}</h2>
+    <input class="search" id="itemSearch" placeholder="🔍 搜尋內文…" style="display:none"></div>`;
+
+  html += `<div class="card"><h2>📄 文章資訊</h2><div class="field-grid">
+    ${tfp(p,'id', a.id)} ${tfp(p,'category', a.category)}
+    ${tap(p,'title', a.title)} ${tap(p,'subtitle', a.subtitle)}
+    ${tfp(p,'author', a.author)} ${tfp(p,'readTime', a.readTime)}
+    ${tfp(p,'date', a.date)} ${tfp(p,'vol', a.vol)}
+    ${tfp(p,'city', a.city)} ${tfp(p,'district', a.district)}
+    ${tfp(p,'slug', a.slug)} ${tfp(p,'rating', a.rating)}
+    ${tfp(p,'readCount', a.readCount)} ${tfp(p,'heroImg', a.heroImg)}
+    ${tap(p,'authorQuote', a.authorQuote)}
+  </div></div>`;
+
+  html += `<div class="card"><h2>📍 景點資訊 spotInfo</h2><div class="field-grid">
+    ${tap(spPath,'name', sp.name)} ${tap(spPath,'address', sp.address)}
+    ${tap(spPath,'hours', sp.hours)} ${tap(spPath,'transport', sp.transport)}
+    ${tap(spPath,'signature', sp.signature)}
+    ${tap(spPath,'mapQuery', sp.mapQuery)} ${tap(spPath,'bookingUrl', sp.bookingUrl)}
+  </div>
+  ${renderLinks(`${spPath}.links`, sp.links)}
+  </div>`;
+
+  html += `<div class="card"><h2>📝 內容 content</h2>
+    <textarea data-path="${p}.content" style="min-height:280px;font-family:monospace;font-size:12px">${escapeHtml(a.content||'')}</textarea>
+  </div>`;
+
+  html += `<div class="card"><h2>🌐 fullHtmlArticle（HTML）</h2>
+    <textarea data-path="${p}.fullHtmlArticle" style="min-height:280px;font-family:monospace;font-size:12px">${escapeHtml(a.fullHtmlArticle||'')}</textarea>
+  </div>`;
+
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function renderCafeList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!Array.isArray(state.data)) return;
+  const search = document.createElement('input');
+  search.id = 'cafeSearch';
+  search.placeholder = '🔍 搜尋咖啡店…';
+  search.style.cssText = 'width:100%;padding:6px 8px;margin-bottom:8px;box-sizing:border-box;border-radius:8px;border:1px solid var(--line);font-size:12px;';
+  search.oninput = () => renderCafeItems(($('#cafeSearch').value||'').toLowerCase());
+  list.appendChild(search);
+  const container = document.createElement('div');
+  container.id = 'cafeListContainer';
+  list.appendChild(container);
+  renderCafeItems('');
+}
+
+function renderCafeItems(q){
+  const c = $('#cafeListContainer');
+  if(!c) return;
+  c.innerHTML = '';
+  state.data.forEach((a,i)=>{
+    const text = ((a.name||'')+' '+(a.city||'')+' '+(a.district||'')+' '+(a.features||'')).toLowerCase();
+    if(q && !text.includes(q)) return;
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state.selectedCafe === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">☕</span><span class="nm">${escapeHtml(a.name)}</span><span class="cnt">${escapeHtml(a.city||'')}</span>`;
+    div.onclick = ()=>{ state.selectedCafe = i; render(); };
+    c.appendChild(div);
+  });
+}
+
+function renderCafe(){
+  const main = $('#main');
+  if(state.selectedCafe == null){ state.selectedCafe = 0; }
+  const a = state.data[state.selectedCafe];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedCafe}]`;
+  let html = `<div class="toolbar"><h2>☕ 咖啡店 ${state.selectedCafe+1} / ${state.data.length}：${escapeHtml(a.name)}</h2></div>`;
+  html += `<div class="card"><h2>基本資訊</h2><div class="field-grid">
+    ${tfp(p,'id', a.id)} ${tfp(p,'status', a.status)}
+    ${tap(p,'name', a.name)} ${tfp(p,'city', a.city)}
+    ${tfp(p,'city_en', a.city_en)} ${tfp(p,'district', a.district)}
+    ${tap(p,'address', a.address)} ${tfp(p,'phone', a.phone)}
+    ${tfp(p,'price', a.price)} ${tfp(p,'rate', a.rate)}
+    ${tap(p,'features', a.features)}
+    ${tap(p,'mapUrl', a.mapUrl)} ${tap(p,'img', a.img)}
+  </div></div>`;
+  html += `<div class="card"><h2>🏷️ 標籤與分潤連結</h2><div class="field-grid">
+    <div class="full">${label('tags（逗號分隔）')}<textarea data-path="${p}.tags" data-csv="1">${escapeHtml((a.tags||[]).join(', '))}</textarea></div>
+    <div class="full">${label('tagEmojis（逗號分隔）')}<textarea data-path="${p}.tagEmojis" data-csv="1">${escapeHtml((a.tagEmojis||[]).join(', '))}</textarea></div>
+  </div>
+  ${renderLinks(`${p}.links`, a.links)}
+  </div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function renderCharterList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!Array.isArray(state.data)) return;
+  const search = document.createElement('input');
+  search.id = 'charterSearch';
+  search.placeholder = '🔍 搜尋包車…';
+  search.style.cssText = 'width:100%;padding:6px 8px;margin-bottom:8px;box-sizing:border-box;border-radius:8px;border:1px solid var(--line);font-size:12px;';
+  search.oninput = () => renderCharterItems(($('#charterSearch').value||'').toLowerCase());
+  list.appendChild(search);
+  const container = document.createElement('div');
+  container.id = 'charterListContainer';
+  list.appendChild(container);
+  renderCharterItems('');
+}
+
+function toPct(r){ return Math.round((r||0)*10000)/100; }
+
+function renderCharterItems(q){
+  const c = $('#charterListContainer');
+  if(!c) return;
+  c.innerHTML = '';
+  state.data.forEach((a,i)=>{
+    const text = ((a.name||'')+' '+(a.city||'')+' '+(a.country||'')).toLowerCase();
+    if(q && !text.includes(q)) return;
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state.selectedCharter === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">🚗</span><span class="nm">${escapeHtml(a.name)}</span><span class="cnt">${toPct(a.commissionRate)}%</span>`;
+    div.onclick = ()=>{ state.selectedCharter = i; render(); };
+    c.appendChild(div);
+  });
+}
+
+function renderCharter(){
+  const main = $('#main');
+  if(state.selectedCharter == null){ state.selectedCharter = 0; }
+  const a = state.data[state.selectedCharter];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedCharter}]`;
+  let html = `<div class="toolbar"><h2>🚗 包車 ${state.selectedCharter+1} / ${state.data.length}</h2></div>`;
+  html += `<div class="card"><h2>分潤與基本資訊</h2><div class="field-grid">
+    ${tap(p,'name', a.name)} ${tfp(p,'city', a.city)}
+    ${tfp(p,'country', a.country)} ${tfp(p,'currency', a.currency)}
+    <div>${label('price')}<input data-path="${p}.price" data-numeric="1" value="${escapeHtml(a.price)}"></div>
+    <div>${label('commissionRate（分潤，% 顯示，存為小數）')}<input data-path="${p}.commissionRate" data-percent="1" step="0.01" value="${toPct(a.commissionRate)}"></div>
+    <div>${label('instantConfirmation')}<select data-path="${p}.instantConfirmation" data-bool="1">
+      <option value="true"${a.instantConfirmation?' selected':''}>true</option>
+      <option value="false"${a.instantConfirmation?'':' selected'}>false</option>
+    </select></div>
+    ${tap(p,'image', a.image)}
+    ${tap(p,'affiliateUrl', a.affiliateUrl)}
+  </div></div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function renderMichelinList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!(state.data && state.data.stars)) return;
+  const groups = [
+    {key:'stars', title:'⭐ 米其林星級', ic:'⭐'},
+    {key:'bib', title:'🍜 必比登推介', ic:'🍜'},
+  ];
+  groups.forEach(g=>{
+    const arr = state.data[g.key] || [];
+    const h = document.createElement('div');
+    h.style.cssText = 'font-size:11px;color:var(--muted);padding:8px 10px 4px;font-weight:700;';
+    h.textContent = `${g.title} (${arr.length})`;
+    list.appendChild(h);
+    arr.forEach((a,i)=>{
+      const on = state.selectedMichelin && state.selectedMichelin.section===g.key && state.selectedMichelin.index===i;
+      const div = document.createElement('div');
+      div.className = 'topic-item' + (on ? ' on' : '');
+      div.innerHTML = `<span class="ic">${g.ic}</span><span class="nm">${escapeHtml(a.name)}</span><span class="cnt">${escapeHtml(a.stars||a.badge||'')}</span>`;
+      div.onclick = ()=>{ state.selectedMichelin = {section:g.key, index:i}; render(); };
+      list.appendChild(div);
+    });
+  });
+}
+
+function renderMichelin(){
+  const main = $('#main');
+  if(!state.selectedMichelin){ state.selectedMichelin = {section:'stars', index:0}; }
+  const sel = state.selectedMichelin;
+  const arr = state.data[sel.section] || [];
+  const a = arr[sel.index];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `${sel.section}[${sel.index}]`;
+  const isStar = sel.section === 'stars';
+  let html = `<div class="toolbar"><h2>${isStar?'⭐ 米其林星級':'🍜 必比登推介'} #${a.rank}：${escapeHtml(a.name)}</h2></div>`;
+  html += `<div class="card"><h2>基本資訊</h2><div class="field-grid">`;
+  html += `${tfp(p,'id', a.id)} <div>${label('rank')}<input data-numeric="1" data-path="${p}.rank" value="${escapeHtml(a.rank)}"></div>`;
+  html += `${tap(p,'name', a.name)}`;
+  if(isStar){
+    html += `${tfp(p,'stars', a.stars)} ${tfp(p,'category', a.category)}`;
+    html += `${tap(p,'categoryName', a.categoryName)} ${tap(p,'cuisine', a.cuisine)}`;
+  } else {
+    html += `${tfp(p,'badge', a.badge)} ${tfp(p,'region', a.region)}`;
+    html += `${tap(p,'dishes', a.dishes)}`;
+  }
+  html += `${tfp(p,'city', a.city)} ${tap(p,'address', a.address)}`;
+  html += `${tfp(p,'price', a.price)} ${tfp(p,'rate', a.rate)}`;
+  html += `${tap(p, isStar?'feature':'desc', isStar?a.feature:a.desc)}`;
+  html += `${tap(p,'img', a.img)}`;
+  html += `</div>${renderLinks(`${p}.links`, a.links)}</div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function renderThemesList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!Array.isArray(state.data)) return;
+  state.data.forEach((th,i)=>{
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state.selectedTheme === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">${escapeHtml(th.icon||'')}</span><span class="nm">${escapeHtml(th.shortTitle||th.id)}</span><span class="cnt">${(th.spots||[]).length}</span>`;
+    div.onclick = ()=>{ state.selectedTheme = i; render(); };
+    list.appendChild(div);
+  });
+}
+
+function renderThemes(){
+  const main = $('#main');
+  if(state.selectedTheme == null){ state.selectedTheme = 0; }
+  const th = state.data[state.selectedTheme];
+  if(!th){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedTheme}]`;
+  const bc = th.bookingCta || {};
+  let html = `<div class="toolbar"><h2>${escapeHtml(th.icon||'')} 主題 ${state.selectedTheme+1} / ${state.data.length}：${escapeHtml(th.shortTitle||th.id)}</h2></div>`;
+
+  html += `<div class="card"><h2>基本資訊</h2><div class="field-grid">
+    ${tfp(p,'id', th.id)} ${tfp(p,'icon', th.icon)}
+    ${tfp(p,'iconImg', th.iconImg)} ${tap(p,'shortTitle', th.shortTitle)}
+    ${tap(p,'zhTitle', th.zhTitle)} ${tap(p,'enTitle', th.enTitle)}
+    ${tap(p,'name', th.name)} ${tap(p,'title', th.title)}
+    ${tap(p,'subtitle', th.subtitle)}
+    ${tap(p,'bannerImg', th.bannerImg)} ${tap(p,'deckBg', th.deckBg)}
+  </div></div>`;
+
+  html += `<div class="card"><h2>🛒 預訂 CTA（分潤連結 bookingCta）</h2><div class="field-grid">
+    ${tfp(p+'.bookingCta','charter', bc.charter)} ${tfp(p+'.bookingCta','hotel', bc.hotel)}
+    ${tfp(p+'.bookingCta','flight', bc.flight)} ${tfp(p+'.bookingCta','tour', bc.tour)}
+    <div class="full hint">charter/tour 為 Klook，hotel/flight 為 Trip.com；flight 因出發地不同為各語言獨立（不會跨語言同步）。</div>
+  </div></div>`;
+
+  html += `<div class="card"><h2>🗂️ 小分類 subCategories（${(th.subCategories||[]).length}）</h2>`;
+  (th.subCategories||[]).forEach((sc,j)=>{
+    const sp = `${p}.subCategories[${j}]`;
+    html += `<div class="item-row"><div class="field-grid">
+      ${tfp(sp,'id', sc.id)} ${tfp(sp,'name', sc.name)} ${tfp(sp,'icon', sc.icon)}
+    </div></div>`;
+  });
+  html += `</div>`;
+
+  html += `<div class="card"><h2>✨ 體驗 experiences（${(th.experiences||[]).length}）</h2>`;
+  (th.experiences||[]).forEach((ex,j)=>{
+    const ep = `${p}.experiences[${j}]`;
+    html += `<div class="item-row"><div class="field-grid">
+      ${tfp(ep,'icon', ex.icon)} ${tfp(ep,'title', ex.title)}
+      ${tap(ep,'desc', ex.desc)}
+    </div></div>`;
+  });
+  html += `</div>`;
+
+  html += `<div class="card"><h2>🗓️ 行程 itineraries（${(th.itineraries||[]).length}）</h2>`;
+  (th.itineraries||[]).forEach((it,j)=>{
+    const ip = `${p}.itineraries[${j}]`;
+    html += `<div class="item-row"><div class="field-grid">
+      ${tap(ip,'planName', it.planName)} ${tfp(ip,'duration', it.duration)}
+    </div>`;
+    (it.days||[]).forEach((dy,k)=>{
+      const dp = `${ip}.days[${k}]`;
+      html += `<div class="field-grid" style="margin-top:6px">${tfp(dp,'day', dy.day)} ${tap(dp,'text', dy.text)}</div>`;
+    });
+    html += `</div>`;
+  });
+  html += `</div>`;
+
+  const spots = th.spots || [];
+  html += `<div class="toolbar"><h2>📍 景點 spots（${spots.length} 筆）</h2>
+    <input class="search" id="itemSearch" placeholder="🔍 搜尋景點/描述…" oninput="filterItems()"></div>`;
+  spots.forEach((sp, idx)=>{
+    const spPath = `${p}.spots[${idx}]`;
+    html += `<div class="item-row" data-search="${escapeHtml((sp.name+' '+sp.subName+' '+sp.en+' '+sp.tag+' '+sp.desc).toLowerCase())}">
+      <div class="item-head"><span class="rank">#${idx+1}</span>
+        <span class="nm"><input data-path="${spPath}.name" value="${escapeHtml(sp.name||'')}"></span>
+        <span class="link">${escapeHtml(sp.subName||'')}</span></div>
+      <div class="item-body field-grid">
+        ${tfp(spPath,'subCategory', sp.subCategory)} ${tfp(spPath,'subName', sp.subName)}
+        ${tfp(spPath,'en', sp.en)} ${tfp(spPath,'tag', sp.tag)}
+        ${tap(spPath,'desc', sp.desc)}
+        ${tap(spPath,'img', sp.img)}
+        ${tfp(spPath,'hotelUrl', sp.hotelUrl)} ${tfp(spPath,'charterUrl', sp.charterUrl)}
+        ${tfp(spPath,'trainTicketUrl', sp.trainTicketUrl)} ${tfp(spPath,'permitUrl', sp.permitUrl)}
+        ${tfp(spPath,'campUrl', sp.campUrl)} ${spotExtras(spPath, sp)}
+      </div>
+    </div>`;
+  });
+
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function spotExtras(path, sp){
+  let out = '';
+  const singles = ['rate','altitude','address','route','movieTitle','day1Plan','day2Plan'];
+  singles.forEach(k=>{ if(sp[k] !== undefined) out += tap(path, k, sp[k]); });
+  if(sp.rank !== undefined) out += `<div>${label('rank')}<input data-numeric="1" data-path="${path}.rank" value="${escapeHtml(sp.rank)}"></div>`;
+  if(Array.isArray(sp.tags)) out += `<div class="full">${label('tags（逗號分隔）')}<textarea data-path="${path}.tags" data-csv="1">${escapeHtml(sp.tags.join(', '))}</textarea></div>`;
+  return out;
+}
+
+function renderSouvenirsList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!Array.isArray(state.data)) return;
+  state.data.forEach((c,i)=>{
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state.selectedSouvenir === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">${escapeHtml(c.icon||'')}</span><span class="nm">${escapeHtml(c.shortName||c.name||c.id)}</span><span class="cnt">${(c.items||[]).length}</span>`;
+    div.onclick = ()=>{ state.selectedSouvenir = i; render(); };
+    list.appendChild(div);
+  });
+}
+
+function renderSouvenirs(){
+  const main = $('#main');
+  if(state.selectedSouvenir == null){ state.selectedSouvenir = 0; }
+  const c = state.data[state.selectedSouvenir];
+  if(!c){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedSouvenir}]`;
+  let html = `<div class="toolbar"><h2>${escapeHtml(c.icon||'')} 分類 ${state.selectedSouvenir+1} / ${state.data.length}：${escapeHtml(c.shortName||c.name)}</h2></div>`;
+
+  html += `<div class="card"><h2>分類資訊</h2><div class="field-grid">
+    ${tfp(p,'id', c.id)} ${tfp(p,'icon', c.icon)}
+    ${tap(p,'name', c.name)} ${tap(p,'shortName', c.shortName)}
+    ${tap(p,'channel', c.channel)} ${tap(p,'badge', c.badge)}
+    ${tap(p,'desc', c.desc)}
+    ${tfp(p,'cta', c.cta)} ${tap(p,'defaultUrl', c.defaultUrl)}
+  </div></div>`;
+
+  const items = c.items || [];
+  html += `<div class="toolbar"><h2>🛍️ 商品 items（${items.length} 筆）</h2>
+    <input class="search" id="itemSearch" placeholder="🔍 搜尋商品/品牌…" oninput="filterItems()"></div>`;
+
+  items.forEach((it, j)=>{
+    const ip = `${p}.items[${j}]`;
+    html += `<div class="item-row" data-search="${escapeHtml((it.brand+' '+it.name+' '+it.enName+' '+it.origin+' '+it.desc).toLowerCase())}">
+      <div class="item-head">
+        <span class="rank">#${it.rank}</span>
+        <span class="nm"><input data-path="${ip}.name" value="${escapeHtml(it.name||'')}"></span>
+        <span class="link"><span class="badge ${it.isKlook ? 'b-klook' : 'b-none'}">${it.isKlook ? 'Klook' : '其他'}</span></span>
+      </div>
+      <div class="item-body field-grid">
+        ${tfp(ip,'brand', it.brand)} ${tfp(ip,'enName', it.enName)}
+        ${tfp(ip,'origin', it.origin)} ${tfp(ip,'price', it.price)}
+        ${tfp(ip,'rating', it.rating)} ${tfp(ip,'reviews', it.reviews)}
+        <div>${label('rank')}<input data-numeric="1" data-path="${ip}.rank" value="${escapeHtml(it.rank)}"></div>
+        <div>${label('isKlook')}<select data-path="${ip}.isKlook" data-bool="1">
+          <option value="true"${it.isKlook?' selected':''}>true（Klook）</option>
+          <option value="false"${it.isKlook?'':' selected'}>false（其他）</option>
+        </select></div>
+        ${tap(ip,'desc', it.desc)}
+        ${tap(ip,'img', it.img)}
+        ${tap(ip,'buyUrl', it.buyUrl)} ${tfp(ip,'ctaText', it.ctaText)}
+      </div>
+    </div>`;
+  });
+
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function renderRankings(){
+  const main = $('#main');
+  if(state.selectedTopic == null){ state.selectedTopic = 0; }
+  const t = state.data.topics[state.selectedTopic];
+  const items = state.data.items[t.id] || [];
+  let html = '';
+
+  // 主題編輯卡
+  html += `<div class="card"><h2>${t.icon||''} 主題：${escapeHtml(t.zhName)} <span class="hint">(topics[${state.selectedTopic}])</span></h2>
+    <div class="field-grid">
+      <div>${label('id')}<input data-path="topics[${state.selectedTopic}].id" value="${escapeHtml(t.id)}" readonly></div> ${tf('num', t.num)} ${tf('icon', t.icon)} ${tf('zhName', t.zhName)}
+      ${tf('enShort', t.enShort)} ${tf('meaning', t.meaning)} ${tf('shortName', t.shortName)} ${tf('category', t.category)}
+      ${tf('categoryName', t.categoryName)} ${tf('color', t.color)} ${tf('watermark', t.watermark)} ${tf('badge', t.badge)}
+      ${tf('ctaText', t.ctaText)} ${tf('ctaType', t.ctaType)}
+      ${ta('title', t.title)} ${ta('enTitle', t.enTitle)}
+      ${ta('desc', t.desc, true)}
+      <div class="full">${label('分潤連結 ctaUrl')}
+        <input data-path="topics[${state.selectedTopic}].ctaUrl" value="${escapeHtml(t.ctaUrl||'')}">
+      </div>
+      ${ta('heroImg', t.heroImg)} ${ta('iconImg', t.iconImg)} ${ta('heroAlt', t.heroAlt)}
+    </div>
+  </div>`;
+
+  // 商品列表
+  html += `<div class="toolbar"><h2>商品 ${items.length} 筆</h2>
+    <input class="search" id="itemSearch" placeholder="🔍 搜尋商品名/描述…" oninput="filterItems()"></div>`;
+
+  items.forEach((it, idx)=>{
+    const path = `items.${t.id}[${idx}]`;
+    html += `<div class="item-row" data-search="${escapeHtml((it.name+' '+it.enName+' '+it.desc+' '+it.highlight+' '+it.tag).toLowerCase())}">
+      <div class="item-head">
+        <span class="rank">#${it.rank}</span>
+        <span class="nm"><input data-path="${path}.name" value="${escapeHtml(it.name||'')}"></span>
+        <span class="link">${channelBadge(it.ctaType)}</span>
+      </div>
+      <div class="item-body field-grid">
+        ${tfp(path,'enName', it.enName)} ${tfp(path,'city', it.city)}
+        ${tfp(path,'price', it.price)} ${tfp(path,'rate', it.rate)}
+        ${tfp(path,'ctaType', it.ctaType)} <div>${label('rank')}<input data-numeric="1" data-path="${path}.rank" value="${escapeHtml(it.rank)}"></div>
+        ${tap(path,'highlight', it.highlight)} ${tap(path,'tag', it.tag)}
+        ${tap(path,'desc', it.desc)}
+        ${tap(path,'img', it.img)}
+      </div>
+      ${renderLinks(`items.${t.id}[${idx}].links`, it.links)}
+    </div>`;
+  });
+
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function label(text){ return `<label>${text}</label>`; }
+function tf(name, val){ return `<div>${label(name)}<input data-path="topics[${state.selectedTopic}].${name}" value="${escapeHtml(val)}"></div>`; }
+function ta(name, val, full){ return `<div class="${full?'full':''}">${label(name)}<textarea data-path="topics[${state.selectedTopic}].${name}">${escapeHtml(val)}</textarea></div>`; }
+function tfp(path, name, val){ return `<div>${label(name)}<input data-path="${path}.${name}" value="${escapeHtml(val)}"></div>`; }
+function tap(path, name, val){ return `<div class="full">${label(name)}<textarea data-path="${path}.${name}">${escapeHtml(val)}</textarea></div>`; }
+
+function resolvePath(obj, path){
+  // path like: topics[0].ctaUrl  or  items["drinks"][2].desc
+  const parts = [];
+  const re = /([^\[\].]+)|\["?([^"\]]+)"?\]/g;
+  let m;
+  while((m = re.exec(path))){
+    if(m[1] !== undefined) parts.push(m[1]);
+    else parts.push(m[2]);
+  }
+  let cur = obj;
+  for(const p of parts){
+    if(cur == null) return undefined;
+    cur = cur[p];
+  }
+  return cur;
+}
+
+function setPath(obj, path, val){
+  const parts = [];
+  const re = /([^\[\].]+)|\["?([^"\]]+)"?\]/g;
+  let m;
+  while((m = re.exec(path))){
+    if(m[1] !== undefined) parts.push(m[1]);
+    else parts.push(m[2]);
+  }
+  let cur = obj;
+  for(let i=0;i<parts.length-1;i++){ cur = cur[parts[i]]; }
+  cur[parts[parts.length-1]] = val;
+}
+
+function renderLinks(basePath, links){
+  const arr = links || [];
+  let rows = '';
+  arr.forEach((lk, li)=>{
+    const p = `${basePath}[${li}]`;
+    rows += `<div class="link-row">
+      <input data-path="${p}.type" value="${escapeHtml(lk.type||'')}" placeholder="type" list="linkTypes" class="lt-type">
+      <input data-path="${p}.label" value="${escapeHtml(lk.label||'')}" placeholder="標籤" class="lt-label">
+      <input data-path="${p}.url" value="${escapeHtml(lk.url||'')}" placeholder="https://..." class="lt-url">
+      <button type="button" class="link-del" onclick="removeLink('${basePath}',${li})" title="刪除">✕</button>
+    </div>`;
+  });
+  return `<div class="links-editor">
+    <label>分潤連結 links（多條，支援 klook + trip 並存）</label>
+    <datalist id="linkTypes">
+      <option value="klook"></option><option value="trip"></option><option value="map"></option>
+      <option value="owlting"></option><option value="souvenir"></option><option value="dining"></option>
+    </datalist>
+    ${rows}
+    <button type="button" class="add-link" onclick="addLink('${basePath}')">＋ 加連結</button>
+  </div>`;
+}
+
+function addLink(basePath){
+  let arr = resolvePath(state.data, basePath);
+  if(!arr){ setPath(state.data, basePath, []); arr = resolvePath(state.data, basePath); }
+  arr.push({type:'', label:'', url:''});
+  markDirty();
+  render();
+}
+
+function removeLink(basePath, li){
+  const arr = resolvePath(state.data, basePath);
+  if(arr) arr.splice(li, 1);
+  markDirty();
+  render();
+}
+
+function bindEdits(){
+  document.querySelectorAll('#main [data-path]').forEach(el=>{
+    el.addEventListener('input', ()=>{
+      const raw = el.value;
+      let val = raw;
+      if(el.dataset.csv === '1'){ val = raw.split(',').map(s=>s.trim()).filter(s=>s); }
+      else if(el.dataset.percent === '1'){ val = raw === '' ? 0 : Number(raw)/100; }
+      else if(el.dataset.bool === '1'){ val = raw === 'true'; }
+      else if(el.dataset.numeric === '1'){ val = raw === '' ? null : Number(raw); }
+      setPath(state.data, el.dataset.path, val);
+      markDirty();
+    });
+  });
+}
+
+function filterItems(){
+  const q = ($('#itemSearch').value||'').toLowerCase();
+  document.querySelectorAll('.item-row[data-search]').forEach(row=>{
+    row.style.display = (row.dataset.search||'').includes(q) ? '' : 'none';
+  });
+}
+
+function markDirty(){ state.dirty = true; updateStatus(); }
+function updateStatus(){
+  const s = $('#status');
+  $('#saveBtn').disabled = !state.dirty;
+  s.className = '';
+  if(state.dirty){ s.textContent = '有未儲存的變更'; s.classList.add('dirty'); }
+  else { s.textContent = state.path ? '已載入：'+state.path : '就緒'; }
+}
+
+async function save(){
+  if(!state.dirty) return;
+  const s = $('#status');
+  try{
+    const res = await api('/api/file?path=' + encodeURIComponent(state.path), {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(state.data)
+    });
+    state.dirty = false;
+    updateStatus();
+    const n = (res.synced && res.synced.length) || 0;
+    s.textContent = n ? ('已儲存並同步 '+n+' 個語言 ✓') : '已儲存 ✓';
+    s.className='ok';
+    setTimeout(updateStatus, 2500);
+  }catch(e){
+    s.textContent = '儲存失敗：'+e.message; s.className='err';
+  }
+}
+
+$('#fileSelect').addEventListener('change', e => loadFile(e.target.value));
+$('#reloadBtn').addEventListener('click', ()=> loadFile(state.path));
+$('#saveBtn').addEventListener('click', save);
+
+loadFiles();
+</script>
+</body>
+</html>
