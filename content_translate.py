@@ -58,6 +58,15 @@ FILE_FIELDS = {
         "shortTitle", "zhTitle", "name", "subtitle", "title",
         "desc", "subName", "tag", "planName", "duration", "day", "text",
     },
+    "activities.json": {
+        "name", "city", "tag", "desc", "badge",
+    },
+    "spots.json": {
+        "name", "city", "zone", "duration", "tag", "badge", "desc",
+    },
+    "theme_grid.json": {
+        "name", "shortName", "desc", "count",
+    },
 }
 
 
