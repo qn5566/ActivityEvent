@@ -108,7 +108,7 @@
 </div>
 
 <script>
-const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, dirty:false, files:{} };
+const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedHomeBlog:null, selectedHomeRanking:null, selectedThemeGrid:null, selectedActivity:null, selectedSpot:null, dirty:false, files:{} };
 const $ = s => document.querySelector(s);
 
 function channelBadge(type){
@@ -182,6 +182,11 @@ async function loadFile(path){
   state.selectedMichelin = null;
   state.selectedTheme = null;
   state.selectedSouvenir = null;
+  state.selectedHomeBlog = null;
+  state.selectedHomeRanking = null;
+  state.selectedThemeGrid = null;
+  state.selectedActivity = null;
+  state.selectedSpot = null;
   updateStatus();
   renderLangTabs();
   render();
@@ -190,6 +195,12 @@ async function loadFile(path){
 function render(){
   const main = $('#main');
   if(!state.data) { main.innerHTML = '<div class="card">載入中…</div>'; return; }
+  const fname = state.path ? state.path.split('/').pop() : '';
+  if(fname === 'home_blog.json'){ renderHomeBlogList(); renderHomeBlog(); return; }
+  if(fname === 'home_rankings.json'){ renderHomeRankingsList(); renderHomeRankings(); return; }
+  if(fname === 'theme_grid.json'){ renderThemeGridList(); renderThemeGrid(); return; }
+  if(fname === 'activities.json'){ renderActivitiesList(); renderActivities(); return; }
+  if(fname === 'spots.json'){ renderSpotsList(); renderSpots(); return; }
   if(state.data && state.data.topics && state.data.items){
     renderRankings();
     renderTopics();
@@ -752,6 +763,190 @@ function renderRankings(){
   bindEdits();
 }
 
+// =========================================================
+// 通用欄位渲染器：依值型別自動輸出對應編輯元件
+// 支援 number / boolean / 字串陣列 / 物件(遞迴) / 字串(長短自動切換)
+// =========================================================
+function genField(path, key, val){
+  if(val === undefined || val === null){
+    return `<div>${label(key)}<input data-path="${path}.${key}" value=""></div>`;
+  }
+  if(typeof val === 'number'){
+    return `<div>${label(key)}<input data-numeric="1" data-path="${path}.${key}" value="${escapeHtml(val)}"></div>`;
+  }
+  if(typeof val === 'boolean'){
+    return `<div>${label(key)}<select data-path="${path}.${key}" data-bool="1">
+      <option value="true"${val?' selected':''}>true</option>
+      <option value="false"${val?'':' selected'}>false</option>
+    </select></div>`;
+  }
+  if(Array.isArray(val)){
+    if(val.every(x => typeof x === 'string')){
+      return `<div class="full">${label(key + '（陣列，逗號分隔）')}<textarea data-path="${path}.${key}" data-csv="1">${escapeHtml(val.join(', '))}</textarea></div>`;
+    }
+    return `<div class="full">${label(key + '（陣列，JSON）')}<textarea data-path="${path}.${key}" data-json="1">${escapeHtml(JSON.stringify(val, null, 2))}</textarea></div>`;
+  }
+  if(typeof val === 'object'){
+    let out = `<div class="full" style="border:1px dashed var(--line);border-radius:8px;padding:8px;margin-bottom:4px">${label(key + '（物件）')}`;
+    for(const k in val){ out += genField(`${path}.${key}`, k, val[k]); }
+    out += `</div>`;
+    return out;
+  }
+  const str = String(val);
+  if(str.length > 90 || str.includes('\n')){
+    return `<div class="full">${label(key)}<textarea data-path="${path}.${key}">${escapeHtml(str)}</textarea></div>`;
+  }
+  return `<div>${label(key)}<input data-path="${path}.${key}" value="${escapeHtml(str)}"></div>`;
+}
+
+// 通用清單渲染器（陣列型資料）
+function genListRender(arr, selKey, icon, nameFn, cntFn){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!Array.isArray(arr)) return;
+  arr.forEach((a,i)=>{
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state[selKey] === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">${icon}</span><span class="nm">${escapeHtml(nameFn(a)||'')}</span><span class="cnt">${escapeHtml((cntFn&&cntFn(a))||'')}</span>`;
+    div.onclick = ()=>{ state[selKey] = i; render(); };
+    list.appendChild(div);
+  });
+}
+
+// =========================================================
+// home_blog.json（首頁文章，陣列）
+// =========================================================
+function renderHomeBlogList(){
+  genListRender(state.data, 'selectedHomeBlog', '📄', a => a.title || a.id, a => a.category || '');
+}
+
+function renderHomeBlog(){
+  const main = $('#main');
+  if(state.selectedHomeBlog == null){ state.selectedHomeBlog = 0; }
+  const a = state.data[state.selectedHomeBlog];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedHomeBlog}]`;
+  let html = `<div class="toolbar"><h2>📄 首頁文章 ${state.selectedHomeBlog+1} / ${state.data.length}</h2></div>`;
+  html += `<div class="card"><h2>文章資訊</h2><div class="field-grid">`;
+  for(const k in a){
+    if(k === 'spotInfo') continue;
+    html += genField(p, k, a[k]);
+  }
+  html += `</div></div>`;
+  html += `<div class="card"><h2>📍 景點資訊 spotInfo</h2><div class="field-grid">`;
+  const sp = a.spotInfo || {};
+  for(const k in sp){ html += genField(`${p}.spotInfo`, k, sp[k]); }
+  html += `</div></div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
+// =========================================================
+// home_rankings.json（首頁排行榜，分類字典）
+// =========================================================
+function renderHomeRankingsList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!(state.data && typeof state.data === 'object' && !Array.isArray(state.data))) return;
+  Object.keys(state.data).forEach(cat=>{
+    const arr = state.data[cat] || [];
+    const h = document.createElement('div');
+    h.style.cssText = 'font-size:11px;color:var(--muted);padding:8px 10px 4px;font-weight:700;';
+    h.textContent = `${cat} (${arr.length})`;
+    list.appendChild(h);
+    arr.forEach((a,i)=>{
+      const on = state.selectedHomeRanking && state.selectedHomeRanking.cat===cat && state.selectedHomeRanking.index===i;
+      const div = document.createElement('div');
+      div.className = 'topic-item' + (on?' on':'');
+      div.innerHTML = `<span class="ic">${a.rank?'#'+a.rank:''}</span><span class="nm">${escapeHtml(a.name||'')}</span><span class="cnt">${escapeHtml(a.city||a.rate||'')}</span>`;
+      div.onclick = ()=>{ state.selectedHomeRanking = {cat, index:i}; render(); };
+      list.appendChild(div);
+    });
+  });
+}
+
+function renderHomeRankings(){
+  const main = $('#main');
+  const catKeys = Object.keys(state.data || {});
+  if(!state.selectedHomeRanking && catKeys.length){
+    state.selectedHomeRanking = {cat: catKeys[0], index:0};
+  }
+  const {cat, index} = state.selectedHomeRanking || {};
+  const arr = (state.data && state.data[cat]) || [];
+  const a = arr[index];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `${cat}[${index}]`;
+  let html = `<div class="toolbar"><h2>🏆 ${escapeHtml(cat)} 排行 #${a.rank||index+1} / ${arr.length}</h2></div>`;
+  html += `<div class="card"><h2>項目欄位</h2><div class="field-grid">`;
+  for(const k in a){ html += genField(p, k, a[k]); }
+  html += `</div></div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
+// =========================================================
+// theme_grid.json（主題格，陣列）
+// =========================================================
+function renderThemeGridList(){
+  genListRender(state.data, 'selectedThemeGrid', '🗂️', a => a.shortName || a.name, a => a.count || '');
+}
+
+function renderThemeGrid(){
+  const main = $('#main');
+  if(state.selectedThemeGrid == null){ state.selectedThemeGrid = 0; }
+  const a = state.data[state.selectedThemeGrid];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedThemeGrid}]`;
+  let html = `<div class="toolbar"><h2>${escapeHtml(a.icon||'')} 主題格 ${state.selectedThemeGrid+1} / ${state.data.length}</h2></div>`;
+  html += `<div class="card"><h2>主題資訊</h2><div class="field-grid">`;
+  for(const k in a){ html += genField(p, k, a[k]); }
+  html += `</div></div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
+// =========================================================
+// activities.json（活動，陣列）
+// =========================================================
+function renderActivitiesList(){
+  genListRender(state.data, 'selectedActivity', '🎟️', a => a.name, a => a.price || a.rate || '');
+}
+
+function renderActivities(){
+  const main = $('#main');
+  if(state.selectedActivity == null){ state.selectedActivity = 0; }
+  const a = state.data[state.selectedActivity];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedActivity}]`;
+  let html = `<div class="toolbar"><h2>🎟️ 活動 ${state.selectedActivity+1} / ${state.data.length}</h2></div>`;
+  html += `<div class="card"><h2>活動資訊</h2><div class="field-grid">`;
+  for(const k in a){ html += genField(p, k, a[k]); }
+  html += `</div></div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
+// =========================================================
+// spots.json（景點，陣列）
+// =========================================================
+function renderSpotsList(){
+  genListRender(state.data, 'selectedSpot', '📍', a => a.name, a => a.city || a.zone || '');
+}
+
+function renderSpots(){
+  const main = $('#main');
+  if(state.selectedSpot == null){ state.selectedSpot = 0; }
+  const a = state.data[state.selectedSpot];
+  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const p = `[${state.selectedSpot}]`;
+  let html = `<div class="toolbar"><h2>📍 景點 ${state.selectedSpot+1} / ${state.data.length}</h2></div>`;
+  html += `<div class="card"><h2>景點資訊</h2><div class="field-grid">`;
+  for(const k in a){ html += genField(p, k, a[k]); }
+  html += `</div></div>`;
+  main.innerHTML = html;
+  bindEdits();
+}
+
 function label(text){ return `<label>${text}</label>`; }
 function tf(name, val){ return `<div>${label(name)}<input data-path="topics[${state.selectedTopic}].${name}" value="${escapeHtml(val)}"></div>`; }
 function ta(name, val, full){ return `<div class="${full?'full':''}">${label(name)}<textarea data-path="topics[${state.selectedTopic}].${name}">${escapeHtml(val)}</textarea></div>`; }
@@ -835,6 +1030,7 @@ function bindEdits(){
       else if(el.dataset.percent === '1'){ val = raw === '' ? 0 : Number(raw)/100; }
       else if(el.dataset.bool === '1'){ val = raw === 'true'; }
       else if(el.dataset.numeric === '1'){ val = raw === '' ? null : Number(raw); }
+      else if(el.dataset.json === '1'){ try { val = JSON.parse(raw); } catch(e){ val = raw; } }
       setPath(state.data, el.dataset.path, val);
       markDirty();
     });
