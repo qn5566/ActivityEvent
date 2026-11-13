@@ -1,0 +1,1630 @@
+{
+ "drinks": [
+  {
+   "rank": 1,
+   "name": "麻古茶坊 MACU TEA",
+   "category": "鮮果茶飲",
+   "rate": "4.9★",
+   "drinks": [
+    "芝芝芒果果粒",
+    "楊枝甘露2.0",
+    "金萱雙Q"
+   ],
+   "sugarIce": "微糖微冰",
+   "logo": "🥭",
+   "img": "https://images.unsplash.com/photo-1558857563-b37cf5a452ef?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "芝芝芒果果粒",
+   "desc": "人氣首選：芝芝芒果果粒。推薦甜度冰塊：微糖微冰。"
+  },
+  {
+   "rank": 2,
+   "name": "得正 Oolong Tea",
+   "category": "原茶專門",
+   "rate": "4.9★",
+   "drinks": [
+    "焙烏龍鮮奶茶",
+    "春烏龍",
+    "芝士奶蓋春烏龍"
+   ],
+   "sugarIce": "微糖少冰",
+   "logo": "🍵",
+   "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "焙烏龍鮮奶茶",
+   "desc": "人氣首選：焙烏龍鮮奶茶。推薦甜度冰塊：微糖少冰。"
+  },
+  {
+   "rank": 3,
+   "name": "五桐號 WooTea",
+   "category": "手作凍飲",
+   "rate": "4.8★",
+   "drinks": [
+    "杏仁凍五桐茶",
+    "泰奶霜料",
+    "綠茶凍五桐茶"
+   ],
+   "sugarIce": "半糖微冰",
+   "logo": "🍮",
+   "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "杏仁凍五桐茶",
+   "desc": "人氣首選：杏仁凍五桐茶。推薦甜度冰塊：半糖微冰。"
+  },
+  {
+   "rank": 4,
+   "name": "迷客夏 Milksha",
+   "category": "鮮奶茶系",
+   "rate": "4.8★",
+   "drinks": [
+    "珍珠紅茶拿鐵",
+    "大甲芋頭鮮奶",
+    "麥茶拿鐵"
+   ],
+   "sugarIce": "微糖微冰",
+   "logo": "🥛",
+   "img": "https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "珍珠紅茶拿鐵",
+   "desc": "人氣首選：珍珠紅茶拿鐵。推薦甜度冰塊：微糖微冰。"
+  },
+  {
+   "rank": 5,
+   "name": "一沐日 A-Mu-Ri",
+   "category": "草仔粿粉粿",
+   "rate": "4.9★",
+   "drinks": [
+    "逮丸奶茶 (草仔粿)",
+    "油切蕎麥茶",
+    "黑糖粉粿奶茶"
+   ],
+   "sugarIce": "微糖少冰",
+   "logo": "🍡",
+   "img": "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "逮丸奶茶 (草仔粿)",
+   "desc": "人氣首選：逮丸奶茶 (草仔粿)。推薦甜度冰塊：微糖少冰。"
+  },
+  {
+   "rank": 6,
+   "name": "清心福全 Ching-Shin",
+   "category": "國民老字號",
+   "rate": "4.7★",
+   "drinks": [
+    "優多綠茶 (多多綠)",
+    "烏龍綠茶",
+    "隱藏版珍珠蜂蜜鮮奶普洱"
+   ],
+   "sugarIce": "微糖少冰",
+   "logo": "🍋",
+   "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "優多綠茶 (多多綠)",
+   "desc": "人氣首選：優多綠茶 (多多綠)。推薦甜度冰塊：微糖少冰。"
+  },
+  {
+   "rank": 7,
+   "name": "可不可熟成紅茶 Kebuke",
+   "category": "英倫熟成",
+   "rate": "4.8★",
+   "drinks": [
+    "熟成紅茶",
+    "白玉歐蕾",
+    "胭脂紅茶"
+   ],
+   "sugarIce": "一分糖微冰",
+   "logo": "🫖",
+   "img": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "熟成紅茶",
+   "desc": "人氣首選：熟成紅茶。推薦甜度冰塊：一分糖微冰。"
+  },
+  {
+   "rank": 8,
+   "name": "龜記茗品 Guiji",
+   "category": "古早味果茶",
+   "rate": "4.8★",
+   "drinks": [
+    "紅柚翡翠",
+    "蘋果紅萱",
+    "三十三紅茶"
+   ],
+   "sugarIce": "微糖少冰",
+   "logo": "🍊",
+   "img": "https://images.unsplash.com/photo-1546173159-315724a31696?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "紅柚翡翠",
+   "desc": "人氣首選：紅柚翡翠。推薦甜度冰塊：微糖少冰。"
+  },
+  {
+   "rank": 9,
+   "name": "珍煮丹 Truedan",
+   "category": "黑糖珍珠",
+   "rate": "4.8★",
+   "drinks": [
+    "黑糖珍珠鮮奶",
+    "泰泰鮮奶茶",
+    "十份芋芋鮮奶"
+   ],
+   "sugarIce": "微糖微冰",
+   "logo": "🧋",
+   "img": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "黑糖珍珠鮮奶",
+   "desc": "人氣首選：黑糖珍珠鮮奶。推薦甜度冰塊：微糖微冰。"
+  },
+  {
+   "rank": 10,
+   "name": "茶湯會 TP-TEA",
+   "category": "春水堂家族",
+   "rate": "4.7★",
+   "drinks": [
+    "觀音拿鐵",
+    "翡翠檸檬",
+    "珍珠觀音拿鐵"
+   ],
+   "sugarIce": "微糖微冰",
+   "logo": "🍃",
+   "img": "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "觀音拿鐵",
+   "desc": "人氣首選：觀音拿鐵。推薦甜度冰塊：微糖微冰。"
+  },
+  {
+   "rank": 11,
+   "name": "約翰紅茶公司 John Tea",
+   "category": "精品紅茶",
+   "rate": "4.9★",
+   "drinks": [
+    "雨果那堤",
+    "曼哈頓紅茶",
+    "煮濃那堤"
+   ],
+   "sugarIce": "半糖少冰",
+   "logo": "👑",
+   "img": "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "雨果那堤",
+   "desc": "人氣首選：雨果那堤。推薦甜度冰塊：半糖少冰。"
+  },
+  {
+   "rank": 12,
+   "name": "春水堂 Chun Shui Tang",
+   "category": "珍珠奶茶始祖",
+   "rate": "4.9★",
+   "drinks": [
+    "原創珍珠奶茶",
+    "黃金香柚茶",
+    "功夫麵搭配珍奶"
+   ],
+   "sugarIce": "微糖少冰",
+   "logo": "🏛️",
+   "img": "https://images.unsplash.com/photo-1558857563-b37cf5a452ef?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "原創珍珠奶茶",
+   "desc": "人氣首選：原創珍珠奶茶。推薦甜度冰塊：微糖少冰。"
+  },
+  {
+   "rank": 13,
+   "name": "再睡5分鐘 Nap Tea",
+   "category": "滴妹創辦",
+   "rate": "4.8★",
+   "drinks": [
+    "棉被午茉綠",
+    "日安燕麥奶茶",
+    "香芋鮮奶"
+   ],
+   "sugarIce": "微糖微冰",
+   "logo": "🦥",
+   "img": "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "棉被午茉綠",
+   "desc": "人氣首選：棉被午茉綠。推薦甜度冰塊：微糖微冰。"
+  },
+  {
+   "rank": 14,
+   "name": "萬波島嶼紅茶 Wanpo",
+   "category": "眷村懷舊",
+   "rate": "4.7★",
+   "drinks": [
+    "紅豆粉粿鮮奶",
+    "蘭葉那堤",
+    "楊枝甘露"
+   ],
+   "sugarIce": "微糖少冰",
+   "logo": "🏝️",
+   "img": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "紅豆粉粿鮮奶",
+   "desc": "人氣首選：紅豆粉粿鮮奶。推薦甜度冰塊：微糖少冰。"
+  },
+  {
+   "rank": 15,
+   "name": "天仁茗茶 CHA FOR TEA",
+   "category": "頂級原葉",
+   "rate": "4.8★",
+   "drinks": [
+    "913茶王",
+    "香橙綠茶",
+    "珍珠鮮奶茶"
+   ],
+   "sugarIce": "無糖微冰",
+   "logo": "🌱",
+   "img": "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "913茶王",
+   "desc": "人氣首選：913茶王。推薦甜度冰塊：無糖微冰。"
+  },
+  {
+   "rank": 16,
+   "name": "大苑子 DaYungs",
+   "category": "鮮果產地直送",
+   "rate": "4.8★",
+   "drinks": [
+    "愛文芒果冰沙",
+    "柳橙翡翠",
+    "芭樂檸檬"
+   ],
+   "sugarIce": "微糖少冰",
+   "logo": "🍓",
+   "img": "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "愛文芒果冰沙",
+   "desc": "人氣首選：愛文芒果冰沙。推薦甜度冰塊：微糖少冰。"
+  },
+  {
+   "rank": 17,
+   "name": "八曜和茶 Hachiyo",
+   "category": "無咖啡因和風",
+   "rate": "4.9★",
+   "drinks": [
+    "八曜和茶",
+    "柚香覺醒白茶",
+    "和風307"
+   ],
+   "sugarIce": "無糖少冰",
+   "logo": "🌾",
+   "img": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "八曜和茶",
+   "desc": "人氣首選：八曜和茶。推薦甜度冰塊：無糖少冰。"
+  },
+  {
+   "rank": 18,
+   "name": "烏弄原茶 UNONG",
+   "category": "台灣原生茶",
+   "rate": "4.8★",
+   "drinks": [
+    "名間冬片仔",
+    "金萱烏龍",
+    "桂花凍胭脂紅茶"
+   ],
+   "sugarIce": "無糖微冰",
+   "logo": "🏔️",
+   "img": "https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "名間冬片仔",
+   "desc": "人氣首選：名間冬片仔。推薦甜度冰塊：無糖微冰。"
+  },
+  {
+   "rank": 19,
+   "name": "SOMA 特調飲品",
+   "category": "東區精品排隊",
+   "rate": "4.9★",
+   "drinks": [
+    "原味茶歐蕾",
+    "精粹高山菁茶",
+    "白霜茶歐蕾"
+   ],
+   "sugarIce": "微糖微冰",
+   "logo": "🍸",
+   "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "原味茶歐蕾",
+   "desc": "人氣首選：原味茶歐蕾。推薦甜度冰塊：微糖微冰。"
+  },
+  {
+   "rank": 20,
+   "name": "COMEBUY",
+   "category": "現萃茶飲",
+   "rate": "4.7★",
+   "drinks": [
+    "海神現萃茶",
+    "蘋果冰茶",
+    "雙Q百香綠茶"
+   ],
+   "sugarIce": "微糖微冰",
+   "logo": "🌊",
+   "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop",
+   "city": "全台各門市",
+   "signature": "海神現萃茶",
+   "desc": "人氣首選：海神現萃茶。推薦甜度冰塊：微糖微冰。"
+  }
+ ],
+ "spots": [
+  {
+   "rank": 1,
+   "name": "台北 101 觀景台",
+   "city": "台北市信義區",
+   "rate": "4.9★",
+   "views": "258 萬次訂閱",
+   "desc": "360度俯瞰台北盆地夜景，世界超高速電梯僅 37 秒登頂。",
+   "tag": "國際地標",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+   "activityId": "1659-taipei-101-observatory-ticket-taipei"
+  },
+  {
+   "rank": 2,
+   "name": "九份老街與阿妹茶樓",
+   "city": "新北市瑞芳區",
+   "rate": "4.9★",
+   "views": "242 萬次訂閱",
+   "desc": "宮崎駿神隱少女靈感之源，紅燈籠石階與芋圓山城茶香。",
+   "tag": "經典山城",
+   "img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&auto=format&fit=crop",
+   "activityId": "1874-jiufen-shifen-day-tour-taipei"
+  },
+  {
+   "rank": 3,
+   "name": "國立故宮博物院",
+   "city": "台北市士林區",
+   "rate": "4.8★",
+   "views": "210 萬次訂閱",
+   "desc": "典藏近七十萬件中華歷代皇家珍寶，翠玉白菜名聞遐邇。",
+   "tag": "世界博物館",
+   "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop",
+   "activityId": "1093-national-palace-museum-ticket-taipei"
+  },
+  {
+   "rank": 4,
+   "name": "花蓮太魯閣峽谷燕子口",
+   "city": "花蓮縣秀林鄉",
+   "rate": "4.9★",
+   "views": "198 萬次訂閱",
+   "desc": "立霧溪經數百萬年切鑿千米大理石絕壁，世界級地質奇觀。",
+   "tag": "大自然鬼斧",
+   "img": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=600&auto=format&fit=crop",
+   "activityId": "1095-taroko-gorge-day-tour-hualien"
+  },
+  {
+   "rank": 5,
+   "name": "南投日月潭水社碼頭",
+   "city": "南投縣魚池鄉",
+   "rate": "4.8★",
+   "views": "185 萬次訂閱",
+   "desc": "CNN評選全球十大最美自行車道，晨曦湖面如詩如畫。",
+   "tag": "湖光山色",
+   "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop",
+   "activityId": "1094-sun-moon-lake-pass-nantou"
+  },
+  {
+   "rank": 6,
+   "name": "嘉義阿里山祝山觀日出",
+   "city": "嘉義縣阿里山鄉",
+   "rate": "4.9★",
+   "views": "172 萬次訂閱",
+   "desc": "搭乘百年高山小火車，在雲海翻騰中迎接金色朝陽光芒。",
+   "tag": "高山鐵道",
+   "img": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&auto=format&fit=crop",
+   "activityId": "3150-alishan-day-tour"
+  },
+  {
+   "rank": 7,
+   "name": "台南奇美博物館",
+   "city": "台南市仁德區",
+   "rate": "4.9★",
+   "views": "165 萬次訂閱",
+   "desc": "希臘神話阿波羅噴泉與巴洛克純白宮殿，典藏頂級小提琴。",
+   "tag": "西洋藝術",
+   "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop",
+   "activityId": "3170-chimei-museum-ticket"
+  },
+  {
+   "rank": 8,
+   "name": "高雄駁二藝術特區與大港橋",
+   "city": "高雄市鹽埕區",
+   "rate": "4.8★",
+   "views": "158 萬次訂閱",
+   "desc": "港邊老倉庫改建文創特區，全台首座旋轉大港橋極具代表性。",
+   "tag": "港灣文創",
+   "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop",
+   "activityId": "3180-pier2-tour"
+  },
+  {
+   "rank": 9,
+   "name": "屏東墾丁白沙灣與鵝鑾鼻",
+   "city": "屏東縣恆春鎮",
+   "rate": "4.8★",
+   "views": "150 萬次訂閱",
+   "desc": "熱帶蔚藍海灣與純白珊瑚沙灘，台灣最南端白色燈塔守護。",
+   "tag": "南國陽光",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+   "activityId": "1090-kenting-day-tour-kaohsiung"
+  },
+  {
+   "rank": 10,
+   "name": "南投清境農場青青草原",
+   "city": "南投縣仁愛鄉",
+   "rate": "4.8★",
+   "views": "146 萬次訂閱",
+   "desc": "綿延翠綠高山草原，可愛綿羊脫衣秀與中央山脈壯麗連峰。",
+   "tag": "小瑞士風情",
+   "img": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&auto=format&fit=crop",
+   "activityId": "3190-cingjing-tour"
+  },
+  {
+   "rank": 11,
+   "name": "台中高美濕地夕陽風車",
+   "city": "台中市清水區",
+   "rate": "4.8★",
+   "views": "142 萬次訂閱",
+   "desc": "被譽為台灣版天空之鏡！泥灘倒映萬丈夕陽餘暉，浪漫滿分。",
+   "tag": "天空之鏡",
+   "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+   "activityId": "3200-gaomei-sunset-tour"
+  },
+  {
+   "rank": 12,
+   "name": "宜蘭蘭陽博物館",
+   "city": "宜蘭縣頭城鎮",
+   "rate": "4.8★",
+   "views": "138 萬次訂閱",
+   "desc": "融入東北角單面山幾何造型建築，烏石港旁生態人文殿堂。",
+   "tag": "美學地標",
+   "img": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop",
+   "activityId": "3210-lanyang-museum"
+  },
+  {
+   "rank": 13,
+   "name": "台東三仙台跨海八拱橋",
+   "city": "台東縣成功鎮",
+   "rate": "4.8★",
+   "views": "132 萬次訂閱",
+   "desc": "巨龍般跨越太平洋的八拱紅色拱橋，迎向台灣本島第一道曙光。",
+   "tag": "東海岸地標",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+   "activityId": "3220-sansiantai-tour"
+  },
+  {
+   "rank": 14,
+   "name": "新北野柳地質公園女王頭",
+   "city": "新北市萬里區",
+   "rate": "4.7★",
+   "views": "129 萬次訂閱",
+   "desc": "經數千年海浪與風化雕琢形成的蕈狀岩，尊貴高雅的女王側面。",
+   "tag": "世界奇觀",
+   "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&auto=format&fit=crop",
+   "activityId": "3230-yehliu-ticket"
+  },
+  {
+   "rank": 15,
+   "name": "台南安平古堡與樹屋",
+   "city": "台南市安平區",
+   "rate": "4.7★",
+   "views": "125 萬次訂閱",
+   "desc": "荷蘭統治時期熱蘭遮城遺跡，百年老榕樹與紅磚倉庫共生奇景。",
+   "tag": "古蹟巡禮",
+   "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop",
+   "activityId": "3240-anping-tour"
+  },
+  {
+   "rank": 16,
+   "name": "澎湖七美雙心石滬",
+   "city": "澎湖縣七美鄉",
+   "rate": "4.9★",
+   "views": "120 萬次訂閱",
+   "desc": "湛藍純淨海水中兩顆相扣愛心石滬，先人捕魚智慧與浪漫傳奇。",
+   "tag": "浪漫海島",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+   "activityId": "3250-qimei-island"
+  },
+  {
+   "rank": 17,
+   "name": "綠島朝日海底溫泉",
+   "city": "台東縣綠島鄉",
+   "rate": "4.9★",
+   "views": "115 萬次訂閱",
+   "desc": "全球僅三處罕見的海底鹹水溫泉，拂曉聽海潮聲看旭日東升。",
+   "tag": "世界名湯",
+   "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&auto=format&fit=crop",
+   "activityId": "2930-green-island-hotspring"
+  },
+  {
+   "rank": 18,
+   "name": "金門得月樓與水頭聚落",
+   "city": "金門縣金城鎮",
+   "rate": "4.8★",
+   "views": "108 萬次訂閱",
+   "desc": "閩南傳統合院與南洋僑鄉番仔樓交融，防禦銃樓歷史底蘊深厚。",
+   "tag": "僑鄉風華",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+   "activityId": "3260-kinmen-tour"
+  },
+  {
+   "rank": 19,
+   "name": "新竹司馬庫斯上帝部落",
+   "city": "新竹縣尖石鄉",
+   "rate": "4.9★",
+   "views": "105 萬次訂閱",
+   "desc": "深山泰雅族純淨部落，參天千年紅檜巨木群洗滌身心。",
+   "tag": "泰雅秘境",
+   "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&auto=format&fit=crop",
+   "activityId": "3270-smangus-tour"
+  },
+  {
+   "rank": 20,
+   "name": "台北北投地熱谷溫泉",
+   "city": "台北市北投區",
+   "rate": "4.8★",
+   "views": "102 萬次訂閱",
+   "desc": "青磺地熱煙霧繚繞如仙境，英式紅磚和洋折衷浴場古蹟美不勝收。",
+   "tag": "市區名湯",
+   "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&auto=format&fit=crop",
+   "activityId": "3280-beitou-hotspring"
+  }
+ ],
+ "charter": [
+  {
+   "rank": 1,
+   "name": "九份老街 · 十分天燈 · 野柳地質經典一日包車",
+   "trips": "年預約 4.2 萬趟",
+   "desc": "北台灣最熱門路線！專車直達免轉車，穿梭黃金山城與十分瀑布，放天燈祈福。",
+   "price": "NT$ 2,800 起",
+   "city": "台北 / 新北出發",
+   "img": "assets/shifen_lantern_tour.png",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 2,
+   "name": "花蓮太魯閣國家公園 · 清水斷崖峽谷包車專車",
+   "trips": "年預約 3.6 萬趟",
+   "desc": "專屬在地老司機隨行導覽燕子口、九曲洞、白楊步道水濂洞與蔚藍清水斷崖。",
+   "price": "NT$ 3,200 起",
+   "city": "花蓮出發",
+   "img": "assets/taroko_gorge_tour.jpg",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 3,
+   "name": "阿里山森林日出 · 奮起湖老街雲海專案包車",
+   "trips": "年預約 2.8 萬趟",
+   "desc": "免去凌晨排小火車站票奔波，專車直達祝山觀日出、神木群步道與奮起湖便當。",
+   "price": "NT$ 3,800 起",
+   "city": "嘉義出發",
+   "img": "assets/alishan_train_tour.jpg",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 4,
+   "name": "南投日月潭湖景 · 清境農場高空步道連線包車",
+   "trips": "年預約 3.1 萬趟",
+   "desc": "一日暢遊中台灣兩大國際景點！水社碼頭騎單車＋清境青青草原看綿羊秀。",
+   "price": "NT$ 3,500 起",
+   "city": "台中出發",
+   "img": "assets/sun_moon_lake_tour.png",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 5,
+   "name": "屏東墾丁國家公園 · 恆春半島海景包車一日遊",
+   "trips": "年預約 2.5 萬趟",
+   "desc": "船帆石、鵝鑾鼻燈塔、龍磐公園崩崖與白沙灣，南國陽光海風全覽行程。",
+   "price": "NT$ 2,900 起",
+   "city": "高雄 / 恆春出發",
+   "img": "assets/kenting_coastal_tour.jpg",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 6,
+   "name": "宜蘭礁溪溫泉 · 抹茶山聖母山莊步道包車",
+   "trips": "年預約 1.9 萬趟",
+   "desc": "登頂翠綠抹茶山俯瞰蘭陽平原，下山專車送達礁溪享受天然美人湯舒壓。",
+   "price": "NT$ 2,600 起",
+   "city": "台北 / 宜蘭出發",
+   "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 7,
+   "name": "台南安平古堡 · 國華街美食赤崁樓文化包車",
+   "trips": "年預約 2.2 萬趟",
+   "desc": "專車輕鬆穿梭台南古都巷弄，大啖牛肉湯、鱔魚意麵，省去高溫步行之苦。",
+   "price": "NT$ 2,500 起",
+   "city": "台南出發",
+   "img": "assets/tainan_sicao_tour.jpg",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 8,
+   "name": "高雄旗津彩虹教堂 · 駁二藝術特區 · 佛光山專車",
+   "trips": "年預約 1.7 萬趟",
+   "desc": "港都海陸雙重享受！探訪佛光山大佛莊嚴盛景，傍晚至西子灣看浪漫夕陽。",
+   "price": "NT$ 2,800 起",
+   "city": "高雄出發",
+   "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 9,
+   "name": "台東池上伯朗大道 · 三仙台跨海大橋專案包車",
+   "trips": "年預約 1.5 萬趟",
+   "desc": "馳騁縱谷黃金稻浪金城武樹，橫跨海岸山脈欣賞太平洋八拱跨海大橋。",
+   "price": "NT$ 3,300 起",
+   "city": "台東出發",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 10,
+   "name": "台北北投名湯 · 陽明山擎天崗小油坑地熱包車",
+   "trips": "年預約 2.0 萬趟",
+   "desc": "台北後花園舒心一日散策！看小油坑地熱火山冒煙，漫步擎天崗水牛草原。",
+   "price": "NT$ 2,400 起",
+   "city": "台北出發",
+   "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  }
+ ],
+ "events": [
+  {
+   "rank": 1,
+   "name": "大港開唱 Megaport Festival",
+   "loc": "高雄駁二藝術特區",
+   "date": "每年 3 月底盛大登場",
+   "tag": "台灣最大港邊獨立音樂祭",
+   "desc": "十座舞台橫跨高雄港兩岸，結合大港橋旋轉、搖滾樂團與知名藝人跨界開唱。",
+   "img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "高雄駁二藝術特區",
+   "price": "每年 3 月底盛大登場"
+  },
+  {
+   "rank": 2,
+   "name": "台灣國際熱氣球嘉年華",
+   "loc": "台東鹿野高台",
+   "date": "每年 7 - 8 月盛夏",
+   "tag": "百萬遊客高空視覺盛宴",
+   "desc": "造型各異的巨大熱氣球在鹿野大草原升空，搭配夜間光雕音樂會與無人機大秀震撼全場。",
+   "img": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "台東鹿野高台",
+   "price": "每年 7 - 8 月盛夏"
+  },
+  {
+   "rank": 3,
+   "name": "新北歡樂耶誕城",
+   "loc": "新北市民廣場與板橋車站",
+   "date": "每年 11 月至翌年 1 月",
+   "tag": "亞洲十大耶誕慶典",
+   "desc": "全台最大 3D 光雕投影秀、璀璨天橋星空光廊與德國傳統耶誕市集，冬季浪漫首選。",
+   "img": "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "新北市民廣場與板橋車站",
+   "price": "每年 11 月至翌年 1 月"
+  },
+  {
+   "rank": 4,
+   "name": "台中大甲媽祖遶境進香",
+   "loc": "台中大甲鎮瀾宮至新港奉天宮",
+   "date": "每年農曆三月 (9天8夜)",
+   "tag": "世界三大宗教盛事 (UNESCO)",
+   "desc": "跨越四縣市跋涉 340 餘公里，數百萬虔誠信眾徒步隨香，體驗最震撼台灣在地人情味。",
+   "img": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "台中大甲鎮瀾宮至新港奉天宮",
+   "price": "每年農曆三月 (9天8夜)"
+  },
+  {
+   "rank": 5,
+   "name": "貢寮國際海洋音樂祭",
+   "loc": "新北貢寮福隆海水浴場",
+   "date": "每年盛夏 7 - 8 月",
+   "tag": "原創獨立音樂搖籃",
+   "desc": "金黃沙灘上的原創音樂狂歡，台灣無數天團崛起的殿堂級海灘音樂節。",
+   "img": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "新北貢寮福隆海水浴場",
+   "price": "每年盛夏 7 - 8 月"
+  },
+  {
+   "rank": 6,
+   "name": "台北國際電玩展 (TpGS)",
+   "loc": "台北南港展覽館",
+   "date": "每年 1 月下旬",
+   "tag": "亞太遊戲產業風向球",
+   "desc": "全球一線頂尖遊戲大廠最新未上市大作試玩、電競總決賽與獨立遊戲專區。",
+   "img": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "台北南港展覽館",
+   "price": "每年 1 月下旬"
+  },
+  {
+   "rank": 7,
+   "name": "台南鹽水蜂炮元宵狂歡",
+   "loc": "台南鹽水武廟",
+   "date": "每年元宵節 (正月十四至十五)",
+   "tag": "全球十大最狂熱慶典",
+   "desc": "數百萬發蜂炮齊發衝擊，全副武裝戴全罩式安全帽親歷震撼洗禮，驅邪祈福迎財神。",
+   "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "台南鹽水武廟",
+   "price": "每年元宵節 (正月十四至十五)"
+  },
+  {
+   "rank": 8,
+   "name": "嘉義市國際管樂節",
+   "loc": "嘉義市體育場與噴水池圓環",
+   "date": "每年 12 月中旬",
+   "tag": "管樂之都街頭踩街狂歡",
+   "desc": "超過 50 支國內外頂尖管樂行進樂隊走上嘉義街頭踩街吹奏，全城沸騰樂音飛揚。",
+   "img": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "嘉義市體育場與噴水池圓環",
+   "price": "每年 12 月中旬"
+  },
+  {
+   "rank": 9,
+   "name": "台灣文博會 Creative Expo",
+   "loc": "全台巡迴 (台北/台南/高雄)",
+   "date": "每年下半年",
+   "tag": "全亞洲最大文創 IP 展",
+   "desc": "集結台灣原創插畫、文創設計、手作工藝、獨立設計師與在地文化策展。",
+   "img": "https://images.unsplash.com/photo-1508997449629-303059a039c0?w=600&auto=format&fit=crop",
+   "rate": "4.9★",
+   "city": "全台巡迴 (台北/台南/高雄)",
+   "price": "每年下半年"
+  },
+  {
+   "rank": 10,
+   "name": "平溪國際天燈節",
+   "loc": "新北市平溪與十分廣場",
+   "date": "每年元宵節前後",
+   "tag": "世界第二大夜間節慶 (CNN)",
+   "desc": "數千盞寫滿心願的天燈在黑夜中同時冉冉升空，繁星點點宛如銀河落入凡間。",
+   "img": "assets/shifen_lantern_tour.png",
+   "rate": "4.9★",
+   "city": "新北市平溪與十分廣場",
+   "price": "每年元宵節前後"
+  }
+ ],
+ "rainy": [
+  {
+   "rank": 1,
+   "name": "台南 ｜ 奇美博物館",
+   "city": "台南市仁德區",
+   "indoor": "純白巴洛克宮殿 · 頂級提琴與西洋藝術",
+   "desc": "全台館藏最豐富的私人博物館！阿波羅噴泉廣場、羅丹沉思者、世界最大提琴典藏，雨天漫步宮殿半天都不夠。",
+   "rate": "4.9★",
+   "ticket": "NT$ 200",
+   "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 2,
+   "name": "台北 ｜ 國立故宮博物院",
+   "city": "台北市士林區",
+   "indoor": "世界四大博物館之一 · 70萬件宮廷瑰寶",
+   "desc": "外頭風雨大作，室內溫潤沉靜。翠玉白菜、肉形石、毛公鼎與四庫全書，雨天浸淫在五千年浩瀚文明。",
+   "rate": "4.8★",
+   "ticket": "NT$ 350",
+   "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 3,
+   "name": "桃園 ｜ Xpark 都會型水生公園",
+   "city": "桃園市中壢區",
+   "indoor": "日本橫濱八景島海外首館 · 療癒水母缸",
+   "desc": "高鐵桃園站步行5分鐘！結合光影音樂科技的沉浸式水族館，雨天看企鵝空中步道、萬隻銀鮫悠游大水槽超療癒。",
+   "rate": "4.8★",
+   "ticket": "NT$ 550",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 4,
+   "name": "台北 ｜ 台北 101 觀景台與室內商場",
+   "city": "台北市信義區",
+   "indoor": "室內高空俯瞰迷霧雲海 · 風阻尼球展示",
+   "desc": "雨天的台北101別有一番仙氣！看窗外雲霧翻騰宛如漫步空中仙境，還能近距離欣賞世界最大 660 公噸風阻尼球。",
+   "rate": "4.9★",
+   "ticket": "NT$ 600",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 5,
+   "name": "台中 ｜ 臺中國家歌劇院",
+   "city": "台中市西屯區",
+   "indoor": "伊東豊雄曲牆美學 · 無樑柱建築奇觀",
+   "desc": "被國際媒體譽為世界九大新地標！走入洞窟般的美聲涵洞曲牆空間，逛文創聚落、品咖啡、看藝文展覽。",
+   "rate": "4.8★",
+   "ticket": "免費參觀 (演出另計)",
+   "img": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 6,
+   "name": "宜蘭 ｜ 蘭陽博物館",
+   "city": "宜蘭縣頭城鎮",
+   "indoor": "單面山幾何玻璃建築 · 宜蘭山海地質史",
+   "desc": "外頭蘭陽平原落雨紛紛，館內傾斜玻璃光影灑落。介紹宜蘭山林、平原與海洋生態，是宜蘭雨天最美避風港。",
+   "rate": "4.8★",
+   "ticket": "NT$ 100",
+   "img": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 7,
+   "name": "基隆 ｜ 國立海洋科技博物館 (海科館)",
+   "city": "基隆市中正區",
+   "indoor": "由火力發電廠改建 · 巨大海洋科學館",
+   "desc": "北台灣雨都基隆最強室內景點！互動式深海潛水艇體驗、水產廳摸摸池與 IMAX 巨幕海洋劇場，親子雨天首推。",
+   "rate": "4.7★",
+   "ticket": "NT$ 200",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 8,
+   "name": "台北 ｜ 台北市立美術館 (北美館)",
+   "city": "台北市中山區",
+   "indoor": "白色四方管狀現代美學 · 沉靜當代藝術展",
+   "desc": "純白採光天井搭配前衛當代藝術展覽，地下中庭設有藝文書店與優雅咖啡座，下雨天一個人也能沉澱充電。",
+   "rate": "4.8★",
+   "ticket": "NT$ 30",
+   "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 9,
+   "name": "高雄 ｜ 高雄市立美術館與內惟藝術中心",
+   "city": "高雄市鼓山區",
+   "indoor": "純白弧形山丘建築 · 結合電影院與輕食展演",
+   "desc": "輕軌直達內惟站！漫步在無隔閡的開放式純白藝術大廳，聽音響實驗、品嚐在地小農精品咖啡，愜意無比。",
+   "rate": "4.8★",
+   "ticket": "NT$ 90",
+   "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 10,
+   "name": "台中 ｜ 國立自然科學博物館 (科博館)",
+   "city": "台中市北區",
+   "indoor": "巨大暴龍恐龍廳 · 太空劇場與植物溫室",
+   "desc": "全台老少咸宜經典！會轉頭吼叫的機械暴龍超逼真，還有巨大立體劇場與熱帶雨林高空玻璃溫室，室內探索一整天。",
+   "rate": "4.9★",
+   "ticket": "NT$ 100",
+   "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&auto=format&fit=crop"
+  }
+ ],
+ "cafe": [
+  {
+   "rank": 1,
+   "name": "Simple Kaffa 興波咖啡旗艦店",
+   "city": "台北市中正區",
+   "views": "186 萬次點閱",
+   "rate": "4.9★",
+   "tag": "世界咖啡大師冠軍",
+   "feature": "WBC世界咖啡師大賽冠軍吳則霖創辦，森林系天井木質空間，招牌皺皺蛋糕與手沖單品必點。",
+   "img": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 2,
+   "name": "RUFOUS COFFEE ROASTERS",
+   "city": "台北市大安區",
+   "views": "154 萬次點閱",
+   "rate": "4.9★",
+   "tag": "亞洲50大最佳咖啡",
+   "feature": "台北老字號自家烘焙傳奇！琥珀色復古木質調吧台，義式濃縮與微酸耶加雪菲層次分明。",
+   "img": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 3,
+   "name": "Fika Fika Cafe",
+   "city": "台北市中山區",
+   "views": "142 萬次點閱",
+   "rate": "4.8★",
+   "tag": "北歐烘焙冠軍",
+   "feature": "北歐盃咖啡烘焙大賽冠軍！淺焙明亮果酸調性，北歐純白極簡空間，採光極佳適合午後閱讀。",
+   "img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 4,
+   "name": "CAFE!N 硬咖啡民權旗艦店",
+   "city": "台北市中山區",
+   "views": "135 萬次點閱",
+   "rate": "4.8★",
+   "tag": "純白極簡美學",
+   "feature": "巨型驚嘆號地標與兩層樓純白採光帷幕，聯名冠軍冠軍黑咖啡與脆皮冠軍麵包，拍照超好看。",
+   "img": "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 5,
+   "name": "Heritage Bakery & Cafe",
+   "city": "台北市中正區",
+   "views": "128 萬次點閱",
+   "rate": "4.8★",
+   "tag": "美式肉桂捲霸主",
+   "feature": "台北排隊肉桂捲與紅心芭樂戚風蛋糕王者！紅磚老屋挑高設計，手沖咖啡與美式烘焙完美結合。",
+   "img": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 6,
+   "name": "Coffee Stopover",
+   "city": "台中市西區",
+   "views": "124 萬次點閱",
+   "rate": "4.9★",
+   "tag": "台中手沖天花板",
+   "feature": "巷弄職人烘焙聖殿！提供五種萃取方式與數十種自選焙度豆單，咖啡迷朝聖必備站點。",
+   "img": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 7,
+   "name": "目覚め咖啡 mezamashikohi",
+   "city": "台中市南屯區",
+   "views": "119 萬次點閱",
+   "rate": "4.8★",
+   "tag": "日式綠意採光",
+   "feature": "清水模綠意大庭院，晨曦陽光透過落地窗灑落，提供手作烘焙吐司與細膩單品黑咖啡。",
+   "img": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 8,
+   "name": "StableNice BLDG. 原木老宅",
+   "city": "台南市中西區",
+   "views": "115 萬次點閱",
+   "rate": "4.9★",
+   "tag": "五十年老印刷廠",
+   "feature": "台南老印刷廠改建！結合精品咖啡、文創選物與半露天天井，老磚老木質感溫潤醇厚。",
+   "img": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 9,
+   "name": "握咖啡 OH! Cafe",
+   "city": "高雄市鼓山區",
+   "views": "110 萬次點閱",
+   "rate": "4.9★",
+   "tag": "烘豆大師賴昱權",
+   "feature": "世界烘豆大賽冠軍賴昱權創立！金黃烘焙原豆與西子灣海風相伴，特調冰滴咖啡香濃甘甜。",
+   "img": "https://images.unsplash.com/photo-1497636577773-f1231844b336?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 10,
+   "name": "昭和浪漫冰室 Cafe & Bar",
+   "city": "台北市大安區",
+   "views": "106 萬次點閱",
+   "rate": "4.8★",
+   "tag": "日式復古大人味",
+   "feature": "老宅骨董沙發配昭和布丁！入夜後提供威士忌冰滴與特調調酒，氛圍微醺浪漫。",
+   "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 11,
+   "name": "Instil Coffee Dimension",
+   "city": "台北市大安區",
+   "views": "102 萬次點閱",
+   "rate": "4.8★",
+   "tag": "暗黑極簡實驗室",
+   "feature": "地下室沉浸式黑色工業風，專注於義式萃取曲線與氮氣冷萃，科技感十足。",
+   "img": "https://images.unsplash.com/photo-1518057111178-44a106bad636?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 12,
+   "name": "AKA café (大稻埕古宅秘境)",
+   "city": "台北市大同區",
+   "views": "98 萬次點閱",
+   "rate": "4.8★",
+   "tag": "大稻埕焦糖布丁",
+   "feature": "迪化街巷弄靜謐老宅，手作方形濃醇焦糖布丁配黑咖啡，安靜療癒適合一個人放空。",
+   "img": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 13,
+   "name": "孵咖啡洋館",
+   "city": "台北市大同區",
+   "views": "95 萬次點閱",
+   "rate": "4.8★",
+   "tag": "昭和喫茶店風情",
+   "feature": "紅絲絨椅、彩繪玻璃吊燈與老黑膠唱片，彷彿穿越回日本大正昭和年代享受虹吸咖啡。",
+   "img": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 14,
+   "name": "好丘 Good Cho's 信義店",
+   "city": "台北市信義區",
+   "views": "92 萬次點閱",
+   "rate": "4.7★",
+   "tag": "眷村手工貝果",
+   "feature": "四四南村眷村木窗老舍，手工自製台灣在地食材貝果，搭配香濃燕麥奶拿鐵看台北101。",
+   "img": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 15,
+   "name": "MKCR 山小孩咖啡",
+   "city": "台北市中正區",
+   "views": "90 萬次點閱",
+   "rate": "4.8★",
+   "tag": "北門古蹟窗景第一排",
+   "feature": "正對國家一級古蹟北門！純白極簡兩層樓，坐二樓窗邊喝燕麥拿鐵看百年北門歷史交會。",
+   "img": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 16,
+   "name": "森/CASA 咖啡沙龍",
+   "city": "台南市南區",
+   "views": "88 萬次點閱",
+   "rate": "4.9★",
+   "tag": "京都開化堂百年茶筒",
+   "feature": "丹麥經典名椅與日本京都開化堂百年銅罐，安靜深邃的極致侘寂美學，品味頂級手沖。",
+   "img": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 17,
+   "name": "Coffee Sind",
+   "city": "台北市中正區",
+   "views": "85 萬次點閱",
+   "rate": "4.8★",
+   "tag": "多肉植栽秘境",
+   "feature": "新生南路巷弄溫室！被上百盆多肉植物環繞的小巧外帶吧，招牌赤崁糖拿鐵與手沖。",
+   "img": "https://images.unsplash.com/photo-1469957767090-753257cc5287?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 18,
+   "name": "Single Origin espresso & roast",
+   "city": "台北市大安區",
+   "views": "83 萬次點閱",
+   "rate": "4.8★",
+   "tag": "單一產區極致",
+   "feature": "藏身東區巷弄的沉著咖啡館，堅持不使用商業配方豆，提供多產區純粹原始風味探索。",
+   "img": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 19,
+   "name": "木柵路易莎烘豆旗艦館",
+   "city": "台北市文山區",
+   "views": "80 萬次點閱",
+   "rate": "4.7★",
+   "tag": "插座辦公天堂",
+   "feature": "挑高三層樓工業風烘豆旗艦店，全店插座齊全、採光充沛，是遠距工作者最愛據點。",
+   "img": "https://images.unsplash.com/photo-1497636577773-f1231844b336?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 20,
+   "name": "Coffee Lover's Planet",
+   "city": "台北市大安區",
+   "views": "78 萬次點閱",
+   "rate": "4.8★",
+   "tag": "UCC 旗艦概念館",
+   "feature": "SOGO敦化館挑高圓形環狀吧台！提供法壓、虹吸、手沖、冷萃等多達七種萃取設備體驗。",
+   "img": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop"
+  }
+ ],
+ "walk": [
+  {
+   "rank": 1,
+   "name": "台北赤峰街 ｜ 打鐵老街蛻變文青獨立選物與咖啡小巷",
+   "city": "台北市大同區",
+   "views": "210 萬篇次閱覽",
+   "tag": "復古選物",
+   "desc": "昔日汽車零件黑手一條街，如今聚集古著、獨立書店、昭和喫茶與手作飾品，穿梭巷弄驚喜連連。",
+   "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 2,
+   "name": "大稻埕迪化街 ｜ 穿梭百年紅磚巴洛克洋樓與南北貨香",
+   "city": "台北市大同區",
+   "views": "195 萬篇次閱覽",
+   "tag": "老洋樓散策",
+   "desc": "中藥香、茶香與布匹織紋交織的老台北繁華港埠，走訪傳統老餅舖、郭雪湖畫中老街與文創天井天井。",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 3,
+   "name": "台南神農街 ｜ 百年木構街屋下的紅燈籠與深夜微光",
+   "city": "台南市中西區",
+   "views": "188 萬篇次閱覽",
+   "tag": "府城夜景",
+   "desc": "五條港全盛期最繁榮古街，木造老屋掛起手繪紅燈籠，漫步其間彷彿走入清代府城古色時光。",
+   "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 4,
+   "name": "台中審計新村 ｜ 舊省府眷舍重生的週末青年文創市集",
+   "city": "台中市西區",
+   "views": "176 萬篇次閱覽",
+   "tag": "青年市集",
+   "desc": "兩層樓鵝黃色眷村宿舍群，假日聚集全台最熱門手作甜點、黑膠唱片、復古相機與文創攤位。",
+   "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 5,
+   "name": "高雄鹽埕堀江商場 ｜ 走訪港都老鹽埕舶來品與日式木屋巷",
+   "city": "高雄市鹽埕區",
+   "views": "162 萬篇次閱覽",
+   "tag": "舶來老街町",
+   "desc": "美軍協防時代的高雄最潮商圈，隱藏老派西服店、阿婆冰、冬粉王與文青翻修復古居酒屋。",
+   "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 6,
+   "name": "台北青田街 ｜ 漫步昭和日式黑瓦宿舍群與綠蔭大道",
+   "city": "台北市大安區",
+   "views": "155 萬篇次閱覽",
+   "tag": "昭和學人街",
+   "desc": "台北最幽靜的文教綠洲，老樟樹遮蔭的老日式宿舍、一號糧倉、青田七六老洋館，茶香怡人。",
+   "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 7,
+   "name": "嘉義檜意森活村 ｜ 漫步全台最大日式官舍檜木建築群",
+   "city": "嘉義市東區",
+   "views": "148 萬篇次閱覽",
+   "tag": "檜木之都",
+   "desc": "昔日阿里山林業開發官方宿舍群，保留完整29棟木造日式黑瓦房，滿園散發天然檜木幽香。",
+   "img": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 8,
+   "name": "新竹湖口老街 ｜ 百年紅磚巴洛克拱圈騎樓與客家米食",
+   "city": "新竹縣湖口鄉",
+   "views": "140 萬篇次閱覽",
+   "tag": "紅磚老巴洛克",
+   "desc": "全長三百公尺的極致對稱紅磚立面，品嚐客家牛汶水、客家擂茶與百年天主堂古蹟。",
+   "img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 9,
+   "name": "宜蘭中興文創園區 ｜ 巨大煙囪與舊中興紙廠頹廢工業美學",
+   "city": "宜蘭縣五結鄉",
+   "views": "135 萬篇次閱覽",
+   "tag": "工業廢墟文創",
+   "desc": "由全台最大造紙廠改建！巨型廢墟鍋爐煙囪、廢棄木料倉庫化身陶藝、金工、染織工坊。",
+   "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 10,
+   "name": "新北淡水重建街 ｜ 踩著石階避開遊客喧囂的真正老淡水",
+   "city": "新北市淡水區",
+   "views": "130 萬篇次閱覽",
+   "tag": "淡水第一街",
+   "desc": "淡水真正最早的古街！穿梭石階老步道、香草街屋與淡水木下靜涯故居，俯瞰淡水河觀音山落日。",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 11,
+   "name": "基隆委託行街區 ｜ 窄巷中的美式舶來品記憶與隱密咖啡館",
+   "city": "基隆市仁愛區",
+   "views": "125 萬篇次閱覽",
+   "tag": "港灣委託行",
+   "desc": "基隆港繁華時代外國船員交易地，如今轉型為深夜精釀啤酒吧、手沖咖啡與老唱片行聚集地。",
+   "img": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 12,
+   "name": "花蓮溝仔尾老洋樓 ｜ 棋盤小巷中的文創聚落與慢城散步",
+   "city": "花蓮縣花蓮市",
+   "views": "120 萬篇次閱覽",
+   "tag": "花蓮慢活",
+   "desc": "曾經的繁華紅燈商圈，如今翻修為獨立書店、二手唱片、自烘咖啡廳，充滿舒緩海風步調。",
+   "img": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 13,
+   "name": "台東鐵花村音樂聚落 ｜ 彩繪熱氣球燈海下的原民清澈歌聲",
+   "city": "台東縣台東市",
+   "views": "116 萬篇次閱覽",
+   "tag": "音樂與燈海",
+   "desc": "鐵道倉庫綠草如茵，數百顆彩繪熱氣球燈籠點綴夜空，草地上席地而坐聽原民歌手吉他吟唱。",
+   "img": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 14,
+   "name": "台北寶藏巖國際藝術村 ｜ 依山而築的歷史聚落與駐村藝術",
+   "city": "台北市中正區",
+   "views": "112 萬篇次閱覽",
+   "tag": "違章聚落美學",
+   "desc": "新店溪畔層疊依山起伏的歷史建築聚落，走入迷宮般窄巷探訪駐村藝術家工作坊。",
+   "img": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 15,
+   "name": "台北四四南村 ｜ 台北最早眷村與現代信義摩天大樓交會",
+   "city": "台北市信義區",
+   "views": "109 萬篇次閱覽",
+   "tag": "眷村與摩天樓",
+   "desc": "綠色青草斜坡後就是高聳入雲的台北101，老眷村瓦頂與假日簡單市集交織強烈時空對比。",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 16,
+   "name": "台中綠光計畫范特喜 ｜ 12棟自來水自修宿舍的美感生活圈",
+   "city": "台中市西區",
+   "views": "105 萬篇次閱覽",
+   "tag": "綠意老眷舍",
+   "desc": "中興一巷老屋重生典範，二樓空中綠意步道串聯手作香氛、皮革工坊與植栽咖啡館。",
+   "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 17,
+   "name": "台南蝸牛巷 ｜ 跟隨作家葉石濤筆觸漫遊老台南慢城",
+   "city": "台南市中西區",
+   "views": "102 萬篇次閱覽",
+   "tag": "文學散步路",
+   "desc": "這是一個適合人們做夢、幹活、戀愛、結婚，悠然過日子的好地方。循著蝸牛彩繪漫步窄巷。",
+   "img": "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 18,
+   "name": "彰化鹿港老街桂花巷 ｜ 傳統紅磚曲巷與日式藝術村木屋",
+   "city": "彰化縣鹿港鎮",
+   "views": "98 萬篇次閱覽",
+   "tag": "古蹟曲巷",
+   "desc": "九曲巷防風防盜、半邊井敦親睦鄰，走入桂花巷藝術村看鹿港國寶級傳統木雕與錫藝大師創作。",
+   "img": "https://images.unsplash.com/photo-1558857563-b37cf5a452ef?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 19,
+   "name": "屏東勝利星村創意生活園區 ｜ 全台最大將軍官舍群眷村重生",
+   "city": "屏東縣屏東市",
+   "views": "95 萬篇次閱覽",
+   "tag": "將軍眷村",
+   "desc": "日治陸軍飛行聯隊將領官舍，擁有寬闊綠意庭院，進駐旗袍體驗、獨立書店、在地特色美食。",
+   "img": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  },
+  {
+   "rank": 20,
+   "name": "澎湖二崁聚落 ｜ 咾咕石砌築的閩南百年合院與傳香杏仁茶",
+   "city": "澎湖縣西嶼鄉",
+   "views": "92 萬篇次閱覽",
+   "tag": "咾咕石古厝",
+   "desc": "全台首處傳統聚落保存區，由玄武岩與珊瑚礁石砌成的古厝，必品嚐古法手磨香濃杏仁茶。",
+   "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+   "rate": "4.9★"
+  }
+ ],
+ "family": [
+  {
+   "rank": 1,
+   "name": "台北市立動物園 (木柵動物園)",
+   "city": "台北市文山區",
+   "rate": "4.9★",
+   "tag": "亞洲最大動物園 · 親子首選",
+   "desc": "亞洲規模最大動物園！穿梭大貓熊館、企鵝館、非洲動物區與熱帶雨林區，搭乘園區小火車樂趣無窮。",
+   "ticket": "全票 NT$ 100",
+   "price": "全票 NT$ 100",
+   "img": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 2,
+   "name": "國立海洋生物博物館 (屏東海生館)",
+   "city": "屏東縣車城鄉",
+   "rate": "4.9★",
+   "tag": "世界級巨型水族館 · 夜宿海生館",
+   "desc": "漫步84公尺海底隧道、欣賞白鯨曼妙泳姿與巨大海藻森林，夜宿企鵝館更是小朋友一生必體驗的夢幻奇遇。",
+   "ticket": "全票 NT$ 450",
+   "price": "全票 NT$ 450",
+   "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 3,
+   "name": "國立自然科學博物館 (台中科博館)",
+   "city": "台中市北區",
+   "rate": "4.9★",
+   "tag": "動態暴龍恐龍館 · 立體太空劇場",
+   "desc": "超人氣會動會吼叫的巨型暴龍、澎湃立體太空劇場、熱帶雨林溫室，寓教於樂的最佳科學探索天地。",
+   "ticket": "展示場 NT$ 100",
+   "price": "門票 NT$ 100",
+   "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 4,
+   "name": "台北市兒童新樂園",
+   "city": "台北市士林區",
+   "rate": "4.8★",
+   "tag": "都會童話遊樂園 · 摩天輪旋轉木馬",
+   "desc": "海底總動員摩天輪、波力摩天輪、銀河號單軌列車、碰碰車與海盜船，捷運直達超平價歡樂天堂。",
+   "ticket": "門票 NT$ 30",
+   "price": "入園 NT$ 30",
+   "img": "https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 5,
+   "name": "六福村主題遊樂園",
+   "city": "新竹縣關西鎮",
+   "rate": "4.8★",
+   "tag": "野生動物王國 · 刺激極限設施",
+   "desc": "搭乘蒸汽火車近距離觀賞犀牛與長頸鹿，挑戰笑傲飛鷹、大怒神與火山歷險，水陸雙拼嗨翻夏天。",
+   "ticket": "全票 NT$ 1,199",
+   "price": "全票 NT$ 1,199",
+   "img": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 6,
+   "name": "花蓮遠雄海洋公園",
+   "city": "花蓮縣壽豐鄉",
+   "rate": "4.9★",
+   "tag": "無敵太平洋海景 · 海豚海獅嘉年華",
+   "desc": "座落東海岸無敵海景山丘！觀賞聰明海豚飛躍、海獅搞笑秀、水晶城堡奇幻大秀與高空纜車。",
+   "ticket": "全票 NT$ 990",
+   "price": "全票 NT$ 990",
+   "img": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 7,
+   "name": "台中麗寶樂園渡假區 (探索世界)",
+   "city": "台中市后里區",
+   "rate": "4.8★",
+   "tag": "全台最大天空之夢摩天輪 · 賽車場",
+   "desc": "全台最大摩天輪「天空之夢」、全球唯一斷軌雲霄飛車「搶救地心」，結合Outlet購物與國際賽車場。",
+   "ticket": "探索世界 NT$ 899",
+   "price": "全票 NT$ 899",
+   "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 8,
+   "name": "雲林劍湖山世界主題樂園",
+   "city": "雲林縣古坑鄉",
+   "rate": "4.7★",
+   "tag": "摩天輪巨蛋 · 擎天飛梭超刺激",
+   "desc": "中台灣經典主題樂園！巨大百米彩虹摩天輪、飛天潛艇G5、咕咕飛車，闔家出遊放電好去處。",
+   "ticket": "全票 NT$ 899",
+   "price": "全票 NT$ 899",
+   "img": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 9,
+   "name": "高雄義大遊樂世界",
+   "city": "高雄市大樹區",
+   "rate": "4.8★",
+   "tag": "希臘愛琴海情境 · 亞洲最大室內樂園",
+   "desc": "純白聖托里尼山城浪漫造景，擁有全台最大室內主題樂園，不懼烈日風雨輕鬆暢玩。",
+   "ticket": "全票 NT$ 899",
+   "price": "全票 NT$ 899",
+   "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 10,
+   "name": "基隆國立海洋科技博物館 (海科館)",
+   "city": "基隆市中正區",
+   "rate": "4.8★",
+   "tag": "潮境智能海洋館 · 沉浸式互動",
+   "desc": "由舊發電廠改建的海洋殿堂！包含兒童廳巨型溜滑梯、潮境智能海洋館與海龜復育池。",
+   "ticket": "主題館 NT$ 200",
+   "price": "門票 NT$ 200",
+   "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 11,
+   "name": "宜蘭傳藝園區 (國立傳統藝術中心)",
+   "city": "宜蘭縣五結鄉",
+   "rate": "4.9★",
+   "tag": "懷舊老街童玩 · 手作DIY體驗",
+   "desc": "走進民藝紅磚老街，親手體驗糖葫蘆、捏麵人、藍染與陶藝手拉胚，欣賞精彩踩街遊行表演。",
+   "ticket": "普通票 NT$ 150",
+   "price": "門票 NT$ 150",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 12,
+   "name": "新北大都會公園 (熊猴森樂園)",
+   "city": "新北市三重區",
+   "rate": "4.9★",
+   "tag": "全台最大堤坡滑梯 · 31座共融遊具",
+   "desc": "全台最狂免費戶外樂園！以台灣原生動物為主題，31座各式滾輪滑梯與超過100組共融遊具免費暢玩。",
+   "ticket": "免費入園",
+   "price": "免費暢玩",
+   "img": "https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 13,
+   "name": "桃園小人國主題樂園",
+   "city": "桃園市龍潭區",
+   "rate": "4.7★",
+   "tag": "世界微縮建築 · 幼童友好遊樂園",
+   "desc": "按比例縮小的世界名勝古蹟、迷你台灣鐵路模型、多樣專為幼兒園與小學生打造的溫和遊樂設施。",
+   "ticket": "特惠票 NT$ 550",
+   "price": "特惠票 NT$ 550",
+   "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 14,
+   "name": "苗栗飛牛牧場",
+   "city": "苗栗縣通霄鎮",
+   "rate": "4.8★",
+   "tag": "高山青青草原 · 餵牛喝奶露營",
+   "desc": "宛如瑞士的廣袤高坡大草原！小朋友親手餵小牛喝奶、擠牛奶體驗，品嚐純天然濃醇香牛奶布丁。",
+   "ticket": "全票 NT$ 280",
+   "price": "全票 NT$ 280",
+   "img": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 15,
+   "name": "嘉義三隻小豬觀光農場",
+   "city": "嘉義縣民雄鄉",
+   "rate": "4.8★",
+   "tag": "巨大粉紅豬造景 · 近距離餵水豚",
+   "desc": "童話風巨型蘑菇屋與三隻小豬屋，園區飼養狐獴、水豚、草泥馬、迷你馬，還有巨大溜滑梯沙坑。",
+   "ticket": "全票 NT$ 100",
+   "price": "門票 NT$ 100",
+   "img": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 16,
+   "name": "高雄壽山動物園",
+   "city": "高雄市鼓山區",
+   "rate": "4.8★",
+   "tag": "高空天空步道 · 親水廣場水豚山丘",
+   "desc": "全新改建升級！漫步空中綠蔭步道俯瞰動物生活，近距離探訪水豚家族與黑熊生活空間。",
+   "ticket": "全票 NT$ 40",
+   "price": "全票 NT$ 40",
+   "img": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 17,
+   "name": "宜蘭張美阿嬤農場",
+   "city": "宜蘭縣三星鄉",
+   "rate": "4.9★",
+   "tag": "呆萌水豚君泡湯 · 日式庭園和服",
+   "desc": "全台最夯可愛動物農場！穿日式浴衣餵食笑笑羊、袋鼠與水豚君，品嚐手作蔥油餅與雞蛋糕。",
+   "ticket": "全票 NT$ 200",
+   "price": "門票 NT$ 200",
+   "img": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 18,
+   "name": "彰化百果山探索樂園",
+   "city": "彰化縣員林市",
+   "rate": "4.7★",
+   "tag": "台版侏儸紀公園 · 實體比例會動恐龍",
+   "desc": "全台最大恐龍主題樂園！園區內藏著超過40隻擬真會吼叫的巨型恐龍，結合恐龍軌道車與旋轉恐龍。",
+   "ticket": "全票 NT$ 350",
+   "price": "門票 NT$ 350",
+   "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 19,
+   "name": "台南市立圖書館新總館 (童樂島)",
+   "city": "台南市永康區",
+   "rate": "4.9★",
+   "tag": "最美森林圖書館 · 兒童五感探索室",
+   "desc": "獲得多項建築大獎！地下室設有巨大兒童探索專區、立體童書牆、影音播映室，戶外兼具親水遊戲場。",
+   "ticket": "免費入館",
+   "price": "免費入館",
+   "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 20,
+   "name": "台南左鎮化石園區",
+   "city": "台南市左鎮區",
+   "rate": "4.8★",
+   "tag": "全台最大化石主題館 · 遠古猛獁象",
+   "desc": "全台唯一化石主題博物館！展出猛獁象、早坂中國犀、劍齒象等百萬年前台灣古生物化石。",
+   "ticket": "全票 NT$ 100",
+   "price": "門票 NT$ 100",
+   "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop"
+  }
+ ],
+ "mall": [
+  {
+   "rank": 1,
+   "name": "台北 101 購物中心 (Taipei 101 Mall)",
+   "city": "台北市信義區",
+   "rate": "4.9★",
+   "tag": "國際頂級精品旗艦 · 都會摩天核心",
+   "desc": "匯聚全球頂尖奢華精品旗艦店、挑高採光中庭與米其林星級餐廳，地下美食街更是國內外伴手禮與美食首選。",
+   "features": "4樓都會廣場 · 89樓觀景台連通",
+   "price": "信義商圈核心",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 2,
+   "name": "新光三越 台北信義新天地 (A4/A8/A9/A11)",
+   "city": "台北市信義區",
+   "rate": "4.8★",
+   "tag": "全台百貨店王聚落 · 空橋漫步購物街",
+   "desc": "由空橋緊密相連的四大主題館，涵蓋潮流男女裝、親子娛樂、頂級美食餐廳與各國快閃店，信義區不敗心臟地帶。",
+   "features": "香堤大道戶外街頭藝人 · 節慶市集",
+   "price": "空橋串聯四館",
+   "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 3,
+   "name": "遠東 SOGO 台北復興館 (BR4)",
+   "city": "台北市大安區",
+   "rate": "4.8★",
+   "tag": "忠孝復興雙捷運交會 · 國際奢華殿堂",
+   "desc": "捷運忠孝復興站直達！擁有國際一線精品、和風日式庭園餐廳、頂級超市與全台坪效最高專櫃。",
+   "features": "挑高中庭自然採光 · 頂級貴賓廳",
+   "price": "雙捷運直達",
+   "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 4,
+   "name": "台中大遠百 Top City",
+   "city": "台中市西屯區",
+   "rate": "4.8★",
+   "tag": "全台中七期旗艦地標 · 威尼斯運河威秀",
+   "desc": "結合威尼斯水都浪漫造景與台灣老街懷舊主題美食街，匯聚國際一級精品大牌，中台灣購物首選指標。",
+   "features": "威尼斯風情美食街 · 奢華國際大牌",
+   "price": "七期旗艦地標",
+   "img": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 5,
+   "name": "新光三越 台中中港店",
+   "city": "台中市西屯區",
+   "rate": "4.9★",
+   "tag": "連續十餘年全台單店業績冠軍 · 全方位百貨",
+   "desc": "全台單店業績最高傳奇百貨！超齊全美妝保養、排隊名店餐廳、大型展演廳與頂級影城，人潮絡繹不絕。",
+   "features": "全台最狂美妝大道 · 超人氣排隊名店",
+   "price": "全台業績冠軍店",
+   "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 6,
+   "name": "高雄漢神巨蛋購物廣場 (Hanshin Arena)",
+   "city": "高雄市左營區",
+   "rate": "4.8★",
+   "tag": "南台灣百貨霸主 · 緊鄰高雄巨蛋體育館",
+   "desc": "南台灣流行時尚龍頭！B1美食街匯集全台頂級排隊甜點，結合巨蛋演唱會經濟，逛街餐飲熱鬧非凡。",
+   "features": "巨蛋聯通 · 南台灣最強排隊美饌",
+   "price": "南台灣百貨龍頭",
+   "img": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 7,
+   "name": "新竹遠東巨城購物中心 (Big City)",
+   "city": "新竹市東區",
+   "rate": "4.8★",
+   "tag": "桃竹苗全方位生活娛樂中心 · 滑冰場保齡球",
+   "desc": "竹科家庭週末必去地標！擁有舊金山叮叮車造景、極凍冰宮滑冰場、湯姆熊與大魯閣保齡球館，一站式搞定吃喝玩樂。",
+   "features": "舊金山漁人碼頭風情 · 挑高溜冰場",
+   "price": "桃竹苗最大休閒",
+   "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 8,
+   "name": "台北微風南山 (Breeze Nanshan)",
+   "city": "台北市信義區",
+   "rate": "4.8★",
+   "tag": "日本atre商場進駐 · 高空星空景觀餐廳",
+   "desc": "結合日系精緻流行商場atre、亞洲最大精品超市與高樓層百萬星空景觀酒吧，引領摩登潮流品味生活。",
+   "features": "高空星空景觀酒吧 · 日系流行品牌",
+   "price": "日系微風美學",
+   "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 9,
+   "name": "台南南紡購物中心 (T.S. Mall)",
+   "city": "台南市東區",
+   "rate": "4.7★",
+   "tag": "府城最大購物商場 · 佔地廣闊綠意公園",
+   "desc": "台南最大購物聚落！一期與二期雙館串聯，包含威秀影城、賓士KTV、日系雜貨大廠與萬坪戶外時代公園。",
+   "features": "萬坪時代綠意公園 · 親子放電娛樂",
+   "price": "台南東區購物中心",
+   "img": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=600&auto=format&fit=crop"
+  },
+  {
+   "rank": 10,
+   "name": "高雄義享天地 (E-Sky Land)",
+   "city": "高雄市鼓山區",
+   "rate": "4.8★",
+   "tag": "結合萬豪酒店 · 3D裸眼巨型螢幕",
+   "desc": "北高雄全新旗艦巨作！戶外配備震撼3D巨型曲面LED，引進大量南台灣首發美食品牌與精品旗艦店。",
+   "features": "萬豪酒店直通 · 3D巨型曲面屏幕",
+   "price": "萬豪酒店直通",
+   "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop"
+  }
+ ]
+}
