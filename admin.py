@@ -10,6 +10,9 @@
   python3 admin.py --port 9000     # 指定埠
   python3 admin.py --open          # 啟動後自動開啟瀏覽器
 
+關閉方式：
+  在執行該指令的終端機（Terminal）畫面中，按鍵盤快捷鍵 `Ctrl + C` 即可中斷並關閉伺服器。
+
 安全範圍：只能讀寫 content/、klook/ 底下的 .json，以及根目錄的 links.json、info.json。
 """
 
