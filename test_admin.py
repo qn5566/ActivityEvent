@@ -52,5 +52,22 @@ class CafeSyncTests(unittest.TestCase):
                     self.assertEqual(json.loads((root / rel).read_text()), [])
 
 
+class CafeArticleSyncTests(unittest.TestCase):
+    def setUp(self):
+        self.source = [
+            {"id": "art_1", "cafeId": "cafe_1", "title": "文章一", "coverImg": "https://img.example/1"},
+            {"id": "art_2", "cafeId": "cafe_2", "title": "文章二", "coverImg": "https://img.example/2"},
+        ]
+        self.target = [dict(art, title="Translated " + art["id"]) for art in self.source]
+
+    def test_sync_cafe_articles_preserves_translation_and_updates_images(self):
+        source = [dict(self.source[0], coverImg="https://img.example/updated")]
+        result = admin.sync_cafe_articles(source, self.target)
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]["id"], "art_1")
+        self.assertEqual(result[0]["title"], "Translated art_1")
+        self.assertEqual(result[0]["coverImg"], "https://img.example/updated")
+
+
 if __name__ == "__main__":
     unittest.main()

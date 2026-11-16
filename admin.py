@@ -113,18 +113,26 @@ def sync_node(src, tgt):
             tgt.extend(copy.deepcopy(src[len(tgt):]))
 
 
-def sync_cafes(src, tgt):
-    """以固定 ID 對齊店家，新增／刪除時保留仍存在店家的翻譯。"""
-    existing = {cafe["id"]: cafe for cafe in tgt}
+def sync_by_id(src, tgt):
+    """以固定 ID 對齊項目，新增／刪除時保留仍存在項目的翻譯與本體結構。"""
+    existing = {item["id"]: item for item in tgt if isinstance(item, dict) and "id" in item}
     result = []
-    for cafe in src:
-        translated = existing.get(cafe["id"])
+    for item in src:
+        translated = existing.get(item["id"])
         if translated is None:
-            translated = copy.deepcopy(cafe)
+            translated = copy.deepcopy(item)
         else:
-            sync_node(cafe, translated)
+            sync_node(item, translated)
         result.append(translated)
     return result
+
+
+def sync_cafes(src, tgt):
+    return sync_by_id(src, tgt)
+
+
+def sync_cafe_articles(src, tgt):
+    return sync_by_id(src, tgt)
 
 
 def sync_to_other_langs(rel, data):
@@ -155,6 +163,8 @@ def sync_to_other_langs(rel, data):
         minified, indent = detect_format(raw)
         if filename == "cafes.json":
             target_data = sync_cafes(data, target_data)
+        elif filename == "cafe_articles.json":
+            target_data = sync_cafe_articles(data, target_data)
         elif filename in SYNC_ALL_FILES:
             import copy
             target_data = copy.deepcopy(data)
@@ -262,6 +272,14 @@ class Handler(BaseHTTPRequestHandler):
                     return self._send(400, {"error": "咖啡店資料必須為陣列，且每筆須有非空白的 ID"})
                 if len({cafe["id"] for cafe in data}) != len(data):
                     return self._send(400, {"error": "咖啡店 ID 不可重複"})
+            if rel.startswith("content/") and rel.endswith("/cafe_articles.json"):
+                if not isinstance(data, list) or any(
+                    not isinstance(art, dict) or not isinstance(art.get("id"), str)
+                    or not art["id"].strip() for art in data
+                ):
+                    return self._send(400, {"error": "咖啡文章資料必須為陣列，且每筆須有非空白的 ID"})
+                if len({art["id"] for art in data}) != len(data):
+                    return self._send(400, {"error": "咖啡文章 ID 不可重複"})
             try:
                 with open(abs_path, encoding="utf-8") as fh:
                     orig_raw = fh.read()

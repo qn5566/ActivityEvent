@@ -68,6 +68,13 @@
   .add-link { border:1px dashed var(--accent); color:var(--accent); background:#fff; border-radius:8px; padding:4px 10px; cursor:pointer; font-size:12px; }
   .toolbar { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
   .toolbar h2 { margin:0; }
+  .toolbar-actions { display:flex; align-items:center; gap:8px; margin-left:auto; }
+  .jump-btn { display:inline-flex; align-items:center; gap:4px; padding:5px 10px; border-radius:8px; border:1px solid #93c5fd; background:#eff6ff; color:#1d4ed8; font-weight:600; font-size:12px; cursor:pointer; text-decoration:none; }
+  .jump-btn:hover { background:#dbeafe; border-color:#60a5fa; }
+  .jump-btn.secondary { background:#f8fafc; border-color:#cbd5e1; color:#475569; }
+  .jump-btn.secondary:hover { background:#f1f5f9; border-color:#94a3b8; }
+  .section-card { border:1px solid var(--line); border-radius:10px; padding:12px; margin-bottom:10px; background:#fbfcfe; }
+  .section-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; font-weight:600; font-size:13px; }
   .search { margin-left:auto; }
   .modal-overlay { position:fixed; inset:0; background:rgba(15,23,42,.55); display:none;
                    align-items:center; justify-content:center; z-index:100; padding:16px; }
@@ -119,8 +126,20 @@
   </form>
 </div>
 
+<div class="modal-overlay" id="cafeArticleModal" onclick="if(event.target===this)closeCafeArticleModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewCafeArticle()">
+    <h2>新增咖啡深度文章</h2>
+    <div class="field-grid" id="cafeArticleModalForm"></div>
+    <p class="hint">新增後請按「存檔」。文章結構會同步至其他語言。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeCafeArticleModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增文章</button>
+    </div>
+  </form>
+</div>
+
 <script>
-const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedHomeBlog:null, selectedHomeRanking:null, selectedThemeGrid:null, selectedActivity:null, selectedSpot:null, dirty:false, files:{} };
+const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCafeArticle:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedHomeBlog:null, selectedHomeRanking:null, selectedThemeGrid:null, selectedActivity:null, selectedSpot:null, dirty:false, files:{}, targetCafeId:null, targetArticleCafeId:null, cafeArticlesMap:null };
 const $ = s => document.querySelector(s);
 
 function channelBadge(type){
@@ -182,7 +201,7 @@ function switchLang(lang){
   }
 }
 
-async function loadFile(path){
+async function loadFile(path, options = {}){
   const res = await api('/api/file?path=' + encodeURIComponent(path));
   state.path = res.path;
   state.data = res.data;
@@ -190,6 +209,7 @@ async function loadFile(path){
   state.selectedTopic = null;
   state.selectedArticle = null;
   state.selectedCafe = null;
+  state.selectedCafeArticle = null;
   state.selectedCharter = null;
   state.selectedMichelin = null;
   state.selectedTheme = null;
@@ -199,6 +219,29 @@ async function loadFile(path){
   state.selectedThemeGrid = null;
   state.selectedActivity = null;
   state.selectedSpot = null;
+
+  if(options.targetCafeId !== undefined){ state.targetCafeId = options.targetCafeId; }
+  if(options.targetArticleCafeId !== undefined){ state.targetArticleCafeId = options.targetArticleCafeId; }
+
+  // 如果載入的是 cafes.json，同步預載同語系的 cafe_articles.json 建立索引
+  const fname = state.path ? state.path.split('/').pop() : '';
+  const lang = (state.path && state.path.startsWith('content/')) ? state.path.split('/')[1] : null;
+  if(fname === 'cafes.json' && lang){
+    try {
+      const artRes = await api('/api/file?path=' + encodeURIComponent(`content/${lang}/cafe_articles.json`));
+      state.cafeArticlesMap = {};
+      if(Array.isArray(artRes.data)){
+        artRes.data.forEach((art, idx) => {
+          if(art.cafeId) state.cafeArticlesMap[art.cafeId] = { article: art, index: idx };
+        });
+      }
+    } catch(e){
+      state.cafeArticlesMap = null;
+    }
+  } else {
+    state.cafeArticlesMap = null;
+  }
+
   updateStatus();
   renderLangTabs();
   render();
@@ -214,6 +257,7 @@ function render(){
   if(fname === 'activities.json'){ renderActivitiesList(); renderActivities(); return; }
   if(fname === 'spots.json'){ renderSpotsList(); renderSpots(); return; }
   if(fname === 'cafes.json' && Array.isArray(state.data)){ renderCafe(); renderCafeList(); return; }
+  if(fname === 'cafe_articles.json' && Array.isArray(state.data)){ renderCafeArticles(); renderCafeArticleList(); return; }
   if(state.data && state.data.topics && state.data.items){
     renderRankings();
     renderTopics();
@@ -339,9 +383,10 @@ function renderCafeItems(q){
   state.data.forEach((a,i)=>{
     const text = ((a.name||'')+' '+(a.city||'')+' '+(a.district||'')+' '+(a.features||'')).toLowerCase();
     if(q && !text.includes(q)) return;
+    const hasArticle = state.cafeArticlesMap && state.cafeArticlesMap[a.id];
     const div = document.createElement('div');
     div.className = 'topic-item' + (state.selectedCafe === i ? ' on' : '');
-    div.innerHTML = `<span class="ic">☕</span><span class="nm">${escapeHtml(a.name)}</span><span class="cnt">${escapeHtml(a.city||'')}</span>`;
+    div.innerHTML = `<span class="ic">${hasArticle ? '☕📝' : '☕'}</span><span class="nm" title="${escapeHtml(a.name)}">${escapeHtml(a.name)}</span><span class="cnt">${hasArticle ? '有專文' : escapeHtml(a.city||'')}</span>`;
     div.onclick = ()=>{ state.selectedCafe = i; render(); };
     c.appendChild(div);
   });
@@ -349,13 +394,34 @@ function renderCafeItems(q){
 
 function renderCafe(){
   const main = $('#main');
+  if(state.targetCafeId){
+    const foundIdx = state.data.findIndex(c => c.id === state.targetCafeId);
+    if(foundIdx !== -1) state.selectedCafe = foundIdx;
+    state.targetCafeId = null;
+  }
   if(state.selectedCafe == null){ state.selectedCafe = 0; }
   const a = state.data[state.selectedCafe];
   const addButton = '<button type="button" class="add-link" onclick="openCafeModal()">＋ 新增咖啡店</button>';
   if(!a){ main.innerHTML = `<div class="toolbar"><h2>☕ 咖啡店（0 筆）</h2>${addButton}</div><div class="card">尚無咖啡店，請新增第一筆資料。</div>`; return; }
   const p = `[${state.selectedCafe}]`;
-  let html = `<div class="toolbar"><h2>☕ 咖啡店 ${state.selectedCafe+1} / ${state.data.length}：${escapeHtml(a.name)}</h2>${addButton}
-    <button type="button" class="link-del" onclick="removeCafe()">刪除咖啡店</button></div>`;
+
+  const curLang = (state.path && state.path.startsWith('content/')) ? state.path.split('/')[1] : 'zh';
+  const articleInfo = state.cafeArticlesMap && state.cafeArticlesMap[a.id];
+  let articleActionBtn = '';
+  if(articleInfo){
+    articleActionBtn = `<button type="button" class="jump-btn" onclick="jumpToCafeArticle('${escapeHtml(a.id)}')">📖 檢視/編輯深度文章（${escapeHtml(articleInfo.article.title || '')}）→</button>`;
+  } else {
+    articleActionBtn = `<button type="button" class="jump-btn secondary" onclick="createArticleForCafe('${escapeHtml(a.id)}', '${escapeHtml(a.name)}')">＋ 為此店建立專題報導</button>`;
+  }
+
+  let html = `<div class="toolbar">
+    <h2>☕ 咖啡店 ${state.selectedCafe+1} / ${state.data.length}：${escapeHtml(a.name)}</h2>
+    ${addButton}
+    <div class="toolbar-actions">
+      ${articleActionBtn}
+      <button type="button" class="link-del" onclick="removeCafe()">刪除咖啡店</button>
+    </div>
+  </div>`;
   html += `<div class="card"><h2>基本資訊</h2><div class="field-grid">
     <div>${label('id（自動產生）')}<input value="${escapeHtml(a.id)}" readonly></div> ${tfp(p,'status', a.status)}
     ${tap(p,'name', a.name)} ${tfp(p,'city', a.city)}
@@ -407,6 +473,256 @@ function removeCafe(){
   if(!cafe || !confirm(`確定刪除「${cafe.name}」？存檔後會從所有語言同步移除。`)) return;
   state.data.splice(state.selectedCafe, 1);
   state.selectedCafe = state.data.length ? Math.min(state.selectedCafe, state.data.length - 1) : null;
+  markDirty();
+  render();
+}
+
+function jumpToCafeArticle(cafeId){
+  const lang = (state.path && state.path.startsWith('content/')) ? state.path.split('/')[1] : 'zh';
+  const targetPath = `content/${lang}/cafe_articles.json`;
+  $('#fileSelect').value = targetPath;
+  loadFile(targetPath, { targetArticleCafeId: cafeId });
+}
+
+function createArticleForCafe(cafeId, cafeName){
+  const lang = (state.path && state.path.startsWith('content/')) ? state.path.split('/')[1] : 'zh';
+  const targetPath = `content/${lang}/cafe_articles.json`;
+  $('#fileSelect').value = targetPath;
+  loadFile(targetPath, { targetArticleCafeId: cafeId }).then(()=>{
+    openCafeArticleModal({ cafeId: cafeId, title: `${cafeName} 深度體驗指南` });
+  });
+}
+
+function jumpToCafe(cafeId){
+  const lang = (state.path && state.path.startsWith('content/')) ? state.path.split('/')[1] : 'zh';
+  const targetPath = `content/${lang}/cafes.json`;
+  $('#fileSelect').value = targetPath;
+  loadFile(targetPath, { targetCafeId: cafeId });
+}
+
+// =========================================================
+// cafe_articles.json（咖啡深度專文）
+// =========================================================
+function renderCafeArticleList(){
+  const list = $('#topicList');
+  list.innerHTML = '';
+  if(!Array.isArray(state.data)) return;
+  const search = document.createElement('input');
+  search.id = 'cafeArticleSearch';
+  search.placeholder = '🔍 搜尋文章標題/店家…';
+  search.style.cssText = 'width:100%;padding:6px 8px;margin-bottom:8px;box-sizing:border-box;border-radius:8px;border:1px solid var(--line);font-size:12px;';
+  search.oninput = () => renderCafeArticleItems(($('#cafeArticleSearch').value||'').toLowerCase());
+  list.appendChild(search);
+  const container = document.createElement('div');
+  container.id = 'cafeArticleListContainer';
+  list.appendChild(container);
+  renderCafeArticleItems('');
+}
+
+function renderCafeArticleItems(q){
+  const c = $('#cafeArticleListContainer');
+  if(!c) return;
+  c.innerHTML = '';
+  state.data.forEach((a, i) => {
+    const text = ((a.title||'') + ' ' + (a.subtitle||'') + ' ' + (a.cafeId||'') + ' ' + (a.category||'')).toLowerCase();
+    if(q && !text.includes(q)) return;
+    const div = document.createElement('div');
+    div.className = 'topic-item' + (state.selectedCafeArticle === i ? ' on' : '');
+    div.innerHTML = `<span class="ic">📖</span><span class="nm" title="${escapeHtml(a.title||a.id)}">${escapeHtml(a.title||a.id)}</span><span class="cnt">${escapeHtml(a.cafeId||'')}</span>`;
+    div.onclick = () => { state.selectedCafeArticle = i; render(); };
+    c.appendChild(div);
+  });
+}
+
+function renderCafeArticles(){
+  const main = $('#main');
+  if(state.targetArticleCafeId){
+    const foundIdx = state.data.findIndex(art => art.cafeId === state.targetArticleCafeId);
+    if(foundIdx !== -1) state.selectedCafeArticle = foundIdx;
+    state.targetArticleCafeId = null;
+  }
+  if(state.selectedCafeArticle == null){ state.selectedCafeArticle = 0; }
+  const a = state.data[state.selectedCafeArticle];
+  const addButton = '<button type="button" class="add-link" onclick="openCafeArticleModal()">＋ 新增專題文章</button>';
+  if(!a){
+    main.innerHTML = `<div class="toolbar"><h2>📖 咖啡深度文章（0 筆）</h2>${addButton}</div><div class="card">尚無文章，請新增第一筆資料。</div>`;
+    return;
+  }
+  const p = `[${state.selectedCafeArticle}]`;
+
+  let jumpBtn = '';
+  if(a.cafeId){
+    jumpBtn = `<button type="button" class="jump-btn" onclick="jumpToCafe('${escapeHtml(a.cafeId)}')">☕ 前往對應咖啡店（${escapeHtml(a.cafeId)}）→</button>`;
+  }
+
+  let html = `<div class="toolbar">
+    <h2>📖 文章 ${state.selectedCafeArticle+1} / ${state.data.length}：${escapeHtml(a.title||a.id)}</h2>
+    ${addButton}
+    <div class="toolbar-actions">
+      ${jumpBtn}
+      <button type="button" class="link-del" onclick="removeCafeArticle()">刪除文章</button>
+    </div>
+  </div>`;
+
+  html += `<div class="card"><h2>基本資訊與關聯</h2><div class="field-grid">
+    <div>${label('文章 id（唯一識別）')}<input value="${escapeHtml(a.id)}" readonly></div>
+    <div>${label('對應咖啡店 ID (cafeId)')}<input data-path="${p}.cafeId" value="${escapeHtml(a.cafeId||'')}"></div>
+    ${tap(p, 'title', a.title)}
+    ${tap(p, 'subtitle', a.subtitle)}
+    ${tfp(p, 'category', a.category)}
+    ${tfp(p, 'author', a.author)}
+    ${tfp(p, 'date', a.date)}
+    ${tfp(p, 'readTime', a.readTime)}
+    ${tfp(p, 'slug', a.slug)}
+    ${tap(p, 'coverImg', a.coverImg)}
+    ${tap(p, 'summary', a.summary)}
+  </div></div>`;
+
+  // highlights
+  const highlights = a.highlights || [];
+  html += `<div class="card"><h2>✨ 本文精選亮點 highlights</h2><div class="field-grid">
+    <div class="full">${label('特色亮點清單（逗號分隔，存檔時轉為陣列）')}<textarea data-path="${p}.highlights" data-csv="1" style="min-height:70px">${escapeHtml(highlights.join(', '))}</textarea></div>
+  </div></div>`;
+
+  // practicalInfo
+  const pi = a.practicalInfo || {};
+  const piPath = `${p}.practicalInfo`;
+  html += `<div class="card"><h2>ℹ️ 實用資訊 practicalInfo</h2><div class="field-grid">
+    ${tfp(piPath, 'businessHours', pi.businessHours)}
+    ${tfp(piPath, 'recommendedStay', pi.recommendedStay)}
+    ${tfp(piPath, 'nearestMrt', pi.nearestMrt)}
+    ${tfp(piPath, 'wifiAndPower', pi.wifiAndPower)}
+    ${tap(piPath, 'minOrder', pi.minOrder)}
+  </div></div>`;
+
+  // sections
+  const sections = a.sections || [];
+  let secHtml = '';
+  sections.forEach((sec, sIdx) => {
+    const sp = `${p}.sections[${sIdx}]`;
+    secHtml += `<div class="section-card">
+      <div class="section-head">
+        <span>段落 ${sIdx + 1}：${escapeHtml(sec.heading || '（未命名段落）')}</span>
+        <button type="button" class="link-del" onclick="removeCafeArticleSection(${sIdx})">✕ 刪除段落</button>
+      </div>
+      <div class="field-grid">
+        ${tap(sp, 'heading', sec.heading)}
+        ${tap(sp, 'content', sec.content)}
+        ${tap(sp, 'image', sec.image)}
+        ${tap(sp, 'caption', sec.caption)}
+      </div>
+    </div>`;
+  });
+
+  html += `<div class="card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+      <h2>📑 專題內容段落 sections（共 ${sections.length} 段）</h2>
+      <button type="button" class="add-link" onclick="addCafeArticleSection()">＋ 新增段落</button>
+    </div>
+    ${secHtml}
+  </div>`;
+
+  main.innerHTML = html;
+  bindEdits();
+}
+
+function openCafeArticleModal(pref = {}){
+  const fields = {
+    cafeId: pref.cafeId || 'cafe_',
+    title: pref.title || '',
+    subtitle: '',
+    category: '人氣名店深度探訪',
+    author: 'HiMyDream 編輯部',
+    readTime: '5 分鐘閱讀',
+    slug: '',
+    coverImg: '',
+    summary: ''
+  };
+  const labels = {
+    cafeId: '對應咖啡店 ID (cafeId，必填)',
+    title: '文章標題（必填）',
+    subtitle: '副標題',
+    category: '分類',
+    author: '作者',
+    readTime: '閱讀時間',
+    slug: '網址 Slug',
+    coverImg: '封面圖 URL',
+    summary: '摘要導言'
+  };
+  $('#cafeArticleModalForm').innerHTML = Object.entries(fields).map(([k, def]) =>
+    `<div class="${k==='title'||k==='subtitle'||k==='summary'||k==='coverImg'?'full':''}">${label(labels[k])}<input id="nca_${k}" ${k==='cafeId'||k==='title'?'required':''} value="${escapeHtml(def)}"></div>`
+  ).join('');
+  $('#cafeArticleModal').classList.add('open');
+  $('#nca_title').focus();
+}
+
+function closeCafeArticleModal(){
+  $('#cafeArticleModal').classList.remove('open');
+}
+
+function saveNewCafeArticle(){
+  const val = k => $('#nca_' + k).value.trim();
+  if(!val('cafeId') || !val('title')){ alert('請填寫 cafeId 與標題'); return; }
+  const today = new Date().toISOString().split('T')[0];
+  const newArt = {
+    id: 'cafe_article_' + crypto.randomUUID(),
+    cafeId: val('cafeId'),
+    slug: val('slug') || ('cafe-' + Date.now()),
+    title: val('title'),
+    subtitle: val('subtitle'),
+    author: val('author') || 'HiMyDream 編輯部',
+    date: today,
+    readTime: val('readTime') || '5 分鐘閱讀',
+    category: val('category') || '人氣名店深度探訪',
+    coverImg: val('coverImg'),
+    summary: val('summary'),
+    sections: [
+      {
+        heading: '空間氛圍與品牌特色',
+        content: '',
+        image: '',
+        caption: ''
+      }
+    ],
+    highlights: [],
+    practicalInfo: {
+      businessHours: '',
+      recommendedStay: '1.5 - 2 小時',
+      nearestMrt: '',
+      wifiAndPower: '提供 Wi-Fi',
+      minOrder: '每人低消一杯飲品'
+    }
+  };
+  state.data.push(newArt);
+  state.selectedCafeArticle = state.data.length - 1;
+  closeCafeArticleModal();
+  markDirty();
+  render();
+}
+
+function removeCafeArticle(){
+  const art = state.data[state.selectedCafeArticle];
+  if(!art || !confirm(`確定刪除文章「${art.title || art.id}」？存檔後會從所有語言同步移除。`)) return;
+  state.data.splice(state.selectedCafeArticle, 1);
+  state.selectedCafeArticle = state.data.length ? Math.min(state.selectedCafeArticle, state.data.length - 1) : null;
+  markDirty();
+  render();
+}
+
+function addCafeArticleSection(){
+  const art = state.data[state.selectedCafeArticle];
+  if(!art) return;
+  if(!Array.isArray(art.sections)) art.sections = [];
+  art.sections.push({ heading: '', content: '', image: '', caption: '' });
+  markDirty();
+  render();
+}
+
+function removeCafeArticleSection(sIdx){
+  const art = state.data[state.selectedCafeArticle];
+  if(!art || !Array.isArray(art.sections)) return;
+  if(!confirm(`確定刪除段落 ${sIdx + 1}？`)) return;
+  art.sections.splice(sIdx, 1);
   markDirty();
   render();
 }
