@@ -113,6 +113,20 @@ def sync_node(src, tgt):
             tgt.extend(copy.deepcopy(src[len(tgt):]))
 
 
+def sync_cafes(src, tgt):
+    """以固定 ID 對齊店家，新增／刪除時保留仍存在店家的翻譯。"""
+    existing = {cafe["id"]: cafe for cafe in tgt}
+    result = []
+    for cafe in src:
+        translated = existing.get(cafe["id"])
+        if translated is None:
+            translated = copy.deepcopy(cafe)
+        else:
+            sync_node(cafe, translated)
+        result.append(translated)
+    return result
+
+
 def sync_to_other_langs(rel, data):
     """把 data 的 http/type 欄位同步到其他語言同型檔案，回傳已同步的相對路徑清單。"""
     if not rel.startswith("content/"):
@@ -139,7 +153,9 @@ def sync_to_other_langs(rel, data):
         except Exception:  # noqa: BLE001
             continue
         minified, indent = detect_format(raw)
-        if filename in SYNC_ALL_FILES:
+        if filename == "cafes.json":
+            target_data = sync_cafes(data, target_data)
+        elif filename in SYNC_ALL_FILES:
             import copy
             target_data = copy.deepcopy(data)
         else:
@@ -238,6 +254,14 @@ class Handler(BaseHTTPRequestHandler):
                 data = json.loads(raw.decode("utf-8"))
             except Exception as exc:  # noqa: BLE001
                 return self._send(400, {"error": "JSON 解析失敗：%s" % exc})
+            if rel.startswith("content/") and rel.endswith("/cafes.json"):
+                if not isinstance(data, list) or any(
+                    not isinstance(cafe, dict) or not isinstance(cafe.get("id"), str)
+                    or not cafe["id"].strip() for cafe in data
+                ):
+                    return self._send(400, {"error": "咖啡店資料必須為陣列，且每筆須有非空白的 ID"})
+                if len({cafe["id"] for cafe in data}) != len(data):
+                    return self._send(400, {"error": "咖啡店 ID 不可重複"})
             try:
                 with open(abs_path, encoding="utf-8") as fh:
                     orig_raw = fh.read()

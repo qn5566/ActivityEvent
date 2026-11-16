@@ -107,6 +107,18 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="cafeModal" onclick="if(event.target===this)closeCafeModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewCafe()">
+    <h2>新增咖啡店</h2>
+    <div class="field-grid" id="cafeModalForm"></div>
+    <p class="hint">新增後請按「存檔」。新店家會同步至其他語言，文字先沿用本次輸入的內容。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeCafeModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增咖啡店</button>
+    </div>
+  </form>
+</div>
+
 <script>
 const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedHomeBlog:null, selectedHomeRanking:null, selectedThemeGrid:null, selectedActivity:null, selectedSpot:null, dirty:false, files:{} };
 const $ = s => document.querySelector(s);
@@ -201,6 +213,7 @@ function render(){
   if(fname === 'theme_grid.json'){ renderThemeGridList(); renderThemeGrid(); return; }
   if(fname === 'activities.json'){ renderActivitiesList(); renderActivities(); return; }
   if(fname === 'spots.json'){ renderSpotsList(); renderSpots(); return; }
+  if(fname === 'cafes.json' && Array.isArray(state.data)){ renderCafe(); renderCafeList(); return; }
   if(state.data && state.data.topics && state.data.items){
     renderRankings();
     renderTopics();
@@ -338,11 +351,13 @@ function renderCafe(){
   const main = $('#main');
   if(state.selectedCafe == null){ state.selectedCafe = 0; }
   const a = state.data[state.selectedCafe];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const addButton = '<button type="button" class="add-link" onclick="openCafeModal()">＋ 新增咖啡店</button>';
+  if(!a){ main.innerHTML = `<div class="toolbar"><h2>☕ 咖啡店（0 筆）</h2>${addButton}</div><div class="card">尚無咖啡店，請新增第一筆資料。</div>`; return; }
   const p = `[${state.selectedCafe}]`;
-  let html = `<div class="toolbar"><h2>☕ 咖啡店 ${state.selectedCafe+1} / ${state.data.length}：${escapeHtml(a.name)}</h2></div>`;
+  let html = `<div class="toolbar"><h2>☕ 咖啡店 ${state.selectedCafe+1} / ${state.data.length}：${escapeHtml(a.name)}</h2>${addButton}
+    <button type="button" class="link-del" onclick="removeCafe()">刪除咖啡店</button></div>`;
   html += `<div class="card"><h2>基本資訊</h2><div class="field-grid">
-    ${tfp(p,'id', a.id)} ${tfp(p,'status', a.status)}
+    <div>${label('id（自動產生）')}<input value="${escapeHtml(a.id)}" readonly></div> ${tfp(p,'status', a.status)}
     ${tap(p,'name', a.name)} ${tfp(p,'city', a.city)}
     ${tfp(p,'city_en', a.city_en)} ${tfp(p,'district', a.district)}
     ${tap(p,'address', a.address)} ${tfp(p,'phone', a.phone)}
@@ -358,6 +373,42 @@ function renderCafe(){
   </div>`;
   main.innerHTML = html;
   bindEdits();
+}
+
+function openCafeModal(){
+  const fields = {name:'店名（必填）', city:'縣市（必填）', city_en:'縣市英文', district:'行政區', address:'地址', phone:'電話', status:'營業狀態', price:'價格', rate:'評分', features:'特色介紹', mapUrl:'地圖網址', img:'圖片網址', tags:'標籤（逗號分隔）', tagEmojis:'標籤 Emoji（逗號分隔）'};
+  $('#cafeModalForm').innerHTML = Object.entries(fields).map(([key, title]) =>
+    `<div>${label(title)}<input id="nc_${key}" ${key === 'name' || key === 'city' ? 'required' : ''} value="${key === 'status' ? '營業中' : ''}"></div>`
+  ).join('');
+  $('#cafeModal').classList.add('open');
+  $('#nc_name').focus();
+}
+
+function closeCafeModal(){
+  $('#cafeModal').classList.remove('open');
+}
+
+function saveNewCafe(){
+  const val = key => $('#nc_' + key).value.trim();
+  if(!val('name') || !val('city')){ alert('請填寫店名與縣市'); return; }
+  const cafe = {id:'cafe_' + crypto.randomUUID()};
+  for(const key of ['name','city','city_en','district','address','phone','status','price','rate','features','mapUrl','img']) cafe[key] = val(key);
+  for(const key of ['tags','tagEmojis']) cafe[key] = val(key).split(',').map(s=>s.trim()).filter(Boolean);
+  cafe.links = [];
+  state.data.push(cafe);
+  state.selectedCafe = state.data.length - 1;
+  closeCafeModal();
+  markDirty();
+  render();
+}
+
+function removeCafe(){
+  const cafe = state.data[state.selectedCafe];
+  if(!cafe || !confirm(`確定刪除「${cafe.name}」？存檔後會從所有語言同步移除。`)) return;
+  state.data.splice(state.selectedCafe, 1);
+  state.selectedCafe = state.data.length ? Math.min(state.selectedCafe, state.data.length - 1) : null;
+  markDirty();
+  render();
 }
 
 function renderCharterList(){
