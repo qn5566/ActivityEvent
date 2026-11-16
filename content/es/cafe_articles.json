@@ -1,0 +1,126 @@
+[
+  {
+    "id": "cafe_article_1",
+    "cafeId": "cafe_1",
+    "slug": "simple-kaffa-flagship-taipei",
+    "title": "Peregrinación para Amantes del Café: Guía Completa de Simple Kaffa Flagship Store",
+    "subtitle": "Descubre el atrio verde en una casa histórica cerca de Huashan, café de filtro de clase mundial y el pastel de miel semihorneado",
+    "author": "Equipo Editorial HiMyDream",
+    "date": "2026-11-16",
+    "readTime": "5 min de lectura",
+    "category": "Exploración de Cafeterías Emblemáticas",
+    "coverImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&auto=format&fit=crop",
+    "summary": "Fundada por Berg Wu, Campeón Mundial de Baristas WBC 2016, esta tienda insignia combina ladrillo rojo histórico, claraboyas y maderas nobles en un templo del café en Taipéi.",
+    "sections": [
+      {
+        "heading": "Estética de Campeón y Renacimiento Histórico",
+        "content": "Ubicada en Zhongxiao East Road junto a Huashan 1914, Simple Kaffa Flagship conserva la estructura de ladrillo rojo y la luz natural de su claraboya, complementada con vegetación y maderas oscuras que crean un refugio sereno.",
+        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&auto=format&fit=crop",
+        "caption": "Amplio atrio iluminado por el sol y barra de madera maciza en Simple Kaffa"
+      },
+      {
+        "heading": "Recomendaciones del Experto: Café de Filtro y Postres Únicos",
+        "content": "El café de especialidad de origen único es el protagonista absoluto. Desde notas florales de Etiopía hasta complejos Geishas, todo se extrae con precisión milimétrica. Para acompañar, el pastel de miel semihorneado Wrinkle ofrece una textura cremosa inigualable.",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop",
+        "caption": "Café de filtro de origen único maridado con el famoso pastel de miel semihorneado"
+      },
+      {
+        "heading": "Consejos de Visita y Gestión de Colas",
+        "content": "Es muy concurrido tanto entre semana como los fines de semana. Se recomienda llegar a la apertura (10:00 AM) o por la tarde entre semana. Dispone de un sistema digital de turnos en la entrada."
+      }
+    ],
+    "highlights": [
+      "Fundado por el Campeón Mundial de Baristas WBC 2016",
+      "Impresionante claraboya y diseño botánico en madera",
+      "Imprescindibles: Café de filtro Etiopía, pastel de miel Wrinkle",
+      "Cerca de las estaciones de metro Shandao Temple y Zhongxiao Xinsheng"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:00 - 17:00 (sujeto a avisos en tienda)",
+      "recommendedStay": "1.5 - 2 horas",
+      "nearestMrt": "Metro Shandao Temple Salida 6 (aprox. 3-5 min a pie)",
+      "wifiAndPower": "Wi-Fi gratuito disponible; enchufes en asientos seleccionados",
+      "minOrder": "Consumo mínimo de una bebida por persona"
+    }
+  },
+  {
+    "id": "cafe_article_2",
+    "cafeId": "cafe_2",
+    "slug": "mori-takasago-coffee-dadaocheng",
+    "title": "Terruño Taiwanés en una Mansión Centenaria de Dadaocheng: Mori Takasago Coffee",
+    "subtitle": "Dedicado en exclusiva al café negro 100% taiwanés de origen único, saboreando el carácter de Alishan y Pingtung",
+    "author": "Equipo Editorial HiMyDream",
+    "date": "2026-11-16",
+    "readTime": "4 min de lectura",
+    "category": "Patrimonio y Terruño Local",
+    "coverImg": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&auto=format&fit=crop",
+    "summary": "Ubicado en un histórico edificio de ladrillo rojo en Dadaocheng, Mori Takasago sirve exclusivamente cafés de especialidad cultivados en Taiwán, acompañados de copas de cata en frío y calor.",
+    "sections": [
+      {
+        "heading": "Arquitectura Histórica Occidental y Café Nativo",
+        "content": "Ocupa una mansión histórica de ladrillo rojo que atestigua más de un siglo de comercio en Dadaocheng. Sus suelos de terrazo retro y muebles de época transportan a una atmósfera elegante y nostálgica.",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&auto=format&fit=crop",
+        "caption": "Mori Takasago Coffee irradia elegancia retro de principios del siglo XX"
+      },
+      {
+        "heading": "Café 100% de Taiwán y el Ritual de Degustación Dual",
+        "content": "Desde Alishan hasta Pingtung, cada servicio incluye una taza caliente y una copa de degustación con hielo para apreciar cómo evolucionan las notas aromáticas con los cambios de temperatura.",
+        "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop",
+        "caption": "Presentación en doble copa para disfrutar de los matices de temperatura"
+      }
+    ],
+    "highlights": [
+      "Granos de especialidad 100% cultivados por agricultores locales en Taiwán",
+      "Edificio centenario de ladrillo rojo con agradable luz natural",
+      "Experiencia exclusiva de degustación con copas fría y caliente",
+      "Perfecto para leer, charlar y revivir la atmósfera clásica de Taipéi"
+    ],
+    "practicalInfo": {
+      "businessHours": "12:00 - 21:00",
+      "recommendedStay": "1.5 - 2 horas",
+      "nearestMrt": "Metro Beimen Salida 3 (aprox. 8 min a pie)",
+      "wifiAndPower": "Wi-Fi disponible; ambiente tranquilo y distinguido",
+      "minOrder": "Consumo mínimo de una bebida por persona"
+    }
+  },
+  {
+    "id": "cafe_article_3",
+    "cafeId": "cafe_3",
+    "slug": "z-day-cafe-daan-taipei",
+    "title": "Un Cálido Refugio Urbano: La Filosofía de Vida Lenta de Z Day Cafe",
+    "subtitle": "Un rincón acogedor sin límite de tiempo en Daan, abundantes enchufes, flan casero y rollos de canela",
+    "author": "Equipo Editorial HiMyDream",
+    "date": "2026-11-16",
+    "readTime": "4 min de lectura",
+    "category": "Ideal para Trabajar y Dulces Artesanales",
+    "coverImg": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900&auto=format&fit=crop",
+    "summary": "Escondido en un tranquilo callejón de Leye Street, Z Day Cafe es el refugio favorito de nómadas digitales y aficionados al buen café.",
+    "sections": [
+      {
+        "heading": "Pausa Cotidiana y Estética del Espacio",
+        "content": "La iluminación cálida y la madera natural invitan a relajarse de inmediato. La mayoría de los asientos disponen de enchufes y conexión Wi-Fi de alta velocidad, perfecto para trabajar con ordenador portátil.",
+        "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&auto=format&fit=crop",
+        "caption": "Tonos de madera acogedores que proporcionan un espacio propicio para la concentración"
+      },
+      {
+        "heading": "Postres Artesanales y Delicioso Curry Casero",
+        "content": "Además de cafés de filtro y lattes con leche de avena, destaca su flan horneado al caramelo de textura sedosa y los rollos de canela recién horneados. Para comer, su arroz con curry casero es excepcional.",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop",
+        "caption": "Flan horneado de caramelo y dulces caseros de alta repostería"
+      }
+    ],
+    "highlights": [
+      "Cafetería de trabajo muy valorada con enchufes abundantes en Daan",
+      "Especialidades: Flan horneado de caramelo, rollo de canela, curry casero",
+      "Música ambiental seleccionada con mimo y ambiente tranquilo",
+      "Excelente ubicación, a sólo 5-7 minutos a pie de la estación Liuzhangli"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:30 - 19:00 (Lunes cerrado)",
+      "recommendedStay": "2 - 3 horas",
+      "nearestMrt": "Metro Liuzhangli (aprox. 6 min a pie)",
+      "wifiAndPower": "Numerosos enchufes / Wi-Fi gratuito de alta velocidad",
+      "minOrder": "Consumo mínimo de una bebida por persona"
+    }
+  }
+]

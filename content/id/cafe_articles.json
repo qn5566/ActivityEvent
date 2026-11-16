@@ -1,0 +1,126 @@
+[
+  {
+    "id": "cafe_article_1",
+    "cafeId": "cafe_1",
+    "slug": "simple-kaffa-flagship-taipei",
+    "title": "Destinasi Utama Pecinta Kopi: Panduan Lengkap Simple Kaffa Flagship Store",
+    "subtitle": "Nikmati atap kaca hijau di bangunan bersejarah dekat Huashan, seduhan pour-over kelas dunia, dan kue madu setengah matang",
+    "author": "Redaksi HiMyDream",
+    "date": "2026-11-16",
+    "readTime": "5 menit baca",
+    "category": "Eksplorasi Kafe Populer",
+    "coverImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&auto=format&fit=crop",
+    "summary": "Didirikan oleh Juara Barista Dunia WBC 2016 Berg Wu, toko utama ini memadukan bata merah bersejarah, atap kaca bermandikan cahaya, dan kehangatan kayu menjadi ikon kopi wajib di Taipei.",
+    "sections": [
+      {
+        "heading": "Estetika Juara Barista & Revitalisasi Bangunan Bersejarah",
+        "content": "Terletak di Zhongxiao East Road dekat Huashan 1914, Simple Kaffa Flagship mempertahankan bata merah asli dan atap kaca alami, berpadu dengan tanaman hijau asri dan kayu jati bernuansa tenang.",
+        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&auto=format&fit=crop",
+        "caption": "Atrium luas bermandikan cahaya matahari dan meja bar kayu jati di Simple Kaffa"
+      },
+      {
+        "heading": "Pilihan Utama: Kopi Seduh Manual Single Origin & Makanan Penutup",
+        "content": "Kopi pour-over single-origin adalah daya tarik utama di sini. Mulai dari aroma bunga Ethiopia washed hingga Geisha yang kaya rasa, diekstraksi dengan presisi tinggi. Nikmati bersama kue madu setengah matang Wrinkle yang lembut meleleh.",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop",
+        "caption": "Kopi pour-over pilihan disajikan dengan kue madu setengah matang Wrinkle"
+      },
+      {
+        "heading": "Tips Kunjungan & Waktu Antrean",
+        "content": "Kafe ini sangat ramai baik di hari kerja maupun akhir pekan. Disarankan tiba saat buka sekitar pukul 10.00 pagi atau sore hari di hari kerja. Terdapat sistem nomor antrean digital sehingga Anda bisa berkeliling di Taman Huashan sambil menunggu."
+      }
+    ],
+    "highlights": [
+      "Didirikan oleh Juara Barista Dunia WBC 2016",
+      "Desain atrium bermandikan cahaya alami dengan nuansa kayu dan tanaman",
+      "Menu wajib coba: Ethiopia Washed pour-over, kue madu Wrinkle",
+      "Dekat stasiun MRT Shandao Temple, akses transportasi sangat mudah"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:00 - 17:00 (sesuai pengumuman toko)",
+      "recommendedStay": "1.5 - 2 jam",
+      "nearestMrt": "Stasiun MRT Shandao Temple Pintu Keluar 6 (jalan kaki 3-5 menit)",
+      "wifiAndPower": "Tersedia Wi-Fi gratis; stopkontak di area tempat duduk tertentu",
+      "minOrder": "Minimal pesan satu minuman per orang"
+    }
+  },
+  {
+    "id": "cafe_article_2",
+    "cafeId": "cafe_2",
+    "slug": "mori-takasago-coffee-dadaocheng",
+    "title": "Cita Rasa Asli Taiwan di Gedung Kolonial Abad ke-100 Dadaocheng: Mori Takasago Coffee",
+    "subtitle": "Berkomitmen 100% pada kopi hitam single-origin lokal Taiwan, menikmati keunikan rasa Alishan dan Pingtung",
+    "author": "Redaksi HiMyDream",
+    "date": "2026-11-16",
+    "readTime": "4 menit baca",
+    "category": "Bangunan Bersejarah & Kopi Lokal",
+    "coverImg": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&auto=format&fit=crop",
+    "summary": "Berlokasi di sudut bangunan bata merah bersejarah di Dadaocheng, Mori Takasago menyajikan 100% kopi spesialti hasil panen petani Taiwan dengan cangkir panas dan dingin.",
+    "sections": [
+      {
+        "heading": "Arsitektur Bata Merah Bersejarah Bertemu Kopi Khas Taiwan",
+        "content": "Menempati bangunan kolonial bata merah yang menjadi saksi sejarah perdagangan seabad di Dadaocheng. Lantai teraso retro dan perabotan antik menghadirkan suasana klasik yang tenang.",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&auto=format&fit=crop",
+        "caption": "Suasana nostalgia dan elegan khas awal abad ke-20 di Mori Takasago"
+      },
+      {
+        "heading": "100% Biji Kopi Petani Taiwan & Tradisi Cangkir Dingin-Panas",
+        "content": "Dari Alishan hingga Pingtung, setiap seduhan disajikan dengan cangkir hangat dan gelas es pencicip, memungkinkan pengunjung merasakan evolusi aroma dan rasa seiring perubahan suhu.",
+        "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop",
+        "caption": "Penyajian dua cangkir untuk menikmati perubahan rasa pada suhu berbeda"
+      }
+    ],
+    "highlights": [
+      "100% biji kopi spesialti dari perkebunan lokal Taiwan",
+      "Gedung bata merah berusia seabad dengan pencahayaan alami yang indah",
+      "Pengalaman mencicipi unik dengan cangkir panas dan dingin sekaligus",
+      "Sangat cocok untuk membaca, mengobrol, dan menikmati suasana Taipei tempo dulu"
+    ],
+    "practicalInfo": {
+      "businessHours": "12:00 - 21:00",
+      "recommendedStay": "1.5 - 2 jam",
+      "nearestMrt": "Stasiun MRT Beimen Pintu Keluar 3 (jalan kaki sekitar 8 menit)",
+      "wifiAndPower": "Tersedia Wi-Fi; suasana tenang dan elegan",
+      "minOrder": "Minimal pesan satu minuman per orang"
+    }
+  },
+  {
+    "id": "cafe_article_3",
+    "cafeId": "cafe_3",
+    "slug": "z-day-cafe-daan-taipei",
+    "title": "Tempat Istirahat Tenang di Tengah Kota: Filosofi Slow Living di Z Day Cafe",
+    "subtitle": "Ruang hangat tanpa batas waktu di Daan, stopkontak melimpah, puding karamel lezat dan cinnamon roll",
+    "author": "Redaksi HiMyDream",
+    "date": "2026-11-16",
+    "readTime": "4 menit baca",
+    "category": "Ramah Laptop & Hidangan Penutup",
+    "coverImg": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900&auto=format&fit=crop",
+    "summary": "Tersembunyi di gang damai Leye Street, Z Day Cafe adalah tempat favorit bagi pekerja lepas dan pencinta buku, terkenal dengan dessert buatan sendiri dan kopi berkualitas tinggi.",
+    "sections": [
+      {
+        "heading": "Estetika Istirahat Sehari-hari",
+        "content": "Pencahayaan hangat dan interior kayu segera melepas penat hiruk pikuk kota. Sebagian besar kursi dilengkapi stopkontak dan Wi-Fi berkecepatan tinggi, ideal untuk bekerja atau membaca.",
+        "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&auto=format&fit=crop",
+        "caption": "Nuansa kayu yang hangat menciptakan suasana tenang untuk fokus dan bersantai"
+      },
+      {
+        "heading": "Dessert Buatan Sendiri & Nasi Kari Istimewa",
+        "content": "Puding karamel panggang bertekstur lembut dengan rasa manis-pahit yang pas, serta cinnamon roll hangat yang harum. Jika lapar, nasi kari buatan rumah mereka juga sangat direkomendasikan.",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop",
+        "caption": "Puding karamel panggang yang lembut dan aneka kudapan manis"
+      }
+    ],
+    "highlights": [
+      "Kafe ramah kerja laptop dengan banyak stopkontak di Daan",
+      "Menu wajib: Puding Karamel Panggang, Cinnamon Roll, Nasi Kari",
+      "Pilihan musik latar yang menenangkan dan atmosfer yang santai",
+      "Akses mudah, hanya 5-7 menit jalan kaki dari stasiun MRT Liuzhangli"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:30 - 19:00 (Tutup setiap Senin)",
+      "recommendedStay": "2 - 3 jam",
+      "nearestMrt": "Stasiun MRT Liuzhangli (jalan kaki sekitar 6 menit)",
+      "wifiAndPower": "Banyak stopkontak / Wi-Fi gratis berkecepatan tinggi",
+      "minOrder": "Minimal pesan satu minuman per orang"
+    }
+  }
+]

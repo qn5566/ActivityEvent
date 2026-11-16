@@ -1,0 +1,126 @@
+[
+  {
+    "id": "cafe_article_1",
+    "cafeId": "cafe_1",
+    "slug": "simple-kaffa-flagship-taipei",
+    "title": "세계 바리스타 챔피언의 성지: 심플 카파 (흥파 커피) 플래그십 스토어 심층 가이드",
+    "subtitle": "화산 1914 옆 오래된 주택의 중정과 채광, 궁극의 핸드드립 커피와 시그니처 꿀 반숙 케이크",
+    "author": "HiMyDream 편집부",
+    "date": "2026-11-16",
+    "readTime": "5분 소요",
+    "category": "인기 명소 심층 탐방",
+    "coverImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&auto=format&fit=crop",
+    "summary": "2016 WBC 세계 바리스타 챔피언 버그 우(Berg Wu)가 설립한 대표 매장. 오래된 붉은 벽돌과 높은 천장의 자연 채광, 원목 미학이 어우러진 타이베이 최고의 커피 랜드마크입니다.",
+    "sections": [
+      {
+        "heading": "챔피언의 감각과 고옥(古屋)의 새로운 탄생",
+        "content": "화산 1914 창의문화원구 인근 중샤오둥루에 위치한 심플 카파 플래그십 스토어는 2016년 WBC 챔피언 버그 우의 정수가 담긴 곳입니다. 오래된 건물의 높은 천장 채광과 붉은 벽돌 질감을 그대로 살리고, 풍성한 식물과 짙은 원목을 더해 도심 속 숲처럼 아늑하고 고요한 분위기를 선사합니다.",
+        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&auto=format&fit=crop",
+        "caption": "탁 트인 높은 천장 채광과 웅장한 원목 바 카운터"
+      },
+      {
+        "heading": "커피 애호가 추천: 스페셜티 핸드드립과 디저트",
+        "content": "이곳의 주인공은 단연 싱글 오리진 핸드드립 커피입니다. 화사한 꽃향기와 과일 산미의 에티오피아 워시드부터 복합적인 게이샤까지 전문 바리스타가 섬세하게 추출합니다. 곁들일 디저트로는 시그니처인 '주주(꿀 반숙 카스텔라)'를 추천합니다. 부드럽게 흘러내리는 꿀의 달콤함과 깔끔한 커피의 조화가 일품입니다.",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop",
+        "caption": "정성껏 내린 싱글 오리진 드립 커피와 시그니처 반숙 꿀 케이크"
+      },
+      {
+        "heading": "방문 팁 및 웨이팅 안내",
+        "content": "평일과 주말 모두 많은 인파가 몰립니다. 오픈 시간인 오전 10시경에 방문하시거나 평일 오후 피크 타임을 피하는 것을 추천합니다. 현장 번호표 등록 시스템이 마련되어 있어 대기 시간 동안 화산 1914 공원을 산책하기 좋습니다."
+      }
+    ],
+    "highlights": [
+      "2016 WBC 세계 바리스타 챔피언 브랜드",
+      "고옥 천장 채광과 플랜테리어 원목 디자인",
+      "추천 메뉴: 에티오피아 워시드 드립, 주주 반숙 꿀 케이크",
+      "MRT 산다오쓰역 / 중샤오신성역 인근으로 접근성 우수"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:00 - 17:00 (현장 안내 기준)",
+      "recommendedStay": "1.5 - 2시간",
+      "nearestMrt": "MRT 산다오쓰역 6번 출구 도보 약 3-5분",
+      "wifiAndPower": "무료 Wi-Fi 제공, 일부 좌석 콘센트 완비",
+      "minOrder": "1인 1음료 필수"
+    }
+  },
+  {
+    "id": "cafe_article_2",
+    "cafeId": "cafe_2",
+    "slug": "mori-takasago-coffee-dadaocheng",
+    "title": "다다오청 100년 붉은 벽돌 양옥에서 만나는 대만 로컬 원두: 삼고사 커피관",
+    "subtitle": "100% 대만 로컬 싱글 오리진 블랙커피를 고집하며, 아리산과 핑둥의 풍토를 음미하다",
+    "author": "HiMyDream 편집부",
+    "date": "2026-11-16",
+    "readTime": "4분 소요",
+    "category": "역사 건축과 대만 떼루아",
+    "coverImg": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&auto=format&fit=crop",
+    "summary": "다다오청 옌핑베이루 역사적인 모퉁이 양옥에 위치한 삼고사 커피는 100% 대만산 스페셜티 커피만을 선보이며, 따뜻한 컵과 차가운 테이스팅 잔이 함께 제공됩니다.",
+    "sections": [
+      {
+        "heading": "다다오청의 역사적인 양옥과 대만 커피의 만남",
+        "content": "다다오청의 번영을 지켜봐 온 유서 깊은 붉은 벽돌 양옥에 자리 잡고 있습니다. 앤티크한 목재 문을 열고 들어서면 레트로한 테라조 바닥과 고풍스러운 가구가 어우러져 여유롭고 클래식한 감성을 자아냅니다.",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&auto=format&fit=crop",
+        "caption": "다다오청의 낭만과 고풍스러운 레트로 감성이 가득한 공간"
+      },
+      {
+        "heading": "오직 100% 대만 원두: 정성 어린 테이블 드립 시음",
+        "content": "자이 아리산, 난터우 궈싱, 핑둥 싼디먼 등 대만 각 산지의 떼루아를 온전히 경험할 수 있습니다. 핸드드립 주문 시 따뜻한 잔과 얼음 테이스팅 컵이 함께 제공되어 온도 변화에 따른 섬세한 향미를 음미할 수 있습니다.",
+        "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop",
+        "caption": "온도에 따라 변화하는 풍미를 느낄 수 있는 듀얼 글라스 서빙"
+      }
+    ],
+    "highlights": [
+      "전 메뉴 100% 대만 로컬 농가 스페셜티 원두 사용",
+      "100년 역사의 서양식 붉은 벽돌 건물과 아늑한 채광",
+      "온·냉 더블 글라스로 즐기는 독창적인 테이스팅 경험",
+      "독서와 조용한 대화, 옛 타이베이 정취를 느끼기에 최적"
+    ],
+    "practicalInfo": {
+      "businessHours": "12:00 - 21:00",
+      "recommendedStay": "1.5 - 2시간",
+      "nearestMrt": "MRT 베이먼역 3번 출구 도보 약 8분",
+      "wifiAndPower": "Wi-Fi 제공 / 차분하고 조용한 분위기",
+      "minOrder": "1인 1음료 필수"
+    }
+  },
+  {
+    "id": "cafe_article_3",
+    "cafeId": "cafe_3",
+    "slug": "z-day-cafe-daan-taipei",
+    "title": "도시 여행자를 위한 다정한 쉼터: 휴습일 Z Day Cafe의 슬로 라이프",
+    "subtitle": "다안구 골목 안 시간 제한 없는 따뜻한 공간, 넉넉한 콘센트와 인생 푸딩 & 시나몬롤",
+    "author": "HiMyDream 편집부",
+    "date": "2026-11-16",
+    "readTime": "4분 소요",
+    "category": "노트북 작업 및 힐링 디저트",
+    "coverImg": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900&auto=format&fit=crop",
+    "summary": "다안구 러예제 골목에 위치한 '휴습일'은 일상 속 휴식과 배움을 지향하는 공간으로, 원격 근무자와 카페 러버들에게 꾸준히 사랑받는 아지트입니다.",
+    "sections": [
+      {
+        "heading": "일상의 쉼표가 되는 따뜻한 공간 미학",
+        "content": "부드럽고 은은한 조명과 원목 인테리어가 마음을 편안하게 해줍니다. 대부분의 좌석 주변에 전기 콘센트가 마련되어 있고 초고속 와이파이를 제공하여 노트북 작업이나 독서에 몰입하기에 이상적입니다.",
+        "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&auto=format&fit=crop",
+        "caption": "편안하게 집중할 수 있는 아늑하고 따뜻한 원목 인테리어"
+      },
+      {
+        "heading": "놓칠 수 없는 홈메이드 디저트와 수제 카레",
+        "content": "훌륭한 핸드드립과 오트밀크 라떼뿐 아니라 수제 디저트의 명성이 자자합니다. 쌉싸름하고 달콤한 캐러멜이 일품인 구운 푸딩, 갓 구워낸 시나몬롤, 그리고 든든한 한 끼가 되는 수제 카레라이스까지 만족스럽습니다.",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop",
+        "caption": "진한 캐러멜 향과 부드러운 식감의 시그니처 수제 푸딩"
+      }
+    ],
+    "highlights": [
+      "다안구 인기 콘센트 완비 노트북 작업 및 독서 공간",
+      "필수 주문 메뉴: 구운 캐러멜 푸딩, 특제 시나몬롤, 수제 카레",
+      "감각적인 배경음악과 편안하고 조용한 분위기",
+      "MRT 류장리역에서 도보 약 5~7분으로 편리한 이동"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:30 - 19:00 (매주 월요일 휴무)",
+      "recommendedStay": "2 - 3시간",
+      "nearestMrt": "MRT 류장리역 도보 약 6분",
+      "wifiAndPower": "콘센트 다수 완비 / 초고속 무료 Wi-Fi",
+      "minOrder": "1인 1음료 필수"
+    }
+  }
+]

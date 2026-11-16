@@ -1,0 +1,126 @@
+[
+  {
+    "id": "cafe_article_1",
+    "cafeId": "cafe_1",
+    "slug": "simple-kaffa-flagship-taipei",
+    "title": "A Pilgrimage for Coffee Lovers: In-Depth Guide to Simple Kaffa Flagship Store",
+    "subtitle": "Discover the heritage atrium greenery near Huashan, masterfully brewed pour-over coffee, and the signature wrinkle honey semi-baked cake",
+    "author": "HiMyDream Editorial",
+    "date": "2026-11-16",
+    "readTime": "5 min read",
+    "category": "In-Depth Cafe Exploration",
+    "coverImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&auto=format&fit=crop",
+    "summary": "Founded by 2016 WBC World Barista Champion Berg Wu, this flagship store seamlessly blends historic red-brick architecture, a soaring sunlit atrium, and rich wood craftsmanship into a must-visit Taipei coffee landmark.",
+    "sections": [
+      {
+        "heading": "Champion Barista Aesthetics & Historic Rebirth",
+        "content": "Located on Zhongxiao East Road near Huashan 1914 Creative Park, Simple Kaffa Flagship Store was created by Berg Wu, the 2016 World Barista Champion. The interior preserves the heritage building's natural skylight and exposed red brick textures, accompanied by lush green flora and dark timber accents to create a tranquil, forest-like retreat.",
+        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&auto=format&fit=crop",
+        "caption": "Spacious sunlit atrium and solid wood coffee bar at Simple Kaffa Flagship"
+      },
+      {
+        "heading": "Connoisseur's Picks: Signature Pour-Over & Desserts",
+        "content": "Single-origin pour-over coffee is the indisputable star here. From the delicate floral notes and bright acidity of washed Ethiopian beans to complex, layered Geishas, every cup is extracted with surgical precision. For pairing, the signature 'Wrinkle' (semi-baked honey cake) offers a silky molten center that harmonizes beautifully with crisp pour-over brews.",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop",
+        "caption": "Signature single-origin pour-over coffee paired with the famous Wrinkle semi-baked honey cake"
+      },
+      {
+        "heading": "Visiting Tips & Wait Time Advice",
+        "content": "Simple Kaffa attracts high foot traffic on both weekdays and weekends. We recommend arriving around the morning opening time (around 10:00 AM) or visiting during off-peak weekday afternoons. An on-site digital queuing system is available, allowing you to explore the nearby Huashan Park while waiting."
+      }
+    ],
+    "highlights": [
+      "Founded by 2016 WBC World Barista Champion",
+      "Stunning atrium skylight and botanical-inspired wooden interior",
+      "Must-tries: Ethiopian washed pour-over, Wrinkle honey semi-baked cake",
+      "Conveniently close to MRT Shandao Temple and Zhongxiao Xinsheng Stations"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:00 - 17:00 (subject to on-site notice)",
+      "recommendedStay": "1.5 - 2 hours",
+      "nearestMrt": "MRT Shandao Temple Station Exit 6 (approx. 3-5 min walk)",
+      "wifiAndPower": "Free Wi-Fi available; power outlets at select seating",
+      "minOrder": "One beverage per person"
+    }
+  },
+  {
+    "id": "cafe_article_2",
+    "cafeId": "cafe_2",
+    "slug": "mori-takasago-coffee-dadaocheng",
+    "title": "Taiwanese Terroir in a Century-Old Dadaocheng Mansion: Mori Takasago Coffee",
+    "subtitle": "Dedicated exclusively to 100% Taiwanese single-origin black coffee, savoring the distinct terroir of Alishan and Pingtung",
+    "author": "HiMyDream Editorial",
+    "date": "2026-11-16",
+    "readTime": "4 min read",
+    "category": "Heritage & Local Terroir",
+    "coverImg": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&auto=format&fit=crop",
+    "summary": "Perched on the corner of Dadaocheng's historic Yanping North Road, Mori Takasago Coffee focuses exclusively on 100% Taiwan-grown specialty coffees, served with origin stories and dedicated dual-temperature tasting cups.",
+    "sections": [
+      {
+        "heading": "Historic Western Architecture Meets Indigenous Coffee",
+        "content": "Mori Takasago occupies a heritage red-brick Western-style building witnessing over a century of Dadaocheng commerce. Stepping inside, retro terrazzo flooring and nostalgic furnishings evoke the glamorous, slow-paced Taisho-era aesthetic.",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&auto=format&fit=crop",
+        "caption": "Mori Takasago Coffee radiates early 20th-century Dadaocheng retro elegance"
+      },
+      {
+        "heading": "100% Taiwan-Grown: The Ritual of Table-Side Pour-Over",
+        "content": "Mori Takasago takes immense pride in serving strictly 100% Taiwanese specialty coffee. From Chiayi Alishan and Nantou Guoxing to Pingtung Sandimen and Taitung Taimali, local terroirs are expressed to the fullest. Each order is served with both a hot cup and an iced tasting glass to appreciate flavor evolution across temperatures.",
+        "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop",
+        "caption": "Dual-cup presentation allows guests to savor floral and fruity shifts across temperatures"
+      }
+    ],
+    "highlights": [
+      "100% locally sourced Taiwanese single-origin coffee beans",
+      "Century-old Western brick building with ambient natural lighting",
+      "Unique hot & iced tasting experience highlighting temperature nuances",
+      "Ideal for slow reading, conversation, and experiencing vintage Taipei"
+    ],
+    "practicalInfo": {
+      "businessHours": "12:00 - 21:00",
+      "recommendedStay": "1.5 - 2 hours",
+      "nearestMrt": "MRT Beimen Station Exit 3 (approx. 8 min walk)",
+      "wifiAndPower": "Wi-Fi available; calm and quiet atmosphere",
+      "minOrder": "One drink minimum per person"
+    }
+  },
+  {
+    "id": "cafe_article_3",
+    "cafeId": "cafe_3",
+    "slug": "z-day-cafe-daan-taipei",
+    "title": "A Gentle Urban Sanctuary: The Slow Living Philosophy of Z Day Cafe",
+    "subtitle": "An unhurried neighborhood hideaway in Daan with abundant outlets, artisanal cinnamon rolls, and velvety pudding",
+    "author": "HiMyDream Editorial",
+    "date": "2026-11-16",
+    "readTime": "4 min read",
+    "category": "Work-Friendly & Comfort Desserts",
+    "coverImg": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900&auto=format&fit=crop",
+    "summary": "Tucked away in the quiet alleys of Leye Street, Z Day Cafe (meaning 'Rest & Practice') is a beloved haven for remote workers and cafe enthusiasts, renowned for exceptional pour-overs and handmade desserts.",
+    "sections": [
+      {
+        "heading": "Everyday Rest & Space Aesthetics",
+        "content": "Entering Z Day Cafe, warm illumination and understated timber interiors immediately relieve urban stress. Conceived as a refuge to 'practice rest in daily life and recharge your spirit,' most tables feature electrical outlets alongside speedy Wi-Fi, making it an ideal work retreat.",
+        "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&auto=format&fit=crop",
+        "caption": "Warm wooden tones offer an undisturbed environment for reading and creative work"
+      },
+      {
+        "heading": "Must-Try Handcrafted Desserts & Savory Curry",
+        "content": "Beyond top-tier pour-overs and oat milk lattes, Z Day's desserts are legendary. The baked caramel pudding offers silky decadence with bittersweet undertones, while freshly warmed cinnamon rolls fill the room with comforting spice. For savory cravings, their homemade curry rice is equally delicious.",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop",
+        "caption": "Rich baked caramel pudding and artisanal handmade sweets"
+      }
+    ],
+    "highlights": [
+      "Top-rated laptop-friendly cafe with plentiful power outlets in Daan",
+      "Signature items: Baked Caramel Pudding, Cinnamon Roll, Homemade Curry",
+      "Curated background playlists creating a calm, pressure-free vibe",
+      "Convenient access, only 5-7 minutes walk from MRT Liuzhangli Station"
+    ],
+    "practicalInfo": {
+      "businessHours": "10:30 - 19:00 (Closed on Mondays)",
+      "recommendedStay": "2 - 3 hours",
+      "nearestMrt": "MRT Liuzhangli Station (approx. 6 min walk)",
+      "wifiAndPower": "Ample power outlets / High-speed free Wi-Fi",
+      "minOrder": "One drink minimum per person"
+    }
+  }
+]
