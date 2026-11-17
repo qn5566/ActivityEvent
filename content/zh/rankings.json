@@ -2405,22 +2405,36 @@
     ],
     "tea": [
       {
+        "id": "wang-de-chuan-taipei",
         "rank": 1,
-        "name": "台北大安・紫藤廬 Wistaria Tea House",
-        "enName": "Wistaria Tea House Historic Japanese Garden",
-        "city": "台北市大安區新生南路三段",
-        "rate": "4.9★",
-        "tag": "日治官舍市定古蹟 · 台灣當代茶藝文化搖籃",
-        "highlight": "必體驗：高山凍頂烏龍、文山包種茶席、紫藤茶點",
-        "desc": "建於 1920 年代的日式木造古蹟，曾是台灣文化思潮重鎮。庭院紫藤老樹蓊鬱，坐在榻榻米上品茗，氛圍寧靜深邃。",
-        "price": "NT$ 350 - 650",
-        "ctaType": "owlting",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "name": "台北中山・王德傳茶莊 台北本店",
+        "enName": "Wang De Chuan Tea House · Taipei Flagship (est. 1862)",
+        "city": "台北市中山區",
+        "address": "台北市中山區中山北路一段95號",
+        "rate": "",
+        "tag": "1862 創立 · 百年茶莊 × Louis Vuitton 茶人旅行箱合作",
+        "highlight": "必體驗：台灣烏龍品茗、手工炭焙茶香、紅罐選茶",
+        "desc": "始於 1862 年的台灣茶莊，以選茶與炭焙工藝傳承五代，曾與 Louis Vuitton 合作茶人旅行箱。中山北路台北本店以古書閣概念打造品茗空間，官網提供電話預約門市品茗。",
+        "price": "品茗與茶品價格請洽門市",
+        "ctaType": "official",
+        "img": "https://www.dechuantea.com/upload/location/db3d25df10521b8c49367fac083e19f1.jpg",
+        "website": "https://www.dechuantea.com/index.php#location",
+        "phone": "+886-2-2561-8738",
+        "openingHours": "Mo-Su 10:00-19:00",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%8E%8B%E5%BE%B7%E5%82%B3%E8%8C%B6%E8%8E%8A+%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E4%B8%AD%E5%B1%B1%E5%8C%97%E8%B7%AF%E4%B8%80%E6%AE%B595%E8%99%9F",
+        "sourceUrl": "https://www.dechuantea.com/",
+        "verifiedAt": "2026-11-17",
+        "imageCredit": "Wang De Chuan official website",
         "links": [
           {
-            "type": "owlting",
-            "label": "OwlTing 預訂",
-            "url": "https://www.owlting.com/market/search?keyword=%E5%8F%B0%E5%8C%97%E5%A4%A7%E5%AE%89%E3%83%BB%E7%B4%AB%E8%97%A4%E5%BB%AC%20Wistaria%20Tea%20House"
+            "type": "official",
+            "label": "官方門市・品茗洽詢",
+            "url": "https://www.dechuantea.com/index.php#location"
+          },
+          {
+            "type": "map",
+            "label": "地圖導航",
+            "url": "https://www.google.com/maps/search/?api=1&query=%E7%8E%8B%E5%BE%B7%E5%82%B3%E8%8C%B6%E8%8E%8A+%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E4%B8%AD%E5%B1%B1%E5%8C%97%E8%B7%AF%E4%B8%80%E6%AE%B595%E8%99%9F"
           }
         ]
       },
