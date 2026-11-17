@@ -225,6 +225,13 @@ async function loadFile(path, options = {}){
 
   // 如果載入的是 cafes.json，同步預載同語系的 cafe_articles.json 建立索引
   const fname = state.path ? state.path.split('/').pop() : '';
+  if(fname === 'affiliate_config.json'){
+    $('#topicList').innerHTML = '<p class="hint">官網與 App 共用分潤設定</p>';
+    main.innerHTML = '<div class="card"><h2>全球分潤設定</h2><p class="hint">修改追蹤參數後，請執行 python3 migrate_affiliate_links.py --apply，更新既有內容與 links.json。App 會在下次啟動時讀取已發布的設定。</p><div class="field-grid">'
+      + Object.entries(state.data).map(([key, value]) => genField('', key, value)).join('') + '</div></div>';
+    bindEdits();
+    return;
+  }
   const lang = (state.path && state.path.startsWith('content/')) ? state.path.split('/')[1] : null;
   if(fname === 'cafes.json' && lang){
     try {

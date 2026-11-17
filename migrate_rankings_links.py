@@ -40,7 +40,7 @@ LINKS_PATH = os.path.join(HERE, "links.json")
 
 # type -> (label, url 模板，{name} 與聯盟參數會被替換)
 def build_templates(links):
-    klook_aid = links.get("klook_aid", "106452")
+    klook_aid = links.get("klook_aid", "123436")
     trip_allianceid = links.get("trip_allianceid", "9507030")
     trip_sid = links.get("trip_sid", "325761227")
     trip_sub1 = links.get("trip_sub1", "app")

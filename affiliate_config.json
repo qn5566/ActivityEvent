@@ -1,0 +1,371 @@
+{
+  "version": 1,
+  "brand": "HiMyDream Studio",
+  "contactEmail": "himydream.studio0220@gmail.com",
+  "geo": {
+    "endpoint": "https://ipapi.co/json/",
+    "timeoutMs": 2500,
+    "cacheTtlMs": 86400000
+  },
+  "tracking": {
+    "trip": {
+      "Allianceid": "9507030",
+      "SID": "325761227",
+      "trip_sub3": "D20272275"
+    },
+    "klookAid": "123436"
+  },
+  "regions": {
+    "TW": {
+      "countries": [
+        "TW",
+        "CN"
+      ],
+      "language": "zh-TW",
+      "currency": "TWD",
+      "tripHost": "tw.trip.com",
+      "klookLocale": "zh-TW"
+    },
+    "HK_MO": {
+      "countries": [
+        "HK",
+        "MO"
+      ],
+      "language": "zh-HK",
+      "currency": "HKD",
+      "tripHost": "hk.trip.com",
+      "klookLocale": "zh-HK"
+    },
+    "SG_MY": {
+      "countries": [
+        "SG",
+        "MY"
+      ],
+      "language": "en-SG",
+      "currency": "SGD",
+      "tripHost": "sg.trip.com",
+      "klookLocale": "en-SG"
+    },
+    "JP": {
+      "countries": [
+        "JP"
+      ],
+      "language": "ja",
+      "currency": "JPY",
+      "tripHost": "jp.trip.com",
+      "klookLocale": "ja"
+    },
+    "KR": {
+      "countries": [
+        "KR"
+      ],
+      "language": "ko",
+      "currency": "KRW",
+      "tripHost": "kr.trip.com",
+      "klookLocale": "ko"
+    },
+    "TH": {
+      "countries": [
+        "TH"
+      ],
+      "language": "th",
+      "currency": "THB",
+      "tripHost": "th.trip.com",
+      "klookLocale": "th"
+    },
+    "VN": {
+      "countries": [
+        "VN"
+      ],
+      "language": "vi",
+      "currency": "VND",
+      "tripHost": "vn.trip.com",
+      "klookLocale": "vi"
+    },
+    "ID": {
+      "countries": [
+        "ID"
+      ],
+      "language": "id",
+      "currency": "IDR",
+      "tripHost": "id.trip.com",
+      "klookLocale": "id"
+    },
+    "SOUTH_ASIA": {
+      "countries": [
+        "PH",
+        "IN",
+        "BD",
+        "PK",
+        "LK",
+        "NP",
+        "BT",
+        "MV"
+      ],
+      "language": "en",
+      "currency": "USD",
+      "tripHost": "www.trip.com",
+      "klookLocale": "en-US"
+    },
+    "GLOBAL": {
+      "countries": [],
+      "language": "en",
+      "currency": "USD",
+      "tripHost": null,
+      "klookLocale": "en-US"
+    }
+  },
+  "platforms": {
+    "travelpayouts_backup_1": {
+      "name": "Travelpayouts 活動備用短鏈 1",
+      "url": "https://tpk.lu/BTY5qbO6"
+    },
+    "travelpayouts_backup_2": {
+      "name": "Travelpayouts 活動備用短鏈 2",
+      "url": "https://tpk.lu/kF64e7qm"
+    },
+    "expedia": {
+      "name": "Expedia 智遊網（歐美機票主力）",
+      "url": "https://expedia.tpk.lu/64QomGwo"
+    },
+    "hotels": {
+      "name": "Hotels.com（歐美住宿主力）",
+      "url": "https://hotels.tpk.lu/uK6ia0Jf"
+    },
+    "tripadvisor": {
+      "name": "Tripadvisor（全球評價比價）",
+      "url": "https://tripadvisor.tpk.lu/EaPQmZiF"
+    },
+    "viator": {
+      "name": "Viator（歐美包車/一日遊）",
+      "url": "https://viator.tpk.lu/j9gLhFjQ"
+    },
+    "kkday": {
+      "name": "KKday（亞洲體驗票券）",
+      "url": "https://kkday.tpk.lu/SZ7kd8Gl"
+    },
+    "transit": {
+      "name": "12Go Asia（火車、客運、離島船票）",
+      "url": "https://12go.tpk.lu/HJqlAUCV"
+    },
+    "carRental": {
+      "name": "Discover Cars（全球自駕租車比價）",
+      "url": "https://discovercars.tpk.lu/sUldB222"
+    },
+    "esim": {
+      "name": "Yesim 國際 eSIM",
+      "url": "https://yesim.tpk.lu/uMFlbh7Z"
+    },
+    "klook_twd": {
+      "name": "Klook 聯盟網台幣通道",
+      "url": "https://affone.site/track/clicks/3731/c627c2b79e0620dbfe9cab248d219d46266e5b9633e0e5f30461a44125095ff88635aca3163d8e"
+    },
+    "dining": {
+      "name": "台灣訂餐與餐券 (affckr 4127)",
+      "url": "https://affckr.site/track/clicks/4127/c627c2bc980126defc88ec23d62e9d47266c4cdf2aabebf00662b513234652eed671a3ea103a9e71?subid_1=台灣吃喝玩樂&subid_2=日本報報"
+    },
+    "souvenirs": {
+      "name": "萬家福生鮮伴手禮 (afftck 4459)",
+      "url": "https://afftck.com/track/clicks/4459/c627c2bc980522defc8dec23d62e9d47266c4cdf2aabebf00365bb13234652eed671a3ea103a9e71?subid_1=台灣吃喝玩樂&subid_2=日本報報"
+    },
+    "camping": {
+      "name": "露營生鮮食材箱 (aftck 1489)",
+      "url": "https://aftck.com/track/clicks/1489/c627c2bc980522defc82ec23d62e9d47266c4cdf2aabebf50368bb13234652eed671a3ea103a9e71?subid_1=台灣吃喝玩樂&subid_2=日本報報"
+    },
+    "drugstore": {
+      "name": "台灣熱門藥妝店 (affckr 5891)",
+      "url": "https://affckr.site/track/clicks/5891/c627c2bc9b0428dbf188ec23d62e9d47266c4cdf2aabebf10f69b313234652eed671a3ea103a9e71?subid_1=台灣吃喝玩樂&subid_2=日本報報"
+    },
+    "design": {
+      "name": "質感選物店與文創 (affclkr 5686)",
+      "url": "https://affclkr.online/track/clicks/5686/c627c2bf910421d7fb8dec23d62e9d47266c4cdf2aabebf10168b413234652eed671a3ea103a9e71?subid_1=台灣吃喝玩樂&subid_2=日本報報"
+    },
+    "health": {
+      "name": "保健食品導購 (afftkr 2498)",
+      "url": "https://afftkr.site/track/clicks/2498/c627c2bc900729d8fd9cab248d219d46266e5b9633e0e4f00e68a44125095ff88635aca3163d8e?subid_1=台灣吃喝玩樂"
+    },
+    "owlting": {
+      "name": "奧丁丁在地深度體驗 (linkgo)",
+      "url": "https://linkgo.one/s/ikCjF"
+    },
+    "delivery": {
+      "name": "Uber Eats 美食外送 (linkgo)",
+      "url": "https://linkgo.one/s/qYLKx"
+    },
+    "education": {
+      "name": "教育學習平台 (vbtrax 9445)",
+      "url": "https://vbtrax.com/track/clicks/9445/c627c2bc9b0428dbf189ec23d62e9d47266c4cdf2aabebfd0364b713234652eed671a3ea103a9e71?subid_1=台灣吃喝玩樂&subid_2=日本報報"
+    },
+    "english": {
+      "name": "線上學英文 (affckr 6826)",
+      "url": "https://affckr.site/track/clicks/6826/c627c2bc9b0428dbf18eec23d62e9d47266c4cdf2aabebf20f62b413234652eed671a3ea103a9e71?subid_1=台灣吃喝&subid_2=日本報報&subid_3=學英文ＡＰＰ"
+    }
+  },
+  "cities": [
+    {
+      "name": "臺北市",
+      "nameEn": "Taipei City",
+      "keyword": "臺北市",
+      "tripCityId": "617"
+    },
+    {
+      "name": "基隆市",
+      "nameEn": "Keelung City",
+      "keyword": "基隆市"
+    },
+    {
+      "name": "新北市",
+      "nameEn": "New Taipei City",
+      "keyword": "新北市",
+      "tripCityId": "765"
+    },
+    {
+      "name": "桃園市",
+      "nameEn": "Taoyuan City",
+      "keyword": "桃園市"
+    },
+    {
+      "name": "新竹市",
+      "nameEn": "Hsinchu City",
+      "keyword": "新竹市"
+    },
+    {
+      "name": "新竹縣",
+      "nameEn": "Hsinchu County",
+      "keyword": "新竹縣"
+    },
+    {
+      "name": "苗栗縣",
+      "nameEn": "Miaoli County",
+      "keyword": "苗栗縣"
+    },
+    {
+      "name": "臺中市",
+      "nameEn": "Taichung City",
+      "keyword": "臺中市"
+    },
+    {
+      "name": "彰化縣",
+      "nameEn": "Changhua County",
+      "keyword": "彰化縣"
+    },
+    {
+      "name": "南投縣",
+      "nameEn": "Nantou County",
+      "keyword": "南投縣"
+    },
+    {
+      "name": "雲林縣",
+      "nameEn": "Yunlin County",
+      "keyword": "雲林縣"
+    },
+    {
+      "name": "嘉義市",
+      "nameEn": "Chiayi City",
+      "keyword": "嘉義市"
+    },
+    {
+      "name": "嘉義縣",
+      "nameEn": "Chiayi County",
+      "keyword": "嘉義縣"
+    },
+    {
+      "name": "臺南市",
+      "nameEn": "Tainan City",
+      "keyword": "臺南市"
+    },
+    {
+      "name": "高雄市",
+      "nameEn": "Kaohsiung City",
+      "keyword": "高雄市"
+    },
+    {
+      "name": "屏東縣",
+      "nameEn": "Pingtung County",
+      "keyword": "屏東縣"
+    },
+    {
+      "name": "宜蘭縣",
+      "nameEn": "Yilan County",
+      "keyword": "宜蘭縣"
+    },
+    {
+      "name": "花蓮縣",
+      "nameEn": "Hualien County",
+      "keyword": "花蓮縣"
+    },
+    {
+      "name": "臺東縣",
+      "nameEn": "Taitung County",
+      "keyword": "臺東縣"
+    },
+    {
+      "name": "澎湖縣",
+      "nameEn": "Penghu County",
+      "keyword": "澎湖縣"
+    },
+    {
+      "name": "金門縣",
+      "nameEn": "Kinmen County",
+      "keyword": "金門縣"
+    },
+    {
+      "name": "連江縣",
+      "nameEn": "Lienchiang County",
+      "keyword": "連江縣"
+    }
+  ],
+  "districts": [
+    {
+      "city": "臺北市",
+      "name": "中正區",
+      "keyword": "台北車站"
+    },
+    {
+      "city": "臺北市",
+      "name": "萬華區",
+      "keyword": "西門町"
+    },
+    {
+      "city": "臺北市",
+      "name": "信義區",
+      "keyword": "信義區"
+    },
+    {
+      "city": "臺北市",
+      "name": "大安區",
+      "keyword": "大安區"
+    },
+    {
+      "city": "臺北市",
+      "name": "北投區",
+      "keyword": "北投溫泉"
+    },
+    {
+      "city": "新北市",
+      "name": "瑞芳區",
+      "keyword": "九份"
+    },
+    {
+      "city": "新北市",
+      "name": "淡水區",
+      "keyword": "淡水"
+    },
+    {
+      "city": "新北市",
+      "name": "烏來區",
+      "keyword": "烏來"
+    },
+    {
+      "city": "新北市",
+      "name": "板橋區",
+      "keyword": "板橋"
+    }
+  ],
+  "unconfigured": [
+    {
+      "category": "pet",
+      "reason": "規格未提供各寵物品牌實際分潤網址，待補；不產生推測連結。"
+    }
+  ]
+}

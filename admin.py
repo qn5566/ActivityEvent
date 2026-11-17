@@ -25,6 +25,8 @@ import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
+from affiliate_config import validate_config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_PORT = 8765
 
@@ -35,6 +37,7 @@ ALLOWED_DIRS = (
 ALLOWED_ROOT_FILES = {
     "links.json",
     "info.json",
+    "affiliate_config.json",
 }
 
 # 這些檔在 11 種語言間完全一樣（無翻譯），存檔時「整份」同步到其他語言。
@@ -264,6 +267,11 @@ class Handler(BaseHTTPRequestHandler):
                 data = json.loads(raw.decode("utf-8"))
             except Exception as exc:  # noqa: BLE001
                 return self._send(400, {"error": "JSON 解析失敗：%s" % exc})
+            if rel == "affiliate_config.json":
+                try:
+                    validate_config(data)
+                except ValueError as exc:
+                    return self._send(400, {"error": str(exc)})
             if rel.startswith("content/") and rel.endswith("/cafes.json"):
                 if not isinstance(data, list) or any(
                     not isinstance(cafe, dict) or not isinstance(cafe.get("id"), str)

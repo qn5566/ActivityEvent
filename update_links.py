@@ -151,9 +151,27 @@ def do_set(key, new_value, dry_run):
     action = "預覽（dry-run，未寫檔）" if dry_run else "已套用"
     print("%s：%s=%s -> %s=%s，共 %d 處，%d 個檔案" %
           (action, param, old_value, param, new_value, total, len(touched)))
-    if not dry_run and total:
-        links[key] = new_value
+    if not dry_run:
+        aliases = {
+            "klook_aid": ("klook_aid", "klook_charter_aid"),
+            "klook_charter_aid": ("klook_aid", "klook_charter_aid"),
+            "trip_sub3": ("trip_sub3", "trip_flight_sub3"),
+            "trip_flight_sub3": ("trip_sub3", "trip_flight_sub3"),
+        }
+        for alias in aliases.get(key, (key,)):
+            links[alias] = new_value
         save_links(links)
+        config_path = os.path.join(HERE, "affiliate_config.json")
+        if os.path.isfile(config_path):
+            with open(config_path, encoding="utf-8") as fh:
+                config = json.load(fh)
+            if key.startswith("klook_"):
+                config["tracking"]["klookAid"] = new_value
+            elif key != "trip_sub1":
+                config["tracking"]["trip"][param] = new_value
+            with open(config_path, "w", encoding="utf-8") as fh:
+                json.dump(config, fh, ensure_ascii=False, indent=2)
+                fh.write("\n")
         print("已更新 links.json：%s = %s" % (key, new_value))
 
 

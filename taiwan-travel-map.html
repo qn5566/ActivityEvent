@@ -347,6 +347,30 @@
       </div>
     </div>
 
+    <section class="twfun-section twfun-booking" data-affiliate-panel aria-labelledby="twfun-booking-title">
+      <div class="twfun-sec-head">
+        <div class="twfun-sec-sub">PLAN YOUR TAIWAN TRIP</div>
+        <h2 class="twfun-sec-title" id="twfun-booking-title" data-affiliate-text="0">旅程預訂</h2>
+      </div>
+      <div class="twfun-booking-filters">
+        <label><span data-affiliate-text="1">市場與幣別</span><select data-market aria-label="Market and currency"></select></label>
+        <label><span data-affiliate-text="2">目的地</span><select data-city aria-label="Destination"></select></label>
+        <label><span data-affiliate-text="3">區域</span><select data-district aria-label="District"></select></label>
+      </div>
+      <div class="twfun-booking-links">
+        <a data-affiliate="flights" data-affiliate-text="5" href="https://expedia.tpk.lu/64QomGwo" target="_blank" rel="sponsored noopener noreferrer">機票</a>
+        <a data-affiliate="hotel" data-affiliate-text="6" href="https://hotels.tpk.lu/uK6ia0Jf" target="_blank" rel="sponsored noopener noreferrer">住宿</a>
+        <a data-affiliate="charter" data-affiliate-text="7" href="https://viator.tpk.lu/j9gLhFjQ" target="_blank" rel="sponsored noopener noreferrer">包車／導覽</a>
+        <a data-affiliate="esim" data-affiliate-text="8" href="https://yesim.tpk.lu/uMFlbh7Z" target="_blank" rel="sponsored noopener noreferrer">eSIM 網卡</a>
+        <a data-affiliate="transit" data-affiliate-text="9" href="https://12go.tpk.lu/HJqlAUCV" target="_blank" rel="sponsored noopener noreferrer">交通票券</a>
+        <a data-affiliate="carRental" data-affiliate-text="10" href="https://discovercars.tpk.lu/sUldB222" target="_blank" rel="sponsored noopener noreferrer">租車</a>
+        <a data-affiliate="tripadvisor" data-affiliate-text="11" href="https://tripadvisor.tpk.lu/EaPQmZiF" target="_blank" rel="sponsored noopener noreferrer">評價比價</a>
+      </div>
+      <p class="twfun-booking-note" data-affiliate-text="12">部分連結為分潤連結；透過連結預訂可支持我們。</p>
+      <p class="twfun-booking-note" data-affiliate-text="13">以預訂平台實際顯示的幣別與價格為準。</p>
+      <details class="twfun-booking-more"><summary>更多旅遊與生活服務 / More services</summary><div class="twfun-booking-links" data-partner-links></div></details>
+    </section>
+
     <!-- FAQ 常見問題 -->
     <div class="twfun-section">
       <div class="twfun-sec-head">
@@ -434,3 +458,6 @@
     }
   </script>
 </section>
+
+<!-- WordPress 請同時載入 affiliate.js 與同目錄的 affiliate_config.json；跨目錄時在 data-affiliate-panel 元素設定 data-config-url。 -->
+<script src="affiliate.js" defer></script>
