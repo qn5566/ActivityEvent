@@ -122,12 +122,12 @@ def sync_node(src, tgt):
             tgt.extend(copy.deepcopy(src[len(tgt):]))
 
 
-def sync_by_id(src, tgt):
+def sync_by_id(src, tgt, id_key='id'):
     """以固定 ID 對齊項目，新增／刪除時保留仍存在項目的翻譯與本體結構。"""
-    existing = {item["id"]: item for item in tgt if isinstance(item, dict) and "id" in item}
+    existing = {item[id_key]: item for item in tgt if isinstance(item, dict) and id_key in item}
     result = []
     for item in src:
-        translated = existing.get(item["id"])
+        translated = existing.get(item[id_key])
         if translated is None:
             translated = copy.deepcopy(item)
         else:
@@ -142,6 +142,85 @@ def sync_cafes(src, tgt):
 
 def sync_cafe_articles(src, tgt):
     return sync_by_id(src, tgt)
+
+
+def souvenir_item_key(item):
+    # Existing editions have no item IDs; their original rank is stable across locales.
+    return ('id', item['id']) if item.get('id') else ('rank', item['rank'])
+
+
+def sync_souvenirs(src, tgt):
+    categories = {category['id']: category for category in tgt}
+    result = []
+    for category in src:
+        translated = categories.get(category['id'])
+        if translated is None:
+            result.append(copy.deepcopy(category))
+            continue
+        sync_node({key: value for key, value in category.items() if key != 'items'}, translated)
+        existing = {souvenir_item_key(item): item for item in translated.get('items', [])}
+        items = []
+        for item in category['items']:
+            translated_item = existing.get(souvenir_item_key(item))
+            if translated_item is None:
+                translated_item = copy.deepcopy(item)
+            else:
+                sync_node(item, translated_item)
+            items.append(translated_item)
+        translated['items'] = items
+        result.append(translated)
+    return result
+
+
+def validate_souvenirs(data):
+    if not isinstance(data, list):
+        raise ValueError('伴手禮資料必須為陣列')
+    categories = set()
+    for category in data:
+        if not isinstance(category, dict) or not isinstance(category.get('id'), str) or not category['id'].strip():
+            raise ValueError('分類須有非空白的 ID')
+        if category['id'] in categories:
+            raise ValueError('分類 ID 不可重複')
+        categories.add(category['id'])
+        if not isinstance(category.get('items'), list):
+            raise ValueError('分類商品必須為陣列')
+        keys = set()
+        for item in category['items']:
+            if not isinstance(item, dict) or type(item.get('rank')) is not int or item['rank'] < 1:
+                raise ValueError('商品 rank 必須為正整數')
+            if 'id' in item and (not isinstance(item['id'], str) or not item['id'].strip()):
+                raise ValueError('商品 ID 不可空白')
+            key = souvenir_item_key(item)
+            if key in keys:
+                raise ValueError('同分類商品識別不可重複')
+            keys.add(key)
+
+
+def validate_michelin(data):
+    if not isinstance(data, dict) or any(not isinstance(data.get(group), list) for group in ('stars', 'bib')):
+        raise ValueError('米其林資料必須包含 stars 與 bib 陣列')
+    ids = set()
+    for group in ('stars', 'bib'):
+        for item in data[group]:
+            if not isinstance(item, dict) or not isinstance(item.get('id'), str) or not item['id'].strip():
+                raise ValueError('餐廳須有非空白的 ID')
+            if item['id'] in ids:
+                raise ValueError('餐廳 ID 不可重複')
+            ids.add(item['id'])
+    # Directory changes propagate to all locales. Keep linked articles valid there too.
+    content_root = os.path.join(HERE, 'content')
+    for language in sorted(os.listdir(content_root)):
+        directory_path = os.path.join(content_root, language, 'michelin.json')
+        article_path = os.path.join(content_root, language, 'michelin_articles.json')
+        if not os.path.isfile(directory_path) or not os.path.isfile(article_path):
+            continue
+        with open(directory_path, encoding='utf-8') as fh:
+            existing = json.load(fh)
+        removed = {r['id'] for group in ('stars', 'bib') for r in existing.get(group, [])} - ids
+        with open(article_path, encoding='utf-8') as fh:
+            articles = json.load(fh)
+        if any(article.get('restaurantId') in removed for article in articles):
+            raise ValueError('無法刪除餐廳：%s 語言仍有對應文章，請先刪除文章並存檔' % language)
 
 
 def sync_to_other_langs(rel, data):
@@ -178,6 +257,15 @@ def sync_to_other_langs(rel, data):
             target_data = sync_cafes(data, target_data)
         elif filename == "cafe_articles.json":
             target_data = sync_cafe_articles(data, target_data)
+        elif filename in ("blog.json", "themes.json"):
+            target_data = sync_by_id(data, target_data)
+        elif filename == "activities.json":
+            target_data = sync_by_id(data, target_data, 'activityId')
+        elif filename == "souvenirs.json":
+            target_data = sync_souvenirs(data, target_data)
+        elif filename == "michelin.json":
+            for group in ('stars', 'bib'):
+                target_data[group] = sync_by_id(data[group], target_data.get(group, []))
         elif filename in SYNC_ALL_FILES:
             import copy
             target_data = copy.deepcopy(data)
@@ -337,6 +425,37 @@ class Handler(BaseHTTPRequestHandler):
                     prepare_articles(data,language,restaurants)
                 except (ValueError,OSError) as exc:
                     return self._send(400,{'error':str(exc)})
+            if rel.startswith('content/') and rel.endswith('/michelin.json'):
+                try:
+                    validate_michelin(data)
+                except (ValueError, OSError) as exc:
+                    return self._send(400, {'error': str(exc)})
+            if rel.startswith('content/') and rel.endswith('/activities.json'):
+                if not isinstance(data, list) or any(
+                    not isinstance(activity, dict)
+                    or not isinstance(activity.get('activityId'), str) or not activity['activityId'].strip()
+                    or not isinstance(activity.get('name'), str) or not activity['name'].strip()
+                    for activity in data
+                ):
+                    return self._send(400, {'error': '活動資料必須為陣列，且每筆須有非空白的 activityId 與名稱'})
+                if len({activity['activityId'] for activity in data}) != len(data):
+                    return self._send(400, {'error': '活動 ID 不可重複'})
+            if rel.startswith('content/') and rel.endswith('/souvenirs.json'):
+                try:
+                    validate_souvenirs(data)
+                except ValueError as exc:
+                    return self._send(400, {'error': str(exc)})
+            if rel.startswith('content/') and rel.endswith('/themes.json'):
+                if not isinstance(data, list) or any(
+                    not isinstance(theme, dict) or not isinstance(theme.get('id'), str)
+                    or not theme['id'].strip()
+                    or any(not isinstance(theme.get(key, []), list) for key in ('subCategories', 'experiences', 'itineraries', 'spots'))
+                    or not isinstance(theme.get('bookingCta', {}), dict)
+                    for theme in data
+                ):
+                    return self._send(400, {'error': '主題須有非空白的 ID，分類、體驗、行程與景點須為陣列，預訂連結須為物件'})
+                if len({theme['id'] for theme in data}) != len(data):
+                    return self._send(400, {'error': '主題 ID 不可重複'})
             if rel.startswith("content/") and rel.endswith("/cafes.json"):
                 if not isinstance(data, list) or any(
                     not isinstance(cafe, dict) or not isinstance(cafe.get("id"), str)
@@ -345,14 +464,14 @@ class Handler(BaseHTTPRequestHandler):
                     return self._send(400, {"error": "咖啡店資料必須為陣列，且每筆須有非空白的 ID"})
                 if len({cafe["id"] for cafe in data}) != len(data):
                     return self._send(400, {"error": "咖啡店 ID 不可重複"})
-            if rel.startswith("content/") and rel.endswith("/cafe_articles.json"):
+            if rel.startswith("content/") and rel.split('/')[-1] in ('cafe_articles.json', 'blog.json'):
                 if not isinstance(data, list) or any(
                     not isinstance(art, dict) or not isinstance(art.get("id"), str)
                     or not art["id"].strip() for art in data
                 ):
-                    return self._send(400, {"error": "咖啡文章資料必須為陣列，且每筆須有非空白的 ID"})
+                    return self._send(400, {"error": "文章資料必須為陣列，且每筆須有非空白的 ID"})
                 if len({art["id"] for art in data}) != len(data):
-                    return self._send(400, {"error": "咖啡文章 ID 不可重複"})
+                    return self._send(400, {"error": "文章 ID 不可重複"})
             try:
                 with open(abs_path, encoding="utf-8") as fh:
                     orig_raw = fh.read()

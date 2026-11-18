@@ -55,7 +55,7 @@ window.EditorialReportEditor = (() => {
     return (nodes || []).map(n => 'text' in n ? n.text : plain(n.children) +
       (['p','h3','h4','li','tr','blockquote','br','hr'].includes(n.tag) ? '\n' : ['th','td'].includes(n.tag) ? ' | ' : '')).join('');
   }
-  function mount({root, list, reports, selected, select, changed, language, kind='reports', restaurants=[], requestedRestaurantId=null}) {
+  function mount({root, list, reports, selected, select, changed, language, kind='reports', restaurants=[], requestedRestaurantId=null, openRestaurant}) {
     const michelin=kind==='michelin',title=michelin?'米其林餐廳專刊':'台灣吃喝玩樂採訪報導';
     invalid = new Set();
     root.replaceChildren(); list.replaceChildren();
@@ -111,6 +111,9 @@ window.EditorialReportEditor = (() => {
     const preview = el('a', '查看前台（請先存檔）', 'jump-btn');
     preview.href = `/preview/${michelin?'michelin_info':'report_info'}.html?` + new URLSearchParams({id:michelin?report.restaurantId:report.id,lang:language === 'zh' ? 'zh-TW' : language});
     preview.target = '_blank'; preview.rel = 'noopener noreferrer'; actions.appendChild(preview);
+    if(michelin && openRestaurant){
+      actions.appendChild(button('🍽️ 前往對應餐廳 →', () => openRestaurant(report.restaurantId), 'jump-btn'));
+    }
     const move = delta => { const other = selected + delta; if (other < 0 || other >= reports.length) return;
       [reports[selected], reports[other]] = [reports[other], reports[selected]]; notify(); select(other); };
     actions.append(button('↑ 上移', () => move(-1)), button('↓ 下移', () => move(1)), button('刪除報導', () => {

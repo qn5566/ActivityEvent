@@ -158,11 +158,83 @@
   </form>
 </div>
 
+<div class="modal-overlay" id="michelinModal" onclick="if(event.target===this)closeMichelinModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewMichelin()">
+    <h2>新增米其林餐廳</h2>
+    <div class="field-grid" id="michelinModalForm"></div>
+    <p class="hint">新增後請按「存檔」。新增與刪除會同步至其他語言，新餐廳文字先沿用本次輸入內容。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeMichelinModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增餐廳</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-overlay" id="blogModal" onclick="if(event.target===this)closeBlogModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewBlog()">
+    <h2>新增文章</h2>
+    <div class="field-grid" id="blogModalForm"></div>
+    <p class="hint">新增後可繼續編輯內文與景點資訊，請按「存檔」完成儲存。新增與刪除會同步至其他語言，新文章文字先沿用本次輸入內容。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeBlogModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增文章</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-overlay" id="activityModal" onclick="if(event.target===this)closeActivityModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewActivity()">
+    <h2>新增活動</h2>
+    <div class="field-grid" id="activityModalForm"></div>
+    <p class="hint">新增後請按「存檔」。新增與刪除會同步至其他語言，新活動文字先沿用本次輸入內容。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeActivityModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增活動</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-overlay" id="charterModal" onclick="if(event.target===this)closeCharterModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewCharter()">
+    <h2>新增包車</h2>
+    <div class="field-grid" id="charterModalForm"></div>
+    <p class="hint">新增後請按「存檔」。包車資料由所有語言共用，存檔會將整份內容同步至其他語言。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeCharterModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增包車</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-overlay" id="souvenirModal" onclick="if(event.target===this)closeSouvenirModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewSouvenir()">
+    <h2 id="souvenirModalTitle">新增伴手禮</h2>
+    <div class="field-grid" id="souvenirModalForm"></div>
+    <p class="hint">新增後請按「存檔」。新增與刪除會同步至其他語言，新資料文字先沿用本次輸入內容。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeSouvenirModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-overlay" id="themeModal" onclick="if(event.target===this)closeThemeModal()">
+  <form class="modal" onsubmit="event.preventDefault();saveNewTheme()">
+    <h2>新增旅遊主題</h2>
+    <div class="field-grid" id="themeModalForm"></div>
+    <p class="hint">新增後可繼續編輯主題資訊與新增景點。請按「存檔」，新增與刪除會同步至其他語言，新主題文字先沿用本次輸入內容。</p>
+    <div class="modal-actions">
+      <button type="button" onclick="closeThemeModal()">取消</button>
+      <button type="submit" class="primary">＋ 新增主題</button>
+    </div>
+  </form>
+</div>
+
 <script src="/cafe-menu-html.js"></script>
 <script src="/cafe-menu-editor.js"></script>
 <script src="/editorial-report-editor.js"></script>
 <script>
-const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCafeArticle:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedHomeBlog:null, selectedHomeRanking:null, selectedThemeGrid:null, selectedActivity:null, selectedSpot:null, dirty:false, files:{}, targetCafeId:null, targetArticleCafeId:null, cafeArticlesMap:null };
+const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCafeArticle:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedThemeGrid:null, selectedActivity:null, dirty:false, files:{}, targetCafeId:null, targetArticleCafeId:null, cafeArticlesMap:null };
 const $ = s => document.querySelector(s);
 
 function channelBadge(type){
@@ -226,7 +298,7 @@ function switchLang(lang){
 
 async function loadFile(path, options = {}){
   const articleFile=value=>/\/(editorial_reports|michelin_articles)\.json$/.test(value||'');
-  if(state.dirty && articleFile(state.path) && !confirm('目前報導有未儲存的變更，確定捨棄並載入？')){
+  if(state.dirty && (articleFile(state.path) || /\/(michelin|blog|activities|charter|souvenirs|themes)\.json$/.test(state.path || '')) && !confirm('目前內容有未儲存的變更，確定捨棄並載入？')){
     $('#fileSelect').value = state.path; return;
   }
   const reportId = articleFile(state.path) ? state.data[state.selectedReport || 0]?.id : null;
@@ -242,13 +314,16 @@ async function loadFile(path, options = {}){
   state.selectedCafeArticle = null;
   state.selectedCharter = null;
   state.selectedMichelin = null;
+  if(options.targetRestaurantId && path.endsWith('/michelin.json')){
+    for(const section of ['stars','bib']){
+      const index = (state.data[section] || []).findIndex(r => r.id === options.targetRestaurantId);
+      if(index >= 0){ state.selectedMichelin = {section,index}; break; }
+    }
+  }
   state.selectedTheme = null;
   state.selectedSouvenir = null;
-  state.selectedHomeBlog = null;
-  state.selectedHomeRanking = null;
   state.selectedThemeGrid = null;
   state.selectedActivity = null;
-  state.selectedSpot = null;
 
   if(options.targetCafeId !== undefined){ state.targetCafeId = options.targetCafeId; }
   if(options.targetArticleCafeId !== undefined){ state.targetArticleCafeId = options.targetArticleCafeId; }
@@ -277,6 +352,15 @@ async function loadFile(path, options = {}){
     return;
   }
   const lang = (state.path && state.path.startsWith('content/')) ? state.path.split('/')[1] : null;
+  state.michelinArticlesMap = null;
+  if(fname === 'michelin.json' && lang){
+    try {
+      const result = await api('/api/file?path=' + encodeURIComponent(`content/${lang}/michelin_articles.json`));
+      state.michelinArticlesMap = new Map((result.data || []).map(article => [article.restaurantId, article]));
+    } catch(e){
+      state.michelinArticlesError = '無法載入餐廳文章：' + e.message;
+    }
+  }
   if(fname === 'cafes.json' && lang){
     try {
       const artRes = await api('/api/file?path=' + encodeURIComponent(`content/${lang}/cafe_articles.json`));
@@ -302,17 +386,19 @@ function render(){
   const main = $('#main');
   if(!state.data) { main.innerHTML = '<div class="card">載入中…</div>'; return; }
   const fname = state.path ? state.path.split('/').pop() : '';
-  if(fname === 'home_blog.json'){ renderHomeBlogList(); renderHomeBlog(); return; }
+  if(fname === 'blog.json' && Array.isArray(state.data)){ renderBlog(); renderBlogList(); return; }
   if(['editorial_reports.json','michelin_articles.json'].includes(fname) && Array.isArray(state.data)){
     EditorialReportEditor.mount({root:main,list:$('#topicList'),reports:state.data,
       selected:state.selectedReport ?? 0,language:state.path.split('/')[1],kind:fname==='michelin_articles.json'?'michelin':'reports',restaurants:state.michelinRestaurants||[],requestedRestaurantId:state.requestedRestaurantId,
+      openRestaurant:id=>jumpToMichelin(id),
       select:index=>{try{EditorialReportEditor.validate();}catch(e){alert(e.message);return;}state.selectedReport=index;if(fname==='michelin_articles.json')state.requestedRestaurantId=state.data[index]?.restaurantId||state.requestedRestaurantId;render();},changed:markDirty});
     return;
   }
-  if(fname === 'home_rankings.json'){ renderHomeRankingsList(); renderHomeRankings(); return; }
   if(fname === 'theme_grid.json'){ renderThemeGridList(); renderThemeGrid(); return; }
   if(fname === 'activities.json'){ renderActivitiesList(); renderActivities(); return; }
-  if(fname === 'spots.json'){ renderSpotsList(); renderSpots(); return; }
+  if(fname === 'charter.json' && Array.isArray(state.data)){ renderCharter(); renderCharterList(); return; }
+  if(fname === 'souvenirs.json' && Array.isArray(state.data)){ renderSouvenirs(); renderSouvenirsList(); return; }
+  if(fname === 'themes.json' && Array.isArray(state.data)){ renderThemes(); renderThemesList(); return; }
   if(fname === 'cafes.json' && Array.isArray(state.data)){ renderCafe(); renderCafeList(); return; }
   if(fname === 'cafe_articles.json' && Array.isArray(state.data)){ renderCafeArticles(); renderCafeArticleList(); return; }
   if(state.data && state.data.topics && state.data.items){
@@ -377,16 +463,17 @@ function renderBlog(){
   const main = $('#main');
   if(state.selectedArticle == null){ state.selectedArticle = 0; }
   const a = state.data[state.selectedArticle];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const addButton = '<button type="button" class="add-link" onclick="openBlogModal()">＋ 新增文章</button>';
+  if(!a){ main.innerHTML = `<div class="toolbar"><h2>📄 文章（0 筆）</h2>${addButton}</div><div class="card">尚無文章，請新增第一篇文章。</div>`; return; }
   const sp = a.spotInfo || {};
   const p = `[${state.selectedArticle}]`;
   const spPath = `${p}.spotInfo`;
 
   let html = `<div class="toolbar"><h2>文章 ${state.selectedArticle+1} / ${state.data.length}</h2>
-    <input class="search" id="itemSearch" placeholder="🔍 搜尋內文…" style="display:none"></div>`;
+    ${addButton}<div class="toolbar-actions"><button type="button" class="link-del" onclick="removeBlog()">刪除文章</button></div></div>`;
 
   html += `<div class="card"><h2>📄 文章資訊</h2><div class="field-grid">
-    ${tfp(p,'id', a.id)} ${tfp(p,'category', a.category)}
+    <div>${label('id（固定識別）')}<input value="${escapeHtml(a.id)}" readonly></div> ${tfp(p,'category', a.category)}
     ${tap(p,'title', a.title)} ${tap(p,'subtitle', a.subtitle)}
     ${tfp(p,'author', a.author)} ${tfp(p,'readTime', a.readTime)}
     ${tfp(p,'date', a.date)} ${tfp(p,'vol', a.vol)}
@@ -415,6 +502,35 @@ function renderBlog(){
 
   main.innerHTML = html;
   bindEdits();
+}
+
+function openBlogModal(){
+  $('#blogModalForm').innerHTML = Object.entries({title:'標題（必填）',subtitle:'副標題',category:'分類',author:'作者',date:'日期',city:'縣市',district:'行政區',heroImg:'封面圖片網址'}).map(([key,title])=>
+    `<div>${label(title)}<input id="nb_${key}" ${key==='title'?'required':''}></div>`).join('');
+  $('#blogModal').classList.add('open');
+  $('#nb_title').focus();
+}
+
+function closeBlogModal(){ $('#blogModal').classList.remove('open'); }
+
+function saveNewBlog(){
+  const val = key => $('#nb_' + key).value.trim();
+  if(!val('title')){ alert('請填寫文章標題'); return; }
+  const id = 'blog_' + crypto.randomUUID();
+  const article = {id,slug:id,readTime:'',vol:'',rating:'',readCount:'',authorQuote:'',tags:[],content:'',fullHtmlArticle:'',
+    spotInfo:{name:'',address:'',hours:'',transport:'',signature:'',mapQuery:'',bookingUrl:'',links:[]}};
+  for(const key of ['title','subtitle','category','author','date','city','district','heroImg']) article[key] = val(key);
+  state.data.push(article);
+  state.selectedArticle = state.data.length - 1;
+  closeBlogModal(); markDirty(); render();
+}
+
+function removeBlog(){
+  const article = state.data[state.selectedArticle];
+  if(!article || !confirm(`確定刪除「${article.title || article.id}」？存檔後會從所有語言同步移除。`)) return;
+  state.data.splice(state.selectedArticle,1);
+  state.selectedArticle = state.data.length ? Math.min(state.selectedArticle,state.data.length-1) : null;
+  markDirty(); render();
 }
 
 function renderCafeList(){
@@ -825,9 +941,11 @@ function renderCharter(){
   const main = $('#main');
   if(state.selectedCharter == null){ state.selectedCharter = 0; }
   const a = state.data[state.selectedCharter];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const addButton = '<button type="button" class="add-link" onclick="openCharterModal()">＋ 新增包車</button>';
+  if(!a){ main.innerHTML = `<div class="toolbar"><h2>🚗 包車（0 筆）</h2>${addButton}</div><div class="card">尚無包車，請新增第一筆資料。</div>`; return; }
   const p = `[${state.selectedCharter}]`;
-  let html = `<div class="toolbar"><h2>🚗 包車 ${state.selectedCharter+1} / ${state.data.length}</h2></div>`;
+  let html = `<div class="toolbar"><h2>🚗 包車 ${state.selectedCharter+1} / ${state.data.length}</h2>${addButton}
+    <div class="toolbar-actions"><button type="button" class="link-del" onclick="removeCharter()">刪除包車</button></div></div>`;
   html += `<div class="card"><h2>分潤與基本資訊</h2><div class="field-grid">
     ${tap(p,'name', a.name)} ${tfp(p,'city', a.city)}
     ${tfp(p,'country', a.country)} ${tfp(p,'currency', a.currency)}
@@ -842,6 +960,40 @@ function renderCharter(){
   </div></div>`;
   main.innerHTML = html;
   bindEdits();
+}
+
+function openCharterModal(){
+  $('#charterModalForm').innerHTML = Object.entries({name:'包車名稱（必填）',country:'國家',city:'城市',currency:'幣別',image:'圖片網址',affiliateUrl:'預訂／分潤連結'}).map(([key,title])=>
+    `<div>${label(title)}<input id="ncx_${key}" ${key==='name'?'required':''} value="${key==='currency'?'TWD':''}"></div>`).join('') + `
+    <div>${label('價格（必填）')}<input id="ncx_price" type="number" min="0" step="any" required></div>
+    <div>${label('分潤比例（%，例如 5 代表 5%）')}<input id="ncx_commissionRate" type="number" min="0" max="100" step="any" value="5" required></div>
+    <div>${label('即時確認')}<select id="ncx_instantConfirmation"><option value="true">是</option><option value="false">否</option></select></div>`;
+  $('#charterModal').classList.add('open');
+  $('#ncx_name').focus();
+}
+
+function closeCharterModal(){ $('#charterModal').classList.remove('open'); }
+
+function saveNewCharter(){
+  const val = key => $('#ncx_' + key).value.trim();
+  if(!val('name')){ alert('請填寫包車名稱'); return; }
+  const price = Number(val('price'));
+  const commissionPercent = Number(val('commissionRate'));
+  if(!val('price') || !Number.isFinite(price) || price < 0){ alert('請填寫有效價格（不可小於 0）'); return; }
+  if(!val('commissionRate') || !Number.isFinite(commissionPercent) || commissionPercent < 0 || commissionPercent > 100){ alert('分潤比例必須介於 0% 與 100%'); return; }
+  const charter = {price,commissionRate:commissionPercent/100,instantConfirmation:val('instantConfirmation')==='true'};
+  for(const key of ['name','country','city','currency','image','affiliateUrl']) charter[key] = val(key);
+  state.data.push(charter);
+  state.selectedCharter = state.data.length - 1;
+  closeCharterModal(); markDirty(); render();
+}
+
+function removeCharter(){
+  const charter = state.data[state.selectedCharter];
+  if(!charter || !confirm(`確定刪除「${charter.name}」？存檔後會從所有語言同步移除。`)) return;
+  state.data.splice(state.selectedCharter,1);
+  state.selectedCharter = state.data.length ? Math.min(state.selectedCharter,state.data.length-1) : null;
+  markDirty(); render();
 }
 
 function renderMichelinList(){
@@ -862,7 +1014,8 @@ function renderMichelinList(){
       const on = state.selectedMichelin && state.selectedMichelin.section===g.key && state.selectedMichelin.index===i;
       const div = document.createElement('div');
       div.className = 'topic-item' + (on ? ' on' : '');
-      div.innerHTML = `<span class="ic">${g.ic}</span><span class="nm">${escapeHtml(a.name)}</span><span class="cnt">${escapeHtml(a.stars||a.badge||'')}</span>`;
+      const hasArticle = state.michelinArticlesMap?.has(a.id);
+      div.innerHTML = `<span class="ic">${g.ic}${hasArticle?'📝':''}</span><span class="nm">${escapeHtml(a.name)}</span><span class="cnt">${hasArticle?'有專文':escapeHtml(a.stars||a.badge||'')}</span>`;
       div.onclick = ()=>{ state.selectedMichelin = {section:g.key, index:i}; render(); };
       list.appendChild(div);
     });
@@ -871,16 +1024,18 @@ function renderMichelinList(){
 
 function renderMichelin(){
   const main = $('#main');
-  if(!state.selectedMichelin){ state.selectedMichelin = {section:'stars', index:0}; }
+  if(!state.selectedMichelin){ state.selectedMichelin = {section:state.data.stars?.length?'stars':'bib', index:0}; }
   const sel = state.selectedMichelin;
   const arr = state.data[sel.section] || [];
   const a = arr[sel.index];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const addButton = '<button type="button" class="add-link" onclick="openMichelinModal()">＋ 新增餐廳</button>';
+  if(!a){ main.innerHTML = `<div class="toolbar"><h2>米其林餐廳</h2>${addButton}</div><div class="card">尚無餐廳，請新增第一筆資料。</div>`; return; }
   const p = `${sel.section}[${sel.index}]`;
   const isStar = sel.section === 'stars';
-  let html = `<div class="toolbar"><h2>${isStar?'⭐ 米其林星級':'🍜 必比登推介'} #${a.rank}：${escapeHtml(a.name)}</h2></div>`;
+  let html = `<div class="toolbar"><h2>${isStar?'⭐ 米其林星級':'🍜 必比登推介'} #${a.rank}：${escapeHtml(a.name)}</h2>${addButton}
+    <button type="button" class="link-del" onclick="removeMichelin()">刪除餐廳</button></div>`;
   html += `<div class="card"><h2>基本資訊</h2><div class="field-grid">`;
-  html += `${tfp(p,'id', a.id)} <div>${label('rank')}<input data-numeric="1" data-path="${p}.rank" value="${escapeHtml(a.rank)}"></div>`;
+  html += `<div>${label('id（固定識別）')}<input value="${escapeHtml(a.id)}" readonly></div> <div>${label('rank')}<input data-numeric="1" data-path="${p}.rank" value="${escapeHtml(a.rank)}"></div>`;
   html += `${tap(p,'name', a.name)}`;
   if(isStar){
     html += `${tfp(p,'stars', a.stars)} ${tfp(p,'category', a.category)}`;
@@ -895,9 +1050,75 @@ function renderMichelin(){
   html += `${tap(p,'img', a.img)}`;
   html += `</div>${renderLinks(`${p}.links`, a.links)}</div>`;
   main.innerHTML = html;
-  const articleButton=document.createElement('button');articleButton.type='button';articleButton.className='jump-btn';articleButton.textContent='新增／編輯這間餐廳的文章';
+  const article = state.michelinArticlesMap?.get(a.id);
+  const articleButton=document.createElement('button');articleButton.type='button';articleButton.className='jump-btn' + (article?'':' secondary');
+  articleButton.textContent=article ? `📖 檢視/編輯深度文章（${article.title || a.name}）→` : '＋ 為此餐廳建立專題報導';
+  if(!state.michelinArticlesMap){articleButton.disabled=true;articleButton.textContent=state.michelinArticlesError || '無法載入餐廳文章，請重新載入';}
   articleButton.onclick=()=>{const path=`content/${state.path.split('/')[1]}/michelin_articles.json`;$('#fileSelect').value=path;loadFile(path,{targetRestaurantId:a.id});};main.querySelector('.toolbar').appendChild(articleButton);
   bindEdits();
+}
+
+function jumpToMichelin(restaurantId){
+  const path = `content/${state.path.split('/')[1]}/michelin.json`;
+  $('#fileSelect').value = path;
+  loadFile(path, {targetRestaurantId:restaurantId});
+}
+
+function openMichelinModal(){
+  $('#michelinModalForm').innerHTML = `
+    <div>${label('餐廳分類')}<select id="nm_section"><option value="stars">米其林星級</option><option value="bib">必比登推介</option></select></div>
+    <div id="nm_starField">${label('星級')}<select id="nm_level"><option value="1">一星</option><option value="2">二星</option><option value="3">三星</option></select>
+      ${label('一星料理分類')}<select id="nm_category"><option value="taiwan_chinese">在地精緻台菜</option><option value="contemporary">當代創新料理</option><option value="japanese">頂級割烹日料</option></select></div>
+    <div id="nm_regionField" hidden>${label('地區代碼 region')}<input id="nm_region" placeholder="例如 taipei"></div>` +
+    Object.entries({name:'店名（必填）',city:'縣市／行政區（必填）',address:'地址',cuisine:'料理類型',price:'價格',rate:'評分',description:'特色介紹',dishes:'推薦菜色（必比登）',img:'圖片網址'}).map(([key,title])=>
+      `<div>${label(title)}<input id="nm_${key}" ${['name','city'].includes(key)?'required':''}></div>`).join('');
+  const section = $('#nm_section');
+  section.value = state.selectedMichelin?.section || 'stars';
+  section.onchange = ()=>{
+    $('#nm_starField').hidden = section.value !== 'stars';
+    $('#nm_regionField').hidden = section.value !== 'bib';
+  };
+  section.onchange();
+  $('#michelinModal').classList.add('open');
+  $('#nm_name').focus();
+}
+
+function closeMichelinModal(){ $('#michelinModal').classList.remove('open'); }
+
+function saveNewMichelin(){
+  const val = key => $('#nm_' + key).value.trim();
+  if(!val('name') || !val('city')){ alert('請填寫店名與縣市／行政區'); return; }
+  const section = val('section');
+  const arr = state.data[section];
+  const restaurant = {id:(section==='stars'?'star-':'bib-') + crypto.randomUUID(),
+    rank:Math.max(0,...arr.map(r=>Number(r.rank)||0))+1,links:[]};
+  for(const key of ['name','city','address','price','rate','img']) restaurant[key] = val(key);
+  if(section === 'stars'){
+    const level = Number(val('level'));
+    Object.assign(restaurant,{stars:'⭐'.repeat(level) + ' 米其林' + ['','一','二','三'][level] + '星',
+      category:level===1?val('category'):'three_two',categoryName:level===1?$('#nm_category').selectedOptions[0].textContent:'頂級三星與二星',
+      cuisine:val('cuisine'),feature:val('description')});
+  } else {
+    Object.assign(restaurant,{badge:'⭐ 必比登推介',region:val('region'),dishes:val('dishes'),desc:val('description')});
+  }
+  arr.push(restaurant);
+  state.selectedMichelin = {section,index:arr.length-1};
+  closeMichelinModal(); markDirty(); render();
+}
+
+function removeMichelin(){
+  const sel = state.selectedMichelin;
+  const arr = state.data[sel?.section];
+  const restaurant = arr?.[sel?.index];
+  if(!restaurant) return;
+  if(!state.michelinArticlesMap){ alert('請先重新載入餐廳文章資料再刪除。'); return; }
+  if(state.michelinArticlesMap.has(restaurant.id)){
+    alert('此餐廳仍有對應文章，請先在文章後台刪除文章並存檔，再刪除餐廳。'); return;
+  }
+  if(!confirm(`確定刪除「${restaurant.name}」？存檔後會從其他語言同步移除；若其他語言仍有對應文章，需先刪除該文章。`)) return;
+  arr.splice(sel.index,1);
+  state.selectedMichelin = arr.length ? {section:sel.section,index:Math.min(sel.index,arr.length-1)} : null;
+  markDirty(); render();
 }
 
 function renderThemesList(){
@@ -917,13 +1138,15 @@ function renderThemes(){
   const main = $('#main');
   if(state.selectedTheme == null){ state.selectedTheme = 0; }
   const th = state.data[state.selectedTheme];
-  if(!th){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const addButton = '<button type="button" class="add-link" onclick="openThemeModal()">＋ 新增主題</button>';
+  if(!th){ main.innerHTML = `<div class="toolbar"><h2>旅遊主題（0 筆）</h2>${addButton}</div><div class="card">尚無主題，請新增第一個旅遊主題。</div>`; return; }
   const p = `[${state.selectedTheme}]`;
   const bc = th.bookingCta || {};
-  let html = `<div class="toolbar"><h2>${escapeHtml(th.icon||'')} 主題 ${state.selectedTheme+1} / ${state.data.length}：${escapeHtml(th.shortTitle||th.id)}</h2></div>`;
+  let html = `<div class="toolbar"><h2>${escapeHtml(th.icon||'')} 主題 ${state.selectedTheme+1} / ${state.data.length}：${escapeHtml(th.shortTitle||th.id)}</h2>${addButton}
+    <div class="toolbar-actions"><button type="button" class="link-del" onclick="removeTheme()">刪除主題</button></div></div>`;
 
   html += `<div class="card"><h2>基本資訊</h2><div class="field-grid">
-    ${tfp(p,'id', th.id)} ${tfp(p,'icon', th.icon)}
+    <div>${label('id（固定識別）')}<input value="${escapeHtml(th.id)}" readonly></div> ${tfp(p,'icon', th.icon)}
     ${tfp(p,'iconImg', th.iconImg)} ${tap(p,'shortTitle', th.shortTitle)}
     ${tap(p,'zhTitle', th.zhTitle)} ${tap(p,'enTitle', th.enTitle)}
     ${tap(p,'name', th.name)} ${tap(p,'title', th.title)}
@@ -1004,6 +1227,39 @@ function spotExtras(path, sp){
   if(sp.rank !== undefined) out += `<div>${label('rank')}<input data-numeric="1" data-path="${path}.rank" value="${escapeHtml(sp.rank)}"></div>`;
   if(Array.isArray(sp.tags)) out += `<div class="full">${label('tags（逗號分隔）')}<textarea data-path="${path}.tags" data-csv="1">${escapeHtml(sp.tags.join(', '))}</textarea></div>`;
   return out;
+}
+
+function openThemeModal(){
+  const fields = {name:'主題名稱（必填）',shortTitle:'主題簡稱',icon:'主題圖示 Emoji',zhTitle:'中文標題',enTitle:'英文標題',title:'主標題',subtitle:'副標題',bannerImg:'封面圖片網址',iconImg:'主題圖示圖片網址',deckBg:'背景圖片網址'};
+  $('#themeModalForm').innerHTML = Object.entries(fields).map(([key,title])=>
+    `<div>${label(title)}<input id="nt_${key}" ${key==='name'?'required':''}></div>`).join('');
+  $('#themeModal').classList.add('open');
+  $('#nt_name').focus();
+}
+
+function closeThemeModal(){ $('#themeModal').classList.remove('open'); }
+
+function saveNewTheme(){
+  const val = key => $('#nt_' + key).value.trim();
+  if(!val('name')){ alert('請填寫主題名稱'); return; }
+  const theme = {id:'theme_' + crypto.randomUUID(),bookingCta:{charter:'',hotel:'',flight:'',tour:''},
+    subCategories:[{id:'all',name:'全部景點',icon:'✨'},{id:'general',name:'精選景點',icon:'📍'}],
+    experiences:[],itineraries:[],spots:[]};
+  for(const key of ['name','shortTitle','icon','zhTitle','enTitle','title','subtitle','bannerImg','iconImg','deckBg']) theme[key] = val(key);
+  theme.shortTitle ||= theme.name;
+  theme.zhTitle ||= theme.name;
+  theme.title ||= theme.name;
+  state.data.push(theme);
+  state.selectedTheme = state.data.length - 1;
+  closeThemeModal(); markDirty(); render();
+}
+
+function removeTheme(){
+  const theme = state.data[state.selectedTheme];
+  if(!theme || !confirm(`確定刪除主題「${theme.shortTitle || theme.name}」及其中的景點、分類、體驗與行程？存檔後會從所有語言同步移除。`)) return;
+  state.data.splice(state.selectedTheme,1);
+  state.selectedTheme = state.data.length ? Math.min(state.selectedTheme,state.data.length-1) : null;
+  markDirty(); render();
 }
 
 function openSpotModal(){
@@ -1098,12 +1354,14 @@ function renderSouvenirs(){
   const main = $('#main');
   if(state.selectedSouvenir == null){ state.selectedSouvenir = 0; }
   const c = state.data[state.selectedSouvenir];
-  if(!c){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const addButton = '<button type="button" class="add-link" onclick="openSouvenirModal(\'category\')">＋ 新增分類</button>';
+  if(!c){ main.innerHTML = `<div class="toolbar"><h2>伴手禮分類（0 筆）</h2>${addButton}</div><div class="card">尚無分類，請新增第一個分類。</div>`; return; }
   const p = `[${state.selectedSouvenir}]`;
-  let html = `<div class="toolbar"><h2>${escapeHtml(c.icon||'')} 分類 ${state.selectedSouvenir+1} / ${state.data.length}：${escapeHtml(c.shortName||c.name)}</h2></div>`;
+  let html = `<div class="toolbar"><h2>${escapeHtml(c.icon||'')} 分類 ${state.selectedSouvenir+1} / ${state.data.length}：${escapeHtml(c.shortName||c.name)}</h2>${addButton}
+    <div class="toolbar-actions"><button type="button" class="link-del" onclick="removeSouvenirCategory()">刪除分類</button></div></div>`;
 
   html += `<div class="card"><h2>分類資訊</h2><div class="field-grid">
-    ${tfp(p,'id', c.id)} ${tfp(p,'icon', c.icon)}
+    <div>${label('id（固定識別）')}<input value="${escapeHtml(c.id)}" readonly></div> ${tfp(p,'icon', c.icon)}
     ${tap(p,'name', c.name)} ${tap(p,'shortName', c.shortName)}
     ${tap(p,'channel', c.channel)} ${tap(p,'badge', c.badge)}
     ${tap(p,'desc', c.desc)}
@@ -1112,6 +1370,7 @@ function renderSouvenirs(){
 
   const items = c.items || [];
   html += `<div class="toolbar"><h2>🛍️ 商品 items（${items.length} 筆）</h2>
+    <button type="button" class="add-link" onclick="openSouvenirModal('item')">＋ 新增商品</button>
     <input class="search" id="itemSearch" placeholder="🔍 搜尋商品/品牌…" oninput="filterItems()"></div>`;
 
   items.forEach((it, j)=>{
@@ -1121,12 +1380,13 @@ function renderSouvenirs(){
         <span class="rank">#${it.rank}</span>
         <span class="nm"><input data-path="${ip}.name" value="${escapeHtml(it.name||'')}"></span>
         <span class="link"><span class="badge ${it.isKlook ? 'b-klook' : 'b-none'}">${it.isKlook ? 'Klook' : '其他'}</span></span>
+        <button type="button" class="link-del" onclick="removeSouvenirItem(${j})">刪除商品</button>
       </div>
       <div class="item-body field-grid">
         ${tfp(ip,'brand', it.brand)} ${tfp(ip,'enName', it.enName)}
         ${tfp(ip,'origin', it.origin)} ${tfp(ip,'price', it.price)}
         ${tfp(ip,'rating', it.rating)} ${tfp(ip,'reviews', it.reviews)}
-        <div>${label('rank')}<input data-numeric="1" data-path="${ip}.rank" value="${escapeHtml(it.rank)}"></div>
+        <div>${label(it.id?'rank':'rank（既有商品固定識別）')}<input data-numeric="1" data-path="${ip}.rank" value="${escapeHtml(it.rank)}" ${it.id?'':'readonly'}></div>
         <div>${label('isKlook')}<select data-path="${ip}.isKlook" data-bool="1">
           <option value="true"${it.isKlook?' selected':''}>true（Klook）</option>
           <option value="false"${it.isKlook?'':' selected'}>false（其他）</option>
@@ -1140,6 +1400,60 @@ function renderSouvenirs(){
 
   main.innerHTML = html;
   bindEdits();
+}
+
+function openSouvenirModal(kind){
+  const category = state.data[state.selectedSouvenir];
+  if(kind==='item' && !category) return;
+  state.souvenirModalKind = kind;
+  state.souvenirModalCategoryId = category?.id;
+  $('#souvenirModalTitle').textContent = kind==='category'?'新增伴手禮分類':`新增商品：${category.shortName || category.name}`;
+  const fields = kind==='category'
+    ? {name:'分類名稱（必填）',shortName:'分類簡稱',icon:'分類圖示 Emoji',channel:'購買通路',badge:'徽章',desc:'分類介紹',cta:'購買按鈕文字',defaultUrl:'預設購買網址'}
+    : {name:'商品名稱（必填）',brand:'品牌',enName:'英文名稱',origin:'產地',price:'價格',rating:'評分',reviews:'評論數',desc:'商品介紹',img:'圖片網址',buyUrl:'購買網址',ctaText:'購買按鈕文字'};
+  $('#souvenirModalForm').innerHTML = Object.entries(fields).map(([key,title])=>
+    `<div>${label(title)}<input id="nsv_${key}" ${key==='name'?'required':''}></div>`).join('') +
+    (kind==='item'?`<div>${label('購買通路')}<select id="nsv_isKlook"><option value="true">Klook</option><option value="false">其他</option></select></div>`:'');
+  $('#souvenirModal').classList.add('open');
+  $('#nsv_name').focus();
+}
+
+function closeSouvenirModal(){ $('#souvenirModal').classList.remove('open'); }
+
+function saveNewSouvenir(){
+  const val = key => $('#nsv_' + key).value.trim();
+  if(!val('name')){ alert('請填寫名稱'); return; }
+  if(state.souvenirModalKind==='category'){
+    const category = {id:'souvenir_' + crypto.randomUUID(),items:[]};
+    for(const key of ['name','shortName','icon','channel','badge','desc','cta','defaultUrl']) category[key] = val(key);
+    category.shortName ||= category.name;
+    state.data.push(category);
+    state.selectedSouvenir = state.data.length - 1;
+  } else {
+    const category = state.data.find(c=>c.id===state.souvenirModalCategoryId);
+    if(!category){ alert('對應分類不存在，請重新選擇分類'); return; }
+    const items = category.items;
+    const item = {id:'souvenir_item_' + crypto.randomUUID(),rank:Math.max(0,...items.map(it=>Number(it.rank)||0))+1,isKlook:val('isKlook')==='true'};
+    for(const key of ['name','brand','enName','origin','price','rating','reviews','desc','img','buyUrl','ctaText']) item[key] = val(key);
+    items.push(item);
+  }
+  closeSouvenirModal(); markDirty(); render();
+}
+
+function removeSouvenirCategory(){
+  const category = state.data[state.selectedSouvenir];
+  if(!category || !confirm(`確定刪除分類「${category.name}」及其中 ${category.items.length} 筆商品？存檔後會從所有語言同步移除。`)) return;
+  state.data.splice(state.selectedSouvenir,1);
+  state.selectedSouvenir = state.data.length ? Math.min(state.selectedSouvenir,state.data.length-1) : null;
+  markDirty(); render();
+}
+
+function removeSouvenirItem(index){
+  const items = state.data[state.selectedSouvenir]?.items;
+  const item = items?.[index];
+  if(!item || !confirm(`確定刪除商品「${item.name}」？存檔後會從所有語言同步移除。`)) return;
+  items.splice(index,1);
+  markDirty(); render();
 }
 
 function renderRankings(){
@@ -1244,77 +1558,6 @@ function genListRender(arr, selKey, icon, nameFn, cntFn){
 }
 
 // =========================================================
-// home_blog.json（首頁文章，陣列）
-// =========================================================
-function renderHomeBlogList(){
-  genListRender(state.data, 'selectedHomeBlog', '📄', a => a.title || a.id, a => a.category || '');
-}
-
-function renderHomeBlog(){
-  const main = $('#main');
-  if(state.selectedHomeBlog == null){ state.selectedHomeBlog = 0; }
-  const a = state.data[state.selectedHomeBlog];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
-  const p = `[${state.selectedHomeBlog}]`;
-  let html = `<div class="toolbar"><h2>📄 首頁文章 ${state.selectedHomeBlog+1} / ${state.data.length}</h2></div>`;
-  html += `<div class="card"><h2>文章資訊</h2><div class="field-grid">`;
-  for(const k in a){
-    if(k === 'spotInfo') continue;
-    html += genField(p, k, a[k]);
-  }
-  html += `</div></div>`;
-  html += `<div class="card"><h2>📍 景點資訊 spotInfo</h2><div class="field-grid">`;
-  const sp = a.spotInfo || {};
-  for(const k in sp){ html += genField(`${p}.spotInfo`, k, sp[k]); }
-  html += `</div></div>`;
-  main.innerHTML = html;
-  bindEdits();
-}
-
-// =========================================================
-// home_rankings.json（首頁排行榜，分類字典）
-// =========================================================
-function renderHomeRankingsList(){
-  const list = $('#topicList');
-  list.innerHTML = '';
-  if(!(state.data && typeof state.data === 'object' && !Array.isArray(state.data))) return;
-  Object.keys(state.data).forEach(cat=>{
-    const arr = state.data[cat] || [];
-    const h = document.createElement('div');
-    h.style.cssText = 'font-size:11px;color:var(--muted);padding:8px 10px 4px;font-weight:700;';
-    h.textContent = `${cat} (${arr.length})`;
-    list.appendChild(h);
-    arr.forEach((a,i)=>{
-      const on = state.selectedHomeRanking && state.selectedHomeRanking.cat===cat && state.selectedHomeRanking.index===i;
-      const div = document.createElement('div');
-      div.className = 'topic-item' + (on?' on':'');
-      div.innerHTML = `<span class="ic">${a.rank?'#'+a.rank:''}</span><span class="nm">${escapeHtml(a.name||'')}</span><span class="cnt">${escapeHtml(a.city||a.rate||'')}</span>`;
-      div.onclick = ()=>{ state.selectedHomeRanking = {cat, index:i}; render(); };
-      list.appendChild(div);
-    });
-  });
-}
-
-function renderHomeRankings(){
-  const main = $('#main');
-  const catKeys = Object.keys(state.data || {});
-  if(!state.selectedHomeRanking && catKeys.length){
-    state.selectedHomeRanking = {cat: catKeys[0], index:0};
-  }
-  const {cat, index} = state.selectedHomeRanking || {};
-  const arr = (state.data && state.data[cat]) || [];
-  const a = arr[index];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
-  const p = `${cat}[${index}]`;
-  let html = `<div class="toolbar"><h2>🏆 ${escapeHtml(cat)} 排行 #${a.rank||index+1} / ${arr.length}</h2></div>`;
-  html += `<div class="card"><h2>項目欄位</h2><div class="field-grid">`;
-  for(const k in a){ html += genField(p, k, a[k]); }
-  html += `</div></div>`;
-  main.innerHTML = html;
-  bindEdits();
-}
-
-// =========================================================
 // theme_grid.json（主題格，陣列）
 // =========================================================
 function renderThemeGridList(){
@@ -1346,9 +1589,11 @@ function renderActivities(){
   const main = $('#main');
   if(state.selectedActivity == null){ state.selectedActivity = 0; }
   const a = state.data[state.selectedActivity];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
+  const addButton = '<button type="button" class="add-link" onclick="openActivityModal()">＋ 新增活動</button>';
+  if(!a){ main.innerHTML = `<div class="toolbar"><h2>🎟️ 活動（0 筆）</h2>${addButton}</div><div class="card">尚無活動，請新增第一筆活動。</div>`; return; }
   const p = `[${state.selectedActivity}]`;
-  let html = `<div class="toolbar"><h2>🎟️ 活動 ${state.selectedActivity+1} / ${state.data.length}</h2></div>`;
+  let html = `<div class="toolbar"><h2>🎟️ 活動 ${state.selectedActivity+1} / ${state.data.length}</h2>${addButton}
+    <div class="toolbar-actions"><button type="button" class="link-del" onclick="removeActivity()">刪除活動</button></div></div>`;
   html += `<div class="card"><h2>活動資訊</h2><div class="field-grid">`;
   for(const k in a){ html += genField(p, k, a[k]); }
   html += `</div></div>`;
@@ -1356,25 +1601,33 @@ function renderActivities(){
   bindEdits();
 }
 
-// =========================================================
-// spots.json（景點，陣列）
-// =========================================================
-function renderSpotsList(){
-  genListRender(state.data, 'selectedSpot', '📍', a => a.name, a => a.city || a.zone || '');
+function openActivityModal(){
+  const fields = {name:'活動名稱（必填）',activityId:'Klook 活動 ID／網址代稱（必填）',enName:'英文名稱',city:'縣市／行政區',cityEn:'縣市英文',price:'價格',origPrice:'原價',rate:'評分',reviews:'評論數',tag:'推薦標籤',badge:'徽章',desc:'活動介紹',img:'圖片路徑／網址',localImg:'本機圖片路徑'};
+  $('#activityModalForm').innerHTML = Object.entries(fields).map(([key,title])=>
+    `<div>${label(title)}<input id="na_${key}" ${['name','activityId'].includes(key)?'required':''}></div>`).join('');
+  $('#activityModal').classList.add('open');
+  $('#na_name').focus();
 }
 
-function renderSpots(){
-  const main = $('#main');
-  if(state.selectedSpot == null){ state.selectedSpot = 0; }
-  const a = state.data[state.selectedSpot];
-  if(!a){ main.innerHTML = '<div class="card">無資料</div>'; return; }
-  const p = `[${state.selectedSpot}]`;
-  let html = `<div class="toolbar"><h2>📍 景點 ${state.selectedSpot+1} / ${state.data.length}</h2></div>`;
-  html += `<div class="card"><h2>景點資訊</h2><div class="field-grid">`;
-  for(const k in a){ html += genField(p, k, a[k]); }
-  html += `</div></div>`;
-  main.innerHTML = html;
-  bindEdits();
+function closeActivityModal(){ $('#activityModal').classList.remove('open'); }
+
+function saveNewActivity(){
+  const val = key => $('#na_' + key).value.trim();
+  if(!val('name') || !val('activityId')){ alert('請填寫活動名稱與 Klook 活動 ID／網址代稱'); return; }
+  if(state.data.some(a=>a.activityId === val('activityId'))){ alert('此活動 ID 已存在，請編輯既有活動或使用其他 ID'); return; }
+  const activity = {rank:Math.max(0,...state.data.map(a=>Number(a.rank)||0))+1};
+  for(const key of ['name','activityId','enName','city','cityEn','price','origPrice','rate','reviews','tag','badge','desc','img','localImg']) activity[key] = val(key);
+  state.data.push(activity);
+  state.selectedActivity = state.data.length - 1;
+  closeActivityModal(); markDirty(); render();
+}
+
+function removeActivity(){
+  const activity = state.data[state.selectedActivity];
+  if(!activity || !confirm(`確定刪除「${activity.name}」？存檔後會從所有語言同步移除。`)) return;
+  state.data.splice(state.selectedActivity,1);
+  state.selectedActivity = state.data.length ? Math.min(state.selectedActivity,state.data.length-1) : null;
+  markDirty(); render();
 }
 
 function label(text){ return `<label>${text}</label>`; }

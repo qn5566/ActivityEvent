@@ -65,20 +65,8 @@ FILE_FIELDS = {
     "activities.json": {
         "name", "city", "tag", "desc", "badge",
     },
-    "spots.json": {
-        "name", "city", "zone", "duration", "tag", "badge", "desc",
-    },
     "theme_grid.json": {
         "name", "shortName", "desc", "count",
-    },
-    "home_rankings.json": {
-        "name", "category", "city", "desc", "tag", "drinks", "sugarIce",
-        "feature", "features", "signature", "loc", "trips", "views", "date",
-        "indoor", "ticket",
-    },
-    "home_blog.json": {
-        "title", "subtitle", "category", "author", "date", "readTime", "content",
-        "name", "address", "hours", "signature", "transport", "mapQuery",
     },
 }
 

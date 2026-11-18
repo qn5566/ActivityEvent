@@ -101,6 +101,176 @@ class ReportAdminTests(unittest.TestCase):
             (self.root/f'content/{language}/michelin_articles.json').write_text(json.dumps([translated]))
         return [article]
 
+    def test_themes_add_delete_preserves_translations_and_locale_flight(self):
+        for language in ('zh', 'en'):
+            data = [{'id': key, 'name': language + key, 'spots': [{'name': language + key}],
+                     'bookingCta': {'flight': 'https://flight.example/' + language,
+                                    'hotel': 'https://hotel.example/original'}} for key in ('a', 'b', 'c')]
+            (self.root / f'content/{language}/themes.json').write_text(json.dumps(data))
+        new_theme = {'id': 'new', 'name': '新主題', 'spots': [], 'experiences': [], 'itineraries': [],
+                     'subCategories': [{'id': 'general', 'name': '精選'}], 'bookingCta': {}}
+        source = [{'id': 'c', 'name': '中文丙', 'spots': [{'name': '中文景點'}],
+                   'bookingCta': {'flight': 'https://flight.example/zh',
+                                  'hotel': 'https://hotel.example/updated'}}, new_theme]
+        path = '/api/file?path=content/zh/themes.json'
+        self.assertEqual(self.request(path, source)[0], 200)
+        translated_path = self.root / 'content/en/themes.json'
+        translated = json.loads(translated_path.read_text())
+        self.assertEqual([theme['id'] for theme in translated], ['c', 'new'])
+        self.assertEqual(translated[0]['name'], 'enc')
+        self.assertEqual(translated[0]['spots'][0]['name'], 'enc')
+        self.assertEqual(translated[0]['bookingCta']['flight'], 'https://flight.example/en')
+        self.assertEqual(translated[0]['bookingCta']['hotel'], 'https://hotel.example/updated')
+        self.assertEqual(translated[1], new_theme)
+        self.assertEqual(self.request(path, [])[0], 200)
+        self.assertEqual(json.loads(translated_path.read_text()), [])
+
+    def test_themes_rejects_invalid_structure_without_writing(self):
+        path = self.root / 'content/zh/themes.json'
+        path.write_text('[{"id":"original","spots":[]}]')
+        original = path.read_bytes()
+        for data in [{}, [{'id': ''}], [{'id': 'same'}, {'id': 'same'}],
+                     [{'id': 'a', 'spots': {}}], [{'id': 'a', 'bookingCta': []}]]:
+            self.assertEqual(self.request('/api/file?path=content/zh/themes.json', data)[0], 400)
+            self.assertEqual(path.read_bytes(), original)
+
+    def test_souvenirs_nested_add_delete_preserves_translations(self):
+        for language in ('zh', 'en'):
+            data = [{'id': key, 'name': language + key, 'items': [
+                {'rank': rank, 'name': language + str(rank), 'buyUrl': 'https://shop.example/' + str(rank)}
+                for rank in (1, 2, 3)]} for key in ('a', 'b', 'c')]
+            (self.root / f'content/{language}/souvenirs.json').write_text(json.dumps(data))
+        new_item = {'id': 'new-item', 'rank': 4, 'name': '新商品'}
+        source = [{'id': 'c', 'name': '中文分類', 'items': [
+            {'rank': 3, 'name': '中文商品', 'buyUrl': 'https://shop.example/updated'}, new_item]},
+            {'id': 'new-category', 'name': '新分類', 'items': []}]
+        path = '/api/file?path=content/zh/souvenirs.json'
+        self.assertEqual(self.request(path, source)[0], 200)
+        translated_path = self.root / 'content/en/souvenirs.json'
+        translated = json.loads(translated_path.read_text())
+        self.assertEqual([category['id'] for category in translated], ['c', 'new-category'])
+        self.assertEqual(translated[0]['name'], 'enc')
+        self.assertEqual(translated[0]['items'][0]['name'], 'en3')
+        self.assertEqual(translated[0]['items'][0]['buyUrl'], 'https://shop.example/updated')
+        self.assertEqual(translated[0]['items'][1], new_item)
+        # New IDs distinguish replacements even when a deleted last item's rank is reused.
+        source[0]['items'] = [{'id': 'replacement', 'rank': 4, 'name': '替代商品'}]
+        self.assertEqual(self.request(path, source)[0], 200)
+        self.assertEqual(json.loads(translated_path.read_text())[0]['items'], source[0]['items'])
+        source[0]['items'] = []
+        self.assertEqual(self.request(path, source)[0], 200)
+        self.assertEqual(json.loads(translated_path.read_text())[0]['items'], [])
+        self.assertEqual(self.request(path, [])[0], 200)
+        self.assertEqual(json.loads(translated_path.read_text()), [])
+
+    def test_souvenirs_rejects_invalid_structure_without_writing(self):
+        path = self.root / 'content/zh/souvenirs.json'
+        path.write_text('[{"id":"a","items":[]}]')
+        original = path.read_bytes()
+        for data in [{}, [{'id': 'a', 'items': {}}], [{'id': '', 'items': []}],
+                     [{'id': 'a', 'items': []}, {'id': 'a', 'items': []}],
+                     [{'id': 'a', 'items': [{'rank': 1}, {'rank': 1}]}],
+                     [{'id': 'a', 'items': [{'rank': 1, 'id': 'same'}, {'rank': 2, 'id': 'same'}]}]]:
+            self.assertEqual(self.request('/api/file?path=content/zh/souvenirs.json', data)[0], 400)
+            self.assertEqual(path.read_bytes(), original)
+
+    def test_activities_add_delete_preserves_translations_by_activity_id(self):
+        for language in ('zh', 'en'):
+            (self.root / f'content/{language}/activities.json').write_text(json.dumps([
+                {'activityId': key, 'name': language + key, 'desc': language + ' description',
+                 'img': 'https://img.example/' + key} for key in ('a', 'b', 'c')]))
+        data = [{'activityId': 'c', 'name': '中文活動', 'desc': '中文介紹',
+                 'img': 'https://img.example/updated'},
+                {'activityId': 'new-tour', 'name': '新增活動', 'rank': 4}]
+        path = '/api/file?path=content/zh/activities.json'
+        self.assertEqual(self.request(path, data)[0], 200)
+        translated = json.loads((self.root / 'content/en/activities.json').read_text())
+        self.assertEqual([item['activityId'] for item in translated], ['c', 'new-tour'])
+        self.assertEqual(translated[0]['name'], 'enc')
+        self.assertEqual(translated[0]['desc'], 'en description')
+        self.assertEqual(translated[0]['img'], data[0]['img'])
+        self.assertEqual(translated[1], data[1])
+        self.assertEqual(self.request(path, [])[0], 200)
+        for language in ('zh', 'en'):
+            self.assertEqual(json.loads((self.root / f'content/{language}/activities.json').read_text()), [])
+
+    def test_activities_rejects_invalid_data_without_writing(self):
+        path = self.root / 'content/zh/activities.json'
+        path.write_text('[{"activityId":"original","name":"活動"}]')
+        original = path.read_bytes()
+        for data in [{}, [{'activityId': '', 'name': '活動'}], [{'name': '活動'}],
+                     [{'activityId': 'a', 'name': ''}],
+                     [{'activityId': 'a', 'name': '甲'}, {'activityId': 'a', 'name': '乙'}]]:
+            self.assertEqual(self.request('/api/file?path=content/zh/activities.json', data)[0], 400)
+            self.assertEqual(path.read_bytes(), original)
+
+    def test_blog_add_delete_preserves_translated_articles_by_id(self):
+        for language in ('zh', 'en'):
+            path = self.root / f'content/{language}/blog.json'
+            path.write_text(json.dumps([
+                {'id': key, 'title': language + key, 'heroImg': 'https://img.example/' + key,
+                 'fullHtmlArticle': '<p>' + language + key + '</p>'}
+                for key in ('a', 'b', 'c')]))
+        data = [{'id': 'c', 'title': '中文丙', 'heroImg': 'https://img.example/updated',
+                 'fullHtmlArticle': '<p>中文</p>'},
+                {'id': 'new', 'title': '新文章', 'spotInfo': {'links': []}}]
+        code, _ = self.request('/api/file?path=content/zh/blog.json', data)
+        self.assertEqual(code, 200)
+        translated = json.loads((self.root / 'content/en/blog.json').read_text())
+        self.assertEqual([article['id'] for article in translated], ['c', 'new'])
+        self.assertEqual(translated[0]['title'], 'enc')
+        self.assertEqual(translated[0]['fullHtmlArticle'], '<p>enc</p>')
+        self.assertEqual(translated[0]['heroImg'], data[0]['heroImg'])
+        self.assertEqual(translated[1], data[1])
+        self.assertEqual(self.request('/api/file?path=content/zh/blog.json', [])[0], 200)
+        for language in ('zh', 'en'):
+            self.assertEqual(json.loads((self.root / f'content/{language}/blog.json').read_text()), [])
+
+    def test_blog_rejects_invalid_and_duplicate_ids_without_writing(self):
+        path = self.root / 'content/zh/blog.json'
+        path.write_text('[{"id":"original"}]')
+        original = path.read_bytes()
+        for data in [{}, [{'id': ''}], [{'title': 'missing ID'}], [{'id': 'a'}, {'id': 'a'}]]:
+            self.assertEqual(self.request('/api/file?path=content/zh/blog.json', data)[0], 400)
+            self.assertEqual(path.read_bytes(), original)
+
+    def test_michelin_directory_add_delete_preserves_translations_by_id(self):
+        self.michelin_fixture()
+        english_path = self.root / 'content/en/michelin.json'
+        english = json.loads(english_path.read_text())
+        english['stars'][0]['name'] = 'Translated restaurant'
+        english_path.write_text(json.dumps(english))
+        data = {'stars': [{'id': 'star-1', 'name': '中文餐廳'},
+                          {'id': 'star-new', 'name': '新店'}],
+                'bib': [{'id': 'bib-new', 'name': '新必比登'}]}
+        code, _ = self.request('/api/file?path=content/zh/michelin.json', data)
+        self.assertEqual(code, 200)
+        saved = json.loads(english_path.read_text())
+        self.assertEqual([r['id'] for r in saved['stars']], ['star-1', 'star-new'])
+        self.assertEqual(saved['stars'][0]['name'], 'Translated restaurant')
+        self.assertEqual(saved['stars'][1], data['stars'][1])
+        self.assertEqual(saved['bib'], data['bib'])
+
+    def test_michelin_directory_rejects_deleting_restaurant_linked_in_other_language(self):
+        self.michelin_fixture()
+        (self.root / 'content/zh/michelin_articles.json').write_text('[]')
+        paths = [self.root / f'content/{lang}/michelin.json' for lang in ('zh', 'en')]
+        original = [path.read_bytes() for path in paths]
+        code, body = self.request('/api/file?path=content/zh/michelin.json', {'stars': [], 'bib': []})
+        self.assertEqual(code, 400)
+        self.assertIn('en', json.loads(body)['error'])
+        self.assertEqual([path.read_bytes() for path in paths], original)
+
+    def test_michelin_directory_rejects_duplicate_ids_across_groups(self):
+        self.michelin_fixture()
+        path = self.root / 'content/zh/michelin.json'
+        original = path.read_bytes()
+        for data in [{'stars': [], 'bib': None},
+                     {'stars': [{'id': 'same'}], 'bib': [{'id': 'same'}]},
+                     {'stars': [{'id': ''}], 'bib': []}]:
+            self.assertEqual(self.request('/api/file?path=content/zh/michelin.json', data)[0], 400)
+            self.assertEqual(path.read_bytes(), original)
+
     def test_michelin_save_preserves_restaurant_link_menu_and_other_language(self):
         data=self.michelin_fixture();english=(self.root/'content/en/michelin_articles.json').read_bytes()
         data[0]['menuVariants'][0]['items'][0]['price']='NT$ 4,500+'
