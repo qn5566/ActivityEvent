@@ -11,7 +11,7 @@
 - `links.json`：既有 App／腳本相容參數。Klook 統一 `123436`，Trip 機票與其他服務統一 `trip_sub3=D20272275`。
 - 本機後台可從檔案選單編輯 `affiliate_config.json`；存檔會驗證必要欄位。修改後請執行 `python3 migrate_affiliate_links.py --apply`，更新內容內的舊連結及 `links.json`。不帶 `--apply` 只預覽。
 - 原有 `python3 update_links.py --set KEY=VALUE` 也會同步共同設定中的追蹤參數；主帳號／包車、機票／其他 Trip 的相容別名會一起更新。
-- 雙北使用規格提供的城市 ID（617、765）與行政區關鍵字；其餘 20 縣市使用關鍵字搜尋，尚未填入未經確認的城市 ID。
+- 全台 22 縣市已逐一核對 Trip.com 官方住宿頁並填入城市 ID；新竹縣／市、嘉義縣／市分開設定，連江縣使用馬祖目的地。台北為 617、新北為 7662；765 是斯圖加特。行政區與景點搜尋仍保留關鍵字。
 - 歐美預設 Expedia／Hotels.com／Viator／Yesim；12Go、Discover Cars、Tripadvisor 及生活服務使用規格提供的原始短鏈。短鏈沒有已確認的目的地參數，因此全球住宿不附加推測的城市參數。
 - 幣別參數控制預訂網站的顯示偏好；既有內容的台幣參考價不做匯率換算，最終成交價格／幣別以平台顯示為準。
 - 寵物品牌只提供了追蹤標籤，沒有實際網址，列於 `unconfigured`，待補網址後再開啟。

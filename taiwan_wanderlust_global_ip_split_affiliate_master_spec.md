@@ -34,12 +34,12 @@
   * 大安區/東區：`https://tw.trip.com/hotels/list?city=617&keyword=%E5%A4%A7%E5%AE%89%E5%8D%80&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
   * 北投溫泉區：`https://tw.trip.com/hotels/list?city=617&keyword=%E5%8C%97%E6%8A%95%E6%BA%AB%E6%B3%89&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
 
-* **新北市 (city=765)**：
-  * 全新北總覽：`https://tw.trip.com/hotels/list?city=765&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
-  * 九份/金瓜石 (瑞芳區)：`https://tw.trip.com/hotels/list?city=765&keyword=%E4%B9%9D%E4%BB%BD&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
-  * 淡水區：`https://tw.trip.com/hotels/list?city=765&keyword=%E6%B7%A1%E6%B0%B4&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
-  * 烏來溫泉：`https://tw.trip.com/hotels/list?city=765&keyword=%E7%83%8F%E4%BE%86&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
-  * 板橋區 (耶誕城)：`https://tw.trip.com/hotels/list?city=765&keyword=%E6%9D%BF%E6%A9%8B&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
+* **新北市 (city=7662)**：
+  * 全新北總覽：`https://tw.trip.com/hotels/list?city=7662&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
+  * 九份/金瓜石 (瑞芳區)：`https://tw.trip.com/hotels/list?city=7662&keyword=%E4%B9%9D%E4%BB%BD&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
+  * 淡水區：`https://tw.trip.com/hotels/list?city=7662&keyword=%E6%B7%A1%E6%B0%B4&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
+  * 烏來溫泉：`https://tw.trip.com/hotels/list?city=7662&keyword=%E7%83%8F%E4%BE%86&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
+  * 板橋區 (耶誕城)：`https://tw.trip.com/hotels/list?city=7662&keyword=%E6%9D%BF%E6%A9%8B&Allianceid=9507030&SID=325761227&trip_sub3=D20272275`
 
 ---
 

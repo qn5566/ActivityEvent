@@ -45,7 +45,7 @@ test('booking panel initializes, switches markets and builds destination links',
   district.value='瑞芳區';district.events.change();
   const hotel = new URL(links[1].href);
   assert.equal(hotel.hostname,'hk.trip.com');
-  assert.equal(hotel.searchParams.get('city'),'765');
+  assert.equal(hotel.searchParams.get('city'),'7662');
   assert.equal(hotel.searchParams.get('keyword'),'九份');
   market.value='GLOBAL';market.events.change();
   assert.equal(new URL(links[1].href).hostname,'hotels.tpk.lu');

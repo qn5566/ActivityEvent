@@ -211,108 +211,128 @@
     {
       "name": "基隆市",
       "nameEn": "Keelung City",
-      "keyword": "基隆市"
+      "keyword": "基隆市",
+      "tripCityId": "7810"
     },
     {
       "name": "新北市",
       "nameEn": "New Taipei City",
       "keyword": "新北市",
-      "tripCityId": "765"
+      "tripCityId": "7662"
     },
     {
       "name": "桃園市",
       "nameEn": "Taoyuan City",
-      "keyword": "桃園市"
+      "keyword": "桃園市",
+      "tripCityId": "7570"
     },
     {
       "name": "新竹市",
       "nameEn": "Hsinchu City",
-      "keyword": "新竹市"
+      "keyword": "新竹市",
+      "tripCityId": "3845"
     },
     {
       "name": "新竹縣",
       "nameEn": "Hsinchu County",
-      "keyword": "新竹縣"
+      "keyword": "新竹縣",
+      "tripCityId": "669328"
     },
     {
       "name": "苗栗縣",
       "nameEn": "Miaoli County",
-      "keyword": "苗栗縣"
+      "keyword": "苗栗縣",
+      "tripCityId": "7809"
     },
     {
       "name": "臺中市",
       "nameEn": "Taichung City",
-      "keyword": "臺中市"
+      "keyword": "臺中市",
+      "tripCityId": "3849"
     },
     {
       "name": "彰化縣",
       "nameEn": "Changhua County",
-      "keyword": "彰化縣"
+      "keyword": "彰化縣",
+      "tripCityId": "7811"
     },
     {
       "name": "南投縣",
       "nameEn": "Nantou County",
-      "keyword": "南投縣"
+      "keyword": "南投縣",
+      "tripCityId": "7524"
     },
     {
       "name": "雲林縣",
       "nameEn": "Yunlin County",
-      "keyword": "雲林縣"
+      "keyword": "雲林縣",
+      "tripCityId": "7523"
     },
     {
       "name": "嘉義市",
       "nameEn": "Chiayi City",
-      "keyword": "嘉義市"
+      "keyword": "嘉義市",
+      "tripCityId": "5152"
     },
     {
       "name": "嘉義縣",
       "nameEn": "Chiayi County",
-      "keyword": "嘉義縣"
+      "keyword": "嘉義縣",
+      "tripCityId": "650358"
     },
     {
       "name": "臺南市",
       "nameEn": "Tainan City",
-      "keyword": "臺南市"
+      "keyword": "臺南市",
+      "tripCityId": "3847"
     },
     {
       "name": "高雄市",
       "nameEn": "Kaohsiung City",
-      "keyword": "高雄市"
+      "keyword": "高雄市",
+      "tripCityId": "720"
     },
     {
       "name": "屏東縣",
       "nameEn": "Pingtung County",
-      "keyword": "屏東縣"
+      "keyword": "屏東縣",
+      "tripCityId": "5589"
     },
     {
       "name": "宜蘭縣",
       "nameEn": "Yilan County",
-      "keyword": "宜蘭縣"
+      "keyword": "宜蘭縣",
+      "tripCityId": "7614"
     },
     {
       "name": "花蓮縣",
       "nameEn": "Hualien County",
-      "keyword": "花蓮縣"
+      "keyword": "花蓮縣",
+      "tripCityId": "6954"
     },
     {
       "name": "臺東縣",
       "nameEn": "Taitung County",
-      "keyword": "臺東縣"
+      "keyword": "臺東縣",
+      "tripCityId": "3848"
     },
     {
       "name": "澎湖縣",
       "nameEn": "Penghu County",
-      "keyword": "澎湖縣"
+      "keyword": "澎湖縣",
+      "tripCityId": "7805"
     },
     {
       "name": "金門縣",
       "nameEn": "Kinmen County",
-      "keyword": "金門縣"
+      "keyword": "金門縣",
+      "tripCityId": "7203"
     },
     {
       "name": "連江縣",
       "nameEn": "Lienchiang County",
-      "keyword": "連江縣"
+      "keyword": "連江縣",
+      "tripCityId": "7808"
     }
   ],
   "districts": [

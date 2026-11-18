@@ -36,12 +36,31 @@ test('22 cities and specified districts preserve destinations without fabricated
   assert.equal(config.cities.length, 22);
   for (const district of config.districts) {
     const url = new URL(buildLink(config, 'JP', 'hotel', {city:district.city, district:district.name}));
-    assert.equal(url.searchParams.get('city'), district.city === '臺北市' ? '617' : '765');
+    assert.equal(url.searchParams.get('city'), district.city === '臺北市' ? '617' : '7662');
     assert.equal(url.searchParams.get('keyword'), district.keyword);
   }
   const url = new URL(buildLink(config, 'TW', 'hotel', {city:'臺南市'}));
-  assert.equal(url.searchParams.get('keyword'), '臺南市');
-  assert.equal(url.searchParams.has('city'), false);
+  assert.equal(url.searchParams.get('city'), '3847');
+  const keywordOnly = structuredClone(config);
+  delete keywordOnly.cities.find(city => city.name === '臺南市').tripCityId;
+  const fallback = new URL(buildLink(keywordOnly, 'TW', 'hotel', {city:'臺南市'}));
+  assert.equal(fallback.searchParams.get('keyword'), '臺南市');
+  assert.equal(fallback.searchParams.has('city'), false);
+});
+
+test('all 22 Taiwan cities have distinct numeric Trip IDs and county/city pairs stay separate', () => {
+  assert.equal(new Set(config.cities.map(city=>city.tripCityId)).size,22);
+  for (const city of config.cities) {
+    assert.match(city.tripCityId,/^\d+$/);
+    const url=new URL(buildLink(config,'TW','hotel',{city:city.name}));
+    assert.equal(url.searchParams.get('city'),city.tripCityId);
+  }
+  const ids=Object.fromEntries(config.cities.map(city=>[city.name,city.tripCityId]));
+  assert.equal(ids['新竹市'],'3845');
+  assert.equal(ids['新竹縣'],'669328');
+  assert.equal(ids['嘉義市'],'5152');
+  assert.equal(ids['嘉義縣'],'650358');
+  assert.equal(ids['連江縣'],'7808');
 });
 
 test('manual selection and unexpired geo cache avoid network requests', async () => {
