@@ -28,7 +28,7 @@ LOG_PATH = CONTENT_DIR / "translate.log"
 
 # These editions are imported from the PM's English Markdown by a separate
 # workflow. Never overwrite their translations with a copy of the zh edition.
-SEPARATELY_MANAGED_FILES = {"editorial_reports.json"}
+SEPARATELY_MANAGED_FILES = {"editorial_reports.json", "michelin_articles.json"}
 
 # 資料夾名稱 → 目標語言代碼（也是 Google / argos 對照用）
 LANGUAGES = {

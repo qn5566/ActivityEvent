@@ -30,6 +30,7 @@ from urllib.parse import urlparse, parse_qs, unquote
 
 from affiliate_config import validate_config
 from editorial_reports import prepare_reports
+from michelin_articles import prepare_articles
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_PORT = 8765
@@ -153,7 +154,7 @@ def sync_to_other_langs(rel, data):
     _, lang, filename = parts
     # Report text, section layout and publication are edited independently per locale.
     # Positional sync would corrupt translated tables and map links after reordering.
-    if filename == 'editorial_reports.json':
+    if filename in ('editorial_reports.json','michelin_articles.json'):
         return []
     synced = []
     content_root = os.path.join(HERE, "content")
@@ -219,11 +220,13 @@ def list_files():
     return result
 
 
-def mirror_report_snapshot(language, data):
+def mirror_report_snapshot(language, data, collection='editorial_reports'):
     """Keep the sibling frontend's local preview in sync when that checkout exists."""
     if not language.isalpha() or not os.path.isfile(os.path.join(WEB_ROOT, 'journals.html')):
         return False
-    folder = os.path.join(WEB_ROOT, 'data', 'editorial_reports')
+    if collection not in ('editorial_reports','michelin_articles'):
+        raise ValueError('Unknown article collection')
+    folder = os.path.join(WEB_ROOT, 'data', collection)
     os.makedirs(folder, exist_ok=True)
     target = os.path.join(folder, language + '.json')
     with open(target + '.tmp', 'w', encoding='utf-8') as fh:
@@ -325,6 +328,15 @@ class Handler(BaseHTTPRequestHandler):
                     prepare_reports(data, rel.split('/')[1])
                 except ValueError as exc:
                     return self._send(400, {'error': str(exc)})
+            if rel.startswith('content/') and rel.endswith('/michelin_articles.json'):
+                try:
+                    language=rel.split('/')[1]
+                    restaurant_path=os.path.join(HERE,'content',language,'michelin.json')
+                    if not os.path.isfile(restaurant_path):restaurant_path=os.path.join(HERE,'content','en','michelin.json')
+                    with open(restaurant_path,encoding='utf-8') as fh:restaurants=json.load(fh)
+                    prepare_articles(data,language,restaurants)
+                except (ValueError,OSError) as exc:
+                    return self._send(400,{'error':str(exc)})
             if rel.startswith("content/") and rel.endswith("/cafes.json"):
                 if not isinstance(data, list) or any(
                     not isinstance(cafe, dict) or not isinstance(cafe.get("id"), str)
@@ -360,9 +372,9 @@ class Handler(BaseHTTPRequestHandler):
                 synced = []
                 sys.stderr.write("[admin] 同步失敗：%s\n" % exc)
             response = {"ok": True, "path": rel, "synced": synced}
-            if rel.startswith('content/') and rel.endswith('/editorial_reports.json'):
+            if rel.startswith('content/') and rel.split('/')[-1] in ('editorial_reports.json','michelin_articles.json'):
                 try:
-                    response['snapshotUpdated'] = mirror_report_snapshot(rel.split('/')[1], data)
+                    response['snapshotUpdated'] = mirror_report_snapshot(rel.split('/')[1], data, rel.split('/')[-1][:-5])
                 except OSError as exc:
                     response['snapshotWarning'] = '後台已儲存，本機前端副本更新失敗：%s' % exc
             return self._send(200, response)

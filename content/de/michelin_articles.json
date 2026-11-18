@@ -1,0 +1,924 @@
+[
+  {
+    "id": "michelin_le_palais",
+    "restaurantId": "star-1",
+    "slug": "le-palais",
+    "language": "de",
+    "title": "Chinesisches Restaurant Yi Gong",
+    "enTitle": "Le Palais — Palais de Chine Hotel Taipei",
+    "summary": "Von 2018 bis 2025 acht Jahre in Folge die Legende von Taiwans drei Michelin-Sternen behalten! Eine eingehende Analyse der Raumästhetik von Le Palais, dem chinesischen Restaurant des Taipei Grand Hotel, 7 berühmte Gerichte und eine dreisprachige Speisekarte in Chinesisch, Englisch und Japanisch. Es enthält außerdem einen unverzichtbaren Leitfaden für Kleiderordnung, vegetarisches Essen und Reservierungen für europäische, amerikanische und japanische Touristen.",
+    "status": "published",
+    "published": true,
+    "isSample": true,
+    "reviewStatus": "needs-fact-check",
+    "city": "台北市",
+    "coverImg": "https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=1800&fit=crop",
+    "coverImageRole": "illustration",
+    "quickFacts": [
+      "📍Bezirk Datong, Stadt Taipeh (Junpin Hotel 17F)",
+      "🥢 Erstklassige klassische kantonesische Küche und handgemachtes Gebäck aus Hongkong",
+      "💰 Mittagessen über 3.880 NT$ / Abend über 4.880 NT$"
+    ],
+    "honors": {
+      "heading": "„Michelin Guide Taiwan“-Auswahlliste im Laufe der Jahre: drei Sterne, die höchste Auszeichnung für acht Jahre in Folge",
+      "content": "Seit der Einführung des Michelin-Führers in Taiwan im Jahr 2018 ist der Yi Palace der einzige Speisesaal in Taiwan, der für seine tadellosen Kochtechniken und seinen exquisiten Service am Tisch acht Jahre in Folge mit der höchsten Auszeichnung „drei Sterne (hervorragende Küche, die einen besonderen Besuch wert ist)“ ausgezeichnet wurde.",
+      "years": [
+        "2018 ★★★",
+        "2019 ★★★",
+        "2020 ★★★",
+        "2021 ★★★",
+        "2022 ★★★",
+        "2023 ★★★",
+        "2024 ★★★",
+        "2025 ★★★"
+      ],
+      "note": "Die ursprüngliche Aufzeichnung der Manuskriptvergabe stammt aus dem Jahr 2025 und ist nicht das aktuelle jährliche Bewertungsergebnis."
+    },
+    "sections": [
+      {
+        "heading": "Wenn der französische „Palast“ auf die Literatenversammlung der Song-Dynastie trifft, wird die ultimative Eleganz der verlorenen alten kantonesischen Küche wiederhergestellt",
+        "layout": "intro",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " Das Wort „Yigong“ kommt vom Yi-Hexagramm im „Buch der Wandlungen“ „Beobachte Yi und beobachte seine Nahrung“, was bedeutet, dass Essen nicht nur die Befriedigung der Geschmacksknospen ist, sondern auch eine Nahrung für Körper, Geist und Seele; und der französische Geschäftsname "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Le Palais"
+                  }
+                ]
+              },
+              {
+                "text": " Es bedeutet „Palast“ und spiegelt genau die Designseele des Palais de Chine wider, das das architektonische Vokabular europäischer Burgen mit der Ästhetik der östlichen Song-Dynastie verbindet. Seit seiner Eröffnung mit dem Hotel im Jahr 2010 hat das Team die zweiachsige Positionierung „Wiederbelebung verlorener alter handgemachter kantonesischer Küche“ und „extremes Dim Sum im Hongkong-Stil“ etabliert. "
+              }
+            ]
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " Basierend auf der traditionellen kantonesischen Küche, bei der „frisch, frisch, zart, geschmeidig, erfrischend und duftend“ im Vordergrund steht, wählt das kulinarische Team des Yi Palace sorgfältig Taiwans beste lokale Berg- und Meereszutaten aus und erhebt die komplizierte und zeitaufwändige alte Handwerkskunst auf den Höhepunkt zeitgenössischer Kunst. Ob das Trocknen und Rösten Tage dauert oder der Cointreau-Orangenlikör mit blauen Flammen am Tisch erblüht."
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "„Flammengeschnittene Ente“"
+                  }
+                ]
+              },
+              {
+                "text": ", oder das berühmte Suppengericht aus altem Huhn und Jinhua-Schinken, das acht Stunden lang langsam gegart wird. Jeder auf dem Tisch servierte Porzellanteller zeigt die unersetzliche Tiefe und das Erbe der besten chinesischen Bankette. "
+              }
+            ]
+          },
+          {
+            "tag": "blockquote",
+            "children": [
+              {
+                "text": " Das scheinbar hausgemacht gegrillte Schweinefleisch und die Tofumilch werden zu Kunstwerken sublimiert, die durch die präzise Temperatur und Hitze des Öls die internationale Lebensmitteljury in Erstaunen versetzen. "
+              }
+            ]
+          },
+          {
+            "text": "—TAIWAN ROAM MICHELIN EDITION"
+          }
+        ],
+        "content": "Das Wort „Yigong“ kommt vom Yi-Hexagramm im „Buch der Wandlungen“ „Beobachte Yi und beobachte seine Nahrung“, was bedeutet, dass Essen nicht nur die Befriedigung der Geschmacksknospen ist, sondern auch eine Nahrung für Körper, Geist und Seele; und der französische Geschäftsname Le Palais Es bedeutet „Palast“ und spiegelt genau die Designseele des Palais de Chine wider, das das architektonische Vokabular europäischer Burgen mit der Ästhetik der östlichen Song-Dynastie verbindet. Seit seiner Eröffnung mit dem Hotel im Jahr 2010 hat das Team die zweiachsige Positionierung „Wiederbelebung verlorener alter handgemachter kantonesischer Küche“ und „extremes Dim Sum im Hongkong-Stil“ etabliert. \n Basierend auf der traditionellen kantonesischen Küche, bei der „frisch, frisch, zart, geschmeidig, erfrischend und duftend“ im Vordergrund steht, wählt das kulinarische Team des Yi Palace sorgfältig Taiwans beste lokale Berg- und Meereszutaten aus und erhebt die komplizierte und zeitaufwändige alte Handwerkskunst auf den Höhepunkt zeitgenössischer Kunst. Ob das Trocknen und Rösten Tage dauert oder der Cointreau-Orangenlikör mit blauen Flammen am Tisch erblüht.„Flammengeschnittene Ente“, oder das berühmte Suppengericht aus altem Huhn und Jinhua-Schinken, das acht Stunden lang langsam gegart wird. Jeder auf dem Tisch servierte Porzellanteller zeigt die unersetzliche Tiefe und das Erbe der besten chinesischen Bankette. \n Das scheinbar hausgemacht gegrillte Schweinefleisch und die Tofumilch werden zu Kunstwerken sublimiert, die durch die präzise Temperatur und Hitze des Öls die internationale Lebensmitteljury in Erstaunen versetzen. \n—TAIWAN ROAM MICHELIN EDITION"
+      },
+      {
+        "heading": "Speiseatmosphäre und Atmosphäre: ein ruhiges Nachtbankett mit roten Backsteinarkaden und Kerzenlicht",
+        "layout": "ambiance",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " Wenn Sie die 17. Etage des Grand Hotels betreten, isolieren Sie die Türen aus dunklem Walnussholz vom geschäftigen Treiben am Bahnhof Taipei. Der Innenraum besteht aus einfachen roten Backsteinbögen, Landschaftsgemälden aus der Song-Dynastie und wertvollen antiken bestickten Paravents, um eine ruhige und private Gelehrtenresidenz zu schaffen. Anders als die Hektik gewöhnlicher chinesischer Restaurants ist die Atmosphäre im Yi Palace"
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Extrem ruhig, elegant und voller Rituale"
+                  }
+                ]
+              },
+              {
+                "text": "——Der sanfte Scheinwerfer fällt präzise auf die Mitte des Esstisches, und der exklusive Teesommelier ist vor Ort, um den Gästen Taiwan Mountain Oolong zuzubereiten. Es ist die erste Wahl für Geschäftsbankette, wichtige Jubiläen und die Bewirtung hochrangiger internationaler Gäste. "
+              }
+            ]
+          },
+          {
+            "text": "🕯️ Zurückhaltende und ruhige Kerzenlichtatmosphäre"
+          },
+          {
+            "text": "🫖 Engagierter Teesommelier zur Begleitung des Teebanketts"
+          },
+          {
+            "text": "🏛️Unabhängige Logen und halboffene Sitzplätze"
+          },
+          {
+            "text": "🔥 Entenflammenshow am Tisch"
+          }
+        ],
+        "content": "Wenn Sie die 17. Etage des Grand Hotels betreten, isolieren Sie die Türen aus dunklem Walnussholz vom geschäftigen Treiben am Bahnhof Taipei. Der Innenraum besteht aus einfachen roten Backsteinbögen, Landschaftsgemälden aus der Song-Dynastie und wertvollen antiken bestickten Paravents, um eine ruhige und private Gelehrtenresidenz zu schaffen. Anders als die Hektik gewöhnlicher chinesischer Restaurants ist die Atmosphäre im Yi PalaceExtrem ruhig, elegant und voller Rituale——Der sanfte Scheinwerfer fällt präzise auf die Mitte des Esstisches, und der exklusive Teesommelier ist vor Ort, um den Gästen Taiwan Mountain Oolong zuzubereiten. Es ist die erste Wahl für Geschäftsbankette, wichtige Jubiläen und die Bewirtung hochrangiger internationaler Gäste. \n🕯️ Zurückhaltende und ruhige Kerzenlichtatmosphäre🫖 Engagierter Teesommelier zur Begleitung des Teebanketts🏛️Unabhängige Logen und halboffene Sitzplätze🔥 Entenflammenshow am Tisch",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&fit=crop",
+        "imageRole": "illustration",
+        "caption": "Ein schematisches Foto des Designentwurfs, das nicht tatsächlich im Restaurant aufgenommen wurde"
+      },
+      {
+        "heading": "Prophetente (Reservierung 2 Tage im Voraus erforderlich)",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 01 – Vorbestellung erforderlich"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " Sorgfältig ausgewählte Yilan-Ente, die nur 28 Tage alt ist und etwa ein Pfund wiegt, wird mit geheimer chinesischer Medizin und Gewürzen gefüllt, mariniert und luftgetrocknet, bevor sie gegrillt wird. Die Haut ist dünn und knackig wie Glas und das Fleisch zart und saftig. Essen Sie zwei Enten zusammen mit eingelegtem Kohl und Entensuppe, die süß und erfrischend ist. Es ist ein Muss für Feinschmecker, die den Yi-Palast besuchen. "
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 01 – Vorbestellung erforderlich Sorgfältig ausgewählte Yilan-Ente, die nur 28 Tage alt ist und etwa ein Pfund wiegt, wird mit geheimer chinesischer Medizin und Gewürzen gefüllt, mariniert und luftgetrocknet, bevor sie gegrillt wird. Die Haut ist dünn und knackig wie Glas und das Fleisch zart und saftig. Essen Sie zwei Enten zusammen mit eingelegtem Kohl und Entensuppe, die süß und erfrischend ist. Es ist ein Muss für Feinschmecker, die den Yi-Palast besuchen.",
+        "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=900&fit=crop",
+        "imageRole": "illustration",
+        "caption": "Ein schematisches Foto des Designentwurfs, das nicht tatsächlich im Restaurant aufgenommen wurde"
+      },
+      {
+        "heading": "Yi Gong Barbecued Pork Emperor / Knusprig gegrilltes Schweinefleisch",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 02"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "Ausgewähltes Matsusaka-Schweinefleisch und Pflaumenblüten von höchster Qualität mit gleichmäßiger Öligkeit werden wiederholt mit Maltosesirup gegrillt. Die äußere Schicht ist leicht verkohlt und knusprig, die innere Schicht ist weich und zart."
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 02Ausgewähltes Matsusaka-Schweinefleisch und Pflaumenblüten von höchster Qualität mit gleichmäßiger Öligkeit werden wiederholt mit Maltosesirup gegrillt. Die äußere Schicht ist leicht verkohlt und knusprig, die innere Schicht ist weich und zart.",
+        "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&fit=crop",
+        "imageRole": "illustration",
+        "caption": "Ein schematisches Foto des Designentwurfs, das nicht tatsächlich im Restaurant aufgenommen wurde"
+      },
+      {
+        "heading": "Die Frühlingsbrise macht glücklich (ein Muss zur Mittagszeit)",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 03 – Dim Sum zum Mittagessen"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "Die glatte und zarte Reisbrötchenhülle aus rotem Reis ist mit goldener, knuspriger Netzhaut und ganzen frischen Garnelen umwickelt. Sie spüren das Trio aus weich, knusprig und frisch in einem Bissen."
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 03 – Dim Sum zum MittagessenDie glatte und zarte Reisbrötchenhülle aus rotem Reis ist mit goldener, knuspriger Netzhaut und ganzen frischen Garnelen umwickelt. Sie spüren das Trio aus weich, knusprig und frisch in einem Bissen.",
+        "image": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=800&fit=crop",
+        "imageRole": "illustration",
+        "caption": "Ein schematisches Foto des Designentwurfs, das nicht tatsächlich im Restaurant aufgenommen wurde"
+      },
+      {
+        "heading": "Gebackener Boston-Hummer in Suppe",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 04 – Imperial Seafood"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " Sorgfältig ausgewählte frische Boston-Hummer werden geölt, um den zähen Meeresfrüchtegeschmack zu bewahren, und dann mit altem Huhn und Jinhua-Schinken acht Stunden lang in einer reichhaltigen Suppe geköchelt, um den Saft zu reduzieren. Das Garnelenfleisch ist süß und prall und die Essenz der Suppe dringt in die Nudeln ein. Es stellt das Erbe der erstklassigen kantonesischen Küche voll und ganz unter Beweis. "
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 04 – Imperial Seafood Sorgfältig ausgewählte frische Boston-Hummer werden geölt, um den zähen Meeresfrüchtegeschmack zu bewahren, und dann mit altem Huhn und Jinhua-Schinken acht Stunden lang in einer reichhaltigen Suppe geköchelt, um den Saft zu reduzieren. Das Garnelenfleisch ist süß und prall und die Essenz der Suppe dringt in die Nudeln ein. Es stellt das Erbe der erstklassigen kantonesischen Küche voll und ganz unter Beweis.",
+        "image": "https://images.unsplash.com/photo-1559742811-822873691df8?w=900&fit=crop",
+        "imageRole": "illustration",
+        "caption": "Ein schematisches Foto des Designentwurfs, das nicht tatsächlich im Restaurant aufgenommen wurde"
+      },
+      {
+        "heading": "Gebratene Tofumilch (ein verlorenes handgemachtes kantonesisches Dessert)",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 05 – Heritage Dessert"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " Ein klassisches kantonesisches Dessert, das die Kontrolle des Kochs über die Öltemperatur auf die Probe stellt! Das goldene, knusprige Gebäck wird in warmen und duftenden Käse eingewickelt und mit feinem Puderzucker bestreut. Die salzig-süße Mischung, reichhaltig und cremig, aber nicht fettig, ist ein atemberaubender Abschluss des Drei-Sterne-Banketts. "
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 05 – Heritage Dessert Ein klassisches kantonesisches Dessert, das die Kontrolle des Kochs über die Öltemperatur auf die Probe stellt! Das goldene, knusprige Gebäck wird in warmen und duftenden Käse eingewickelt und mit feinem Puderzucker bestreut. Die salzig-süße Mischung, reichhaltig und cremig, aber nicht fettig, ist ein atemberaubender Abschluss des Drei-Sterne-Banketts.",
+        "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=900&fit=crop",
+        "imageRole": "illustration",
+        "caption": "Ein schematisches Foto des Designentwurfs, das nicht tatsächlich im Restaurant aufgenommen wurde"
+      },
+      {
+        "heading": "Kann ich Shorts, Turnschuhe oder Flip-Flops tragen?",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Smart Casual ist unbedingt erforderlich."
+                  }
+                ]
+              },
+              {
+                "text": " Herren müssen lange Hosen und geschlossene Schuhe tragen (saubere Lederturnschuhe oder Slipper sind akzeptabel). "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Streng KEINE Shorts, ärmellose Hemden/Tanktops, Flip-Flops oder Hausschuhe"
+                  }
+                ]
+              },
+              {
+                "text": "—Gästen, die dagegen verstoßen, kann der Zutritt verweigert werden."
+              }
+            ]
+          }
+        ],
+        "content": "Smart Casual ist unbedingt erforderlich. Herren müssen lange Hosen und geschlossene Schuhe tragen (saubere Lederturnschuhe oder Slipper sind akzeptabel). Streng KEINE Shorts, ärmellose Hemden/Tanktops, Flip-Flops oder Hausschuhe—Gästen, die dagegen verstoßen, kann der Zutritt verweigert werden.",
+        "key": "guide_1"
+      },
+      {
+        "heading": "Wie weit im Voraus öffnen Reservierungen?",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "Online-Reservierungen geöffnet "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "1 bis 2 Monate im Voraus"
+                  }
+                ]
+              },
+              {
+                "text": " (am 1. eines jeden Monats für den Folgemonat). Zur Sicherung Ihres Tisches ist eine Anzahlung per Kreditkarte erforderlich. Abendessen am Wochenende sind innerhalb weniger Minuten ausgebucht – reservieren Sie frühzeitig."
+              }
+            ]
+          }
+        ],
+        "content": "Online-Reservierungen geöffnet 1 bis 2 Monate im Voraus (am 1. eines jeden Monats für den Folgemonat). Zur Sicherung Ihres Tisches ist eine Anzahlung per Kreditkarte erforderlich. Abendessen am Wochenende sind innerhalb weniger Minuten ausgebucht – reservieren Sie frühzeitig.",
+        "key": "guide_2"
+      },
+      {
+        "heading": "Gibt es vegetarische oder rindfleischfreie Menüs?",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Ja."
+                  }
+                ]
+              },
+              {
+                "text": " Le Palais bietet spezielle Angebote "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Vegetarische Menüs"
+                  }
+                ]
+              },
+              {
+                "text": " und berücksichtigt Anfragen zu Rindfleisch, Schweinefleisch oder Schalentierallergien. Bitte geben Sie mindestens Ihre Ernährungsbedürfnisse an "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "3 Tage vorher"
+                  }
+                ]
+              },
+              {
+                "text": " zu Ihrem Besuch."
+              }
+            ]
+          }
+        ],
+        "content": "Ja. Le Palais bietet spezielle Angebote Vegetarische Menüs und berücksichtigt Anfragen zu Rindfleisch, Schweinefleisch oder Schalentierallergien. Bitte geben Sie mindestens Ihre Ernährungsbedürfnisse an 3 Tage vorher zu Ihrem Besuch.",
+        "key": "guide_3"
+      },
+      {
+        "heading": "Welche Signature-Gerichte muss man unbedingt bestellen?",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "Das Legendäre "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Flambierte gebratene Peking-Ente"
+                  }
+                ]
+              },
+              {
+                "text": " und "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Knusprig gebratene Babyente"
+                  }
+                ]
+              },
+              {
+                "text": " sind ein absolutes Muss – beides "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "muss bei der Buchung vorbestellt werden"
+                  }
+                ]
+              },
+              {
+                "text": ". Verpassen Sie zum Mittagessen nicht die knusprige Reisnudelrolle mit Garnelen und das mit Honig glasierte BBQ-Schweinefleisch."
+              }
+            ]
+          }
+        ],
+        "content": "Das Legendäre Flambierte gebratene Peking-Ente und Knusprig gebratene Babyente sind ein absolutes Muss – beides muss bei der Buchung vorbestellt werden. Verpassen Sie zum Mittagessen nicht die knusprige Reisnudelrolle mit Garnelen und das mit Honig glasierte BBQ-Schweinefleisch.",
+        "key": "guide_4"
+      },
+      {
+        "heading": "Feiern Sie einen Geburtstag oder ein besonderes Jubiläum?",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "Informieren Sie das Restaurant im Voraus, wenn Sie einen Geburtstag oder ein Jubiläum feiern. Kostenlose Langlebigkeits-Pfirsichbrötchen ("
+              },
+              {
+                "tag": "em",
+                "children": [
+                  {
+                    "text": "Shou Tao"
+                  }
+                ]
+              },
+              {
+                "text": ") oder ein personalisierter Dessertteller kann arrangiert werden. Für Familienfeiern stehen auch private Speisesäle mit Mindestbeträgen zur Verfügung (für Wein/Spirituosen im Freien fällt eine Korkgebühr an)."
+              }
+            ]
+          }
+        ],
+        "content": "Informieren Sie das Restaurant im Voraus, wenn Sie einen Geburtstag oder ein Jubiläum feiern. Kostenlose Langlebigkeits-Pfirsichbrötchen (Shou Tao) oder ein personalisierter Dessertteller kann arrangiert werden. Für Familienfeiern stehen auch private Speisesäle mit Mindestbeträgen zur Verfügung (für Wein/Spirituosen im Freien fällt eine Korkgebühr an).",
+        "key": "guide_5"
+      }
+    ],
+    "menuVariants": [
+      {
+        "language": "zh",
+        "title": "TRADITIONAL CHINESE ｜ 繁體中文",
+        "items": [
+          {
+            "id": "dish_1",
+            "name": "1. 火焰片皮鴨（三吃）＊需提前預訂",
+            "description": "桌邊君度橙酒點火秀・附手工餅皮、鴨腿與鴨架粥/湯",
+            "price": "NT$ 4,280+"
+          },
+          {
+            "id": "dish_2",
+            "name": "2. 先知鴨（二吃）＊需提前 2 日預訂",
+            "description": "28天宜蘭幼鴨秘製香料燒烤・附酸菜鴨架湯",
+            "price": "NT$ 3,280+"
+          },
+          {
+            "id": "dish_3",
+            "name": "3. 頤宮叉燒皇",
+            "description": "頂級松阪豬與梅花肉麥芽糖蜜汁炙烤",
+            "price": "NT$ 1,280+"
+          },
+          {
+            "id": "dish_4",
+            "name": "4. 上湯焗波士頓龍蝦",
+            "description": "八小時金華火腿老母雞上湯燜焗鮮活龍蝦",
+            "price": "NT$ 2,680+"
+          },
+          {
+            "id": "dish_5",
+            "name": "5. 春風得意腸（午間供應）",
+            "description": "紅米腸粉包裹金黃脆網皮與整隻鮮蝦仁",
+            "price": "NT$ 580+"
+          },
+          {
+            "id": "dish_6",
+            "name": "6. 君品明蝦餃皇（午間供應）",
+            "description": "手工水晶澄麵皮包裹飽滿鮮甜大明蝦",
+            "price": "NT$ 480+"
+          },
+          {
+            "id": "dish_7",
+            "name": "7. 炸豆腐奶（經典手工甜品）",
+            "description": "金黃酥脆外皮包裹溫熱濃郁起司內餡",
+            "price": "NT$ 380+"
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "title": "ENGLISH ｜ INTERNATIONAL MENU",
+        "items": [
+          {
+            "id": "dish_1",
+            "name": "1. Flambé Roast Peking Duck (3 Courses) *Pre-order",
+            "description": "Tableside Cointreau flambé, crispy skin, pancakes & duck soup",
+            "price": "NT$ 4,280+"
+          },
+          {
+            "id": "dish_2",
+            "name": "2. Crispy Roasted Baby Duck (2 Courses) *2-Day Pre-order",
+            "description": "28-day young Yilan duck marinated with Chinese herbs",
+            "price": "NT$ 3,280+"
+          },
+          {
+            "id": "dish_3",
+            "name": "3. Le Palais Signature Honey-Glazed BBQ Pork",
+            "description": "Charcoal-roasted premium pork neck glazed with maltose",
+            "price": "NT$ 1,280+"
+          },
+          {
+            "id": "dish_4",
+            "name": "4. Braised Boston Lobster in Supreme Broth",
+            "description": "Live lobster braised in 8-hour Jinhua ham & chicken stock",
+            "price": "NT$ 2,680+"
+          },
+          {
+            "id": "dish_5",
+            "name": "5. Crispy Shrimp Rice Noodle Roll (Lunch Only)",
+            "description": "Steamed red rice roll filled with crispy net & fresh prawns",
+            "price": "NT$ 580+"
+          },
+          {
+            "id": "dish_6",
+            "name": "6. Steamed King Prawn Dumplings (Lunch Only)",
+            "description": "Handcrafted translucent Har Gow filled with whole king prawns",
+            "price": "NT$ 480+"
+          },
+          {
+            "id": "dish_7",
+            "name": "7. Deep-Fried Crispy Milk & Cheese Pastry",
+            "description": "Traditional Cantonese dessert with warm melted cheese filling",
+            "price": "NT$ 380+"
+          }
+        ]
+      },
+      {
+        "language": "ja",
+        "title": "JAPANESE ｜ 日本語メニュー",
+        "items": [
+          {
+            "id": "dish_1",
+            "name": "1. ファイヤー北京ダック（三種食べ方）＊要事前予約",
+            "description": "目の前でコアントローの炎を纏わせる名物・クレープ包み＆スープ付",
+            "price": "NT$ 4,280+"
+          },
+          {
+            "id": "dish_2",
+            "name": "2. 先知鴨（28日若鴨の丸焼き）＊2日前要予約",
+            "description": "漢方スパイスで熟成させた宜蘭産若鴨のパリパリロースト",
+            "price": "NT$ 3,280+"
+          },
+          {
+            "id": "dish_3",
+            "name": "3. 頤宮特製・極上蜜汁チャーシュー",
+            "description": "厳選豚トロと肩ロースを麦芽糖で香ばしく焼き上げた逸品",
+            "price": "NT$ 1,280+"
+          },
+          {
+            "id": "dish_4",
+            "name": "4. ボストンロブスターの上湯煮込み",
+            "description": "金華ハムと老鶏を8時間煮込んだ極上スープで仕上げた活ロブスター",
+            "price": "NT$ 2,680+"
+          },
+          {
+            "id": "dish_5",
+            "name": "5. 春風得意腸（サクサク海老入り紅米腸粉・ランチ限定）",
+            "description": "もちもちの紅米腸粉で揚げ湯葉とプリプリ海老を包んだ人気点心",
+            "price": "NT$ 580+"
+          },
+          {
+            "id": "dish_6",
+            "name": "6. 君品特製・大海老蒸し餃子（ランチ限定）",
+            "description": "職人手打ちの透き通る皮に大ぶりな車海老を贅沢に包んだハーガオ",
+            "price": "NT$ 480+"
+          },
+          {
+            "id": "dish_7",
+            "name": "7. 炸豆腐奶（チーズ入り揚げミルクパイ）",
+            "description": "サクサクの薄衣から温かい濃厚チーズがとろけ出す伝統広東スイーツ",
+            "price": "NT$ 380+"
+          }
+        ]
+      }
+    ],
+    "menuNote": "* Die oben genannten Preise verstehen sich zuzüglich einer Servicegebühr von 10 %; Gebratene Ente und einige handgemachte Kung-Fu-Gerichte müssen bei der Reservierung im Voraus reserviert werden. Vorbehaltlich einer Servicegebühr von 10 %.",
+    "practicalInfo": {
+      "name": "Mehr anzeigen Le Palais (17 Tage)",
+      "address": "台北市大同區承德路一段 3 號 17 樓",
+      "businessHours": "Sonntag 11:30–14:30 Uhr und Samstag 17:30–21:30 Uhr",
+      "phone": "+886-2-2181-9985",
+      "transport": "台北車站步行 3 分鐘／捷運中山站步行 6 分鐘",
+      "mapUrl": "https://maps.google.com/?q=頤宮中餐廳+Le+Palais"
+    },
+    "bookingUrl": "https://www.palaisdechinehotel.com/tw/restaurant-info.php?id=6",
+    "editorialNote": "Ein Beispiel, das auf dem Designentwurf von PM basiert; Die Bilder stammen nicht vom tatsächlichen Restaurant und Preise, Menüs und Reservierungsregeln müssen noch überprüft werden.",
+    "source": {
+      "file": "米其林餐廳/01-mi.html",
+      "language": "zh",
+      "sha256": "c793c177fa67349041a4ab07452aa7d03cdb73ae48f26b6d3956c92909a1f41e",
+      "awardThroughYear": 2025,
+      "imageUsage": "design-illustrations",
+      "guideOriginals": {
+        "guide_1": {
+          "en": {
+            "heading": "Can I wear shorts, sneakers, or flip-flops?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Smart Casual is strictly required."
+                      }
+                    ]
+                  },
+                  {
+                    "text": " Gentlemen must wear long trousers and closed-toe shoes (clean leather sneakers or loafers are acceptable). "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Strictly NO shorts, sleeveless shirts/tank tops, flip-flops, or slippers"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "—guests in violation may be refused entry."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "短パン・スニーカー・サンダルでの入店は可能ですか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "スマートカジュアル必須です。"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "男性は長ズボンとつま先の隠れる靴（清潔感のあるスニーカーや革靴は可）をご着用ください。"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "短パン、タンクトップ、ビーチサンダル、スリッパでの入店は固くお断り"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "しております。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_2": {
+          "en": {
+            "heading": "How far in advance do reservations open?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "Online reservations open "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "1 to 2 months in advance"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " (on the 1st of each month for the following month). A credit card deposit is required to secure your table. Weekend dinners book out within minutes—reserve early."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "何ヶ月前から予約ができますか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "オンライン予約は"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "1〜2ヶ月前（毎月1日に翌月分）"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "より受付開始となります。予約確定にはクレジットカードのデポジット登録が必要です。週末のディナーは即満席となるためお早めにご予約ください。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_3": {
+          "en": {
+            "heading": "Are vegetarian or beef-free menus available?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Yes."
+                      }
+                    ]
+                  },
+                  {
+                    "text": " Le Palais offers dedicated "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Vegetarian Set Menus"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " and accommodates beef-free, pork-free, or shellfish allergy requests. Please specify your dietary requirements at least "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "3 days prior"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " to your visit."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "ベジタリアンや牛肉NGの対応メニューはありますか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "はい、対応可能です。"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "専用のベジタリアンコースのほか、牛肉・豚肉抜きや甲殻類アレルギーにも柔軟に対応いたします。食材の変更は"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "ご来店の3日前まで"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "に必ず事前にお知らせください。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_4": {
+          "en": {
+            "heading": "What are the must-order signature dishes?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "The legendary "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Flambé Roast Peking Duck"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " and "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Crispy Roasted Baby Duck"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " are absolute musts—both "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "must be pre-ordered when booking"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ". For lunch, do not miss the Crispy Shrimp Rice Noodle Roll and Honey-Glazed BBQ Pork."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "絶対に注文すべき看板メニューは何ですか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "名物の"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "「ファイヤー北京ダック」"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "と"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "「先知鴨（若鴨の丸焼き）」"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "は必食ですが、"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "予約時の事前注文が必須"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "です。ランチタイムなら「春風得意腸（海老入り紅米腸粉）」と「極上蜜汁チャーシュー」も外せません。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_5": {
+          "en": {
+            "heading": "Celebrating a Birthday or Special Anniversary?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "Inform the restaurant in advance if you are celebrating a birthday or anniversary. Complimentary longevity peach buns ("
+                  },
+                  {
+                    "tag": "em",
+                    "children": [
+                      {
+                        "text": "Shou Tao"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ") or a personalized dessert plate can be arranged. Private dining rooms with minimum spend are also available for family milestones (corkage fee applies for outside wine/liquor)."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "誕生日や結婚記念日のお祝いサービスはありますか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "ご予約時にお誕生日や記念日利用の旨をお伝えいただくと、お祝いの桃まんじゅう（壽桃）やメッセージ付きデザートプレートのご用意が可能です。ご家族での大切な節目には、ミニマムチャージ制の個室（全席禁煙・お酒の持ち込みは抜栓料あり）もご利用いただけます。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "translation": {
+      "status": "machine-translated-needs-review",
+      "sourceLanguage": "zh",
+      "provider": "Google Translate",
+      "sourceSha256": "c793c177fa67349041a4ab07452aa7d03cdb73ae48f26b6d3956c92909a1f41e"
+    }
+  }
+]

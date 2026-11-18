@@ -225,10 +225,12 @@ function switchLang(lang){
 }
 
 async function loadFile(path, options = {}){
-  if(state.dirty && state.path?.endsWith('/editorial_reports.json') && !confirm('目前報導有未儲存的變更，確定捨棄並載入？')){
+  const articleFile=value=>/\/(editorial_reports|michelin_articles)\.json$/.test(value||'');
+  if(state.dirty && articleFile(state.path) && !confirm('目前報導有未儲存的變更，確定捨棄並載入？')){
     $('#fileSelect').value = state.path; return;
   }
-  const reportId = state.path?.endsWith('/editorial_reports.json') ? state.data[state.selectedReport || 0]?.id : null;
+  const reportId = articleFile(state.path) ? state.data[state.selectedReport || 0]?.id : null;
+  const requestedRestaurantId=options.targetRestaurantId || (state.path?.endsWith('/michelin_articles.json') ? state.data[state.selectedReport ?? 0]?.restaurantId || state.requestedRestaurantId : null);
   const res = await api('/api/file?path=' + encodeURIComponent(path));
   state.path = res.path;
   state.data = res.data;
@@ -253,7 +255,20 @@ async function loadFile(path, options = {}){
 
   // 如果載入的是 cafes.json，同步預載同語系的 cafe_articles.json 建立索引
   const fname = state.path ? state.path.split('/').pop() : '';
-  if(fname === 'editorial_reports.json' && reportId) state.selectedReport = Math.max(0,state.data.findIndex(report=>report.id===reportId));
+  if(articleFile(state.path) && reportId) state.selectedReport = Math.max(0,state.data.findIndex(report=>report.id===reportId));
+  if(fname === 'michelin_articles.json'){
+    state.requestedRestaurantId=requestedRestaurantId;
+    const language=state.path.split('/')[1];let directory;
+    try{directory=await api('/api/file?path='+encodeURIComponent(`content/${language}/michelin.json`));}
+    catch(e){directory=await api('/api/file?path=content/en/michelin.json');}
+    state.michelinRestaurants=[...(directory.data.stars||[]),...(directory.data.bib||[])];
+    if(requestedRestaurantId)state.selectedReport=state.data.findIndex(a=>a.restaurantId===requestedRestaurantId);
+    if(options.targetRestaurantId){
+      let index=state.data.findIndex(a=>a.restaurantId===options.targetRestaurantId);
+      if(index<0){const restaurant=state.michelinRestaurants.find(r=>r.id===options.targetRestaurantId);if(restaurant){const id='michelin_'+Date.now().toString(36);state.data.push({id,slug:id,restaurantId:restaurant.id,language,title:restaurant.name,summary:'',status:'draft',published:false,isSample:false,reviewStatus:'needs-fact-check',sections:[],menuVariants:[],honors:{years:[]}});index=state.data.length-1;state.dirty=true;}}
+      state.selectedReport=Math.max(0,index);
+    }
+  }
   if(fname === 'affiliate_config.json'){
     $('#topicList').innerHTML = '<p class="hint">官網與 App 共用分潤設定</p>';
     main.innerHTML = '<div class="card"><h2>全球分潤設定</h2><p class="hint">修改追蹤參數後，請執行 python3 migrate_affiliate_links.py --apply，更新既有內容與 links.json。App 會在下次啟動時讀取已發布的設定。</p><div class="field-grid">'
@@ -288,10 +303,10 @@ function render(){
   if(!state.data) { main.innerHTML = '<div class="card">載入中…</div>'; return; }
   const fname = state.path ? state.path.split('/').pop() : '';
   if(fname === 'home_blog.json'){ renderHomeBlogList(); renderHomeBlog(); return; }
-  if(fname === 'editorial_reports.json' && Array.isArray(state.data)){
+  if(['editorial_reports.json','michelin_articles.json'].includes(fname) && Array.isArray(state.data)){
     EditorialReportEditor.mount({root:main,list:$('#topicList'),reports:state.data,
-      selected:state.selectedReport || 0,language:state.path.split('/')[1],
-      select:index=>{try{EditorialReportEditor.validate();}catch(e){alert(e.message);return;}state.selectedReport=index;render();},changed:markDirty});
+      selected:state.selectedReport ?? 0,language:state.path.split('/')[1],kind:fname==='michelin_articles.json'?'michelin':'reports',restaurants:state.michelinRestaurants||[],requestedRestaurantId:state.requestedRestaurantId,
+      select:index=>{try{EditorialReportEditor.validate();}catch(e){alert(e.message);return;}state.selectedReport=index;if(fname==='michelin_articles.json')state.requestedRestaurantId=state.data[index]?.restaurantId||state.requestedRestaurantId;render();},changed:markDirty});
     return;
   }
   if(fname === 'home_rankings.json'){ renderHomeRankingsList(); renderHomeRankings(); return; }
@@ -880,6 +895,8 @@ function renderMichelin(){
   html += `${tap(p,'img', a.img)}`;
   html += `</div>${renderLinks(`${p}.links`, a.links)}</div>`;
   main.innerHTML = html;
+  const articleButton=document.createElement('button');articleButton.type='button';articleButton.className='jump-btn';articleButton.textContent='新增／編輯這間餐廳的文章';
+  articleButton.onclick=()=>{const path=`content/${state.path.split('/')[1]}/michelin_articles.json`;$('#fileSelect').value=path;loadFile(path,{targetRestaurantId:a.id});};main.querySelector('.toolbar').appendChild(articleButton);
   bindEdits();
 }
 
@@ -1470,7 +1487,7 @@ async function save(){
   if(!state.dirty) return;
   const s = $('#status');
   try{
-    if(state.path.endsWith('/editorial_reports.json')) EditorialReportEditor.validate();
+    if(/\/(editorial_reports|michelin_articles)\.json$/.test(state.path)) EditorialReportEditor.validate();
     const res = await api('/api/file?path=' + encodeURIComponent(state.path), {
       method:'POST',
       headers:{'Content-Type':'application/json'},

@@ -16,6 +16,9 @@ class EditorialTranslationTest(unittest.TestCase):
             (content / 'en').mkdir()
             (content / 'zh/blog.json').write_text('{}')
             (content / 'zh/editorial_reports.json').write_text('[{"title":"中文草稿"}]')
+            (content / 'zh/michelin_articles.json').write_text('[{"title":"中文餐廳文章"}]')
+            michelin=content/'en/michelin_articles.json'
+            michelin.write_text('[{"title":"Original restaurant article"}]')
             target = content / 'en/editorial_reports.json'
             original = '[{"title":"Original English draft","status":"draft"}]\n'
             target.write_text(original)
@@ -25,6 +28,7 @@ class EditorialTranslationTest(unittest.TestCase):
                  patch.object(ct, 'log'):
                 self.assertTrue(ct.build_language('en'))
             self.assertEqual(target.read_text(), original)
+            self.assertEqual(json.loads(michelin.read_text())[0]['title'],'Original restaurant article')
             self.assertEqual(json.loads((content / 'en/blog.json').read_text()), {})
 
 

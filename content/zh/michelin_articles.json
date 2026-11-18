@@ -1,0 +1,922 @@
+[
+  {
+    "id": "michelin_le_palais",
+    "restaurantId": "star-1",
+    "slug": "le-palais",
+    "language": "zh",
+    "title": "頤宮中餐廳",
+    "enTitle": "Le Palais — Palais de Chine Hotel Taipei",
+    "summary": "蟬聯2018至2025年台灣米其林三星8連霸傳奇！深入解析台北君品酒店頤宮中餐廳 Le Palais 空間美學、7道鎮店名菜與中英日三語菜單，附歐美日旅客必讀 Dress Code、素食與訂位攻略。",
+    "status": "published",
+    "published": true,
+    "isSample": true,
+    "reviewStatus": "needs-fact-check",
+    "city": "台北市",
+    "coverImg": "https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=1800&fit=crop",
+    "coverImageRole": "illustration",
+    "quickFacts": [
+      "📍 台北市大同區（君品酒店 17F）",
+      "🥢 頂級經典廣東菜・手工港點",
+      "💰 午間 NT$3,880+ / 晚間 NT$4,880+"
+    ],
+    "honors": {
+      "heading": "《臺灣米其林指南》歷年獲選紀錄：連續八年三星最高榮譽",
+      "content": "自 2018 年米其林指南首度登陸台灣以來，頤宮以無懈可擊的火候工藝與細膩桌邊服務，成為全台唯一蟬聯最高「三星（值得專程造訪的卓越料理）」八連霸的餐飲殿堂。",
+      "years": [
+        "2018 ★★★",
+        "2019 ★★★",
+        "2020 ★★★",
+        "2021 ★★★",
+        "2022 ★★★",
+        "2023 ★★★",
+        "2024 ★★★",
+        "2025 ★★★"
+      ],
+      "note": "原稿獲獎紀錄截至 2025 年，並非目前年度評鑑結果。"
+    },
+    "sections": [
+      {
+        "heading": "當法式「宮殿」遇見宋代文人雅集，重現失傳老粵菜的極致風華",
+        "layout": "intro",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " 「頤宮」二字源自《易經》頤卦「觀頤，觀其所養也」，寓意飲食不僅止於味蕾的滿足，更是一場身心靈的滋養；而法文店名 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "Le Palais"
+                  }
+                ]
+              },
+              {
+                "text": " 意為「宮殿」，精準呼應君品酒店（Palais de Chine）將歐式古堡建築語彙與東方宋代美學交融的設計靈魂。自 2010 年隨飯店開幕以來，團隊便立下「復興失傳手工老粵菜」與「極致港式點心」的雙軸定位。 "
+              }
+            ]
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " 在廣東菜講究「清、鮮、嫩、滑、爽、香」的傳統根基上，頤宮廚藝團隊嚴選台灣在地頂級山海食材，將繁複費時的古法工藝推向當代藝術高度。無論是需耗時數日風乾烤製、於桌邊點燃君度橙酒綻放藍色火光的"
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "「火焰片皮鴨」"
+                  }
+                ]
+              },
+              {
+                "text": "，或是以老母雞與金華火腿慢火熬煮八小時的上湯名菜，每一道端上桌的瓷盤，都展現了華人頂級宴席無可取代的深度與底蘊。 "
+              }
+            ]
+          },
+          {
+            "tag": "blockquote",
+            "children": [
+              {
+                "text": " 將看似家常的叉燒與豆腐奶，透過毫釐不差的油溫與火候，昇華為令國際美食評審驚嘆的藝術品。 "
+              }
+            ]
+          },
+          {
+            "text": "— TAIWAN ROAM MICHELIN EDITION"
+          }
+        ],
+        "content": "「頤宮」二字源自《易經》頤卦「觀頤，觀其所養也」，寓意飲食不僅止於味蕾的滿足，更是一場身心靈的滋養；而法文店名 Le Palais 意為「宮殿」，精準呼應君品酒店（Palais de Chine）將歐式古堡建築語彙與東方宋代美學交融的設計靈魂。自 2010 年隨飯店開幕以來，團隊便立下「復興失傳手工老粵菜」與「極致港式點心」的雙軸定位。 \n 在廣東菜講究「清、鮮、嫩、滑、爽、香」的傳統根基上，頤宮廚藝團隊嚴選台灣在地頂級山海食材，將繁複費時的古法工藝推向當代藝術高度。無論是需耗時數日風乾烤製、於桌邊點燃君度橙酒綻放藍色火光的「火焰片皮鴨」，或是以老母雞與金華火腿慢火熬煮八小時的上湯名菜，每一道端上桌的瓷盤，都展現了華人頂級宴席無可取代的深度與底蘊。 \n 將看似家常的叉燒與豆腐奶，透過毫釐不差的油溫與火候，昇華為令國際美食評審驚嘆的藝術品。 \n— TAIWAN ROAM MICHELIN EDITION"
+      },
+      {
+        "heading": "用餐環境與氣氛：紅磚拱廊與燭光交織的靜謐夜宴",
+        "layout": "ambiance",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " 步入君品酒店 17 樓，深胡桃木門扉隔絕了台北車站的繁華喧囂。室內以古樸紅磚拱門、宋代山水畫意象與珍貴古董刺繡屏風構築出沉穩私密的文人宅邸。不同於一般中餐廳的熱鬧喧騰，頤宮的氣氛"
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "極為靜謐、優雅且充滿儀式感"
+                  }
+                ]
+              },
+              {
+                "text": "——柔和聚光燈精準落在餐桌中央，專屬侍茶師隨侍在側為賓客沖泡台灣高山烏龍，是商務宴請、重要紀念日與款待國際貴賓的首選殿堂。 "
+              }
+            ]
+          },
+          {
+            "text": "🕯️ 低調靜謐燭光氛圍"
+          },
+          {
+            "text": "🫖 專屬侍茶師佐餐茶席"
+          },
+          {
+            "text": "🏛️ 獨立包廂與半開放雅座"
+          },
+          {
+            "text": "🔥 桌邊片鴨火焰秀"
+          }
+        ],
+        "content": "步入君品酒店 17 樓，深胡桃木門扉隔絕了台北車站的繁華喧囂。室內以古樸紅磚拱門、宋代山水畫意象與珍貴古董刺繡屏風構築出沉穩私密的文人宅邸。不同於一般中餐廳的熱鬧喧騰，頤宮的氣氛極為靜謐、優雅且充滿儀式感——柔和聚光燈精準落在餐桌中央，專屬侍茶師隨侍在側為賓客沖泡台灣高山烏龍，是商務宴請、重要紀念日與款待國際貴賓的首選殿堂。 \n🕯️ 低調靜謐燭光氛圍🫖 專屬侍茶師佐餐茶席🏛️ 獨立包廂與半開放雅座🔥 桌邊片鴨火焰秀",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&fit=crop",
+        "imageRole": "illustration",
+        "caption": "設計稿示意照片，非餐廳實拍"
+      },
+      {
+        "heading": "先知鴨（需提前 2 日預訂）",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 01 — Pre-Order Required"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " 嚴選生長僅 28 天、重約一斤的宜蘭小北鴨，塞入秘製中藥與香料醃漬風乾後掛爐燒烤。外皮薄脆如琉璃、肉質細嫩多汁，一鴨兩吃搭配酸菜鴨架湯清甜回甘，是老饕造訪頤宮的必點名菜。 "
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 01 — Pre-Order Required 嚴選生長僅 28 天、重約一斤的宜蘭小北鴨，塞入秘製中藥與香料醃漬風乾後掛爐燒烤。外皮薄脆如琉璃、肉質細嫩多汁，一鴨兩吃搭配酸菜鴨架湯清甜回甘，是老饕造訪頤宮的必點名菜。",
+        "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=900&fit=crop",
+        "imageRole": "illustration",
+        "caption": "設計稿示意照片，非餐廳實拍"
+      },
+      {
+        "heading": "頤宮叉燒皇 / 脆皮叉燒",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 02"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "精選油花均勻的頂級松阪豬與梅花肉，以麥芽糖蜜汁反覆炙烤，外層微焦酥脆、內裡軟嫩化口。"
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 02精選油花均勻的頂級松阪豬與梅花肉，以麥芽糖蜜汁反覆炙烤，外層微焦酥脆、內裡軟嫩化口。",
+        "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&fit=crop",
+        "imageRole": "illustration",
+        "caption": "設計稿示意照片，非餐廳實拍"
+      },
+      {
+        "heading": "春風得意腸（午間港點必點）",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 03 — Lunch Dim Sum"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "滑嫩紅米腸粉皮包裹金黃酥脆網皮與整隻鮮蝦仁，一口感受軟滑、酥脆、鮮彈三重奏。"
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 03 — Lunch Dim Sum滑嫩紅米腸粉皮包裹金黃酥脆網皮與整隻鮮蝦仁，一口感受軟滑、酥脆、鮮彈三重奏。",
+        "image": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=800&fit=crop",
+        "imageRole": "illustration",
+        "caption": "設計稿示意照片，非餐廳實拍"
+      },
+      {
+        "heading": "上湯焗波士頓龍蝦",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 04 — Imperial Seafood"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " 嚴選鮮活波士頓龍蝦過油鎖住彈牙海味，再以老母雞、金華火腿慢火熬煮八小時的濃郁上湯燜焗收汁，蝦肉鮮甜飽滿、湯汁精華滲入伊麵底，盡顯頂級粵菜底蘊。 "
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 04 — Imperial Seafood 嚴選鮮活波士頓龍蝦過油鎖住彈牙海味，再以老母雞、金華火腿慢火熬煮八小時的濃郁上湯燜焗收汁，蝦肉鮮甜飽滿、湯汁精華滲入伊麵底，盡顯頂級粵菜底蘊。",
+        "image": "https://images.unsplash.com/photo-1559742811-822873691df8?w=900&fit=crop",
+        "imageRole": "illustration",
+        "caption": "設計稿示意照片，非餐廳實拍"
+      },
+      {
+        "heading": "炸豆腐奶（失傳手工粵式甜品）",
+        "layout": "dish",
+        "blocks": [
+          {
+            "text": "Signature Dish 05 — Heritage Dessert"
+          },
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": " 極度考驗師傅油溫掌控的經典老粵式甜點！金黃酥香的薄脆麵衣內包裹溫熱牽絲的香濃起司，外撒細白糖粉，鹹甜交織、奶香濃郁而不膩，為三星宴席畫下驚豔句點。 "
+              }
+            ]
+          }
+        ],
+        "content": "Signature Dish 05 — Heritage Dessert 極度考驗師傅油溫掌控的經典老粵式甜點！金黃酥香的薄脆麵衣內包裹溫熱牽絲的香濃起司，外撒細白糖粉，鹹甜交織、奶香濃郁而不膩，為三星宴席畫下驚豔句點。",
+        "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=900&fit=crop",
+        "imageRole": "illustration",
+        "caption": "設計稿示意照片，非餐廳實拍"
+      },
+      {
+        "heading": "我可以穿短褲、運動鞋或夾腳拖嗎？",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "嚴格要求穿著商務休閒服。"
+                  }
+                ]
+              },
+              {
+                "text": " 男士必須穿長褲和不露趾鞋（乾淨的皮革運動鞋或樂福鞋都可以）。 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "嚴禁穿著短褲、無袖襯衫/背心、夾腳拖或拖鞋"
+                  }
+                ]
+              },
+              {
+                "text": "——違反規定的客人可能會被拒絕入內。"
+              }
+            ]
+          }
+        ],
+        "content": "嚴格要求穿著商務休閒服。 男士必須穿長褲和不露趾鞋（乾淨的皮革運動鞋或樂福鞋都可以）。 嚴禁穿著短褲、無袖襯衫/背心、夾腳拖或拖鞋——違反規定的客人可能會被拒絕入內。",
+        "key": "guide_1"
+      },
+      {
+        "heading": "提前多久開始預訂？",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "網上預約開放 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "提前1至2個月"
+                  }
+                ]
+              },
+              {
+                "text": " （下個月的每月 1 日）。客人需支付信用卡訂金以確保餐桌安全。週末晚餐只需幾分鐘即可預訂完畢——請儘早預訂。"
+              }
+            ]
+          }
+        ],
+        "content": "網上預約開放 提前1至2個月 （下個月的每月 1 日）。客人需支付信用卡訂金以確保餐桌安全。週末晚餐只需幾分鐘即可預訂完畢——請儘早預訂。",
+        "key": "guide_2"
+      },
+      {
+        "heading": "有素食或無牛肉菜單嗎？",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "是的。"
+                  }
+                ]
+              },
+              {
+                "text": " Le Palais 專門提供 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "素食套餐"
+                  }
+                ]
+              },
+              {
+                "text": " 並滿足不含牛肉、不含豬肉或貝類過敏的要求。請至少註明您的飲食需求 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "3天前"
+                  }
+                ]
+              },
+              {
+                "text": " 迎接您的來訪。"
+              }
+            ]
+          }
+        ],
+        "content": "是的。 Le Palais 專門提供 素食套餐 並滿足不含牛肉、不含豬肉或貝類過敏的要求。請至少註明您的飲食需求 3天前 迎接您的來訪。",
+        "key": "guide_3"
+      },
+      {
+        "heading": "必點的招牌菜有哪些？",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "傳說中的 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "火焰烤北京烤鴨"
+                  }
+                ]
+              },
+              {
+                "text": " 和 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "脆皮烤小鴨"
+                  }
+                ]
+              },
+              {
+                "text": " 是絕對必須的－兩者 "
+              },
+              {
+                "tag": "strong",
+                "children": [
+                  {
+                    "text": "預訂時必須提前預訂"
+                  }
+                ]
+              },
+              {
+                "text": "。午餐時，不要錯過脆皮蝦米粉和蜜汁叉燒。"
+              }
+            ]
+          }
+        ],
+        "content": "傳說中的 火焰烤北京烤鴨 和 脆皮烤小鴨 是絕對必須的－兩者 預訂時必須提前預訂。午餐時，不要錯過脆皮蝦米粉和蜜汁叉燒。",
+        "key": "guide_4"
+      },
+      {
+        "heading": "慶祝生日或特殊週年紀念日？",
+        "layout": "guide",
+        "blocks": [
+          {
+            "tag": "p",
+            "children": [
+              {
+                "text": "如果您要慶祝生日或週年紀念日，請提前通知餐廳。贈送長壽桃包一個（"
+              },
+              {
+                "tag": "em",
+                "children": [
+                  {
+                    "text": "壽濤"
+                  }
+                ]
+              },
+              {
+                "text": "）或可安排個性化甜點盤。家庭里程碑時還可以享受最低消費的私人用餐室（外帶葡萄酒/烈酒需支付開瓶費）。"
+              }
+            ]
+          }
+        ],
+        "content": "如果您要慶祝生日或週年紀念日，請提前通知餐廳。贈送長壽桃包一個（壽濤）或可安排個性化甜點盤。家庭里程碑時還可以享受最低消費的私人用餐室（外帶葡萄酒/烈酒需支付開瓶費）。",
+        "key": "guide_5"
+      }
+    ],
+    "menuVariants": [
+      {
+        "language": "zh",
+        "title": "TRADITIONAL CHINESE ｜ 繁體中文",
+        "items": [
+          {
+            "id": "dish_1",
+            "name": "1. 火焰片皮鴨（三吃）＊需提前預訂",
+            "description": "桌邊君度橙酒點火秀・附手工餅皮、鴨腿與鴨架粥/湯",
+            "price": "NT$ 4,280+"
+          },
+          {
+            "id": "dish_2",
+            "name": "2. 先知鴨（二吃）＊需提前 2 日預訂",
+            "description": "28天宜蘭幼鴨秘製香料燒烤・附酸菜鴨架湯",
+            "price": "NT$ 3,280+"
+          },
+          {
+            "id": "dish_3",
+            "name": "3. 頤宮叉燒皇",
+            "description": "頂級松阪豬與梅花肉麥芽糖蜜汁炙烤",
+            "price": "NT$ 1,280+"
+          },
+          {
+            "id": "dish_4",
+            "name": "4. 上湯焗波士頓龍蝦",
+            "description": "八小時金華火腿老母雞上湯燜焗鮮活龍蝦",
+            "price": "NT$ 2,680+"
+          },
+          {
+            "id": "dish_5",
+            "name": "5. 春風得意腸（午間供應）",
+            "description": "紅米腸粉包裹金黃脆網皮與整隻鮮蝦仁",
+            "price": "NT$ 580+"
+          },
+          {
+            "id": "dish_6",
+            "name": "6. 君品明蝦餃皇（午間供應）",
+            "description": "手工水晶澄麵皮包裹飽滿鮮甜大明蝦",
+            "price": "NT$ 480+"
+          },
+          {
+            "id": "dish_7",
+            "name": "7. 炸豆腐奶（經典手工甜品）",
+            "description": "金黃酥脆外皮包裹溫熱濃郁起司內餡",
+            "price": "NT$ 380+"
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "title": "ENGLISH ｜ INTERNATIONAL MENU",
+        "items": [
+          {
+            "id": "dish_1",
+            "name": "1. Flambé Roast Peking Duck (3 Courses) *Pre-order",
+            "description": "Tableside Cointreau flambé, crispy skin, pancakes & duck soup",
+            "price": "NT$ 4,280+"
+          },
+          {
+            "id": "dish_2",
+            "name": "2. Crispy Roasted Baby Duck (2 Courses) *2-Day Pre-order",
+            "description": "28-day young Yilan duck marinated with Chinese herbs",
+            "price": "NT$ 3,280+"
+          },
+          {
+            "id": "dish_3",
+            "name": "3. Le Palais Signature Honey-Glazed BBQ Pork",
+            "description": "Charcoal-roasted premium pork neck glazed with maltose",
+            "price": "NT$ 1,280+"
+          },
+          {
+            "id": "dish_4",
+            "name": "4. Braised Boston Lobster in Supreme Broth",
+            "description": "Live lobster braised in 8-hour Jinhua ham & chicken stock",
+            "price": "NT$ 2,680+"
+          },
+          {
+            "id": "dish_5",
+            "name": "5. Crispy Shrimp Rice Noodle Roll (Lunch Only)",
+            "description": "Steamed red rice roll filled with crispy net & fresh prawns",
+            "price": "NT$ 580+"
+          },
+          {
+            "id": "dish_6",
+            "name": "6. Steamed King Prawn Dumplings (Lunch Only)",
+            "description": "Handcrafted translucent Har Gow filled with whole king prawns",
+            "price": "NT$ 480+"
+          },
+          {
+            "id": "dish_7",
+            "name": "7. Deep-Fried Crispy Milk & Cheese Pastry",
+            "description": "Traditional Cantonese dessert with warm melted cheese filling",
+            "price": "NT$ 380+"
+          }
+        ]
+      },
+      {
+        "language": "ja",
+        "title": "JAPANESE ｜ 日本語メニュー",
+        "items": [
+          {
+            "id": "dish_1",
+            "name": "1. ファイヤー北京ダック（三種食べ方）＊要事前予約",
+            "description": "目の前でコアントローの炎を纏わせる名物・クレープ包み＆スープ付",
+            "price": "NT$ 4,280+"
+          },
+          {
+            "id": "dish_2",
+            "name": "2. 先知鴨（28日若鴨の丸焼き）＊2日前要予約",
+            "description": "漢方スパイスで熟成させた宜蘭産若鴨のパリパリロースト",
+            "price": "NT$ 3,280+"
+          },
+          {
+            "id": "dish_3",
+            "name": "3. 頤宮特製・極上蜜汁チャーシュー",
+            "description": "厳選豚トロと肩ロースを麦芽糖で香ばしく焼き上げた逸品",
+            "price": "NT$ 1,280+"
+          },
+          {
+            "id": "dish_4",
+            "name": "4. ボストンロブスターの上湯煮込み",
+            "description": "金華ハムと老鶏を8時間煮込んだ極上スープで仕上げた活ロブスター",
+            "price": "NT$ 2,680+"
+          },
+          {
+            "id": "dish_5",
+            "name": "5. 春風得意腸（サクサク海老入り紅米腸粉・ランチ限定）",
+            "description": "もちもちの紅米腸粉で揚げ湯葉とプリプリ海老を包んだ人気点心",
+            "price": "NT$ 580+"
+          },
+          {
+            "id": "dish_6",
+            "name": "6. 君品特製・大海老蒸し餃子（ランチ限定）",
+            "description": "職人手打ちの透き通る皮に大ぶりな車海老を贅沢に包んだハーガオ",
+            "price": "NT$ 480+"
+          },
+          {
+            "id": "dish_7",
+            "name": "7. 炸豆腐奶（チーズ入り揚げミルクパイ）",
+            "description": "サクサクの薄衣から温かい濃厚チーズがとろけ出す伝統広東スイーツ",
+            "price": "NT$ 380+"
+          }
+        ]
+      }
+    ],
+    "menuNote": "* 以上價格均需另加 10% 服務費；烤鴨與部分手工功夫大菜需於訂位時提前預訂。Subject to 10% service charge.",
+    "practicalInfo": {
+      "name": "頤宮中餐廳 Le Palais（君品酒店 17 樓）",
+      "address": "台北市大同區承德路一段 3 號 17 樓",
+      "businessHours": "午餐 11:30–14:30 ｜ 晚餐 17:30–21:30",
+      "phone": "+886-2-2181-9985",
+      "transport": "台北車站步行 3 分鐘／捷運中山站步行 6 分鐘",
+      "mapUrl": "https://maps.google.com/?q=頤宮中餐廳+Le+Palais"
+    },
+    "bookingUrl": "https://www.palaisdechinehotel.com/tw/restaurant-info.php?id=6",
+    "editorialNote": "依 PM 設計稿建立的範例；圖片非餐廳實拍，價格、菜單與訂位規則尚待查核。",
+    "source": {
+      "file": "米其林餐廳/01-mi.html",
+      "language": "zh",
+      "sha256": "c793c177fa67349041a4ab07452aa7d03cdb73ae48f26b6d3956c92909a1f41e",
+      "awardThroughYear": 2025,
+      "imageUsage": "design-illustrations",
+      "guideOriginals": {
+        "guide_1": {
+          "en": {
+            "heading": "Can I wear shorts, sneakers, or flip-flops?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Smart Casual is strictly required."
+                      }
+                    ]
+                  },
+                  {
+                    "text": " Gentlemen must wear long trousers and closed-toe shoes (clean leather sneakers or loafers are acceptable). "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Strictly NO shorts, sleeveless shirts/tank tops, flip-flops, or slippers"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "—guests in violation may be refused entry."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "短パン・スニーカー・サンダルでの入店は可能ですか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "スマートカジュアル必須です。"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "男性は長ズボンとつま先の隠れる靴（清潔感のあるスニーカーや革靴は可）をご着用ください。"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "短パン、タンクトップ、ビーチサンダル、スリッパでの入店は固くお断り"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "しております。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_2": {
+          "en": {
+            "heading": "How far in advance do reservations open?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "Online reservations open "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "1 to 2 months in advance"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " (on the 1st of each month for the following month). A credit card deposit is required to secure your table. Weekend dinners book out within minutes—reserve early."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "何ヶ月前から予約ができますか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "オンライン予約は"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "1〜2ヶ月前（毎月1日に翌月分）"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "より受付開始となります。予約確定にはクレジットカードのデポジット登録が必要です。週末のディナーは即満席となるためお早めにご予約ください。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_3": {
+          "en": {
+            "heading": "Are vegetarian or beef-free menus available?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Yes."
+                      }
+                    ]
+                  },
+                  {
+                    "text": " Le Palais offers dedicated "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Vegetarian Set Menus"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " and accommodates beef-free, pork-free, or shellfish allergy requests. Please specify your dietary requirements at least "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "3 days prior"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " to your visit."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "ベジタリアンや牛肉NGの対応メニューはありますか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "はい、対応可能です。"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "専用のベジタリアンコースのほか、牛肉・豚肉抜きや甲殻類アレルギーにも柔軟に対応いたします。食材の変更は"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "ご来店の3日前まで"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "に必ず事前にお知らせください。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_4": {
+          "en": {
+            "heading": "What are the must-order signature dishes?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "The legendary "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Flambé Roast Peking Duck"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " and "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "Crispy Roasted Baby Duck"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " are absolute musts—both "
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "must be pre-ordered when booking"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ". For lunch, do not miss the Crispy Shrimp Rice Noodle Roll and Honey-Glazed BBQ Pork."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "絶対に注文すべき看板メニューは何ですか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "名物の"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "「ファイヤー北京ダック」"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "と"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "「先知鴨（若鴨の丸焼き）」"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "は必食ですが、"
+                  },
+                  {
+                    "tag": "strong",
+                    "children": [
+                      {
+                        "text": "予約時の事前注文が必須"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "です。ランチタイムなら「春風得意腸（海老入り紅米腸粉）」と「極上蜜汁チャーシュー」も外せません。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "guide_5": {
+          "en": {
+            "heading": "Celebrating a Birthday or Special Anniversary?",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "Inform the restaurant in advance if you are celebrating a birthday or anniversary. Complimentary longevity peach buns ("
+                  },
+                  {
+                    "tag": "em",
+                    "children": [
+                      {
+                        "text": "Shou Tao"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ") or a personalized dessert plate can be arranged. Private dining rooms with minimum spend are also available for family milestones (corkage fee applies for outside wine/liquor)."
+                  }
+                ]
+              }
+            ]
+          },
+          "ja": {
+            "heading": "誕生日や結婚記念日のお祝いサービスはありますか？",
+            "blocks": [
+              {
+                "tag": "p",
+                "children": [
+                  {
+                    "text": "ご予約時にお誕生日や記念日利用の旨をお伝えいただくと、お祝いの桃まんじゅう（壽桃）やメッセージ付きデザートプレートのご用意が可能です。ご家族での大切な節目には、ミニマムチャージ制の個室（全席禁煙・お酒の持ち込みは抜栓料あり）もご利用いただけます。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "translation": {
+      "status": "source",
+      "sourceLanguage": "zh"
+    }
+  }
+]

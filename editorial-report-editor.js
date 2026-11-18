@@ -55,7 +55,8 @@ window.EditorialReportEditor = (() => {
     return (nodes || []).map(n => 'text' in n ? n.text : plain(n.children) +
       (['p','h3','h4','li','tr','blockquote','br','hr'].includes(n.tag) ? '\n' : ['th','td'].includes(n.tag) ? ' | ' : '')).join('');
   }
-  function mount({root, list, reports, selected, select, changed, language}) {
+  function mount({root, list, reports, selected, select, changed, language, kind='reports', restaurants=[], requestedRestaurantId=null}) {
+    const michelin=kind==='michelin',title=michelin?'米其林餐廳專刊':'台灣吃喝玩樂採訪報導';
     invalid = new Set();
     root.replaceChildren(); list.replaceChildren();
     const notify = () => changed();
@@ -79,12 +80,16 @@ window.EditorialReportEditor = (() => {
     };
     const pass = input => { invalid.delete(input); input.removeAttribute('aria-invalid'); input.setCustomValidity(''); };
     const add = () => {
+      const available=restaurants.filter(r=>!reports.some(a=>a.restaurantId===r.id));
+      const restaurant=michelin?(available.find(r=>r.id===requestedRestaurantId)||available[0]):null;
+      if(michelin&&!restaurant){alert('所有餐廳都已建立文章，請在列表選擇既有文章編輯。');return;}
       const id = 'report_' + Date.now().toString(36);
       reports.push({id, slug:id, language, title:'新報導', summary:'', status:'draft', published:false,
-        isSample:false, reviewStatus:'needs-fact-check', sections:[], photos:[], nearby:[]});
+        isSample:false, reviewStatus:'needs-fact-check', sections:[], photos:[], nearby:[],
+        ...(michelin?{restaurantId:restaurant.id,title:restaurant.name,menuVariants:[],honors:{years:[]}}:{})});
       notify(); select(reports.length - 1);
     };
-    list.appendChild(button('＋ 新增採訪報導', add));
+    list.appendChild(button(michelin?'＋ 新增餐廳文章':'＋ 新增採訪報導', add));
     const search = el('input'); search.placeholder = '搜尋報導標題或 ID'; search.setAttribute('aria-label', '搜尋報導');
     search.style.margin = '10px 0'; list.appendChild(search);
     const entries = el('div'); list.appendChild(entries);
@@ -98,13 +103,13 @@ window.EditorialReportEditor = (() => {
     };
     search.oninput = renderItems; renderItems();
     const report = reports[selected];
-    if (!report) { card('台灣吃喝玩樂採訪報導').appendChild(el('p', '目前沒有報導，請按「新增採訪報導」。')); return; }
-    const intro = card('台灣吃喝玩樂採訪報導');
+    if (!report) { const name=restaurants.find(r=>r.id===requestedRestaurantId)?.name;card(title).appendChild(el('p',michelin?(name?`「${name}」在目前語言尚未建立文章，請按「新增餐廳文章」。`:'目前沒有餐廳文章，請按「新增餐廳文章」。'):'目前沒有報導，請按「新增採訪報導」。')); return; }
+    const intro = card(title);
     intro.appendChild(el('p', `目前語言：${language}。本次儲存只修改目前語言；其他語言請切換語言分頁編輯。`, 'hint'));
     intro.appendChild(el('p', `固定 ID：${report.id}`, 'mono'));
     const actions = el('div', null, 'toolbar');
     const preview = el('a', '查看前台（請先存檔）', 'jump-btn');
-    preview.href = '/preview/report_info.html?' + new URLSearchParams({id:report.id,lang:language === 'zh' ? 'zh-TW' : language});
+    preview.href = `/preview/${michelin?'michelin_info':'report_info'}.html?` + new URLSearchParams({id:michelin?report.restaurantId:report.id,lang:language === 'zh' ? 'zh-TW' : language});
     preview.target = '_blank'; preview.rel = 'noopener noreferrer'; actions.appendChild(preview);
     const move = delta => { const other = selected + delta; if (other < 0 || other >= reports.length) return;
       [reports[selected], reports[other]] = [reports[other], reports[selected]]; notify(); select(other); };
@@ -128,12 +133,34 @@ window.EditorialReportEditor = (() => {
     fields(card('基本資料'), report, [['title','標題'],['slug','網址代稱 slug'],['summary','摘要','textarea'],['city','城市（住宿搜尋使用，建議保留中文）'],['area','街區／地區'],['author','作者'],['date','日期'],['coverImg','封面圖片網址','url'],['readingTimeMinutes','閱讀分鐘','number'],['editorialNote','編輯／資料查核註記','textarea']]);
     report.seo ||= {};
     fields(card('SEO'), report.seo, [['title','SEO 標題'],['description','SEO 摘要','textarea'],['keywords','關鍵字']]);
+    if(michelin){
+      const caption=el('label','對應餐廳（固定 ID，不依排名）'),restaurant=el('select');restaurant.id='article-restaurant';caption.htmlFor=restaurant.id;
+      for(const item of restaurants){const option=el('option',`${item.name} · ${item.id}`);option.value=item.id;option.disabled=reports.some(a=>a!==report&&a.restaurantId===item.id);restaurant.appendChild(option);}
+      restaurant.value=report.restaurantId || '';restaurant.onchange=()=>{report.restaurantId=restaurant.value;notify();preview.href=`/preview/michelin_info.html?`+new URLSearchParams({id:report.restaurantId,lang:language==='zh'?'zh-TW':language});};intro.append(caption,restaurant);
+      fields(card('餐廳專刊資訊'),report,[['enTitle','外文名稱'],['bookingUrl','官網訂位網址','url'],['coverImageRole','封面性質：illustration 示意／photo 實拍'],['menuNote','菜單／服務費說明','textarea']]);
+      const lineField=(parent,object,key,label)=>{const caption=el('label',label),input=el('textarea');input.value=(object[key]||[]).join('\n');input.oninput=()=>{object[key]=input.value.split('\n').map(v=>v.trim()).filter(Boolean);notify();};parent.append(caption,input);};
+      lineField(intro,report,'quickFacts','餐廳重點（每行一筆）');
+      report.honors||={years:[]};const honors=card('歷年獲獎紀錄');fields(honors,report.honors,[['heading','紀錄標題'],['content','說明','textarea'],['note','紀錄期間／查核說明','textarea']]);lineField(honors,report.honors,'years','獲獎年份（每行一筆，例如 2025 ★★★）');
+      const menu=card('多語招牌菜單');
+      menu.appendChild(button('＋ 新增菜單語言',()=>{const languages=['zh','en','ja','ko','es','th','vi','ms','fil','hi','id','de'];const language=languages.find(l=>!(report.menuVariants||[]).some(v=>v.language===l));if(!language)return;(report.menuVariants||=[]).push({language,title:language,items:[]});notify();refresh();}));
+      (report.menuVariants||[]).forEach((variant,index)=>{
+        const panel=el('details',null,'section-card');panel.open=index===0;panel.appendChild(el('summary',`${variant.language} · ${variant.items.length} 道菜`));
+        fields(panel,variant,[['language','語言代碼（zh、en、ja 等）'],['title','菜單標題']]);
+        for(const [i,item] of variant.items.entries()){const row=el('div',null,'section-card');fields(row,item,[['name','菜名'],['price','價格（文字）'],['description','菜色說明','textarea']]);row.appendChild(button('刪除此道菜',()=>{variant.items.splice(i,1);notify();refresh();}));panel.appendChild(row);}
+        panel.append(button('＋ 新增菜色',()=>{variant.items.push({id:'dish_'+Date.now().toString(36),name:'新菜色',description:'',price:''});notify();refresh();}),button('刪除此語言菜單',()=>{if(confirm('刪除此語言菜單？')){report.menuVariants.splice(index,1);notify();refresh();}}));menu.appendChild(panel);
+      });
+    }
     const sections = card('文章段落');
     sections.appendChild(button('＋ 新增段落', () => { (report.sections ||= []).push({heading:'新段落',content:'',blocks:[{tag:'p',children:[{text:'請輸入內容'}]}]}); notify(); refresh(); }));
     (report.sections || []).forEach((section, index) => {
       const panel = el('details', null, 'section-card'); panel.open = index === 0;
       panel.appendChild(el('summary', `${index + 1}. ${section.heading || '未命名段落'}`));
       fields(panel, section, [['heading','段落標題'],['image','段落圖片網址','url'],['caption','圖片說明']]);
+      if(michelin){
+        const caption=el('label','段落版型'),layout=el('select');layout.setAttribute('aria-label',`第 ${index+1} 段版型`);
+        for(const [value,label]of[['intro','餐廳故事'],['ambiance','空間氛圍'],['dish','招牌菜色'],['guide','用餐須知']]){const option=el('option',label);option.value=value;layout.appendChild(option);}layout.value=section.layout||'intro';layout.onchange=()=>{section.layout=layout.value;notify();};panel.append(caption,layout);
+        fields(panel,section,[['imageRole','圖片性質：illustration 示意／photo 實拍']]);
+      }
       const toolbar = el('div', null, 'menu-editor-toolbar');
       const editor = el('div', null, 'report-body-editor'); editor.contentEditable = 'true'; editor.role = 'textbox'; editor.setAttribute('aria-multiline','true'); editor.setAttribute('aria-label',`第 ${index + 1} 段內文`);
       const initial = Array.isArray(section.blocks) && section.blocks.length ? section.blocks : [{tag:'p',children:[{text:section.content || ''}]}];
@@ -205,9 +232,9 @@ window.EditorialReportEditor = (() => {
       });
     };
     collections('photos','照片集',[['image','圖片網址','url'],['caption','圖說']],{image:'',caption:''});
-    collections('nearby','周邊推薦（前台最多顯示三筆）',[['name','名稱'],['description','介紹','textarea'],['walk','步行距離／時間'],['image','圖片網址','url'],['address','地址'],['mapUrl','地圖網址','url']],{name:'',description:''});
+    if(!michelin)collections('nearby','周邊推薦（前台最多顯示三筆）',[['name','名稱'],['description','介紹','textarea'],['walk','步行距離／時間'],['image','圖片網址','url'],['address','地址'],['mapUrl','地圖網址','url']],{name:'',description:''});
     report.practicalInfo ||= {};
-    fields(card('探訪資訊（選填）'),report.practicalInfo,[['name','店家／景點名稱'],['address','地址'],['addressEn','英文地址'],['businessHours','營業時間','textarea'],['mapUrl','地圖網址','url']]);
+    fields(card('探訪資訊（選填）'),report.practicalInfo,[['name','店家／景點名稱'],['address','地址'],['addressEn','英文地址'],['businessHours','營業時間','textarea'],['phone','電話'],['transport','交通說明','textarea'],['mapUrl','地圖網址','url']]);
     const metadata = card('來源與翻譯紀錄');
     metadata.appendChild(el('p', '原始來源與翻譯紀錄會保留，未重新翻譯前不會被標記為已校對。', 'hint'));
     metadata.appendChild(el('pre', JSON.stringify({source:report.source,translation:report.translation,reviewStatus:report.reviewStatus},null,2)));

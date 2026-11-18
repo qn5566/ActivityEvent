@@ -92,5 +92,33 @@ class ReportAdminTests(unittest.TestCase):
         for path in ['/preview/%2e%2e/admin.py','/content/_translations/private.json','/content/zh/../../admin.py']:
             self.assertEqual(self.request(path)[0],404)
 
+    def michelin_fixture(self):
+        for language in ['zh','en']:
+            (self.root/f'content/{language}/michelin.json').write_text(json.dumps({'stars':[{'id':'star-1','name':'Le Palais'},{'id':'star-2','name':'Other'}],'bib':[]}))
+        article=copy.deepcopy(self.reports[0]);article.update(restaurantId='star-1',honors={'years':['2025 ★★★']},menuVariants=[{'language':'zh','items':[{'id':'dish-1','name':'烤鴨','price':'NT$ 4,280+','description':'需預訂'}]}])
+        for language in ['zh','en']:
+            translated=copy.deepcopy(article);translated['language']=language
+            (self.root/f'content/{language}/michelin_articles.json').write_text(json.dumps([translated]))
+        return [article]
+
+    def test_michelin_save_preserves_restaurant_link_menu_and_other_language(self):
+        data=self.michelin_fixture();english=(self.root/'content/en/michelin_articles.json').read_bytes()
+        data[0]['menuVariants'][0]['items'][0]['price']='NT$ 4,500+'
+        code,raw=self.request('/api/file?path=content/zh/michelin_articles.json',data)
+        self.assertEqual(code,200);self.assertTrue(json.loads(raw)['snapshotUpdated']);self.assertEqual(json.loads(raw)['synced'],[])
+        saved=json.loads((self.web/'data/michelin_articles/zh.json').read_text())
+        self.assertEqual(saved[0]['restaurantId'],'star-1');self.assertEqual(saved[0]['menuVariants'][0]['items'][0]['price'],'NT$ 4,500+')
+        self.assertEqual((self.root/'content/en/michelin_articles.json').read_bytes(),english)
+
+    def test_michelin_rejects_orphaned_or_duplicated_links_and_bad_menu_data(self):
+        data=self.michelin_fixture();path=self.root/'content/zh/michelin_articles.json';original=path.read_bytes();cases=[]
+        bad=copy.deepcopy(data);bad[0]['restaurantId']='missing';cases.append(bad)
+        bad=copy.deepcopy(data);extra=copy.deepcopy(bad[0]);extra.update(id='other',slug='other');bad.append(extra);cases.append(bad)
+        bad=copy.deepcopy(data);bad[0]['menuVariants'][0]['items'][0]['price']=4500;cases.append(bad)
+        bad=copy.deepcopy(data);bad[0]['sections'][0]['layout']='script';cases.append(bad)
+        for bad in cases:
+            self.assertEqual(self.request('/api/file?path=content/zh/michelin_articles.json',bad)[0],400)
+            self.assertEqual(path.read_bytes(),original)
+
 
 if __name__=='__main__':unittest.main()
