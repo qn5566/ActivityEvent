@@ -26,6 +26,10 @@ SOURCE_DIR = CONTENT_DIR / "zh"
 TRANSLATION_DIR = CONTENT_DIR / "_translations"
 LOG_PATH = CONTENT_DIR / "translate.log"
 
+# These editions are imported from the PM's English Markdown by a separate
+# workflow. Never overwrite their translations with a copy of the zh edition.
+SEPARATELY_MANAGED_FILES = {"editorial_reports.json"}
+
 # 資料夾名稱 → 目標語言代碼（也是 Google / argos 對照用）
 LANGUAGES = {
     "en": "En", "ja": "Ja", "ko": "Ko", "vi": "Vi", "ms": "Ms",
@@ -261,7 +265,8 @@ def load_translations(language):
 def build_language(folder, force=False):
     """套用對照表寫出 content/<folder>/*.json（供 offline 腳本複用）。"""
     language = LANGUAGES[folder]
-    sources = sorted(SOURCE_DIR.glob("*.json"))
+    sources = sorted(path for path in SOURCE_DIR.glob("*.json")
+                     if path.name not in SEPARATELY_MANAGED_FILES)
     documents = {path.name: read_json(path) for path in sources}
 
     texts = set()
@@ -302,7 +307,8 @@ def main():
     folder = args.language
     log(f"=== 開始處理 content/{folder}（{'檢查模式' if args.check else '套用模式'}） ===")
 
-    sources = sorted(SOURCE_DIR.glob("*.json"))
+    sources = sorted(path for path in SOURCE_DIR.glob("*.json")
+                     if path.name not in SEPARATELY_MANAGED_FILES)
     if not sources:
         log("錯誤：content/zh/ 下沒有 JSON 檔案")
         sys.exit(1)
