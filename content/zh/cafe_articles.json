@@ -41,7 +41,8 @@
       "nearestMrt": "捷運善導寺站 6 號出口步行約 3-5 分鐘",
       "wifiAndPower": "提供免費 Wi-Fi，部分座位提供插座",
       "minOrder": "每人一杯飲品"
-    }
+    },
+    "menuHtml": "<table><thead><tr><th>品項 / 介紹</th><th>價格</th></tr></thead><tbody><tr><td><strong>衣索比亞水洗手沖</strong><br><small>文章推薦的單品手沖，花香與清爽果酸。</small></td><td>依現場菜單</td></tr><tr><td><strong>皺皺（蜂蜜半熟蛋糕）</strong><br><small>文章推薦的招牌甜點，搭配手沖咖啡。</small></td><td>依現場菜單</td></tr></tbody></table>"
   },
   {
     "id": "cafe_article_2",

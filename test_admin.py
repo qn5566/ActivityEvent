@@ -68,6 +68,14 @@ class CafeArticleSyncTests(unittest.TestCase):
         self.assertEqual(result[0]["title"], "Translated art_1")
         self.assertEqual(result[0]["coverImg"], "https://img.example/updated")
 
+    def test_menu_html_stays_independent_in_each_language(self):
+        source = [dict(self.source[0], menuHtml="<table><tr><td>中文菜單</td></tr></table>")]
+        target = [dict(self.target[0], menuHtml="<table><tr><td>English menu</td></tr></table>")]
+        result = admin.sync_cafe_articles(source, target)
+        self.assertEqual(result[0]["menuHtml"], target[0]["menuHtml"])
+        result = admin.sync_cafe_articles(source, [dict(self.target[0], menuHtml="")])
+        self.assertEqual(result[0]["menuHtml"], "")
+
 
 if __name__ == "__main__":
     unittest.main()

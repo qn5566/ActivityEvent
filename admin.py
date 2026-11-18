@@ -227,6 +227,9 @@ class Handler(BaseHTTPRequestHandler):
         path = parsed.path
         if path == "/" or path == "/admin.html":
             return self._serve_index()
+        if path in ("/cafe-menu-html.js", "/cafe-menu-editor.js"):
+            with open(os.path.join(HERE, path[1:]), "rb") as fh:
+                return self._send(200, fh.read(), "text/javascript; charset=utf-8")
         if path == "/api/files":
             return self._send(200, list_files())
         if path == "/api/file":

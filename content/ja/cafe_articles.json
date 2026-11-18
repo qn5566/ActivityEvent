@@ -41,7 +41,8 @@
       "nearestMrt": "MRT善導寺駅6番出口より徒歩約3〜5分",
       "wifiAndPower": "無料Wi-Fi完備、一部席に電源コンセントあり",
       "minOrder": "お一人様ドリンク1杯以上"
-    }
+    },
+    "menuHtml": "<table><thead><tr><th>メニュー / 説明</th><th>価格</th></tr></thead><tbody><tr><td><strong>エチオピア・ウォッシュド</strong><br><small>華やかな香りと果実味のシングルオリジンコーヒー。</small></td><td>店頭メニューをご確認ください</td></tr><tr><td><strong>皺皺（半熟蜂蜜ケーキ）</strong><br><small>ハンドドリップと合わせたい看板スイーツ。</small></td><td>店頭メニューをご確認ください</td></tr></tbody></table>"
   },
   {
     "id": "cafe_article_2",

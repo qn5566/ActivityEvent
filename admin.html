@@ -84,6 +84,18 @@
   .modal h2 { margin:0 0 12px; font-size:16px; }
   .modal .field-grid { grid-template-columns:repeat(2, 1fr); }
   .modal .modal-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:14px; }
+  .menu-editor-toolbar { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+  .menu-editor-toolbar button { border:1px solid var(--line); background:#fff; padding:7px 12px; border-radius:6px; cursor:pointer; }
+  .menu-visual-editor { min-height:160px; max-height:600px; overflow:auto; border:1px solid var(--line); padding:16px; border-radius:8px; background:#fffdf9; overflow-wrap:anywhere; }
+  .menu-visual-editor:focus { outline:2px solid #bfdbfe; }
+  .menu-visual-editor table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  .menu-visual-editor th, .menu-visual-editor td { padding:12px 6px; border-bottom:1px dotted #d8d0c5; vertical-align:top; text-align:left; }
+  .menu-visual-editor tr > :last-child:not(:first-child) { width:30%; text-align:right; color:#b85233; }
+  .menu-visual-editor small { display:block; color:var(--muted); }
+  .menu-source-details { margin:14px 0; }
+  .menu-source { min-height:160px; font-family:monospace; }
+  .menu-editor-preview { width:100%; min-height:300px; border:1px solid var(--line); margin-top:10px; background:#faf8f5; }
+  .cafe-menu-editor h3 { font-size:13px; margin:14px 0 0; }
 </style>
 </head>
 <body>
@@ -138,6 +150,8 @@
   </form>
 </div>
 
+<script src="/cafe-menu-html.js"></script>
+<script src="/cafe-menu-editor.js"></script>
 <script>
 const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCafeArticle:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedHomeBlog:null, selectedHomeRanking:null, selectedThemeGrid:null, selectedActivity:null, selectedSpot:null, dirty:false, files:{}, targetCafeId:null, targetArticleCafeId:null, cafeArticlesMap:null };
 const $ = s => document.querySelector(s);
@@ -585,6 +599,8 @@ function renderCafeArticles(){
     ${tap(p, 'summary', a.summary)}
   </div></div>`;
 
+  html += CafeMenuEditor.markup();
+
   // highlights
   const highlights = a.highlights || [];
   html += `<div class="card"><h2>✨ 本文精選亮點 highlights</h2><div class="field-grid">
@@ -631,6 +647,7 @@ function renderCafeArticles(){
 
   main.innerHTML = html;
   bindEdits();
+  CafeMenuEditor.mount(main.querySelector('.cafe-menu-editor'), a, markDirty);
 }
 
 function openCafeArticleModal(pref = {}){
@@ -683,6 +700,7 @@ function saveNewCafeArticle(){
     category: val('category') || '人氣名店深度探訪',
     coverImg: val('coverImg'),
     summary: val('summary'),
+    menuHtml: '',
     sections: [
       {
         heading: '空間氛圍與品牌特色',

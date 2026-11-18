@@ -41,7 +41,8 @@
       "nearestMrt": "MRT Shandao Temple Station Exit 6 (approx. 3-5 min walk)",
       "wifiAndPower": "Free Wi-Fi available; power outlets at select seating",
       "minOrder": "One beverage per person"
-    }
+    },
+    "menuHtml": "<table><thead><tr><th>Item / Description</th><th>Price</th></tr></thead><tbody><tr><td><strong>Ethiopian Washed Pour-Over</strong><br><small>Single-origin coffee with floral notes and bright acidity.</small></td><td>See in-store menu</td></tr><tr><td><strong>Wrinkle Honey Cake</strong><br><small>Signature semi-baked honey cake to pair with pour-over coffee.</small></td><td>See in-store menu</td></tr></tbody></table>"
   },
   {
     "id": "cafe_article_2",
