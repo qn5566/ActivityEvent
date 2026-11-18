@@ -96,6 +96,14 @@
   .menu-source { min-height:160px; font-family:monospace; }
   .menu-editor-preview { width:100%; min-height:300px; border:1px solid var(--line); margin-top:10px; background:#faf8f5; }
   .cafe-menu-editor h3 { font-size:13px; margin:14px 0 0; }
+  .report-body-editor { min-height:130px; max-height:620px; overflow:auto; border:1px solid var(--line); border-radius:8px; padding:16px; background:#fff; line-height:1.8; overflow-wrap:anywhere; }
+  .report-body-editor:focus { outline:2px solid #bfdbfe; }
+  .report-body-editor table { border-collapse:collapse; width:100%; min-width:580px; }
+  .report-body-editor th, .report-body-editor td { border:1px solid var(--line); padding:10px; text-align:left; }
+  .report-body-editor ul, .report-body-editor ol { padding-left:24px; }
+  .report-editor-error, [aria-invalid="true"] { color:var(--danger); border-color:var(--danger); }
+  #main { min-width:0; }
+  .section-card > summary { cursor:pointer; font-weight:600; padding:8px 0; }
 </style>
 </head>
 <body>
@@ -152,6 +160,7 @@
 
 <script src="/cafe-menu-html.js"></script>
 <script src="/cafe-menu-editor.js"></script>
+<script src="/editorial-report-editor.js"></script>
 <script>
 const state = { path:null, data:null, selectedTopic:null, selectedArticle:null, selectedCafe:null, selectedCafeArticle:null, selectedCharter:null, selectedMichelin:null, selectedTheme:null, selectedSouvenir:null, selectedHomeBlog:null, selectedHomeRanking:null, selectedThemeGrid:null, selectedActivity:null, selectedSpot:null, dirty:false, files:{}, targetCafeId:null, targetArticleCafeId:null, cafeArticlesMap:null };
 const $ = s => document.querySelector(s);
@@ -185,7 +194,7 @@ async function loadFiles(){
     }
   }
   // 預設選 zh/rankings.json
-  const preferred = 'content/zh/rankings.json';
+  const preferred = new URLSearchParams(location.search).get('file') || 'content/zh/rankings.json';
   if([...sel.options].some(o => o.value === preferred)) sel.value = preferred;
   renderLangTabs();
   await loadFile(sel.value);
@@ -216,12 +225,17 @@ function switchLang(lang){
 }
 
 async function loadFile(path, options = {}){
+  if(state.dirty && state.path?.endsWith('/editorial_reports.json') && !confirm('目前報導有未儲存的變更，確定捨棄並載入？')){
+    $('#fileSelect').value = state.path; return;
+  }
+  const reportId = state.path?.endsWith('/editorial_reports.json') ? state.data[state.selectedReport || 0]?.id : null;
   const res = await api('/api/file?path=' + encodeURIComponent(path));
   state.path = res.path;
   state.data = res.data;
   state.dirty = false;
   state.selectedTopic = null;
   state.selectedArticle = null;
+  state.selectedReport = 0;
   state.selectedCafe = null;
   state.selectedCafeArticle = null;
   state.selectedCharter = null;
@@ -239,6 +253,7 @@ async function loadFile(path, options = {}){
 
   // 如果載入的是 cafes.json，同步預載同語系的 cafe_articles.json 建立索引
   const fname = state.path ? state.path.split('/').pop() : '';
+  if(fname === 'editorial_reports.json' && reportId) state.selectedReport = Math.max(0,state.data.findIndex(report=>report.id===reportId));
   if(fname === 'affiliate_config.json'){
     $('#topicList').innerHTML = '<p class="hint">官網與 App 共用分潤設定</p>';
     main.innerHTML = '<div class="card"><h2>全球分潤設定</h2><p class="hint">修改追蹤參數後，請執行 python3 migrate_affiliate_links.py --apply，更新既有內容與 links.json。App 會在下次啟動時讀取已發布的設定。</p><div class="field-grid">'
@@ -273,6 +288,12 @@ function render(){
   if(!state.data) { main.innerHTML = '<div class="card">載入中…</div>'; return; }
   const fname = state.path ? state.path.split('/').pop() : '';
   if(fname === 'home_blog.json'){ renderHomeBlogList(); renderHomeBlog(); return; }
+  if(fname === 'editorial_reports.json' && Array.isArray(state.data)){
+    EditorialReportEditor.mount({root:main,list:$('#topicList'),reports:state.data,
+      selected:state.selectedReport || 0,language:state.path.split('/')[1],
+      select:index=>{try{EditorialReportEditor.validate();}catch(e){alert(e.message);return;}state.selectedReport=index;render();},changed:markDirty});
+    return;
+  }
   if(fname === 'home_rankings.json'){ renderHomeRankingsList(); renderHomeRankings(); return; }
   if(fname === 'theme_grid.json'){ renderThemeGridList(); renderThemeGrid(); return; }
   if(fname === 'activities.json'){ renderActivitiesList(); renderActivities(); return; }
@@ -1449,6 +1470,7 @@ async function save(){
   if(!state.dirty) return;
   const s = $('#status');
   try{
+    if(state.path.endsWith('/editorial_reports.json')) EditorialReportEditor.validate();
     const res = await api('/api/file?path=' + encodeURIComponent(state.path), {
       method:'POST',
       headers:{'Content-Type':'application/json'},
@@ -1457,7 +1479,7 @@ async function save(){
     state.dirty = false;
     updateStatus();
     const n = (res.synced && res.synced.length) || 0;
-    s.textContent = n ? ('已儲存並同步 '+n+' 個語言 ✓') : '已儲存 ✓';
+    s.textContent = res.snapshotWarning || (res.snapshotUpdated ? '已儲存，並更新本機前台 ✓' : n ? ('已儲存並同步 '+n+' 個語言 ✓') : '已儲存 ✓');
     s.className='ok';
     setTimeout(updateStatus, 2500);
   }catch(e){
@@ -1470,6 +1492,7 @@ $('#reloadBtn').addEventListener('click', ()=> loadFile(state.path));
 $('#saveBtn').addEventListener('click', save);
 
 loadFiles();
+window.addEventListener('beforeunload', event => { if(state.dirty){event.preventDefault();event.returnValue='';} });
 </script>
 </body>
 </html>

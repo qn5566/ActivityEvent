@@ -13,22 +13,27 @@
 關閉方式：
   在執行該指令的終端機（Terminal）畫面中，按鍵盤快捷鍵 `Ctrl + C` 即可中斷並關閉伺服器。
 
-安全範圍：只能讀寫 content/、klook/ 底下的 .json，以及根目錄的 links.json、info.json。
+API 寫入範圍：content/、klook/ 底下的 .json，以及根目錄設定白名單。
+報導儲存另同步相鄰 taiwan-travel/data/editorial_reports/ 的固定語言副本；
+/preview/ 只提供相鄰前端的網頁與靜態素材，讓編輯者檢視本機內容。
 """
 
 import argparse
 import copy
 import json
+import mimetypes
 import os
 import sys
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, unquote
 
 from affiliate_config import validate_config
+from editorial_reports import prepare_reports
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_PORT = 8765
+WEB_ROOT = os.path.realpath(os.path.join(HERE, '..', 'taiwan-travel'))
 
 ALLOWED_DIRS = (
     os.path.join(HERE, "content"),
@@ -146,6 +151,10 @@ def sync_to_other_langs(rel, data):
     if len(parts) != 3:
         return []
     _, lang, filename = parts
+    # Report text, section layout and publication are edited independently per locale.
+    # Positional sync would corrupt translated tables and map links after reordering.
+    if filename == 'editorial_reports.json':
+        return []
     synced = []
     content_root = os.path.join(HERE, "content")
     for other_lang in sorted(os.listdir(content_root)):
@@ -210,6 +219,19 @@ def list_files():
     return result
 
 
+def mirror_report_snapshot(language, data):
+    """Keep the sibling frontend's local preview in sync when that checkout exists."""
+    if not language.isalpha() or not os.path.isfile(os.path.join(WEB_ROOT, 'journals.html')):
+        return False
+    folder = os.path.join(WEB_ROOT, 'data', 'editorial_reports')
+    os.makedirs(folder, exist_ok=True)
+    target = os.path.join(folder, language + '.json')
+    with open(target + '.tmp', 'w', encoding='utf-8') as fh:
+        fh.write(dump_json(data, False, JSON_INDENT) + '\n')
+    os.replace(target + '.tmp', target)
+    return True
+
+
 class Handler(BaseHTTPRequestHandler):
     server_version = "ActivityEventAdmin/1.0"
 
@@ -227,9 +249,32 @@ class Handler(BaseHTTPRequestHandler):
         path = parsed.path
         if path == "/" or path == "/admin.html":
             return self._serve_index()
-        if path in ("/cafe-menu-html.js", "/cafe-menu-editor.js"):
+        if path in ("/cafe-menu-html.js", "/cafe-menu-editor.js", "/editorial-report-editor.js"):
             with open(os.path.join(HERE, path[1:]), "rb") as fh:
                 return self._send(200, fh.read(), "text/javascript; charset=utf-8")
+        if path.startswith('/preview/'):
+            relative = unquote(path[len('/preview/'):]) or 'journals.html'
+            target = os.path.realpath(os.path.join(WEB_ROOT, relative))
+            if not target.startswith(WEB_ROOT + os.sep) or not os.path.isfile(target):
+                return self._send(404, {'error': '預覽檔案不存在'})
+            allowed = {'.html', '.js', '.css', '.json', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.woff', '.woff2', '.gif'}
+            if os.path.splitext(target)[1].lower() not in allowed:
+                return self._send(404, {'error': '不支援的預覽檔案'})
+            with open(target, 'rb') as fh:
+                body = fh.read()
+            if target.endswith('.html'):
+                body = body.replace(b'<head>', b'<head><script>window.CONTENT_BASE_URL="/content";</script>', 1)
+            return self._send(200, body, mimetypes.guess_type(target)[0] or 'application/octet-stream')
+        if path.startswith('/content/'):
+            rel = unquote(path[1:])
+            parts = rel.split('/')
+            if len(parts) != 3 or parts[1].startswith('_'):
+                return self._send(404, {'error': 'not found'})
+            target = resolve_json(rel)
+            if target and os.path.isfile(target):
+                with open(target, 'rb') as fh:
+                    return self._send(200, fh.read())
+            return self._send(404, {'error': 'not found'})
         if path == "/api/files":
             return self._send(200, list_files())
         if path == "/api/file":
@@ -275,6 +320,11 @@ class Handler(BaseHTTPRequestHandler):
                     validate_config(data)
                 except ValueError as exc:
                     return self._send(400, {"error": str(exc)})
+            if rel.startswith('content/') and rel.endswith('/editorial_reports.json'):
+                try:
+                    prepare_reports(data, rel.split('/')[1])
+                except ValueError as exc:
+                    return self._send(400, {'error': str(exc)})
             if rel.startswith("content/") and rel.endswith("/cafes.json"):
                 if not isinstance(data, list) or any(
                     not isinstance(cafe, dict) or not isinstance(cafe.get("id"), str)
@@ -309,7 +359,13 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as exc:  # noqa: BLE001
                 synced = []
                 sys.stderr.write("[admin] 同步失敗：%s\n" % exc)
-            return self._send(200, {"ok": True, "path": rel, "synced": synced})
+            response = {"ok": True, "path": rel, "synced": synced}
+            if rel.startswith('content/') and rel.endswith('/editorial_reports.json'):
+                try:
+                    response['snapshotUpdated'] = mirror_report_snapshot(rel.split('/')[1], data)
+                except OSError as exc:
+                    response['snapshotWarning'] = '後台已儲存，本機前端副本更新失敗：%s' % exc
+            return self._send(200, response)
         return self._send(404, {"error": "not found"})
 
     def _serve_index(self):
