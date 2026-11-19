@@ -1737,8 +1737,16 @@ function updateStatus(){
 }
 
 async function save(){
-  if(!state.dirty) return;
+  if(!state.dirty || state.saving) return;
+  state.saving = true;
+  $('#main').inert = true;
+  $('#topicList').inert = true;
+  $('#fileSelect').disabled = true;
+  $('#reloadBtn').disabled = true;
   const s = $('#status');
+  $('#saveBtn').disabled = true;
+  s.textContent = '儲存並翻譯新增內容中，請稍候…';
+  s.className = '';
   try{
     if(/\/(editorial_reports|michelin_articles)\.json$/.test(state.path)) EditorialReportEditor.validate();
     const res = await api('/api/file?path=' + encodeURIComponent(state.path), {
@@ -1746,14 +1754,21 @@ async function save(){
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(state.data)
     });
-    state.dirty = false;
+    state.dirty = !!res.syncWarning;
     updateStatus();
     const n = (res.synced && res.synced.length) || 0;
-    s.textContent = res.snapshotWarning || (res.snapshotUpdated ? '已儲存，並更新本機前台 ✓' : n ? ('已儲存並同步 '+n+' 個語言 ✓') : '已儲存 ✓');
-    s.className='ok';
-    setTimeout(updateStatus, 2500);
+    s.textContent = res.syncWarning || res.snapshotWarning || (res.snapshotUpdated ? '已儲存，並更新本機前台 ✓' : n ? ('已儲存並同步 '+n+' 個語言 ✓') : '已儲存 ✓');
+    s.className = (res.syncWarning || res.snapshotWarning) ? 'err' : 'ok';
+    if(!res.syncWarning && !res.snapshotWarning) setTimeout(updateStatus, 5000);
   }catch(e){
     s.textContent = '儲存失敗：'+e.message; s.className='err';
+  }finally{
+    state.saving = false;
+    $('#main').inert = false;
+    $('#topicList').inert = false;
+    $('#fileSelect').disabled = false;
+    $('#reloadBtn').disabled = false;
+    $('#saveBtn').disabled = !state.dirty;
   }
 }
 

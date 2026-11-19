@@ -33,7 +33,8 @@ class ReportAdminTests(unittest.TestCase):
             data=copy.deepcopy(self.reports);data[0]['language']=language
             path.write_text(json.dumps(data,ensure_ascii=False))
         self.english = self.en.read_bytes()
-        self.patches = [patch.object(admin,'HERE',str(self.root)),
+        self.patches = [patch('admin_translation.AddedContentTranslator.text', lambda self, value, language: value),
+                        patch.object(admin,'HERE',str(self.root)),
                         patch.object(admin,'WEB_ROOT',str(self.web)),
                         patch.object(admin,'ALLOWED_DIRS',(str(self.root/'content'),)),
                         patch.object(admin.Handler,'log_message')]
@@ -65,6 +66,45 @@ class ReportAdminTests(unittest.TestCase):
         self.assertEqual(saved[0]['sections'][0]['content'],'完整內容地圖')
         self.assertEqual(saved,json.loads((self.web/'data/editorial_reports/zh.json').read_text()))
         self.assertEqual(self.en.read_bytes(),self.english)
+
+    def test_save_translates_only_new_reports_and_syncs_deletion(self):
+        new = copy.deepcopy(self.reports[0])
+        new.update(id='new-report', slug='new-report', title='新增報導')
+        self.reports.append(new)
+        with patch('admin_translation.AddedContentTranslator.text', side_effect=lambda value, language: 'Translated ' + value):
+            code, raw = self.save(self.reports)
+        result = json.loads(raw)
+        self.assertEqual(code, 200)
+        self.assertNotIn('syncWarning', result)
+        english = json.loads(self.en.read_text())
+        self.assertEqual(english[0], json.loads(self.english)[0])
+        self.assertEqual(english[1]['title'], 'Translated 新增報導')
+        self.assertEqual(english[1]['language'], 'en')
+        self.assertEqual(english, json.loads((self.web / 'data/editorial_reports/en.json').read_text()))
+        self.assertEqual(self.save([self.reports[1]])[0], 200)
+        self.assertEqual([r['id'] for r in json.loads(self.en.read_text())], ['new-report'])
+
+    def test_save_warns_on_failed_language_continues_others_and_can_retry(self):
+        folder = self.root / 'content/ja'
+        folder.mkdir()
+        (folder / 'editorial_reports.json').write_text('[]')
+        original = self.en.read_bytes()
+        new = copy.deepcopy(self.reports[0])
+        new.update(id='new-report', slug='new-report', title='新增報導')
+        def fail_english(translator, value, language):
+            if language == 'en':
+                translator.warn(language, 'missing model')
+                return value
+            return 'Japanese ' + value
+        with patch('admin_translation.AddedContentTranslator.text', fail_english):
+            code, raw = self.save(self.reports + [new])
+        self.assertEqual(code, 200)
+        self.assertIn('en', json.loads(raw)['syncWarning'])
+        self.assertEqual(self.en.read_bytes(), original)
+        self.assertEqual(len(json.loads((folder / 'editorial_reports.json').read_text())), 2)
+        # A later save retries the addition because the failed edition stayed intact.
+        self.assertEqual(self.save(self.reports + [new])[0], 200)
+        self.assertEqual(len(json.loads(self.en.read_text())), 2)
 
     def test_unpublishing_one_language_stays_independent(self):
         self.reports[0].update(status='draft',published=False)

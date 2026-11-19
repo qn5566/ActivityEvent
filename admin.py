@@ -24,10 +24,12 @@ import json
 import mimetypes
 import os
 import sys
+import threading
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs, unquote
 
+from admin_translation import AddedContentTranslator
 from affiliate_config import validate_config
 from editorial_reports import prepare_reports
 from michelin_articles import prepare_articles
@@ -48,6 +50,8 @@ ALLOWED_ROOT_FILES = {
 
 # 這些檔在 11 種語言間完全一樣（無翻譯），存檔時「整份」同步到其他語言。
 SYNC_ALL_FILES = {"charter.json"}
+
+SAVE_LOCK = threading.RLock()
 
 JSON_INDENT = 2
 JSON_ENSURE_ASCII = False
@@ -100,7 +104,7 @@ def should_sync(key, value):
     return False
 
 
-def sync_node(src, tgt):
+def sync_node(src, tgt, new_item=copy.deepcopy):
     """把 src 中應同步的欄位（http / type）就地合併進 tgt（並行結構）。
 
     列表長度也會對齊 src：多出的會刪除、少掉的會補上（深拷貝 src 的新增項），
@@ -110,38 +114,48 @@ def sync_node(src, tgt):
         for key, sval in src.items():
             if should_sync(key, sval):
                 tgt[key] = sval
-            elif isinstance(sval, (dict, list)) and isinstance(tgt.get(key), (dict, list)):
-                sync_node(sval, tgt[key])
+            elif isinstance(sval, (dict, list)):
+                if key not in tgt:
+                    tgt[key] = new_item(sval)
+                elif isinstance(tgt[key], (dict, list)):
+                    sync_node(sval, tgt[key], new_item)
     elif isinstance(src, list) and isinstance(tgt, list):
+        # Match stable identifiers before merging translated nested lists.
+        for id_key in ('id', 'activityId', 'en', 'rank'):
+            if src and all(isinstance(item, dict) and isinstance(item.get(id_key), (str, int))
+                           and not isinstance(item.get(id_key), bool) for item in src + tgt):
+                if len({item[id_key] for item in src}) == len(src) and len({item[id_key] for item in tgt}) == len(tgt):
+                    tgt[:] = sync_by_id(src, tgt, id_key, new_item)
+                    return
         for i, sval in enumerate(src):
             if i < len(tgt):
-                sync_node(sval, tgt[i])
+                sync_node(sval, tgt[i], new_item)
         if len(tgt) > len(src):
             del tgt[len(src):]
         elif len(tgt) < len(src):
-            tgt.extend(copy.deepcopy(src[len(tgt):]))
+            tgt.extend(new_item(item) for item in src[len(tgt):])
 
 
-def sync_by_id(src, tgt, id_key='id'):
+def sync_by_id(src, tgt, id_key='id', new_item=copy.deepcopy):
     """以固定 ID 對齊項目，新增／刪除時保留仍存在項目的翻譯與本體結構。"""
     existing = {item[id_key]: item for item in tgt if isinstance(item, dict) and id_key in item}
     result = []
     for item in src:
         translated = existing.get(item[id_key])
         if translated is None:
-            translated = copy.deepcopy(item)
+            translated = new_item(item)
         else:
-            sync_node(item, translated)
+            sync_node(item, translated, new_item)
         result.append(translated)
     return result
 
 
-def sync_cafes(src, tgt):
-    return sync_by_id(src, tgt)
+def sync_cafes(src, tgt, new_item=copy.deepcopy):
+    return sync_by_id(src, tgt, new_item=new_item)
 
 
-def sync_cafe_articles(src, tgt):
-    return sync_by_id(src, tgt)
+def sync_cafe_articles(src, tgt, new_item=copy.deepcopy):
+    return sync_by_id(src, tgt, new_item=new_item)
 
 
 def souvenir_item_key(item):
@@ -149,23 +163,23 @@ def souvenir_item_key(item):
     return ('id', item['id']) if item.get('id') else ('rank', item['rank'])
 
 
-def sync_souvenirs(src, tgt):
+def sync_souvenirs(src, tgt, new_item=copy.deepcopy):
     categories = {category['id']: category for category in tgt}
     result = []
     for category in src:
         translated = categories.get(category['id'])
         if translated is None:
-            result.append(copy.deepcopy(category))
+            result.append(new_item(category))
             continue
-        sync_node({key: value for key, value in category.items() if key != 'items'}, translated)
+        sync_node({key: value for key, value in category.items() if key != 'items'}, translated, new_item)
         existing = {souvenir_item_key(item): item for item in translated.get('items', [])}
         items = []
         for item in category['items']:
             translated_item = existing.get(souvenir_item_key(item))
             if translated_item is None:
-                translated_item = copy.deepcopy(item)
+                translated_item = new_item(item)
             else:
-                sync_node(item, translated_item)
+                sync_node(item, translated_item, new_item)
             items.append(translated_item)
         translated['items'] = items
         result.append(translated)
@@ -223,18 +237,14 @@ def validate_michelin(data):
             raise ValueError('無法刪除餐廳：%s 語言仍有對應文章，請先刪除文章並存檔' % language)
 
 
-def sync_to_other_langs(rel, data):
-    """把 data 的 http/type 欄位同步到其他語言同型檔案，回傳已同步的相對路徑清單。"""
+def sync_to_other_langs(rel, data, translator=None):
+    """同步新增／刪除與共用欄位，僅翻譯新項目，保留既有譯文。"""
     if not rel.startswith("content/"):
         return []
     parts = rel.split("/")
     if len(parts) != 3:
         return []
     _, lang, filename = parts
-    # Report text, section layout and publication are edited independently per locale.
-    # Positional sync would corrupt translated tables and map links after reordering.
-    if filename in ('editorial_reports.json','michelin_articles.json'):
-        return []
     synced = []
     content_root = os.path.join(HERE, "content")
     for other_lang in sorted(os.listdir(content_root)):
@@ -243,39 +253,62 @@ def sync_to_other_langs(rel, data):
         target_dir = os.path.join(content_root, other_lang)
         if not os.path.isdir(target_dir):
             continue
-        target_path = os.path.join(target_dir, filename)
-        if not os.path.isfile(target_path):
-            continue
-        with open(target_path, encoding="utf-8") as fh:
-            raw = fh.read()
         try:
-            target_data = json.loads(raw)
-        except Exception:  # noqa: BLE001
-            continue
-        minified, indent = detect_format(raw)
-        if filename == "cafes.json":
-            target_data = sync_cafes(data, target_data)
-        elif filename == "cafe_articles.json":
-            target_data = sync_cafe_articles(data, target_data)
-        elif filename in ("blog.json", "themes.json"):
-            target_data = sync_by_id(data, target_data)
-        elif filename == "activities.json":
-            target_data = sync_by_id(data, target_data, 'activityId')
-        elif filename == "souvenirs.json":
-            target_data = sync_souvenirs(data, target_data)
-        elif filename == "michelin.json":
-            for group in ('stars', 'bib'):
-                target_data[group] = sync_by_id(data[group], target_data.get(group, []))
-        elif filename in SYNC_ALL_FILES:
-            import copy
-            target_data = copy.deepcopy(data)
-        else:
-            sync_node(data, target_data)
-        tmp = target_path + ".tmp"
-        with open(tmp, "w", encoding="utf-8") as fh:
-            fh.write(dump_json(target_data, minified, indent) + "\n")
-        os.replace(tmp, target_path)
-        synced.append("content/%s/%s" % (other_lang, filename))
+            target_path = os.path.join(target_dir, filename)
+            if not os.path.isfile(target_path):
+                raw = "[]" if isinstance(data, list) else "{}"
+            else:
+                with open(target_path, encoding="utf-8") as fh:
+                    raw = fh.read()
+            try:
+                target_data = json.loads(raw)
+            except Exception as exc:  # noqa: BLE001
+                raise ValueError("目標 JSON 無法讀取：%s" % exc) from exc
+            original_target = copy.deepcopy(target_data)
+            minified, indent = detect_format(raw)
+            new_item = (lambda item: translator.translate(item, other_lang)) if translator else copy.deepcopy
+            if filename in ("editorial_reports.json", "michelin_articles.json"):
+                existing = {item["id"]: item for item in target_data}
+                target_data = [existing[item["id"]] if item["id"] in existing else new_item(item) for item in data]
+                for item in target_data:
+                    item["language"] = other_lang
+                    if item["id"] not in existing:
+                        prepare_reports([item], other_lang)
+                if filename == "editorial_reports.json":
+                    prepare_reports(copy.deepcopy(target_data), other_lang)
+                else:
+                    with open(os.path.join(target_dir, "michelin.json"), encoding="utf-8") as fh:
+                        prepare_articles(copy.deepcopy(target_data), other_lang, json.load(fh))
+            elif filename == "cafes.json":
+                target_data = sync_cafes(data, target_data, new_item)
+            elif filename == "cafe_articles.json":
+                target_data = sync_cafe_articles(data, target_data, new_item)
+            elif filename in ("blog.json", "themes.json", "theme_grid.json"):
+                target_data = sync_by_id(data, target_data, new_item=new_item)
+            elif filename == "activities.json":
+                target_data = sync_by_id(data, target_data, 'activityId', new_item)
+            elif filename == "souvenirs.json":
+                target_data = sync_souvenirs(data, target_data, new_item)
+            elif filename == "michelin.json":
+                for group in ('stars', 'bib'):
+                    target_data[group] = sync_by_id(data[group], target_data.get(group, []), new_item=new_item)
+            elif filename in SYNC_ALL_FILES:
+                target_data = copy.deepcopy(data)
+            else:
+                sync_node(data, target_data, new_item)
+            if target_data == original_target and os.path.isfile(target_path):
+                continue
+            tmp = target_path + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as fh:
+                fh.write(dump_json(target_data, minified, indent) + "\n")
+            os.replace(tmp, target_path)
+            synced.append("content/%s/%s" % (other_lang, filename))
+            if filename in ("editorial_reports.json", "michelin_articles.json"):
+                mirror_report_snapshot(other_lang, target_data, filename[:-5])
+        except Exception as exc:
+            if translator is None:
+                raise
+            translator.warnings.append('%s 同步未完成：%s' % (other_lang, exc))
     return synced
 
 
@@ -392,6 +425,11 @@ class Handler(BaseHTTPRequestHandler):
         return self._send(404, {"error": "not found"})
 
     def do_POST(self):
+        # Translation and file writes must not race another save.
+        with SAVE_LOCK:
+            self._save_request()
+
+    def _save_request(self):
         parsed = urlparse(self.path)
         path = parsed.path
         if path == "/api/file":
@@ -485,12 +523,18 @@ class Handler(BaseHTTPRequestHandler):
                 os.replace(tmp, abs_path)
             except Exception as exc:  # noqa: BLE001
                 return self._send(500, {"error": "寫入失敗：%s" % exc})
+            translator = AddedContentTranslator(HERE, rel)
+            sync_warning = None
             try:
-                synced = sync_to_other_langs(rel, data)
+                synced = sync_to_other_langs(rel, data, translator)
             except Exception as exc:  # noqa: BLE001
                 synced = []
+                sync_warning = "來源已儲存，但多語同步未完成：%s" % exc
                 sys.stderr.write("[admin] 同步失敗：%s\n" % exc)
             response = {"ok": True, "path": rel, "synced": synced}
+            warnings = ([sync_warning] if sync_warning else []) + translator.warnings
+            if warnings:
+                response["syncWarning"] = "來源已儲存；" + "；".join(warnings)
             if rel.startswith('content/') and rel.split('/')[-1] in ('editorial_reports.json','michelin_articles.json'):
                 try:
                     response['snapshotUpdated'] = mirror_report_snapshot(rel.split('/')[1], data, rel.split('/')[-1][:-5])

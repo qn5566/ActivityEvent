@@ -26,6 +26,12 @@ Flutter 專案：`../ActivityEventFlutter`。App 已加入 `AffiliateService` �
 本專案驗證：`node --test test_affiliate.js test_affiliate_panel.js` 與 `python3 -m unittest test_affiliate_migration.py test_admin.py`。
 Flutter 專案依其 `AGENTS.md` 規則，只有明確要求時才執行格式化、分析、測試或建置。
 
+## 後台存檔與多語同步
+
+啟動 `python3 admin.py --open`。新增或刪除內容後按存檔，會同步其他語言的項目，新增文字優先套用 `content/_translations/<lang>.json`，缺譯時使用 Argos 離線模型；既有譯文保留。報導與米其林文章也會同步新增／刪除，既有文章內容與發布狀態仍按語言獨立編輯。HTML 只翻譯文字，網址、固定 ID、價格與原生菜單語言版本保留；`charter.json` 維持各語言共用整份資料。
+
+翻譯在存檔時執行，首次載入模型或新增長文可能需要較久。請使用已安裝 `argostranslate` 與所需語言模型的 Python 環境；目前本機模型涵蓋中文到原有十種目標語言及德文（經英文中轉）。其他電腦或從其他來源語言新增時，需備妥對應翻譯路徑。缺少模型或翻譯失敗時，畫面會列出語言與錯誤，該語言維持原檔，其他語言繼續同步。來源檔已儲存，修正環境後可再按存檔重試。若後台已啟動，修改程式後需重啟並重新整理管理頁。
+
 ## 一鍵翻譯（推薦）
 
 到任何一台新電腦，只需把整個專案資料夾複製過去，然後執行：

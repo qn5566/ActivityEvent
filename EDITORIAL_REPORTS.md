@@ -7,7 +7,7 @@
 
 檔案為 `content/<lang>/editorial_reports.json`，十二種語言各十篇範例，目前均為 `published`，保留範例與待查核標記。前台顯示需要同時有 `status: "published"` 與 `published: true`；表單發布狀態會同時更新兩者。
 
-表單支援搜尋、新增／排序／刪除報導、發布／草稿／封存、查核與範例標記、標題摘要、城市、封面、SEO、段落、表格、圖片集、周邊推薦與探訪資訊。固定 ID 保持不變。各語言獨立編輯與發布，不透過原有位置同步覆寫譯文；切換語言時以固定 ID 保持同一篇報導。
+表單支援搜尋、新增／排序／刪除報導、發布／草稿／封存、查核與範例標記、標題摘要、城市、封面、SEO、段落、表格、圖片集、周邊推薦與探訪資訊。固定 ID 保持不變。新增／刪除會在存檔時依 ID 跨語言同步，新增文字自動翻譯；既有文章仍各語言獨立編輯與發布，不透過位置同步覆寫譯文；切換語言時以固定 ID 保持同一篇報導。
 
 段落可直接編輯文字、表格儲存格、清單與連結，也可在進階 JSON 修改結構。無效 JSON 會阻止儲存，後端拒絕重複 ID、矛盾發布狀態、錯誤結構及非 HTTP(S) 網址。`blocks` 存在時，儲存會自動重建完整純文字 `content`。
 
@@ -20,5 +20,5 @@
 驗證：
 
 ```sh
-python3 -m unittest test_admin.py test_editorial_admin.py test_editorial_translation.py
+python3 -m unittest test_admin.py test_editorial_admin.py test_editorial_translation.py test_admin_translation.py
 ```
