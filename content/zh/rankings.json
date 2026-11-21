@@ -2357,7 +2357,7 @@
         "desc": "九份最經典地標！傍晚紅燈籠點亮時分最為魔幻，露台直面基隆嶼海景與山城夜色，服務人員提供各國語言專業沖茶教學。",
         "price": "NT$ 400 - 600",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_amei.png",
         "links": [
           {
             "type": "klook",
@@ -2377,7 +2377,7 @@
         "desc": "貓空最老字號茶坊！坐擁整座山林綠意，深夜在戶外露台借炭火茶具慢品鐵觀音，看著遠方台北盆地微光，浪漫愜意。",
         "price": "NT$ 250 - 500",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_yaoyue.png",
         "links": [
           {
             "type": "map",
@@ -2397,7 +2397,7 @@
         "desc": "將台灣茶道國際化！館內典藏全台各產區原葉，專人帶領穿上圍裙用標準國際評茶杯品味日月潭紅玉、凍頂與東方美人。",
         "price": "NT$ 300 - 800",
         "ctaType": "owlting",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_youshan.png",
         "links": [
           {
             "type": "owlting",
@@ -2417,7 +2417,7 @@
         "desc": "鬧市中的世外桃源！迴廊環繞中央天然池塘，錦鯉成群游動。坐在湖畔木格窗櫺前手執紫砂壺沖茶，時光彷彿在此慢了下來。",
         "price": "NT$ 280 - 550",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_wuwei.png",
         "links": [
           {
             "type": "map",
@@ -2437,7 +2437,7 @@
         "desc": "台南茶文化代表！保留老屋木樓梯與紅磚，將台灣茶葉與台南在地文學、詩歌緊密結合，沖泡出一壺壺帶有歲月韻味的甘醇。",
         "price": "NT$ 200 - 450",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_fengcha.png",
         "links": [
           {
             "type": "map",
@@ -2457,7 +2457,7 @@
         "desc": "穿過一樓文創選物店登上二樓，店員會送上裝滿18種台灣精品茶葉的精緻聞香盒讓客人盲選喜愛香氣，擺盤器皿優雅古典。",
         "price": "NT$ 300 - 450",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_nanjie_deyi.png",
         "links": [
           {
             "type": "map",
@@ -2477,7 +2477,7 @@
         "desc": "擺脫傳統茶藝厚重感，空間運用通透玻璃與俐落線條打造出輕盈的現代茶席。適合年輕一代與外國旅人輕鬆認識台灣茶。",
         "price": "NT$ 250 - 500",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_chuanmenzi.png",
         "links": [
           {
             "type": "map",
@@ -2497,7 +2497,7 @@
         "desc": "宛如隱沒在熱帶森林中的天空之城！紅磚圓拱長廊遠眺新店群山，鄰近著名打卡秘境銀河洞瀑布，洗滌心靈絕佳所在。",
         "price": "NT$ 200 - 400",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_green_cube.png",
         "links": [
           {
             "type": "map",
@@ -2517,7 +2517,7 @@
         "desc": "座落於北投半山腰林蔭間，曾為張學良幽禁故居。純日式黑瓦木造茶亭居高臨下，黃昏時分品茗看觀音夕陽令人沉醉。",
         "price": "NT$ 500 - 900",
         "ctaType": "trip",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_shaoshuai.png",
         "links": [
           {
             "type": "trip",
@@ -2537,7 +2537,7 @@
         "desc": "冬山鄉是宜蘭茶葉重鎮！由農會老穀倉活化改建，旅客能親自穿戴斗笠採茶、體驗手揉茶烘乾帶回家，親子寓教於樂。",
         "price": "NT$ 200 - 450",
         "ctaType": "owlting",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_dongshan.png",
         "links": [
           {
             "type": "owlting",
@@ -2557,7 +2557,7 @@
         "desc": "結合京劇臉譜木雕藝術與客家山茶文化，親手用陶缽研磨花生、芝麻與綠茶葉沖入熱水，體驗最純正客家待客之禮。",
         "price": "NT$ 200 - 350",
         "ctaType": "owlting",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_shanbanqiao.png",
         "links": [
           {
             "type": "owlting",
@@ -2577,7 +2577,7 @@
         "desc": "台灣農林旗下頂級莊園！建築拔地而起懸浮於梯田茶園之上，走在延伸出去的景觀露台，四周千頃茶葉綠波翻湧，氣勢磅礴。",
         "price": "NT$ 180 - 350",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_luhao.png",
         "links": [
           {
             "type": "map",
@@ -2597,7 +2597,7 @@
         "desc": "直接架設在波光粼粼的綠寶石貯木池之上！脫鞋步入和室榻榻米，窗外湖光山色倒映落羽松，宛如踏進京都嵐山。",
         "price": "NT$ 220 - 450",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_steam.png",
         "links": [
           {
             "type": "map",
@@ -2617,7 +2617,7 @@
         "desc": "隱身阿里山樟樹湖茶區的極品黑鐵木構茶屋！整面巨幅落地窗直接框住大塔山與奔騰雲海，採嚴格預約制，一位難求。",
         "price": "NT$ 400 - 700",
         "ctaType": "owlting",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_shanjiaotie.png",
         "links": [
           {
             "type": "owlting",
@@ -2637,7 +2637,7 @@
         "desc": "太平雲梯旁的超震撼植栽空間！挑高敞開的木架上陳列大量多肉植物與老木盒，沒有牆壁的通透設計讓高山清新空氣自由穿流。",
         "price": "NT$ 250 - 500",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_air_library.png",
         "links": [
           {
             "type": "map",
@@ -2657,7 +2657,7 @@
         "desc": "恆春半島特產「港口茶」種植在海風吹拂的丘陵，帶有天然海鹽礦物鹹香與甘濃回甘。面海露天座席觀賞夕陽沉入海平面。",
         "price": "NT$ 200 - 400",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_shannan.png",
         "links": [
           {
             "type": "map",
@@ -2677,7 +2677,7 @@
         "desc": "每年八至九月漫山遍野盛開澄黃金針花海！在山頂制高點涼亭手捧一杯被小綠葉蟬叮咬後散發天然蜜香的紅茶，如夢似幻。",
         "price": "NT$ 150 - 350",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_liushishi.png",
         "links": [
           {
             "type": "map",
@@ -2688,21 +2688,21 @@
       },
       {
         "rank": 19,
-        "name": "台東鹿野・新峰紅烏龍茶莊",
-        "enName": "Xin Feng Red Oolong Tea Heritage Taitung",
-        "city": "台東縣鹿野鄉永安村高台路",
+        "name": "台東鹿野・女兒不懂茶",
+        "enName": "Oolong Tea Project Taitung Luye",
+        "city": "台東縣鹿野鄉永安村永嶺路",
         "rate": "4.9★",
-        "tag": "鹿野高台紅烏龍發源地 · 琥珀橙紅熟果甜香",
-        "highlight": "必體驗：鹿野紅烏龍冷泡茶、封茶祈福DIY",
-        "desc": "鹿野熱氣球高台旁的老茶莊！紅烏龍是台東獨步全台的重發酵特色茶，茶湯呈現琥珀紅如紅茶，卻帶有烏龍甘醇果蜜，極耐沖泡。",
-        "price": "NT$ 180 - 400",
+        "tag": "紅烏龍新美學茶席 · 國際獲獎評鑑級品茗",
+        "highlight": "必體驗：女兒的紅烏龍茶席、專業風味盲測導覽",
+        "desc": "顛覆傳統茶莊印象的鹿野新美學茶空間！由神農獎紅烏龍二代創立，以現代極簡美學呈現鹿野風土，引領旅人細細品味紅烏龍在不同烘焙與發酵下的熟果香與蜜韻。",
+        "price": "NT$ 200 - 450",
         "ctaType": "owlting",
         "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
         "links": [
           {
             "type": "owlting",
             "label": "OwlTing 預訂",
-            "url": "https://www.owlting.com/market/search?keyword=%E5%8F%B0%E6%9D%B1%E9%B9%BF%E9%87%8E%E3%83%BB%E6%96%B0%E5%B3%B0%E7%B4%85%E7%83%8F%E9%BE%8D%E8%8C%B6%E8%8E%8A"
+            "url": "https://www.owlting.com/market/search?keyword=%E5%8F%B0%E6%9D%B1%E9%B9%BF%E9%87%8E%20%E5%A5%B3%E5%85%92%E4%B8%8D%E6%87%82%E8%8C%B6"
           }
         ]
       },
@@ -2717,7 +2717,7 @@
         "desc": "坐落在金門水頭聚落最壯觀的防禦碉堡「得月樓」旁。在滿佈南洋彩釉花磚的閩南古厝迴廊下品茶配貢糖，細味僑鄉傳奇歷史。",
         "price": "NT$ 150 - 300",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_tea_deyuelou.png",
         "links": [
           {
             "type": "map",
@@ -2739,7 +2739,7 @@
         "desc": "台灣最具代表性世界地標！登上89樓俯瞰台北盆地夜景，親眼目睹重達660公噸的金色抗風防震阻尼球。",
         "price": "門票 NT$ 600 起",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_taipei101.png",
         "links": [
           {
             "type": "klook",
@@ -2759,7 +2759,7 @@
         "desc": "世界四大博物館之一！館藏橫跨數千年歷史文物，精美絕倫的翠玉白菜與象牙雕刻鬼斧神工，外國元首訪台必遊。",
         "price": "門票 NT$ 350",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_npm.png",
         "links": [
           {
             "type": "klook",
@@ -2779,7 +2779,7 @@
         "desc": "依山面海的採金山城！穿梭曲折狹窄石階小巷，品嚐現煮Q彈芋圓，傍晚紅燈籠亮起，彷彿置身動畫電影浪漫秘境。",
         "price": "免費漫遊",
         "ctaType": "klook",
-        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_jiufen.png",
         "links": [
           {
             "type": "klook",
@@ -2799,7 +2799,7 @@
         "desc": "大自然鬼斧神工雕塑！突出的岬角受千萬年海蝕風化，形成神似英國女王優雅昂首的奇石，是北台灣海岸必看國際地質名勝。",
         "price": "全票 NT$ 120",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_yehliu.png",
         "links": [
           {
             "type": "klook",
@@ -2819,7 +2819,7 @@
         "desc": "台灣最大高山天然淡水湖！湖光山色清晨雲霧繚繞如水墨畫，騎單車掠過落羽松水上木棧步道，漫遊原民伊達邵商圈。",
         "price": "環湖遊艇票 NT$ 300",
         "ctaType": "klook",
-        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/sun_moon_lake_tour.png",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_sunmoonlake.png",
         "links": [
           {
             "type": "klook",
@@ -2839,7 +2839,7 @@
         "desc": "漫步在海拔兩千多公尺的千年紅檜巨木林間，森呼吸滿滿芬多精。清晨搭乘紅色登山小火車穿過雲海直達祝山迎接第一道金光。",
         "price": "全票 NT$ 300",
         "ctaType": "klook",
-        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/alishan_train_tour.jpg",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_alishan.png",
         "links": [
           {
             "type": "klook",
@@ -2859,7 +2859,7 @@
         "desc": "造山運動與立霧溪億萬年切割出的驚世大理石峽谷，抬頭絕壁千仞、低頭碧綠急流奔騰，大自然的鬼斧神工令人屏息震撼。",
         "price": "免費入園",
         "ctaType": "klook",
-        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/taroko_gorge_tour.jpg",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_taroko.png",
         "links": [
           {
             "type": "klook",
@@ -2879,7 +2879,7 @@
         "desc": "港都最具活力的文創基地！老舊碼頭糖廠倉庫進駐無數獨立書店、文創選物與當代展演，搭乘輕軌穿梭兩岸海景開闊浪漫。",
         "price": "免費漫遊",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_pier2.png",
         "links": [
           {
             "type": "klook",
@@ -2899,7 +2899,7 @@
         "desc": "由晶瑩剔透的貝殼砂凝聚而成的半月形海灣，海水清澈蔚藍全年溫暖。黃昏時分坐在沙灘吧看夕陽染紅整片巴士海峽，渡假感爆棚。",
         "price": "免費入灘",
         "ctaType": "klook",
-        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/kenting_coastal_tour.jpg",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_kenting.png",
         "links": [
           {
             "type": "klook",
@@ -2919,7 +2919,7 @@
         "desc": "榮獲無數國際建築大獎！建築物以北關單面山為靈感，宛如從烏石港濕地破土而出的巨石，館內展示宜蘭豐富山海人文。",
         "price": "全票 NT$ 100",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_lan_yang.png",
         "links": [
           {
             "type": "klook",
@@ -2939,7 +2939,7 @@
         "desc": "建於西元1653年荷蘭東印度公司時期，歷經鄭成功與清代重修，九隻馱著御碑的巨大石贔屓栩栩如生，周圍更匯集府城頂級小吃。",
         "price": "門票 NT$ 70",
         "ctaType": "klook",
-        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/tainan_sicao_tour.jpg",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_chihkan_tower.png",
         "links": [
           {
             "type": "klook",
@@ -2959,7 +2959,7 @@
         "desc": "整排巨大純白發電風車屹立在無垠泥灘上，沿著木棧道漫步至盡頭，脫下鞋赤腳踩入冰涼泥灘，欣賞如夢似幻的橘紅晚霞鏡面倒影。",
         "price": "免費入場",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_gaomei.png",
         "links": [
           {
             "type": "klook",
@@ -2979,7 +2979,7 @@
         "desc": "各國旅客訪台必玩！火車緩緩駛過民宅屋簷下，在鐵軌上提筆寫下心願點燃天燈放飛天際。步行不遠即是磅礴簾幕型瀑布。",
         "price": "天燈約 NT$ 200 - 300",
         "ctaType": "klook",
-        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/shifen_lantern_tour.png",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_shifen_lantern.png",
         "links": [
           {
             "type": "klook",
@@ -2999,7 +2999,7 @@
         "desc": "一條完全沒有電線桿的筆直田園天堂路！兩側是隨風翻湧的翠綠金黃稻浪，背倚壯闊中央山脈，是東台灣療癒放空的代表作。",
         "price": "單車租借約 NT$ 100 - 200",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_mr_brown_ave.png",
         "links": [
           {
             "type": "klook",
@@ -3019,7 +3019,7 @@
         "desc": "三大展館涵蓋台灣水域、珊瑚王國與世界水域。漫步在84公尺長的海底隧道看魔鬼氈與鯊魚頭頂掠過，夜宿企鵝館更是夢幻回憶。",
         "price": "全票 NT$ 450",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_nmmba.png",
         "links": [
           {
             "type": "klook",
@@ -3039,7 +3039,7 @@
         "desc": "昔日松山菸廠老廠房！保留典雅巴洛克中庭噴泉與古樸木桁架，常年舉辦國際級藝術展覽與市集，緊鄰台北大巨蛋人氣鼎盛。",
         "price": "免費園區",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_songshan_cultural.png",
         "links": [
           {
             "type": "klook",
@@ -3059,7 +3059,7 @@
         "desc": "八角頂純白大理石建築高達70公尺，正殿前方階梯象徵建國歷史。每整點的三軍儀隊交接操槍動作整齊劃一，外國遊客爭相錄影圍觀。",
         "price": "免費參觀",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_cksmemorial.png",
         "links": [
           {
             "type": "klook",
@@ -3079,7 +3079,7 @@
         "desc": "聳立在蓮池潭湖畔的七層雙塔！傳統民俗深信「入龍喉、出虎口」能趨吉避凶逢凶化吉，塔內雕刻廿四孝與西方極樂浮雕，民俗色彩濃烈。",
         "price": "免費參觀",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_dragon_tiger_pagodas.png",
         "links": [
           {
             "type": "klook",
@@ -3099,7 +3099,7 @@
         "desc": "奇美創辦人許文龍先生圓夢獻給全台灣的純白西洋宮殿！典藏世界名琴、西洋繪畫、雕塑與遠古兵器，漫步護城河畔宛如飛抵巴黎凡爾賽宮。",
         "price": "全票 NT$ 200",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_chimei_museum.png",
         "links": [
           {
             "type": "klook",
@@ -3119,7 +3119,7 @@
         "desc": "澎湖保存最完整的傳統潮間帶捕魚陷阱！利用玄武岩與珊瑚礁石在海中堆砌出兩顆相連的心型，退潮時海水湛藍見底，浪漫指數破表。",
         "price": "跳島船票 NT$ 800 起",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_twin_hearts_stone_weir.png",
         "links": [
           {
             "type": "klook",
@@ -3141,7 +3141,7 @@
         "desc": "老台北最繁華港埠！巴洛克雕花立面紅磚洋樓林立，中藥香與南北貨香撲鼻，老字號餅舖與新興天井文創店交織出迷人時光。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_dihua.png",
         "links": [
           {
             "type": "map",
@@ -3161,7 +3161,7 @@
         "desc": "曾是台北著名的汽車零件與打鐵街，如今低調窄巷聚集了日本昭和喫茶店、復古選品店、文青理髮廳與獨立書店，文青必訪首選。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_chifeng.png",
         "links": [
           {
             "type": "map",
@@ -3181,7 +3181,7 @@
         "desc": "由永康街、青田街、龍泉街串連的生活美學圈。青田街綠蔭遮天，林立著建於1930年代的台北帝大日籍教授宿舍木屋群。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_yongkang.png",
         "links": [
           {
             "type": "map",
@@ -3201,7 +3201,7 @@
         "desc": "建於民國37年的聯勤四十四兵工廠廠工眷舍，矮小青瓦魚鱗板房舍直接依偎在台北101腳下，新舊時代強烈衝突張力，攝影聖地。",
         "price": "免費園區",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_44south.png",
         "links": [
           {
             "type": "map",
@@ -3221,7 +3221,7 @@
         "desc": "橫跨清代、日治與戰後不同時期的紅磚街廓，蜿蜒老巷內排列著傳統店屋與木格門窗，漫步其中體驗老艋舺歲月滄桑印記。",
         "price": "免費入園",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_bopiliao.png",
         "links": [
           {
             "type": "map",
@@ -3241,7 +3241,7 @@
         "desc": "長達兩百公尺的紅磚騎樓步道，每棟建築立面山牆上雕刻著不同堂號與吉祥浮雕。老街旁的三峽祖師廟更有「東方藝術殿堂」石雕美名。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_sanxia.png",
         "links": [
           {
             "type": "map",
@@ -3261,7 +3261,7 @@
         "desc": "沿途鋪設羅馬花崗石步道與波浪綠樹，老窯場煙囪高聳。聚集上百家生活陶瓷、柴燒茶壺與藝術彩釉店，親子情侶捏陶樂趣無窮。",
         "price": "免費散策",
         "ctaType": "owlting",
-        "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_yingge.png",
         "links": [
           {
             "type": "owlting",
@@ -3281,7 +3281,7 @@
         "desc": "清末大漢溪樟腦與茶葉集散碼頭，富商延聘名匠建造出融合希臘柱式與閩南吉祥圖案的奢華浮雕立面，豆干飄香百年不墜。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_daxi.png",
         "links": [
           {
             "type": "map",
@@ -3301,7 +3301,7 @@
         "desc": "全台僅存的護城河親水步道！綠樹垂蔭、清澈水流潺潺流淌，兩側種滿櫻花與垂柳，連結新竹火車站與舊城老市場，散步極為舒壓。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_hsinchu_moat.png",
         "links": [
           {
             "type": "map",
@@ -3321,7 +3321,7 @@
         "desc": "兩層樓矮鵝黃色磚牆宿舍，保留木構老樓梯與陽台鐵花窗。週末集結全台最具活力的青年插畫家、黑膠唱片、復古相機與文創手作。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_shenji.png",
         "links": [
           {
             "type": "map",
@@ -3341,7 +3341,7 @@
         "desc": "兩排雙層舊瓦磚房以空中木棧橋相連，綠藤隨風擺盪。進駐台灣在地原創皮件、手作印章、插畫小店，處處充滿生活美學溫度。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_calligraphy_greenway.png",
         "links": [
           {
             "type": "map",
@@ -3361,7 +3361,7 @@
         "desc": "曲折如迷宮般的紅磚矮巷！為防阻冬季強烈東北季風而特意曲折開闢，夏日陰涼避暑。十宜樓橫跨巷弄上方，老鹿港文人墨客雅集勝所。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_lukang_alley.png",
         "links": [
           {
             "type": "map",
@@ -3381,7 +3381,7 @@
         "desc": "全台罕見的農村型眷村！曾為神風特攻隊訓練宿舍，巨大紅磚防空掩體與水塔被百年榕樹氣根盤根錯節纏繞，充滿探險與歷史滄桑感。",
         "price": "免費園區",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_huwei_village.png",
         "links": [
           {
             "type": "map",
@@ -3401,7 +3401,7 @@
         "desc": "昔日聚集全台最多文人墨客與裱框書畫師傅的「美街」！如今由回鄉青年翻修百年木構造街屋，文青咖啡與藝廊林立，幽靜耐人尋味。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_chengren_street.png",
         "links": [
           {
             "type": "map",
@@ -3421,7 +3421,7 @@
         "desc": "29棟全由阿里山珍貴台灣紅檜興建的日治林務官舍，空氣中瀰漫淡淡檜木幽香。漫步石板路，宛如瞬間瞬移至日本京都嵐山。",
         "price": "免費入園",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_hinoki_village.png",
         "links": [
           {
             "type": "klook",
@@ -3441,7 +3441,7 @@
         "desc": "寬僅四公尺的百年老街！木造兩層樓閣樓老屋門戶相連，入夜後街道上方懸掛的彩繪燈籠綻放溫暖微光，老酒吧與文創咖啡人聲微醺。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1558857563-b37cf5a452ef?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_shennong_street.png",
         "links": [
           {
             "type": "map",
@@ -3461,7 +3461,7 @@
         "desc": "清代府城港口重要稻米買賣聚落，如今保留了古老紙糊店、百年香舖與製冰老廠，老牆面上繪滿府城插畫壁畫，轉角處處是驚喜。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_xinmei_street.png",
         "links": [
           {
             "type": "map",
@@ -3481,7 +3481,7 @@
         "desc": "昔日鹽埕區繁華的黃金金飾一條街，短短數百公尺聚集了十多家名牌手工奶茶店！漫步老商場窄巷，品味老派港都風情與濃郁鮮奶茶香。",
         "price": "免費散策",
         "ctaType": "dining",
-        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_xinle_milktea.png",
         "links": [
           {
             "type": "dining",
@@ -3501,7 +3501,7 @@
         "desc": "日治時期陸軍陸空聯隊將領官舍！佔地遼闊，每棟黑瓦木屋皆有獨立的大庭院與老樹，整修後引進特色獨立書店與文創咖啡，悠閒舒展。",
         "price": "免費園區",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_victorystar.png",
         "links": [
           {
             "type": "klook",
@@ -3521,7 +3521,7 @@
         "desc": "宜蘭開發最早的古街道！街道頭尾由南門福德祠與北門福德祠鎮守，融合清代閩南紅磚、日治巴洛克洋樓，遊客稀少清幽靜謐。",
         "price": "免費散策",
         "ctaType": "map",
-        "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_walk_toucheng_oldstreet.png",
         "links": [
           {
             "type": "map",
@@ -3543,7 +3543,7 @@
         "desc": "建於日治時期的古典巨柱宮殿建築，館內挑高大廳架設了震撼的巨大長頸雷龍與翼龍骨骼模型，門票僅銅板價30元，吹冷氣避雨首選！",
         "price": "全票 NT$ 30",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy_ntm.png",
         "links": [
           {
             "type": "klook",
@@ -3563,7 +3563,7 @@
         "desc": "遇到狂風暴雨也完全不受影響的世界級博物館！館內空調恆溫舒適，展廳空間寬闊浩大，即使逛上整整一天也看不完。",
         "price": "全票 NT$ 350",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy_npm.png",
         "links": [
           {
             "type": "klook",
@@ -3583,7 +3583,7 @@
         "desc": "昔日台北芳釀社清酒廠！挑高木屋架老廠房常年舉辦日本吉卜力、梵谷光影、人氣動漫等國際大型室內特展，文創選物與咖啡館齊備。",
         "price": "園區免門票（特展另計）",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy_huashan.png",
         "links": [
           {
             "type": "klook",
@@ -3603,7 +3603,7 @@
         "desc": "台灣當代藝術核心！純白幾何交錯挑高空間，巨大落地玻璃引進柔和自然光，即使窗外暴雨滂沱，室內依然靜謐安詳。",
         "price": "全票 NT$ 30",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy_tfam.png",
         "links": [
           {
             "type": "klook",
@@ -3623,7 +3623,7 @@
         "desc": "全台最具趣味的親子科學探索殿堂！高懸九樓天花板的極限空中腳踏車刺激無比，常設展互動設施豐富，雨天放電不二之選。",
         "price": "全票 NT$ 100",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy_ntsec.png",
         "links": [
           {
             "type": "klook",
@@ -3643,7 +3643,7 @@
         "desc": "由日治菸廠改建的室內廊道相連空間，誠品生活松菸館進駐手作金工、吹玻璃、黑膠唱片與24小時書店，避雨兼具深度品味。",
         "price": "免費園區",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_songshan_cultural.png",
         "links": [
           {
             "type": "klook",
@@ -3663,7 +3663,7 @@
         "desc": "純白宮殿式巨型博物館！館內藏品之豐富名震海內外，數千件世界頂級西洋名畫、古代騎士盔甲與提琴名琴，下雨天待上整天也不膩。",
         "price": "全票 NT$ 200",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_chimei_museum.png",
         "links": [
           {
             "type": "klook",
@@ -3683,7 +3683,7 @@
         "desc": "由日本普立茲克建築獎得主坂茂設計，以台南市花鳳凰花為概念轉化為五角形屋頂，純白幾何交錯建築本身就是一件當代巨作。",
         "price": "全票 NT$ 200",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy_tnam.png",
         "links": [
           {
             "type": "klook",
@@ -3703,7 +3703,7 @@
         "desc": "南台灣避雨避暑第一首選！三座超大型冷氣展館全部由室內空橋連通，觀看小白鯨優雅旋轉、企鵝在冰雪中滑行，大人小孩都著迷。",
         "price": "全票 NT$ 450",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_spots_nmmba.png",
         "links": [
           {
             "type": "klook",
@@ -3723,7 +3723,7 @@
         "desc": "超震撼室內科技遊樂世界！館內擁有直達地下室的六層樓超高螺旋滑梯，只需16秒滑到底部，並設有常年室內人工滑雪場，雨天暢玩。",
         "price": "全票 NT$ 100",
         "ctaType": "klook",
-        "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop",
+        "img": "https://raw.githubusercontent.com/qn5566/ActivityEvent/main/klook/assets/ranking_rainy_nstm.png",
         "links": [
           {
             "type": "klook",
